@@ -1,0 +1,13 @@
+{
+	"displayName": "Illuminant Crystal",
+	"texture": "Projectile/illuminant/IlluminantCrystal",
+	"size": [14, 16],
+	"aiStyle": 0,
+	"timeLeft": 600,
+	"friendly": true,
+	"hostile": false,	
+	"tileCollide": true,
+	"damage": 30,
+	"penetrate": 10,
+	"magic": true
+}

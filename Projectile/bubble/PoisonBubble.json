@@ -1,0 +1,13 @@
+{
+	"displayName": "Poison Bubble",
+	"size": [10, 10],
+	"aiStyle": 0,
+	"timeLeft": 2000,
+	"friendly": true,
+	"hostile": false,	
+	"tileCollide": true,
+	"damage": 1,
+	"magic": false,
+	"penetrate": 1,
+	"maxUpdates": 1
+}

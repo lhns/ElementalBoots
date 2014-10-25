@@ -1,0 +1,16 @@
+{
+	"displayName": "True Angel Wings",
+	"texture": "Item/wings/TrueAngelWings",
+	"size": [28, 34],
+	"maxStack": 1,
+	"value": [0, 0, 0, 0],
+	"rare": 3,
+	"tooltip": "",
+	"accessory": true,
+	"recipes":
+	[{
+		"items": {"Angel Wings": 1, "LolHens:BrokenHeroWings": 1},
+		"tiles": ["Tinkerer's Workshop"],
+		"creates": 1
+	}]
+}

@@ -1,0 +1,16 @@
+{
+	"displayName": "Prism",
+	"texture": "Item/prism/Prism",
+	"size": [32, 32],
+	"maxStack": 99,
+	"value": [0, 0, 0, 0],
+	"rare": 0,
+	"tooltip": "",
+	"accessory": true,
+	"recipes":
+	[{
+		"items": {"Glass": 10, "Diamond": 1, "Soul of Light": 5},
+		"tiles": ["Inventor's Workshop", "Mythril Anvil"],
+		"creates": 10
+	}]
+}

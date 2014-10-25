@@ -1,0 +1,24 @@
+{
+	"displayName": "Magma Claws",
+	"texture": "Item/ninja/MagmaClaws",
+	"size": [32, 32],
+	"maxStack": 1,
+	"value": [0, 10, 0, 0],
+	"rare": 8,
+	"tooltip": "Increases melee knockback and inflicts fire damage on attack
+9% increased melee damage and speed
+Allows the ability to slide down walls
+Improved ability if combined with Shoe Spikes",
+	"accessory": true,
+	"recipes":
+	[{
+		"items": {"Fire Gauntlet": 1, "Climbing Claws": 1},
+		"tiles": ["Inventor's Workshop"],
+		"creates": 1
+	},
+	{
+		"items": {"ElementalBoots:MagmaClaws": 1},
+		"tiles": [],
+		"creates": 1
+	}]
+}

@@ -1,0 +1,20 @@
+{
+	"displayName": "Inventor's Workshop",
+	"frameImportant": true,
+	"size": [4, 4],
+	"frameWidth": 16,
+	"frameHeight": 16,
+	"sheetColumns": 4,
+	"sheetRows": 4,
+	"placementOrigin": [2, 3],
+	"solid": false,
+	"solidTop": true,
+	"blocksLight": false,
+	"blocksSun": false,
+	"mergeDirt": false,
+	"table": false,
+	"drop": "LolHens:InventorsWorkshopItem",
+	"dust": 0,
+	"sound": 0,
+	"soundGroup": 0
+}
