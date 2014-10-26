@@ -15,8 +15,6 @@ namespace LolHens.Items
         private float usedTime = 0;
         public float usedPercent = 0;
 
-        private int playerDeaths = 0;
-
         public Boolean glowing = false;
 
         public sealed override void Initialize()
@@ -43,11 +41,7 @@ namespace LolHens.Items
         public override void Effects(Player player)
         {
             EffectsPre(player);
-            if (playerDeaths < LolHensPlayer.playerDeaths)
-            {
-                playerDeaths =  LolHensPlayer.playerDeaths;
-                PlayerDied(player);
-            }
+            if (LolHensPlayer.dead) PlayerDied(player);
         }
 
         public virtual void EffectsPre(Player player) { }

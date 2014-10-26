@@ -17,20 +17,22 @@ namespace LolHens
     {
         new public LolHensBase modBase;
 
-        public static int playerDeaths = 0;
-        private bool playerDied = false;
+        public static bool dead = false;
+        private bool died = false;
 
-        public override void Initialize() {
+        public override void Initialize()
+        {
             modBase = base.modBase as LolHensBase;
         }
 
         public override void PostUpdate()
         {
-            if (player.dead) playerDied = true;
-            if (player.respawnTimer == 0 && playerDied)
+            dead = false;
+            if (player.dead) died = true;
+            if (player.respawnTimer == 0 && died)
             {
-                playerDied = false;
-                playerDeaths++;
+                died = false;
+                dead = true;
             }
 
             if (player.grappling[0] >= 0
@@ -39,7 +41,7 @@ namespace LolHens
 
             if (player.grappling[0] == -1 && !player.tongued && player.velocity.Y != 0f) FlyVertically();
         }
-        private static Boolean printed = false;
+
         public override void ModifyDrawLayerList(System.Collections.Generic.List<PlayerLayer> list)
         {
             LolHensItem wings = Main.localPlayer.GetWingsItem();
