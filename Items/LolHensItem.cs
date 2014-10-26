@@ -17,9 +17,12 @@ namespace LolHens.Items
 
         private int playerDeaths = 0;
 
+        public Boolean glowing = false;
+
         public sealed override void Initialize()
         {
             modBase = base.modBase as LolHensBase;
+            modBase.items.Add(this);
             Init();
             if (!Main.dedServ) InitTextures();
             InitPost();
@@ -39,12 +42,15 @@ namespace LolHens.Items
 
         public override void Effects(Player player)
         {
+            EffectsPre(player);
             if (playerDeaths < LolHensPlayer.playerDeaths)
             {
-                playerDeaths++;
+                playerDeaths =  LolHensPlayer.playerDeaths;
                 PlayerDied(player);
             }
         }
+
+        public virtual void EffectsPre(Player player) { }
 
         public override bool? UseItem(Player player)
         {

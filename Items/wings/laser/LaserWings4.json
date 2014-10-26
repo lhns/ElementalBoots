@@ -7,14 +7,13 @@
 	"rare": 3,
 	"tooltip": "",
 	"accessory": true,
+	"wings": true,
+	"wingTime": 200,
+	"wingSpeedMax": 8,
+	"wingRateMult": 1.5,
 	"recipes":
 	[{
-		"items": {"Blue Phaseblade": 1, "Crystal Shard": 20, "Lens": 20, "Iron Bar": 10, "Soul of Flight": 20},
-		"tiles": ["Inventor's Workshop"],
-		"creates": 1
-	},
-	{
-		"items": {"Blue Phaseblade": 1, "Crystal Shard": 20, "Lens": 20, "Lead Bar": 10, "Soul of Flight": 20},
+		"items": {"Blue Phaseblade": 1, "Crystal Shard": 20, "Lens": 20, "g:Tier2Bar": 10, "Soul of Flight": 20},
 		"tiles": ["Inventor's Workshop"],
 		"creates": 1
 	}]

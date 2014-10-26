@@ -15,7 +15,7 @@
 	
 	"recipes":
 	[{
-		"items": { "Tinkerer's Workshop": 1, "Wood": 10, "Wooden Table": 1, "Spell Tome": 1 }, 
+		"items": { "Tinkerer's Workshop": 1, "g:Wood": 10, "Wooden Table": 1, "Spell Tome": 1 }, 
 		"tiles": [ "Work Bench" ], 
 		"creates": 1	
 	}]

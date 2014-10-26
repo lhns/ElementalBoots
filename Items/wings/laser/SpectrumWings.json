@@ -1,5 +1,4 @@
 {
-	"code": "Items.LaserWings",
 	"displayName": "Spectrum Wings",
 	"size": [32, 40],
 	"maxStack": 1,
@@ -7,6 +6,10 @@
 	"rare": 3,
 	"tooltip": "",
 	"accessory": true,
+	"wings": true,
+	"wingTime": 300,
+	"wingSpeedMax": 8,
+	"wingRateMult": 1.5,
 	"recipes":
 	[{
 		"items": {"LolHens:LaserWings1": 1, "LolHens:Prism": 10, "Soul of Flight": 5},

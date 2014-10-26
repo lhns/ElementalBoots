@@ -1,6 +1,5 @@
 {
 	"displayName": "Elemental Boots",
-	"texture": "Items/boots/ElementalBoots4",
 	"size": [32, 32],
 	"maxStack": 1,
 	"value": [0, 30, 0, 0],
@@ -10,6 +9,7 @@
 Provides the ability to walk on water and lava
 Leaves a trail of flames as the player moves",
 	"accessory": true,
+	"textureShoes": "Items/boots/ElementalBoots_Shoes",
 	"recipes":
 	[{
 		"items": {"Frostspark Boots": 1, "Lava Waders": 1, "Soul of Light": 20, "Ichor": 10},

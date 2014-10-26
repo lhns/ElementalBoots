@@ -24,15 +24,11 @@ namespace LolHens
             // 2 only render slotNum and ammoCount
             // >2 render nothing
             Item slotItem = slot.MyItem;
-            if (slotItem != null)
+            LolHensItem item = slotItem.AsLolHensItem();
+            if (item != null)
             {
-                ModItem modItem = slotItem.GetSubClass<ModItem>();
-                if (modItem != null && modItem is LolHensItem)
-                {
-                    renderMode = ((LolHensItem)modItem).PreDrawItemSlotItem(slotItem, slotItem.GetAlpha(slotItem.GetTextureColor()) * slot.alpha, sb, slot);
-                    if (renderMode == 1 && slot.MyItem.color != default(Color))
-                        ((LolHensItem)modItem).PreDrawItemSlotItem(slotItem, slotItem.GetColor(Color.White) * slot.alpha, sb, slot);
-                }
+                renderMode = item.PreDrawItemSlotItem(slotItem, slotItem.GetAlpha(slotItem.GetTextureColor()) * slot.alpha, sb, slot);
+                if (renderMode == 1 && slot.MyItem.color != default(Color)) item.PreDrawItemSlotItem(slotItem, slotItem.GetColor(Color.White) * slot.alpha, sb, slot);
             }
             if (renderMode > 0)
             {

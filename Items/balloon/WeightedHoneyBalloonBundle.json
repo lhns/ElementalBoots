@@ -9,6 +9,7 @@ Increases jump heigh
 Negates fall damage
 Releases bees when damaged",
 	"accessory": true,
+	"textureBalloon": "Items/balloon/WeightedHoneyBalloonBundle_Balloon",
 	"recipes":
 	[{
 		"items": {"LolHens:WeightedBalloonBundle": 1, "Honey Comb": 1},

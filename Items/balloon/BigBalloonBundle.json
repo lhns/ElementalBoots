@@ -7,6 +7,7 @@
 	"tooltip": "Allows the holder to quintuple jump
 Increases jump heigh",
 	"accessory": true,
+	"textureBalloon": "Items/balloon/BigBalloonBundle_Balloon",
 	"recipes":
 	[{
 		"items": {"Bundle of Balloons": 1, "Fart in a Balloon": 1, "Soul of Flight": 5},

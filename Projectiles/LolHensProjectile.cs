@@ -15,7 +15,9 @@ namespace LolHens.Projectiles
 
         public sealed override void Initialize()
         {
-            modBase = projectile.def.modBase as LolHensBase;
+            base.modBase = projectile.def.modBase;
+            modBase = base.modBase as LolHensBase;
+            modBase.projectiles.Add(this);
             Init();
             if (!Main.dedServ) InitTextures();
             InitPost();

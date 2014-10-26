@@ -10,10 +10,5 @@ namespace LolHens.Items
 {
     public class TrueAngelWings : TrueDemonWings
     {
-
-        public override void InitTextures()
-        {
-            texture = modBase.textures["Items/wings/true/TrueAngelWingsPlayer"];
-        }
     }
 }

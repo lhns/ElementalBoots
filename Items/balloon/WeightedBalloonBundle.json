@@ -8,6 +8,7 @@
 Increases jump heigh
 Negates fall damage",
 	"accessory": true,
+	"textureBalloon": "Items/balloon/WeightedBalloonBundle_Balloon",
 	"recipes":
 	[{
 		"items": {"LolHens:BigBalloonBundle": 1, "Lucky Horseshoe": 1},

@@ -13,19 +13,9 @@ namespace LolHens.Items
         public Texture2D texture = null;
         public int wingID;
 
-        public override void InitTextures()
+        public override void Init()
         {
-            texture = modBase.textures["Items/wings/elemental/ElementalWingsPlayer"];
-        }
-
-        public override void InitPost()
-        {
-            wingID = LolHensBase.AddWings(item, texture, 600, 8, true);
-        }
-
-        public override void Effects(Player player)
-        {
-            player.wings = wingID;
+            glowing = true;
         }
     }
 }

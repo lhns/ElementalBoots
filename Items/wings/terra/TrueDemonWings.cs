@@ -8,7 +8,7 @@ using Terraria;
 
 namespace LolHens.Items
 {
-    public class TerraWings : ElementalWings
+    public class TrueDemonWings : ElementalWings
     {
     }
 }
