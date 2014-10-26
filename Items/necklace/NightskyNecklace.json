@@ -1,0 +1,16 @@
+{
+	"displayName": "Nightsky Necklace",
+	"size": [32, 32],
+	"maxStack": 1,
+	"value": [0, 30, 0, 0],
+	"rare": 8,
+	"tooltip": "Causes stars to fall and increases length of invincibility after taking damage
+Turns the holder into a werewolf at the night and a merfolk when entering water",
+	"accessory": true,
+	"recipes":
+	[{
+		"items": {"Star Veil": 1, "Moon Shell": 1},
+		"tiles": ["Inventor's Workshop"],
+		"creates": 1
+	}]
+}

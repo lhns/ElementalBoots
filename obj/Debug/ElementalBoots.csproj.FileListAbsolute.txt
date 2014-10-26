@@ -1,1 +1,2 @@
 E:\Documents\My Games\Terraria\tAPI\Mods\Sources\ElementalBoots\bin\Debug\ElementalBoots.exe.config
+E:\Documents\My Games\Terraria\tAPI\Mods\Sources\ElementalBoots\obj\Debug\ElementalBoots.csprojResolveAssemblyReference.cache

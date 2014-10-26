@@ -1,0 +1,17 @@
+{
+	"displayName": "Weighted Balloon Bundle",
+	"size": [36, 42],
+	"maxStack": 1,
+	"value": [0, 8, 0, 0],
+	"rare": 9,
+	"tooltip": "Allows the holder to quintuple jump
+Increases jump heigh
+Negates fall damage",
+	"accessory": true,
+	"recipes":
+	[{
+		"items": {"LolHens:BigBalloonBundle": 1, "Lucky Horseshoe": 1},
+		"tiles": ["Inventor's Workshop"],
+		"creates": 1
+	}]
+}

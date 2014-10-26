@@ -1,0 +1,15 @@
+{
+	"displayName": "Elemental Wings",
+	"size": [30, 34],
+	"maxStack": 1,
+	"value": [0, 0, 0, 0],
+	"rare": 0,
+	"tooltip": "",
+	"accessory": true,
+	"recipes":
+	[{
+		"items": {"Leaf Wings": 1, "Frozen Wings": 1, "Flame Wings": 1, "Ghost Wings": 1, "Soul of Flight": 20},
+		"tiles": ["Inventor's Workshop"],
+		"creates": 1
+	}]
+}

@@ -1,0 +1,20 @@
+{
+	"displayName": "Slingshot",
+	"size": [32, 32],
+	"scale": 1.4,
+    "holdoutOrigin": [0, 0],
+    "holdoutOffset": [-6, -14],
+	"maxStack": 1,
+	"value": [0,0,0,30],	
+	"rare": 0,
+	"tooltip": ["Shoots Acorns"],
+	"useStyle": 5,
+	"useAnimation": 60,
+	"useTime": 60,
+	"damage": 20,
+	"knockback": 4,
+	"autoReuse": true,
+	"useAmmo": "Acorn",
+	"noMelee": true,
+	"ranged": true
+}

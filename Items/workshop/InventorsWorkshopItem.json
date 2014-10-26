@@ -1,0 +1,22 @@
+{
+	"displayName": "Inventor's Workshop",
+	"size": [26, 32],
+	"maxStack": 250,
+	"value": [0,0,10,0],	
+	"rare": 1,
+	"useStyle": 1,
+	"useAnimation": 15,
+	"useTime": 10,
+	"autoReuse": true,
+	"useTurn": true,
+	"tooltip": "Allows the advanced combining of some accessories",
+	"createTile": "LolHens:InventorsWorkshop",
+	"consumable": true,
+	
+	"recipes":
+	[{
+		"items": { "Tinkerer's Workshop": 1, "Wood": 10, "Wooden Table": 1, "Spell Tome": 1 }, 
+		"tiles": [ "Work Bench" ], 
+		"creates": 1	
+	}]
+}

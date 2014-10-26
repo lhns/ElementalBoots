@@ -1,0 +1,10 @@
+{
+	"displayName": "Illuminant",
+	"texture": "Buffs/illuminant/IlluminantBuff2",
+	"tip": "Glow!",
+	"debuff": false,
+	"vanityPet": false,
+	"lightPet": false,
+	"enchantment": false,
+	"noTimer": false
+}

@@ -1,0 +1,16 @@
+{
+	"code": "Items.LaserWings",
+	"displayName": "Spectrum Wings",
+	"size": [32, 40],
+	"maxStack": 1,
+	"value": [0, 1, 0, 10],
+	"rare": 3,
+	"tooltip": "",
+	"accessory": true,
+	"recipes":
+	[{
+		"items": {"LolHens:LaserWings1": 1, "LolHens:Prism": 10, "Soul of Flight": 5},
+		"tiles": ["Inventor's Workshop"],
+		"creates": 1
+	}]
+}
