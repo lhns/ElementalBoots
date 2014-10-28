@@ -8,8 +8,8 @@
 	"accessory": true,
 	"wings": true,
 	"wingTime": 600,
-	"wingSpeedMax": 8.5,
-	"wingRateMult": 1.5,
+	"wingSpeedMax": 12,
+	"wingRateMult": 2,
 	"recipes":
 	[{
 		"items": {"Leaf Wings": 1, "Frozen Wings": 1, "Flame Wings": 1, "Ghost Wings": 1, "Soul of Flight": 20},

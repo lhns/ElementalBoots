@@ -11,12 +11,12 @@ namespace LolHens.Items
     class SpectrumWings : LaserWings
     {
         private static int[] lightTrans = new int[] { 0, 5, 4, 2, 3 };
-
-        private float time = 0;
+        private float lastVerticalPlayerSpeed = 0;
 
         public override void EffectsPre(Player player)
         {
-            time = (time + 0.02f) % 5;
+            player.gravDir *= 10;
+            float time = (this.time * 0.02f) % 5;
             float brightness = 0.8f;
             float colorR = lightR.Interpolate(time, lightTrans) * brightness;
             float colorG = lightG.Interpolate(time, lightTrans) * brightness;

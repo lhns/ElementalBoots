@@ -15,10 +15,13 @@ namespace LolHens.Projectiles
             int nearest = -1;
             float nearestDistance = 0;
             Vector2 distanceVec;
-            for (int i = 0; i < 200; i++)
+            for (int i = 0; i < Main.npc.Length; i++)
             {
-                if (Main.npc[i].active && !Main.npc[i].dontTakeDamage && !Main.npc[i].friendly && Main.npc[i].lifeMax > 5 &&
-                    Collision.CanHit(projectile.position, projectile.width, projectile.height, Main.npc[i].position, Main.npc[i].width, Main.npc[i].height))
+                if (Main.npc[i].active
+                    && !Main.npc[i].dontTakeDamage
+                    && !Main.npc[i].friendly
+                    && Main.npc[i].lifeMax > 5
+                    && Collision.CanHit(projectile.position, projectile.width, projectile.height, Main.npc[i].position, Main.npc[i].width, Main.npc[i].height))
                 {
                     distanceVec = new Vector2(Main.npc[i].Center.X - projectile.Center.X, Main.npc[i].Center.Y - projectile.Center.Y);
                     float distance = (float)System.Math.Sqrt((double)(distanceVec.X * distanceVec.X + distanceVec.Y * distanceVec.Y));

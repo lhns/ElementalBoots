@@ -14,6 +14,7 @@ namespace LolHens.Items
 
         private float usedTime = 0;
         public float usedPercent = 0;
+        public int time = 0;
 
         public Boolean glowing = false;
 
@@ -40,6 +41,7 @@ namespace LolHens.Items
 
         public override void Effects(Player player)
         {
+            time++;
             EffectsPre(player);
             if (LolHensPlayer.dead) PlayerDied(player);
         }

@@ -16,9 +16,9 @@ namespace LolHens.Items
 
         public override void Effects(Player player)
         {
-            player.moveSpeedMax = 6.8f;
-            player.rocketBoots = 3;
-            player.rocketTimeMax = 21;
+            player.moveSpeedMax = Math.Max(player.moveSpeedMax, 6.8f);
+            player.rocketBoots = Math.Max(player.rocketBoots, 3);
+            player.rocketTimeMax = Math.Max(player.rocketTimeMax, 21);
             player.moveSpeed += 0.08f;
             player.iceSkate = true;
             player.waterWalk = true;

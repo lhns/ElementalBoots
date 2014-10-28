@@ -17,5 +17,10 @@ namespace LolHens.Items
         {
             glowing = true;
         }
+
+        public override void EffectsPre(Player player)
+        {
+            player.gravDir *= 2f;
+        }
     }
 }

@@ -28,6 +28,7 @@ namespace LolHens.Items
 
         public override void DamagePlayer(NPC npc, Player owner, int hitDir, ref int damage, ref bool crit, ref float critMult)
         {
+            Buffs.LolHensBuff.lastTrigger = item;
             owner.AddBuff(BuffDef.byName["LolHens:IlluminantBuff"], 1200, false);
             owner.AddBuff(BuffDef.byName["Vanilla:Panic!"], 600, false);
 

@@ -8,7 +8,7 @@
 	"accessory": true,
 	"wings": true,
 	"wingTime": 300,
-	"wingSpeedMax": 8,
+	"wingSpeedMax": 10,
 	"wingRateMult": 1.5,
 	"recipes":
 	[{

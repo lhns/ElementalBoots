@@ -23,7 +23,7 @@ namespace LolHens.Items
             player.magmaStone = true;
 
             player.blackBelt = true;
-            player.dash = 1;
+            player.dash += 1;
             player.spikedBoots += 2;
 
             if (fiery)

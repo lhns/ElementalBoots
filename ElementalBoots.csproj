@@ -45,6 +45,7 @@
     <None Include="Items\balloon\unused.rar" />
     <None Include="Items\balloon\WeightedBalloonBundle.json" />
     <None Include="Items\balloon\WeightedHoneyBalloonBundle.json" />
+    <None Include="Items\biting\BitingStaff.json" />
     <None Include="Items\boots\ElementalBoots.json" />
     <None Include="Items\boots\ElementalBoots.pdn" />
     <None Include="Items\boots\ElementalBoots_Shoes.pdn" />
@@ -200,10 +201,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Buffs\illuminant\IlluminantBuff.cs" />
+    <Compile Include="Buffs\LolHensBuff.cs" />
     <Compile Include="Items\balloon\BigBalloonBundle.cs" />
     <Compile Include="Items\balloon\GreenHorseshoeBalloon.cs" />
     <Compile Include="Items\balloon\WeightedBalloonBundle.cs" />
     <Compile Include="Items\balloon\WeightedHoneyBalloonBundle.cs" />
+    <Compile Include="Items\biting\BitingStaff.cs" />
     <Compile Include="Items\boots\ElementalBoots.cs" />
     <Compile Include="Items\bubble\PoisonBubbleWand.cs" />
     <Compile Include="Items\illuminant\IlluminantHeartNecklace.cs" />
@@ -253,6 +256,7 @@
       <HintPath>E:\Program Files (x86)\Steam\SteamApps\common\Terraria\tAPI.exe</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

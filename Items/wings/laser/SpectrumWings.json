@@ -8,8 +8,8 @@
 	"accessory": true,
 	"wings": true,
 	"wingTime": 300,
-	"wingSpeedMax": 8,
-	"wingRateMult": 1.5,
+	"wingSpeedMax": 14,
+	"wingRateMult": 3,
 	"recipes":
 	[{
 		"items": {"LolHens:LaserWings1": 1, "LolHens:Prism": 10, "Soul of Flight": 5},

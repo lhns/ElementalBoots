@@ -54,7 +54,7 @@ namespace LolHens
         public const int UNDERWORLD = 8;
     }
 
-    public static class ChestHelper
+    public static class ChestExtensions
     {
         public static bool AddItem(this Chest chest, Item item, int stack)
         {

@@ -9,8 +9,8 @@
 	"accessory": true,
 	"wings": true,
 	"wingTime": 200,
-	"wingSpeedMax": 8,
-	"wingRateMult": 1.5,
+	"wingSpeedMax": 12,
+	"wingRateMult": 2.2,
 	"recipes":
 	[{
 		"items": {"Purple Phaseblade": 1, "Crystal Shard": 20, "Lens": 20, "g:Tier2Bar": 10, "Soul of Flight": 20},

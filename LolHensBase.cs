@@ -115,7 +115,8 @@ namespace LolHens
 
         public static LolHensItem AsLolHensItem(this Item item)
         {
-            if (item != null) {
+            if (item != null)
+            {
                 ModItem modItem = item.GetSubClass<ModItem>();
                 if (modItem != null && modItem is LolHensItem) return modItem as LolHensItem;
             }
@@ -126,6 +127,23 @@ namespace LolHens
         {
             if (player.wings != 0) foreach (LolHensItem item in LolHensBase.instance.items) if (item.item.wingSlot == player.wings) return item;
             return null;
+        }
+
+        public static bool isEnemy(this CodableEntity entity)
+        {
+            if (!entity.active) return false;
+            if (entity is NPC)
+            {
+                NPC npc = entity as NPC;
+                if (npc.dontTakeDamage) return false;
+                if (npc.friendly) return false;
+            }
+            else if (entity is Player)
+            {
+                Player player = entity as Player;
+                return false;
+            }
+            return false;
         }
     }
 }

@@ -18,6 +18,9 @@ namespace LolHens
         new public LolHensBase modBase;
 
         public static bool dead = false;
+        public static bool flyingVertically = false;
+        public static bool resetFlightTimer = false;
+
         private bool died = false;
 
         public override void Initialize()
@@ -35,11 +38,11 @@ namespace LolHens
                 dead = true;
             }
 
-            if (player.grappling[0] >= 0
+            resetFlightTimer = (player.grappling[0] >= 0
                 || (player.grappling[0] == -1 && !player.tongued && (player.velocity.Y == 0f || player.sliding))
-                || (player.pulley)) ResetFlightTimer();
+                || (player.pulley));
 
-            if (player.grappling[0] == -1 && !player.tongued && player.velocity.Y != 0f) FlyVertically();
+            flyingVertically = player.grappling[0] == -1 && !player.tongued && player.velocity.Y != 0f;
         }
 
         public override void ModifyDrawLayerList(System.Collections.Generic.List<PlayerLayer> list)
@@ -47,9 +50,5 @@ namespace LolHens
             LolHensItem wings = Main.localPlayer.GetWingsItem();
             if (wings != null && wings.glowing) PlayerLayer.extraDrawInfo.colorArmorBody = new Color(255, 255, 255);
         }
-
-        public void FlyVertically() { }
-
-        public void ResetFlightTimer() { }
     }
 }
