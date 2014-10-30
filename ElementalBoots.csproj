@@ -35,6 +35,7 @@
     <None Include="App.config" />
     <None Include="banner.pdn" />
     <None Include="Buffs\illuminant\IlluminantBuff.json" />
+    <None Include="Buffs\illuminant\IlluminantCrystal.json" />
     <None Include="Buffs\illuminant\IlluminantCrystal.pdn" />
     <None Include="Items\balloon\BigBalloonBundle.json" />
     <None Include="Items\balloon\BigBalloonBundle.pdn" />
@@ -204,6 +205,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Buffs\illuminant\IlluminantBuff.cs" />
+    <Compile Include="Buffs\illuminant\IlluminantCrystal.cs" />
     <Compile Include="Buffs\LolHensBuff.cs" />
     <Compile Include="Items\balloon\BigBalloonBundle.cs" />
     <Compile Include="Items\balloon\GreenHorseshoeBalloon.cs" />
