@@ -4,8 +4,7 @@
 	"maxStack": 1,
 	"value": [0, 6, 0, 0],
 	"rare": 9,
-	"tooltip": "Allows the holder to quintuple jump
-Increases jump heigh",
+	"tooltip": "Allows the holder to quintuple jump\nIncreases jump heigh",
 	"accessory": true,
 	"textureBalloon": "Items/balloon/BigBalloonBundle_Balloon",
 	"recipes":

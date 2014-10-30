@@ -4,9 +4,7 @@
 	"maxStack": 1,
 	"value": [0, 15, 0, 0],
 	"rare": 6,
-	"tooltip": "Causes stars to fall, increases length of invincibility
-and applies the Illuminated buff after taking damage
-Refills your mana when dead",
+	"tooltip": "Causes stars to fall, increases length of invincibility\nand applies the Illuminated buff after taking damage\nRefills your mana when dead",
 	"accessory": true,
 	"recipes":
 	[{

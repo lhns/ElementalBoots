@@ -10,18 +10,6 @@ namespace LolHens.Buffs
 {
     public class IlluminantBuff : LolHensBuff
     {
-        public override void Start(CodableEntity entity, int index)
-        {
-            base.Start(entity, index);
-            //ShootCrystal();
-        }
-
-        private void ShootCrystal()
-        {
-            Item item = trigger as Item;
-            if (item != null) Projectile.NewProjectile(entity.Center.X, entity.Center.Y, 0, 0, ProjDef.byName["LolHens:IlluminantCrystal"].type, item.damage, item.knockBack, entity.whoAmI);
-        }
-
         public override void Effects(CodableEntity entity, int index)
         {
             base.Effects(entity, index);

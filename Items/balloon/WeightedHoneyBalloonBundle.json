@@ -4,10 +4,7 @@
 	"maxStack": 1,
 	"value": [0, 8, 0, 0],
 	"rare": 9,
-	"tooltip": "Allows the holder to quintuple jump
-Increases jump heigh
-Negates fall damage
-Releases bees when damaged",
+	"tooltip": "Allows the holder to quintuple jump\nIncreases jump heigh\nNegates fall damage\nReleases bees when damaged",
 	"accessory": true,
 	"textureBalloon": "Items/balloon/WeightedHoneyBalloonBundle_Balloon",
 	"recipes":

@@ -6,6 +6,8 @@ using Microsoft.Xna.Framework.Graphics;
 using TAPI;
 using Terraria;
 
+using LolHens;
+
 namespace LolHens.Items
 {
     public class IlluminantPearlsNecklace : LolHensItem
@@ -29,10 +31,11 @@ namespace LolHens.Items
         public override void DamagePlayer(NPC npc, Player owner, int hitDir, ref int damage, ref bool crit, ref float critMult)
         {
             Buffs.LolHensBuff.lastTrigger = item;
-            owner.AddBuff(BuffDef.byName["LolHens:IlluminantBuff"], 1200, false);
-            owner.AddBuff(BuffDef.byName["Vanilla:Panic!"], 600, false);
+            owner.AddBuff("LolHens:IlluminantBuff", 1200, item, false);
+            owner.AddBuff("LolHens:IlluminantCrystal", 300, item, false);
+            owner.AddBuff("Vanilla:Panic!", 600, item, false);
 
-            Projectile.NewProjectile(owner.Center.X, owner.Center.Y, 0, 0, ProjDef.byName["LolHens:IlluminantCrystal"].type, item.damage, item.knockBack, owner.whoAmI);
+            //Projectile.NewProjectile(owner.Center.X, owner.Center.Y, 0, 0, ProjDef.byName["LolHens:IlluminantCrystal"].type, item.damage, item.knockBack, owner.whoAmI);
         }
     }
 }

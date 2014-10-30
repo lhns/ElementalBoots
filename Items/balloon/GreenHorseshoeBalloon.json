@@ -4,8 +4,7 @@
 	"maxStack": 1,
 	"value": [0, 1, 0, 0],
 	"rare": 4,
-	"tooltip": "Allows the holder to double jump
-Negates fall damage",
+	"tooltip": "Allows the holder to double jump\nNegates fall damage",
 	"accessory": true,
 	"textureBalloon": "Items/balloon/GreenHorseshoeBalloon_Balloon",
 	"recipes":

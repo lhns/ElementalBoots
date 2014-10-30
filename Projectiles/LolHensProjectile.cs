@@ -54,5 +54,15 @@ namespace LolHens.Projectiles
             float newPosY = (float)(Math.Sin(rot) * (vecToRot.X - origin.X) + Math.Cos(rot) * (vecToRot.Y - origin.Y) + origin.Y);
             return new Vector2(newPosX, newPosY);
         }
+
+        public sealed override void DamageNPC(NPC npc, int hitDir, ref int damage, ref float knockback, ref bool crit, ref float critMult) { Damage(npc, hitDir, ref damage, ref  knockback, ref crit, ref critMult); }
+
+        public sealed override void DamagePlayer(Player player, int hitDir, ref int damage, ref bool crit, ref float critMult)
+        {
+            float knockback = 0;
+            Damage(player, hitDir, ref damage, ref knockback, ref crit, ref critMult);
+        }
+
+        public virtual void Damage(CodableEntity entity, int hitDir, ref int damage, ref float knockback, ref bool crit, ref float critMult) { }
     }
 }

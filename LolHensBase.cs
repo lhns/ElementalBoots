@@ -11,6 +11,7 @@ using TAPI;
 using Terraria;
 using LolHens.Items;
 using LolHens.Projectiles;
+using LolHens.Buffs;
 
 namespace LolHens
 {
@@ -129,8 +130,24 @@ namespace LolHens
             return null;
         }
 
-        public static bool isEnemy(this CodableEntity entity)
+        public static int AddBuff(this CodableEntity entity, string name, int time, CodableEntity trigger, bool quiet = true)
         {
+            if (!name.Contains(":")) name = "Vanilla:" + name;
+            return AddBuff(entity, BuffDef.byName[name], time, trigger, quiet);
+        }
+
+        public static int AddBuff(this CodableEntity entity, int type, int time, CodableEntity trigger, bool quiet = true)
+        {
+            int ret = 0;
+            LolHensBuff.lastTrigger = trigger;
+            if (entity is Player) ret = (entity as Player).AddBuff(type, time, quiet);
+            else if (entity is NPC) ret = (entity as NPC).AddBuff(type, time, quiet);
+            LolHensBuff.lastTrigger = null;
+            return ret;
+        }
+
+        public static bool isEnemy(this CodableEntity entity)
+        { // TODO WIP
             if (!entity.active) return false;
             if (entity is NPC)
             {

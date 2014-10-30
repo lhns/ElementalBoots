@@ -4,9 +4,7 @@
 	"maxStack": 1,
 	"value": [0, 12, 0, 0],
 	"rare": 8,
-	"tooltip": "Increases melee knockback and inflicts fire damage on attack
-9% increased melee damage and speed
-Allows the ability to climb walls",
+	"tooltip": "Increases melee knockback and inflicts fire damage on attack\n9% increased melee damage and speed\nAllows the ability to climb walls",
 	"accessory": true,
 	"recipes":
 	[{

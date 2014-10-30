@@ -4,10 +4,7 @@
 	"maxStack": 1,
 	"value": [0, 30, 0, 0],
 	"rare": 9,
-	"tooltip": "Allows flight, super fast running, and extra mobility on ice
-7% increased movement speed
-Provides the ability to walk on water and lava
-Leaves a trail of flames as the player moves",
+	"tooltip": "Allows flight, super fast running, and extra mobility on ice\n7% increased movement speed\nProvides the ability to walk on water and lava\nLeaves a trail of flames as the player moves",
 	"accessory": true,
 	"textureShoes": "Items/boots/ElementalBoots_Shoes",
 	"recipes":

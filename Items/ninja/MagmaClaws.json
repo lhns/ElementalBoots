@@ -4,10 +4,7 @@
 	"maxStack": 1,
 	"value": [0, 10, 0, 0],
 	"rare": 8,
-	"tooltip": "Increases melee knockback and inflicts fire damage on attack
-9% increased melee damage and speed
-Allows the ability to slide down walls
-Improved ability if combined with Shoe Spikes",
+	"tooltip": "Increases melee knockback and inflicts fire damage on attack\n9% increased melee damage and speed\nAllows the ability to slide down walls\nImproved ability if combined with Shoe Spikes",
 	"accessory": true,
 	"recipes":
 	[{

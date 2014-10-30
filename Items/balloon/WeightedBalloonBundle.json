@@ -4,8 +4,7 @@
 	"maxStack": 1,
 	"value": [0, 8, 0, 0],
 	"rare": 9,
-	"tooltip": "Allows the holder to quintuple jump
-Increases jump heigh
+	"tooltip": "Allows the holder to quintuple jump\nIncreases jump heigh
 Negates fall damage",
 	"accessory": true,
 	"textureBalloon": "Items/balloon/WeightedBalloonBundle_Balloon",

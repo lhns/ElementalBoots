@@ -113,9 +113,7 @@ namespace LolHens.Projectiles
 
         public override bool OnTileCollide(ref Vector2 velocityChange) { return true; }
 
-        public override void DamageNPC(NPC npc, int hitDir, ref int damage, ref float knockback, ref bool crit, ref float critMult) { if (toxic) npc.AddBuff(BuffDef.byName["Vanilla:Poisoned"], 300, false); }
-
-        public override void DamagePlayer(Player p, int hitDir, ref int damage, ref bool crit, ref float critMult) { if (toxic) p.AddBuff(BuffDef.byName["Vanilla:Poisoned"], 300, false); }
+        public override void Damage(CodableEntity entity, int hitDir, ref int damage, ref float knockback, ref bool crit, ref float critMult) { if (toxic) entity.AddBuff("Vanilla:Poisoned", 300, projectile, false); }
 
         public override void PostKill()
         {

@@ -4,8 +4,7 @@
 	"maxStack": 1,
 	"value": [0, 10, 0, 0],
 	"rare": 6,
-	"tooltip": "Transforms the holder into merfolk when entering water or lava
-Provides 12 seconds of immunity to lava",
+	"tooltip": "Transforms the holder into merfolk when entering water or lava\nProvides 12 seconds of immunity to lava",
 	"accessory": true,
 	"recipes":
 	[{

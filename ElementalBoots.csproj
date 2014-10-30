@@ -35,6 +35,7 @@
     <None Include="App.config" />
     <None Include="banner.pdn" />
     <None Include="Buffs\illuminant\IlluminantBuff.json" />
+    <None Include="Buffs\illuminant\IlluminantCrystal.pdn" />
     <None Include="Items\balloon\BigBalloonBundle.json" />
     <None Include="Items\balloon\BigBalloonBundle.pdn" />
     <None Include="Items\balloon\BigBalloonBundle_Balloon.pdn" />
@@ -45,7 +46,6 @@
     <None Include="Items\balloon\unused.rar" />
     <None Include="Items\balloon\WeightedBalloonBundle.json" />
     <None Include="Items\balloon\WeightedHoneyBalloonBundle.json" />
-    <None Include="Items\biting\BitingStaff.json" />
     <None Include="Items\boots\ElementalBoots.json" />
     <None Include="Items\boots\ElementalBoots.pdn" />
     <None Include="Items\boots\ElementalBoots_Shoes.pdn" />
@@ -68,6 +68,7 @@
     <None Include="Items\prism\Prism.json" />
     <None Include="Items\shell\FieryShell.json" />
     <None Include="Items\shell\FieryShell.pdn" />
+    <None Include="Items\shield\FrozenTurtleShield.json" />
     <None Include="Items\slingshot\Slingshot.json" />
     <None Include="Items\slingshot\Slingshot.pdn" />
     <None Include="Items\slingshot\Slingshot_1.pdn" />
@@ -100,8 +101,9 @@
     <None Include="Tiles\workshop\InventorsWorkshopTile.pdn" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Buffs\illuminant\IlluminantBuff_alternate.png" />
     <Content Include="Buffs\illuminant\IlluminantBuff.png" />
-    <Content Include="Buffs\illuminant\IlluminantBuff2.png" />
+    <Content Include="Buffs\illuminant\IlluminantCrystal.png" />
     <Content Include="Buffs\TemplateBuff.png" />
     <Content Include="Images\banner.png" />
     <Content Include="icon.png" />
@@ -136,6 +138,7 @@
     <Content Include="Items\ninja\MagmaClimbingGear.png" />
     <Content Include="Items\prism\Prism.png" />
     <Content Include="Items\shell\FieryShell.png" />
+    <Content Include="Items\shield\FrozenTurtleShield.png" />
     <Content Include="Items\slingshot\Slingshot.png" />
     <Content Include="Items\slingshot\Slingshot2.png" />
     <Content Include="Items\slingshot\Slingshot3.png" />
@@ -206,7 +209,6 @@
     <Compile Include="Items\balloon\GreenHorseshoeBalloon.cs" />
     <Compile Include="Items\balloon\WeightedBalloonBundle.cs" />
     <Compile Include="Items\balloon\WeightedHoneyBalloonBundle.cs" />
-    <Compile Include="Items\biting\BitingStaff.cs" />
     <Compile Include="Items\boots\ElementalBoots.cs" />
     <Compile Include="Items\bubble\PoisonBubbleWand.cs" />
     <Compile Include="Items\illuminant\IlluminantHeartNecklace.cs" />
@@ -218,6 +220,7 @@
     <Compile Include="Items\ninja\MagmaClaws.cs" />
     <Compile Include="Items\ninja\MagmaClimbingGear.cs" />
     <Compile Include="Items\shell\FieryShell.cs" />
+    <Compile Include="Items\shield\FrozenTurtleShield.cs" />
     <Compile Include="Items\slingshot\Slingshot.cs" />
     <Compile Include="Items\wings\elemental\ElementalWings.cs" />
     <Compile Include="Items\wings\laser\LaserWings.cs" />
