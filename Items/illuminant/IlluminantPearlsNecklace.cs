@@ -34,8 +34,6 @@ namespace LolHens.Items
             owner.AddBuff("LolHens:IlluminantBuff", 1200, item, false);
             owner.AddBuff("LolHens:IlluminantCrystal", 300, item, false);
             owner.AddBuff("Vanilla:Panic!", 600, item, false);
-
-            //Projectile.NewProjectile(owner.Center.X, owner.Center.Y, 0, 0, ProjDef.byName["LolHens:IlluminantCrystal"].type, item.damage, item.knockBack, owner.whoAmI);
         }
     }
 }

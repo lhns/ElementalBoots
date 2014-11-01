@@ -32,7 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="banner.pdn" />
     <None Include="Buffs\illuminant\IlluminantBuff.json" />
     <None Include="Buffs\illuminant\IlluminantCrystal.json" />

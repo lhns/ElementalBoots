@@ -146,6 +146,21 @@ namespace LolHens
             return ret;
         }
 
+        public static LolHensProjectile AsLolHensProjectile(this Projectile projectile)
+        {
+            if (projectile != null)
+            {
+                ModProjectile modProjectile = projectile.GetSubClass<ModProjectile>();
+                if (modProjectile != null && modProjectile is LolHensProjectile) return modProjectile as LolHensProjectile;
+            }
+            return null;
+        }
+
+        public static LolHensProjectile New(this Projectile projectile, float x, float y, float speedX, float speedY, int damage, float knockBack, int owner = 255, float ai0 = 0f, float ai1 = 0f)
+        {
+            return Main.projectile[Projectile.NewProjectile(x, y, speedX, speedY, projectile.type, damage, knockBack, owner, ai0, ai1)].AsLolHensProjectile();
+        }
+
         public static bool isEnemy(this CodableEntity entity)
         { // TODO WIP
             if (!entity.active) return false;
