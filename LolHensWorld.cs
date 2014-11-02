@@ -52,6 +52,7 @@ namespace LolHens
         public const int UNDERGROUND = 2;
         public const int CAVERN = 4;
         public const int UNDERWORLD = 8;
+        public const int ISLAND = 16;
     }
 
     public static class ChestExtensions
@@ -100,23 +101,11 @@ namespace LolHens
         public static int getChestType(this Chest chest)
         {
             int y = chest.y;
-
-            if (y < Main.worldSurface + 25.0)
-            {
-                return ChestType.SURFACE;
-            }
-            else if (y < Main.rockLayer)
-            {
-                return ChestType.UNDERGROUND;
-            }
-            else if (y < Main.maxTilesY - 250)
-            {
-                return ChestType.CAVERN;
-            }
-            else
-            {
-                return ChestType.UNDERWORLD;
-            }
+            if (y < Main.worldSurface - 200) return ChestType.ISLAND;
+            else if (y < Main.worldSurface + 25) return ChestType.SURFACE;
+            else if (y < Main.rockLayer) return ChestType.UNDERGROUND;
+            else if (y < Main.maxTilesY - 250) return ChestType.CAVERN;
+            else return ChestType.UNDERWORLD;
         }
     }
 }

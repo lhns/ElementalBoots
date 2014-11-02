@@ -1,0 +1,9 @@
+﻿{
+	"displayName": "Magnet",
+	"size": [32, 46],
+	"maxStack": 1,
+	"value": [0, 0, 0, 0],
+	"rare": 0,
+	"tooltip": "Increases pickup range for items",
+	"accessory": true
+}

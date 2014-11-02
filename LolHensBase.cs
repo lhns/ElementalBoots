@@ -30,13 +30,16 @@ namespace LolHens
 
         public override void OnAllModsLoaded()
         {
-            ItemDef.byName["LolHens:IlluminantPearl"].MakeMobDrop(NPCDef.byName["Vanilla:Illuminant Bat"].type, 0.0167f);
-            ItemDef.byName["LolHens:IlluminantPearl"].MakeMobDrop(NPCDef.byName["Vanilla:Illuminant Slime"].type, 0.0167f);
-            ItemDef.byName["LolHens:BrokenHeroWings"].MakeMobDrop(NPCDef.byName["Vanilla:Eyezor"].type, 0.004f);
+            NPCDef.byName["Vanilla:Illuminant Bat"].AddDrop(ItemDef.byName["LolHens:IlluminantPearl"], 0.0167f);
+            NPCDef.byName["Vanilla:Illuminant Slime"].AddDrop(ItemDef.byName["LolHens:IlluminantPearl"], 0.0167f);
+            NPCDef.byName["Vanilla:Eyezor"].AddDrop(ItemDef.byName["LolHens:BrokenHeroWings"], 0.004f);
+            NPCDef.byName["Vanilla:King Slime"].AddDrop(ItemDef.byName["Vanilla:Gel"], 1, 40, 80);
 
             ItemDef.byName["Vanilla:Acorn"].MakeAmmo("Acorn");
 
             ItemDef.byName["LolHens:Slingshot"].MakeChestLoot(0.2f, ChestType.SURFACE);
+            ItemDef.byName["LolHens:Magnet"].MakeChestLoot(0.05f, ChestType.UNDERGROUND);
+            ItemDef.byName["LolHens:TornadoInABottle"].MakeChestLoot(1, ChestType.ISLAND);
         }
 
         public override object OnModCall(TAPI.ModBase mod, params object[] args)
@@ -77,7 +80,7 @@ namespace LolHens
             item.ammo = ItemDef.ammo[ammoName];
         }
 
-        public static void MakeMobDrop(this Item item, int type, float chance = 1, int numFrom = 1, int numTo = -1)
+        public static void AddDrop(this NPC npc, Item item, float chance = 1, int numFrom = 1, int numTo = -1)
         {
             String drop = "{\"drop\":{\"item\":\"" + item.name + "\",";
             if (numTo == -1)
@@ -87,12 +90,12 @@ namespace LolHens
             drop = drop + "\"chance\":" + chance.ToString().Replace(",", ".") + "}}";
 
             JsonData drops;
-            if (NPCDef.npcDrops.ContainsKey(type))
-                drops = NPCDef.npcDrops[type];
+            if (NPCDef.npcDrops.ContainsKey(npc.type))
+                drops = NPCDef.npcDrops[npc.type];
             else
                 drops = new JsonData();
             drops.Add(JsonMapper.ToObject(drop)["drop"]);
-            NPCDef.npcDrops[type] = drops;
+            NPCDef.npcDrops[npc.type] = drops;
         }
 
         public static float Interpolate(this float[] array, float index, int[] translation = null)
