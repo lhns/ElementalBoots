@@ -6,7 +6,7 @@
 	"rare": 9,
 	"tooltip": "Allows the holder to quintuple jump\nIncreases jump heigh\nNegates fall damage\nReleases bees when damaged",
 	"accessory": true,
-	"textureBalloon": "Items/balloon/bundle/WeightedHoneyBalloonBundle_Balloon",
+	"textureBalloon": "Items/balloon/bundle/honey/WeightedHoneyBalloonBundle_Balloon",
 	"recipes":
 	[{
 		"items": {"LolHens:WeightedBalloonBundle": 1, "Honey Comb": 1},

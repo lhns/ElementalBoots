@@ -78,7 +78,7 @@ namespace LolHens.Projectiles
 
         public override void InitTextures()
         {
-            texture = modBase.textures["Projectiles/bubble/bubble" + color + size];
+            texture = modBase.textures["Projectiles/bubble/textures/bubble" + color + size];
         }
 
         public override void AI()

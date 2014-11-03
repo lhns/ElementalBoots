@@ -1,0 +1,16 @@
+{
+	"displayName": "Giant Balloon Bundle",
+	"size": [42, 32],
+	"maxStack": 1,
+	"value": [0, 6, 0, 0],
+	"rare": 9,
+	"tooltip": "Allows the holder to sextuple jump\nIncreases jump heigh",
+	"accessory": true,
+	"textureBalloon": "Items/balloon/bundle/normal/GiantBalloonBundle_Balloon",
+	"recipes":
+	[{
+		"items": {"Bundle of Balloons": 1, "Fart in a Balloon": 1, "Soul of Flight": 5},
+		"tiles": ["Inventor's Workshop"],
+		"creates": 1
+	}]
+}
