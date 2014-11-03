@@ -38,6 +38,7 @@
     <None Include="Buffs\illuminant\IlluminantCrystal.pdn" />
     <None Include="Items\balloon\black\TornadoInABalloon.json" />
     <None Include="Items\balloon\black\BlackHorseshoeBalloon.json" />
+    <None Include="Items\balloon\bundle\honey\GiantWeightedHoneyBalloonBundle.json" />
     <None Include="Items\balloon\bundle\normal\BigBalloonBundle.json" />
     <None Include="Items\balloon\bundle\normal\BigBalloonBundle.pdn" />
     <None Include="Items\balloon\bundle\normal\BigBalloonBundle_Balloon.pdn" />
@@ -115,6 +116,7 @@
     <Content Include="Buffs\TemplateBuff.png" />
     <Content Include="Images\banner.png" />
     <Content Include="icon.png" />
+    <Content Include="Items\balloon\bundle\honey\GiantWeightedHoneyBalloonBundle.png" />
     <Content Include="Items\balloon\bundle\normal\BigBalloonBundle.png" />
     <Content Include="Items\balloon\bundle\normal\BigBalloonBundle_Balloon.png" />
     <Content Include="Items\balloon\bundle\honey\BigHoneyBalloonBundle.png" />
@@ -224,6 +226,7 @@
     <Compile Include="Buffs\LolHensBuff.cs" />
     <Compile Include="Items\balloon\black\TornadoInABalloon.cs" />
     <Compile Include="Items\balloon\black\BlackHorseshoeBalloon.cs" />
+    <Compile Include="Items\balloon\bundle\honey\GiantWeightedHoneyBalloonBundle.cs" />
     <Compile Include="Items\balloon\bundle\normal\BigBalloonBundle.cs" />
     <Compile Include="Items\balloon\bundle\normal\GiantBalloonBundle.cs" />
     <Compile Include="Items\balloon\bundle\weighted\GiantWeightedBalloonBundle.cs" />

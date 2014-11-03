@@ -101,7 +101,7 @@ namespace LolHens
         public static int getChestType(this Chest chest)
         {
             int y = chest.y;
-            if (y < Main.worldSurface - 200) return ChestType.ISLAND;
+            if (y < Main.worldSurface - 150) return ChestType.ISLAND;
             else if (y < Main.worldSurface + 25) return ChestType.SURFACE;
             else if (y < Main.rockLayer) return ChestType.UNDERGROUND;
             else if (y < Main.maxTilesY - 250) return ChestType.CAVERN;

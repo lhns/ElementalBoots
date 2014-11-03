@@ -1,0 +1,22 @@
+{
+    "displayName": "Giant Weighted Honey Balloon Bundle",
+    "size": [ 42, 42 ],
+    "maxStack": 1,
+    "value": [ 0, 8, 0, 0 ],
+    "rare": 9,
+    "tooltip": "Allows the holder to sextuple jump\nIncreases jump heigh\nNegates fall damage\nReleases bees when damaged",
+    "accessory": true,
+    "textureBalloon": "Items/balloon/bundle/honey/GiantWeightedHoneyBalloonBundle_Balloon",
+    "recipes": [
+        {
+            "items": { "LolHens:GiantWeightedBalloonBundle": 1, "Honey Comb": 1 },
+            "tiles": [ "Inventor's Workshop" ],
+            "creates": 1
+        },
+        {
+            "items": { "LolHens:WeightedHoneyBalloonBundle": 1, "TornadoInABalloon": 1, "Soul of Flight": 5 },
+            "tiles": [ "Inventor's Workshop" ],
+            "creates": 1
+        }
+    ]
+}

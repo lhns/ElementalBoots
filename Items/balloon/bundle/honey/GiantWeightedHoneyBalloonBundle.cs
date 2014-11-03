@@ -8,16 +8,12 @@ using Terraria;
 
 namespace LolHens.Items
 {
-    public class WeightedHoneyBalloonBundle : LolHensItem
+    public class GiantWeightedHoneyBalloonBundle : GiantWeightedBalloonBundle
     {
+
         public override void Effects(Player player)
         {
-            player.doubleJump = true;
-            player.doubleJump2 = true;
-            player.doubleJump3 = true;
-            player.doubleJump4 = true;
-            player.jumpBoost = true;
-            player.noFallDmg = true;
+            base.Effects(player);
             player.bee = true;
         }
     }

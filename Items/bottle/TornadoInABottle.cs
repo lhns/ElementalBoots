@@ -19,6 +19,14 @@ namespace LolHens.Items
         private bool jumpAgain = true, dJumpEffect = false;
         private int dJumpEffectTime = 0;
         private float lastWingTime = 0;
+        private int lastRocketTime = 0;
+
+        public override void OnUnEquip(Player player, TAPI.UIKit.ItemSlot slot)
+        {
+            base.OnUnEquip(player, slot);
+            lastWingTime = 0;
+            lastRocketTime = 0;
+        }
 
         public override void Effects(Player player)
         {
@@ -62,6 +70,18 @@ namespace LolHens.Items
 
                     if (onSlime || onGround || (player.wet && player.accFlipper))
                     {
+                        // deactivate wings and rocket boots on first jump
+                        if (player.wingTime > 0)
+                        {
+                            lastWingTime = player.wingTime;
+                            player.wingTime = -1;
+                        }
+                        if (player.rocketTime > 0)
+                        {
+                            lastRocketTime = player.rocketTime;
+                            player.rocketTime = 0;
+                        }
+
                         player.velocity.Y = -Player.jumpSpeed * player.gravDir;
                         player.jump = Player.jumpHeight;
                         if (player.sliding) player.velocity.X = 3f * -(float)player.slideDir;
@@ -69,6 +89,7 @@ namespace LolHens.Items
                     }
                     else if (jump)
                     {
+
                         dJumpEffect = true;
                         Main.PlaySound(16, (int)player.position.X, (int)player.position.Y, 1);
                         player.velocity.Y = -Player.jumpSpeed * player.gravDir;
@@ -77,16 +98,19 @@ namespace LolHens.Items
                 }
             }
 
-            // block wings until the jump is complete
-            if (jumpAgain)
+            // reactivate wings and rocket boots after double jump
+            if (!jumpAgain && !dJumpEffect)
             {
-                if (player.wingTime > 0) lastWingTime = player.wingTime;
-                player.wingTime = -1;
-            }
-            else if (!dJumpEffect && lastWingTime > 0)
-            {
-                if (player.wingTime == -1) player.wingTime = lastWingTime;
-                lastWingTime = 0;
+                if (lastWingTime > 0)
+                {
+                    player.wingTime = lastWingTime;
+                    lastWingTime = 0;
+                }
+                if (lastRocketTime > 0)
+                {
+                    player.rocketTime = lastRocketTime;
+                    lastRocketTime = 0;
+                }
             }
 
             // jump effects
