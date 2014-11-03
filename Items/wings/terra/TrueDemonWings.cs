@@ -10,5 +10,8 @@ namespace LolHens.Items
 {
     public class TrueDemonWings : ElementalWings
     {
+        public override void EffectsPre(Player player)
+        {
+        }
     }
 }

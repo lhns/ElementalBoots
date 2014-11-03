@@ -18,6 +18,7 @@ namespace LolHens.Items
 
         private bool jumpAgain = true, dJumpEffect = false;
         private int dJumpEffectTime = 0;
+        private float lastWingTime = 0;
 
         public override void Effects(Player player)
         {
@@ -32,7 +33,6 @@ namespace LolHens.Items
                     && !(player.inventory[player.selectedItem].holdStyle == 3)
                     && (player.inventory[player.selectedItem].subClass == null || !player.inventory[player.selectedItem].subClass.SetHoldFrame(player))
                     && player.grappling[0] >= 0)) dJumpEffect = false;
-
 
             bool onGround = player.velocity.Y == 0f || player.sliding;
             bool onSlime = player.mount.Active && player.mount.Type == 3 && player.wetSlime > 0;
@@ -77,11 +77,24 @@ namespace LolHens.Items
                 }
             }
 
+            // block wings until the jump is complete
+            if (jumpAgain)
+            {
+                if (player.wingTime > 0) lastWingTime = player.wingTime;
+                player.wingTime = -1;
+            }
+            else if (!dJumpEffect && lastWingTime > 0)
+            {
+                if (player.wingTime == -1) player.wingTime = lastWingTime;
+                lastWingTime = 0;
+            }
+
+            // jump effects
             if (dJumpEffect)
             {
                 dJumpEffectTime++;
 
-                if (!jumpAgain && ((player.gravDir == 1f && player.velocity.Y < 0f) || (player.gravDir == -1f && player.velocity.Y > 0f)))
+                if (!jumpAgain && ((player.gravDir >= 1f && player.velocity.Y < 0f) || (player.gravDir <= -1f && player.velocity.Y > 0f)))
                 {
                     int playerHeight = player.height;
                     if (player.gravDir == -1f)
@@ -104,9 +117,10 @@ namespace LolHens.Items
                     }
                 }
 
+                // player turning effect
                 if (player.sandStorm)
                 {
-                    if (player.miscCounter % 4 == 0 && player.itemAnimation == 0)
+                    if (player.miscCounter % 4 == 0 && player.itemAnimation == 0 && player.wingTime == 0)
                     {
                         player.ChangeDir(player.direction * -1);
                         if (player.inventory[player.selectedItem].holdStyle == 2)
