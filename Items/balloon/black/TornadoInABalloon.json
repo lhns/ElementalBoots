@@ -1,0 +1,16 @@
+{
+	"displayName": "Tornado in a Balloon",
+	"size": [30, 28],
+	"maxStack": 1,
+	"value": [0, 1, 0, 0],
+	"rare": 4,
+	"tooltip": "Allows the holder to double jump",
+	"accessory": true,
+	"textureBalloon": "Items/balloon/black/TornadoInABalloon_Balloon",
+	"recipes":
+	[{
+		"items": {"Shiny Red Balloon": 1, "LolHens:TornadoInABottle": 1},
+		"tiles": ["Tinkerer's Workshop"],
+		"creates": 1
+	}]
+}

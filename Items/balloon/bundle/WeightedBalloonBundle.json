@@ -4,10 +4,9 @@
 	"maxStack": 1,
 	"value": [0, 8, 0, 0],
 	"rare": 9,
-	"tooltip": "Allows the holder to quintuple jump\nIncreases jump heigh
-Negates fall damage",
+	"tooltip": "Allows the holder to quintuple jump\nIncreases jump heigh\nNegates fall damage",
 	"accessory": true,
-	"textureBalloon": "Items/balloon/WeightedBalloonBundle_Balloon",
+	"textureBalloon": "Items/balloon/bundle/WeightedBalloonBundle_Balloon",
 	"recipes":
 	[{
 		"items": {"LolHens:BigBalloonBundle": 1, "Lucky Horseshoe": 1},

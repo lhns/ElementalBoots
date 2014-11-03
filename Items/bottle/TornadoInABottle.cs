@@ -12,7 +12,7 @@ using TAPI;
 
 namespace LolHens.Items
 {
-    class TornadoInABottle : LolHensItem
+    public class TornadoInABottle : LolHensItem
     {
         private static Color grayMultiplier = new Color(0.53f, 0.54f, 0.675f) * 1.3f;
 
