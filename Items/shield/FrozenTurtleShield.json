@@ -1,17 +1,18 @@
 ﻿{
-	"displayName": "Frozen Turtle Shield",
-	"size": [28, 34],
-	"maxStack": 1,
-	"value": [0, 0, 0, 0],
-	"rare": 1,
+    "displayName": "Frozen Turtle Shield",
+    "size": [ 28, 34 ],
+    "maxStack": 1,
+    "value": [ 0, 0, 0, 0 ],
+    "rare": 1,
     "tooltip": "Absorbs 25% of damage done to players on your team when above 25% life\nBelow 25% it gives 30 extra defense",
-	"accessory": true,
-	"textureShield": "Items/shield/FrozenTurtleShield_Shield",
-	"defense": 6,
-	"recipes":
-	[{
-		"items": {"Frozen Turtle Shell": 1, "Paladin's Shield": 1},
-		"tiles": ["Inventor's Workshop"],
-		"creates": 1
-	}]
+    "accessory": true,
+    "textureShield": "Items/shield/FrozenTurtleShield_Shield",
+    "defense": 6,
+    "recipes": [
+        {
+            "items": { "Frozen Turtle Shell": 1, "Paladin's Shield": 1 },
+            "tiles": [ "Inventor's Workshop" ],
+            "creates": 1
+        }
+    ]
 }

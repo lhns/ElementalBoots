@@ -36,6 +36,7 @@ namespace LolHens
             NPCDef.byName["Vanilla:King Slime"].AddDrop(ItemDef.byName["Vanilla:Gel"], 1, 40, 80);
 
             ItemDef.byName["Vanilla:Acorn"].MakeAmmo("Acorn");
+            ItemDef.byName["Vanilla:Spiky Ball"].MakeAmmo("SpikyBall");
 
             ItemDef.byName["LolHens:Slingshot"].MakeChestLoot(0.15f, ChestType.SURFACE);
             ItemDef.byName["LolHens:Magnet"].MakeChestLoot(0.05f, ChestType.UNDERGROUND);
@@ -162,6 +163,19 @@ namespace LolHens
         public static LolHensProjectile New(this Projectile projectile, float x, float y, float speedX, float speedY, int damage, float knockBack, int owner = 255, float ai0 = 0f, float ai1 = 0f)
         {
             return Main.projectile[Projectile.NewProjectile(x, y, speedX, speedY, projectile.type, damage, knockBack, owner, ai0, ai1)].AsLolHensProjectile();
+        }
+
+        public static void UseAmmo(this Player player)
+        {
+            for (int i = 0; i < 58; i++)
+            {
+                if (player.inventory[i].ammo == player.inventory[player.selectedItem].useAmmo && player.inventory[i].stack > 0)
+                {
+                    player.inventory[i].stack--;
+                    if (player.inventory[i].stack == 0) player.inventory[i].SetDefaults(0);
+                    return;
+                }
+            }
         }
 
         public static bool isEnemy(this CodableEntity entity)

@@ -60,19 +60,5 @@ namespace LolHens.Items
             }
             return null;
         }
-
-        public void UseAmmo(Player player)
-        {
-            for (int i = 0; i < 58; i++)
-            {
-                if (player.inventory[i].ammo == player.inventory[player.selectedItem].useAmmo && player.inventory[i].stack > 0)
-                {
-                    player.inventory[i].stack--;
-                    if (player.inventory[i].stack == 0) player.inventory[i].SetDefaults(0);
-                    return;
-                }
-            }
-        }
-
     }
 }

@@ -82,6 +82,7 @@
     <None Include="Items\slingshot\Slingshot.pdn" />
     <None Include="Items\slingshot\Slingshot_1.pdn" />
     <None Include="Items\slingshot\Slingshot_2.pdn" />
+    <None Include="Items\spikyball\SpikyBallBlaster.json" />
     <None Include="Items\wings\elemental\ElementalWings_Wings.pdn" />
     <None Include="Items\wings\elemental\unused.rar" />
     <None Include="Items\wings\laser\LaserWings_Wings.pdn" />
@@ -164,6 +165,7 @@
     <Content Include="Items\slingshot\Slingshot5.png" />
     <Content Include="Items\slingshot\Slingshot6.png" />
     <Content Include="Items\slingshot\Slingshot7.png" />
+    <Content Include="Items\spikyball\SpikyBallBlaster.png" />
     <Content Include="Items\wings\elemental\ElementalWings_Wings.png" />
     <Content Include="Items\wings\laser\LaserWings0_Wings.png" />
     <Content Include="Items\wings\laser\LaserWings1_Wings.png" />
@@ -239,6 +241,7 @@
     <Compile Include="Items\illuminant\IlluminantHeartNecklace.cs" />
     <Compile Include="Items\illuminant\IlluminantPearlsNecklace.cs" />
     <Compile Include="Items\illuminant\IlluminantStarNecklace.cs" />
+    <Compile Include="Items\LolHensGun.cs" />
     <Compile Include="Items\LolHensItem.cs" />
     <Compile Include="Items\magnet\Magnet.cs" />
     <Compile Include="Items\necklace\NightskyNecklace.cs" />
@@ -248,6 +251,7 @@
     <Compile Include="Items\shell\FieryShell.cs" />
     <Compile Include="Items\shield\FrozenTurtleShield.cs" />
     <Compile Include="Items\slingshot\Slingshot.cs" />
+    <Compile Include="Items\spikyball\SpikyBallBlaster.cs" />
     <Compile Include="Items\wings\elemental\ElementalWings.cs" />
     <Compile Include="Items\wings\laser\LaserWings.cs" />
     <Compile Include="Items\wings\laser\SpectrumWings.cs" />

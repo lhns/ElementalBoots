@@ -54,7 +54,7 @@ namespace LolHens.Items
                     float norm = 20f / hyp;
                     velocity.X *= norm;
                     velocity.Y *= norm;
-                    UseAmmo(player);
+                    player.UseAmmo();
                     Projectile.NewProjectile(vector.X, vector.Y, velocity.X, velocity.Y, ProjDef.byName["LolHens:Acorn"].type, item.damage, item.knockBack, player.whoAmI);
                     Main.PlaySound(2, (int)vector.X, (int)vector.Y, 5);
                 }

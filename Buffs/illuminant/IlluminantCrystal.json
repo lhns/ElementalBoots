@@ -1,9 +1,9 @@
 ﻿{
-	"displayName": "Illuminant Crystal",
-	"tip": "Follows enemies and damages them",
-	"debuff": false,
-	"vanityPet": false,
-	"lightPet": false,
-	"enchantment": false,
-	"noTimer": false
+    "displayName": "Illuminant Crystal",
+    "tip": "Follows enemies and damages them",
+    "debuff": true,
+    "vanityPet": false,
+    "lightPet": false,
+    "enchantment": false,
+    "noTimer": false
 }
