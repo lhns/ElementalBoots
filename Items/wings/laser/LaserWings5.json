@@ -1,20 +1,21 @@
 {
-	"code": "Items.LaserWings",
-	"displayName": "Purple Phasewings",
-	"size": [32, 40],
-	"maxStack": 1,
-	"value": [0, 1, 0, 0],
-	"rare": 3,
-	"tooltip": "",
-	"accessory": true,
-	"wings": true,
-	"wingTime": 200,
-	"wingSpeedMax": 12,
-	"wingRateMult": 2.2,
-	"recipes":
-	[{
-		"items": {"Purple Phaseblade": 1, "Crystal Shard": 20, "Lens": 20, "g:Tier2Bar": 10, "Soul of Flight": 20},
-		"tiles": ["Inventor's Workshop"],
-		"creates": 1
-	}]
+    "code": "Items.LaserWings",
+    "displayName": "Purple Phasewings",
+    "size": [ 32, 40 ],
+    "maxStack": 1,
+    "value": [ 0, 1, 0, 0 ],
+    "rare": 3,
+    "tooltip": "",
+    "accessory": true,
+    "wings": true,
+    "wingTime": 200,
+    "wingSpeedMax": 12,
+    "wingRateMult": 2.2,
+    "recipes": [
+        {
+            "items": { "Purple Phaseblade": 1, "Crystal Shard": 20, "Lens": 20, "g:Tier2Bar": 10, "Soul of Flight": 20 },
+            "tiles": [ "Inventor's Workshop" ],
+            "creates": 1
+        }
+    ]
 }

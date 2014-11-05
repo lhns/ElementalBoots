@@ -1,9 +1,9 @@
 {
-	"displayName": "Illuminant",
-	"tip": "Glows!",
-	"debuff": false,
-	"vanityPet": false,
-	"lightPet": false,
-	"enchantment": false,
-	"noTimer": false
+    "displayName": "Illuminant",
+    "tip": "Glows!",
+    "debuff": false,
+    "vanityPet": false,
+    "lightPet": false,
+    "enchantment": false,
+    "noTimer": false
 }

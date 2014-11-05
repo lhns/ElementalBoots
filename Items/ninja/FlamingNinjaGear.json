@@ -1,20 +1,21 @@
 {
-	"displayName": "Flaming Ninja Gear",
-	"size": [30, 32],
-	"maxStack": 1,
-	"value": [0, 20, 0, 0],
-	"rare": 9,
-	"tooltip": "Increases melee knockback and inflicts fire damage on attack\n9% increased melee damage and speed\nAllows the ability to climb walls and dash\nGives a chance to dodge attacks",
-	"accessory": true,
-	"recipes":
-	[{
-		"items": {"LolHens:MagmaClimbingGear": 1, "Tabi": 1, "Black Belt": 1},
-		"tiles": ["Inventor's Workshop"],
-		"creates": 1
-	},
-	{
-		"items": {"Fire Gauntlet": 1, "Master Ninja Gear": 1, "Soul of Might": 5},
-		"tiles": ["Inventor's Workshop"],
-		"creates": 1
-	}]
+    "displayName": "Flaming Ninja Gear",
+    "size": [ 30, 32 ],
+    "maxStack": 1,
+    "value": [ 0, 20, 0, 0 ],
+    "rare": 9,
+    "tooltip": "Increases melee knockback and inflicts fire damage on attack\n9% increased melee damage and speed\nAllows the ability to climb walls and dash\nGives a chance to dodge attacks",
+    "accessory": true,
+    "recipes": [
+        {
+            "items": { "LolHens:MagmaClimbingGear": 1, "Tabi": 1, "Black Belt": 1 },
+            "tiles": [ "Inventor's Workshop" ],
+            "creates": 1
+        },
+        {
+            "items": { "Fire Gauntlet": 1, "Master Ninja Gear": 1, "Soul of Might": 5 },
+            "tiles": [ "Inventor's Workshop" ],
+            "creates": 1
+        }
+    ]
 }

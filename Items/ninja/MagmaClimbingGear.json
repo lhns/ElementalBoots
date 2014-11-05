@@ -1,20 +1,21 @@
 {
-	"displayName": "Magma Climbing Gear",
-	"size": [32, 32],
-	"maxStack": 1,
-	"value": [0, 12, 0, 0],
-	"rare": 8,
-	"tooltip": "Increases melee knockback and inflicts fire damage on attack\n9% increased melee damage and speed\nAllows the ability to climb walls",
-	"accessory": true,
-	"recipes":
-	[{
-		"items": {"LolHens:MagmaClaws": 1, "Shoe Spikes": 1},
-		"tiles": ["Inventor's Workshop"],
-		"creates": 1
-	},
-	{
-		"items": {"Fire Gauntlet": 1, "Tiger Climbing Gear": 1, "Soul of Might": 2},
-		"tiles": ["Inventor's Workshop"],
-		"creates": 1
-	}]
+    "displayName": "Magma Climbing Gear",
+    "size": [ 32, 32 ],
+    "maxStack": 1,
+    "value": [ 0, 12, 0, 0 ],
+    "rare": 8,
+    "tooltip": "Increases melee knockback and inflicts fire damage on attack\n9% increased melee damage and speed\nAllows the ability to climb walls",
+    "accessory": true,
+    "recipes": [
+        {
+            "items": { "LolHens:MagmaClaws": 1, "Shoe Spikes": 1 },
+            "tiles": [ "Inventor's Workshop" ],
+            "creates": 1
+        },
+        {
+            "items": { "Fire Gauntlet": 1, "Tiger Climbing Gear": 1, "Soul of Might": 2 },
+            "tiles": [ "Inventor's Workshop" ],
+            "creates": 1
+        }
+    ]
 }

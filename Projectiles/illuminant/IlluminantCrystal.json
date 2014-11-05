@@ -1,12 +1,12 @@
 {
-	"displayName": "Illuminant Crystal",
-	"size": [14, 16],
-	"aiStyle": 0,
-	"timeLeft": 600,
-	"friendly": true,
-	"hostile": false,	
-	"tileCollide": true,
-	"damage": 30,
-	"penetrate": 10,
-	"magic": true
+    "displayName": "Illuminant Crystal",
+    "size": [ 14, 16 ],
+    "aiStyle": 0,
+    "timeLeft": 600,
+    "friendly": true,
+    "hostile": false,
+    "tileCollide": true,
+    "damage": 30,
+    "penetrate": 10,
+    "magic": true
 }

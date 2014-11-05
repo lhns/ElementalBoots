@@ -1,15 +1,16 @@
 {
-	"displayName": "Magma Claws",
-	"size": [32, 32],
-	"maxStack": 1,
-	"value": [0, 10, 0, 0],
-	"rare": 8,
-	"tooltip": "Increases melee knockback and inflicts fire damage on attack\n9% increased melee damage and speed\nAllows the ability to slide down walls\nImproved ability if combined with Shoe Spikes",
-	"accessory": true,
-	"recipes":
-	[{
-		"items": {"Fire Gauntlet": 1, "Climbing Claws": 1},
-		"tiles": ["Inventor's Workshop"],
-		"creates": 1
-	}]
+    "displayName": "Magma Claws",
+    "size": [ 32, 32 ],
+    "maxStack": 1,
+    "value": [ 0, 10, 0, 0 ],
+    "rare": 8,
+    "tooltip": "Increases melee knockback and inflicts fire damage on attack\n9% increased melee damage and speed\nAllows the ability to slide down walls\nImproved ability if combined with Shoe Spikes",
+    "accessory": true,
+    "recipes": [
+        {
+            "items": { "Fire Gauntlet": 1, "Climbing Claws": 1 },
+            "tiles": [ "Inventor's Workshop" ],
+            "creates": 1
+        }
+    ]
 }

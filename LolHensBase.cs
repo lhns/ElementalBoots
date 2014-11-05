@@ -38,9 +38,11 @@ namespace LolHens
             ItemDef.byName["Vanilla:Acorn"].MakeAmmo("Acorn");
             ItemDef.byName["Vanilla:Spiky Ball"].MakeAmmo("SpikyBall");
 
-            ItemDef.byName["LolHens:Slingshot"].MakeChestLoot(0.15f, ChestType.SURFACE);
-            ItemDef.byName["LolHens:Magnet"].MakeChestLoot(0.05f, ChestType.UNDERGROUND);
-            ItemDef.byName["LolHens:TornadoInABottle"].MakeChestLoot(0.3f, ChestType.ISLAND);
+            ItemDef.byName["LolHens:TornadoInABottle"].MakeChestLoot(0.3f, ChestType.ISLAND, true);
+            ItemDef.byName["LolHens:Slingshot"].MakeChestLoot(0.1f, ChestType.SURFACE, true);
+            ItemDef.byName["Vanilla:Acorn"].MakeChestLoot(0.2f, ChestType.SURFACE, false, 10, 40);
+            ItemDef.byName["LolHens:Magnet"].MakeChestLoot(0.1f, ChestType.UNDERGROUND, true);
+            ItemDef.byName["LolHens:SpikyBallBlaster"].MakeChestLoot(0.1f, ChestType.CAVERN, true);
         }
 
         public override object OnModCall(TAPI.ModBase mod, params object[] args)
@@ -167,7 +169,7 @@ namespace LolHens
 
         public static void UseAmmo(this Player player)
         {
-            for (int i = 0; i < 58; i++)
+            for (int i = 0; i < player.inventory.Length; i++)
             {
                 if (player.inventory[i].ammo == player.inventory[player.selectedItem].useAmmo && player.inventory[i].stack > 0)
                 {

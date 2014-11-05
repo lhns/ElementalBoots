@@ -21,7 +21,6 @@ namespace LolHens
             foreach (Chest chest in Main.chest)
             {
                 if (chest == null) continue;
-
                 foreach (ChestLoot loot in chestLoot) chest.AddLoot(loot);
             }
         }

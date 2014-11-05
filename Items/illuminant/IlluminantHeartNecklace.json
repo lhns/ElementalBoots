@@ -1,17 +1,18 @@
 {
-	"displayName": "Illuminant Heart Necklace",
-	"size": [30, 30],
-	"maxStack": 1,
-	"value": [0, 8, 0, 0],
-	"rare": 5,
-	"tooltip": "Releases illuminant crystal, increases movement speed\nand applies the Illuminated buff when damaged\nRefills your health when dead",
-	"accessory": true,
-	"damage": 20,
-	"knockback": 1,
-	"recipes":
-	[{
-		"items": {"Sweetheart Necklace": 1, "LolHens:IlluminantPearl": 1},
-		"tiles": ["Tinkerer's Workshop"],
-		"creates": 1
-	}]
+    "displayName": "Illuminant Heart Necklace",
+    "size": [ 30, 30 ],
+    "maxStack": 1,
+    "value": [ 0, 8, 0, 0 ],
+    "rare": 5,
+    "tooltip": "Releases illuminant crystal, increases movement speed\nand applies the Illuminated buff when damaged\nRefills your health when dead",
+    "accessory": true,
+    "damage": 20,
+    "knockback": 1,
+    "recipes": [
+        {
+            "items": { "Sweetheart Necklace": 1, "LolHens:IlluminantPearl": 1 },
+            "tiles": [ "Tinkerer's Workshop" ],
+            "creates": 1
+        }
+    ]
 }

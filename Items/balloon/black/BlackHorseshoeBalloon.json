@@ -1,16 +1,17 @@
 {
-	"displayName": "Black Horseshoe Balloon",
-	"size": [28, 48],
-	"maxStack": 1,
-	"value": [0, 1, 0, 0],
-	"rare": 4,
-	"tooltip": "Allows the holder to double jump\nNegates fall damage",
-	"accessory": true,
-	"textureBalloon": "Items/balloon/black/BlackHorseshoeBalloon_Balloon",
-	"recipes":
-	[{
-		"items": {"LolHens:TornadoInABalloon": 1, "Lucky Horseshoe": 1},
-		"tiles": ["Tinkerer's Workshop"],
-		"creates": 1
-	}]
+    "displayName": "Black Horseshoe Balloon",
+    "size": [ 28, 48 ],
+    "maxStack": 1,
+    "value": [ 0, 1, 0, 0 ],
+    "rare": 4,
+    "tooltip": "Allows the holder to double jump\nNegates fall damage",
+    "accessory": true,
+    "textureBalloon": "Items/balloon/black/BlackHorseshoeBalloon_Balloon",
+    "recipes": [
+        {
+            "items": { "LolHens:TornadoInABalloon": 1, "Lucky Horseshoe": 1 },
+            "tiles": [ "Tinkerer's Workshop" ],
+            "creates": 1
+        }
+    ]
 }
