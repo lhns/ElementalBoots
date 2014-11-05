@@ -169,6 +169,7 @@ namespace LolHens
 
         public static void UseAmmo(this Player player)
         {
+            if (player.inventory[player.selectedItem].useAmmo == 0) return;
             for (int i = 0; i < player.inventory.Length; i++)
             {
                 if (player.inventory[i].ammo == player.inventory[player.selectedItem].useAmmo && player.inventory[i].stack > 0)

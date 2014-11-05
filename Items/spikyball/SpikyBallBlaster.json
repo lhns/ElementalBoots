@@ -3,7 +3,7 @@
     "size": [ 66, 34 ],
     "maxStack": 1,
     "value": [ 0, 0, 10, 0 ],
-    "rare": 7,
+    "rare": 0,
     "tooltip": "Shoots Spiky Balls",
     "useStyle": 5,
     "useAnimation": 15,

@@ -15,16 +15,23 @@ namespace LolHens.Items
     public class LolHensGun : LolHensItem
     {
         public int bulletOffset = 0;
+        public float bulletSpread = 0;
+        public bool addPlayerVel = false;
 
         public override bool ConsumeAmmo(Player p) { return bulletOffset == 0; }
 
-        public override bool PreShoot(Terraria.Player player, Vector2 position, Vector2 velocity, int projType, int damage, float knockback)
+        public override bool PreShoot(Player player, Vector2 position, Vector2 velocity, int projType, int damage, float knockback)
         {
             if (bulletOffset == 0) return true;
+
+            velocity = velocity.Rotate((Main.rand.NextFloat() - 0.5f) * bulletSpread);
+            if (addPlayerVel) velocity = velocity + player.velocity;
+
             Vector2 direction = new Vector2(velocity.X, velocity.Y);
             direction.Normalize();
             direction *= bulletOffset;
             Vector2 newPos = new Vector2(position.X + direction.X, position.Y + direction.Y);
+            
             Tile tile = Main.tile[(int)(newPos.X / 16f), (int)(newPos.Y / 16f)];
             if (!tile.active() || tile.collisionType == -1)
             {

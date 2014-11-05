@@ -1,0 +1,11 @@
+﻿{
+    "displayName": "Smoke",
+    "size": [ 10, 10 ],
+    "aiStyle": 0,
+    "timeLeft": 100,
+    "friendly": true,
+    "hostile": false,
+    "tileCollide": true,
+    "damage": 1,
+    "ranged": true
+}
