@@ -1,0 +1,13 @@
+{
+    "displayName": "Ice Crystal",
+    "size": [ 7, 23 ],
+    "aiStyle": 0,
+    "timeLeft": 200,
+    "friendly": true,
+    "hostile": false,
+    "tileCollide": true,
+    "damage": 5,
+    "magic": true,
+    "penetrate": 4,
+    "maxUpdates": 4
+}

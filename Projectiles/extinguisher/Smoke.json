@@ -7,5 +7,5 @@
     "hostile": false,
     "tileCollide": true,
     "damage": 1,
-    "ranged": true
+    "magic": true
 }

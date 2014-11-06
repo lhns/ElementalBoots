@@ -1,0 +1,20 @@
+﻿{
+    "displayName": "Ice Storm",
+    "size": [ 28, 32 ],
+    "maxStack": 1,
+    "value": [ 0, 0, 10, 0 ],
+    "rare": 0,
+    "tooltip": "Shoots Ice Crystals",
+    "useStyle": 5,
+    "useAnimation": 15,
+    "useTime": 5,
+    "damage": 20,
+    "knockBack": 3,
+    "useSound": 9,
+    "autoReuse": true,
+    "noMelee": true,
+    "ranged": true,
+    "shoot": "LolHens:IceCrystal",
+    "shootSpeed": 2,
+    "mana": 1
+}

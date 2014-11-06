@@ -61,6 +61,7 @@
     <None Include="Items\bubble\PoisonBubbleWand.json" />
     <None Include="Items\bubble\PoisonBubbleWand.pdn" />
     <None Include="Items\extinguisher\Extinguisher.json" />
+    <None Include="Items\ice\IceStorm.json" />
     <None Include="Items\illuminant\IlluminantHeartNecklace.json" />
     <None Include="Items\illuminant\IlluminantPearl.json" />
     <None Include="Items\illuminant\IlluminantPearlsNecklace.json" />
@@ -107,6 +108,7 @@
     <None Include="ModInfo.json" />
     <None Include="Projectiles\bubble\PoisonBubble.json" />
     <None Include="Projectiles\extinguisher\Smoke.json" />
+    <None Include="Projectiles\ice\IceCrystal.json" />
     <None Include="Projectiles\illuminant\IlluminantCrystal.json" />
     <None Include="Projectiles\slingshot\Acorn.json" />
     <None Include="Tiles\workshop\InventorsWorkshop.json" />
@@ -149,6 +151,7 @@
     <Content Include="Items\bottle\TornadoInABottle.png" />
     <Content Include="Items\bubble\PoisonBubbleWand.png" />
     <Content Include="Items\extinguisher\Extinguisher.png" />
+    <Content Include="Items\ice\IceStorm.png" />
     <Content Include="Items\illuminant\IlluminantHeartNecklace.png" />
     <Content Include="Items\illuminant\IlluminantPearl.png" />
     <Content Include="Items\illuminant\IlluminantPearlsNecklace.png" />
@@ -221,7 +224,10 @@
     <Content Include="Projectiles\bubble\textures\bubble55.png" />
     <Content Include="Projectiles\bubble\PoisonBubble.png" />
     <Content Include="Projectiles\extinguisher\Smoke.png" />
-    <Content Include="Projectiles\ice\IceStorm.png" />
+    <Content Include="Projectiles\ice\IceCrystal.png" />
+    <Content Include="Projectiles\ice\textures\IceCrystal0.png" />
+    <Content Include="Projectiles\ice\textures\IceCrystal1.png" />
+    <Content Include="Projectiles\ice\textures\IceCrystal2.png" />
     <Content Include="Projectiles\illuminant\IlluminantCrystal.png" />
     <Content Include="Projectiles\slingshot\Acorn.png" />
     <Content Include="Tiles\workshop\InventorsWorkshop.png" />
@@ -269,6 +275,8 @@
     <Compile Include="LolHensPlayer.cs" />
     <Compile Include="LolHensWorld.cs" />
     <Compile Include="Projectiles\bubble\PoisonBubble.cs" />
+    <Compile Include="Projectiles\extinguisher\Smoke.cs" />
+    <Compile Include="Projectiles\ice\IceCrystal.cs" />
     <Compile Include="Projectiles\illuminant\IlluminantCrystal.cs" />
     <Compile Include="Projectiles\LolHensProjectile.cs" />
     <Compile Include="Projectiles\slingshot\Acorn.cs" />

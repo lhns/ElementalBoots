@@ -42,7 +42,9 @@ namespace LolHens
             ItemDef.byName["LolHens:Slingshot"].MakeChestLoot(0.1f, ChestType.SURFACE, true);
             ItemDef.byName["Vanilla:Acorn"].MakeChestLoot(0.2f, ChestType.SURFACE, false, 10, 40);
             ItemDef.byName["LolHens:Magnet"].MakeChestLoot(0.1f, ChestType.UNDERGROUND, true);
+            ItemDef.byName["LolHens:Extinguisher"].MakeChestLoot(0.1f, ChestType.UNDERGROUND, true);
             ItemDef.byName["LolHens:SpikyBallBlaster"].MakeChestLoot(0.1f, ChestType.CAVERN, true);
+            ItemDef.byName["LolHens:IceStorm"].MakeChestLoot(0.1f, ChestType.CAVERN, true);
         }
 
         public override object OnModCall(TAPI.ModBase mod, params object[] args)

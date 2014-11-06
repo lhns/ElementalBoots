@@ -11,7 +11,7 @@
     "useAnimation": 15,
     "accessory": true,
     "useTime": 1,
-    "damage": 1,
+    "damage": 2,
     "knockBack": 1,
     "useSound": 13,
     "autoReuse": true,
@@ -20,5 +20,5 @@
     "magic": true,
     "shoot": "LolHens:Smoke",
     "shootSpeed": 4,
-    "mana": 1
+    "mana": 2
 }
