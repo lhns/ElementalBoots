@@ -20,7 +20,7 @@ namespace LolHens.Items
 
         public override void EffectsPre(Player player)
         {
-            player.gravDir *= 2f;
+            //player.gravDir *= 2f;
         }
     }
 }

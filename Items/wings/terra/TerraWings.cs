@@ -12,8 +12,8 @@ namespace LolHens.Items
     {
         public override void EffectsPre(Player player)
         {
-            player.gravDir *= 2f;
-            player.runAcceleration *= 10f;
+            //player.gravDir *= 2f;
+            //player.runAcceleration *= 10f;
         }
     }
 }

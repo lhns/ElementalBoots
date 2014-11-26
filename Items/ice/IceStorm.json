@@ -16,5 +16,12 @@
     "ranged": true,
     "shoot": "LolHens:IceCrystal",
     "shootSpeed": 2,
-    "mana": 1
+    "mana": 1,
+    "recipes": [
+        {
+            "items": { "Spell Tome": 1, "Frost Core": 1 },
+            "tiles": [ "Bookcase" ],
+            "creates": 1
+        }
+    ]
 }

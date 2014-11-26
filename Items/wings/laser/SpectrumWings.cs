@@ -15,7 +15,7 @@ namespace LolHens.Items
 
         public override void EffectsPre(Player player)
         {
-            player.gravDir *= 10;
+            //player.gravDir *= 10;
             float time = (this.time * 0.02f) % 5;
             float brightness = 0.8f;
             float colorR = lightR.Interpolate(time, lightTrans) * brightness;
