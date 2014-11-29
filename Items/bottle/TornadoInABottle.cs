@@ -16,8 +16,9 @@ namespace LolHens.Items
     {
         private static Color grayMultiplier = new Color(0.53f, 0.54f, 0.675f) * 1.3f;
 
-        private bool jumpAgain = true, dJumpEffect = false;
+        private bool jumpAgain = true, dJumpEffect = false, sandStorm = false;
         private int dJumpEffectTime = 0;
+
         private float lastWingTime = 0;
         private int lastRocketTime = 0;
 
@@ -41,6 +42,8 @@ namespace LolHens.Items
                     && !(player.inventory[player.selectedItem].holdStyle == 3)
                     && (player.inventory[player.selectedItem].subClass == null || !player.inventory[player.selectedItem].subClass.SetHoldFrame(player))
                     && player.grappling[0] >= 0)) dJumpEffect = false;
+
+            if (!player.sandStorm) sandStorm = false;
 
             bool onGround = player.velocity.Y == 0f || player.sliding;
             bool onSlime = player.mount.Active && player.mount.Type == 3 && player.wetSlime > 0;
@@ -127,6 +130,7 @@ namespace LolHens.Items
                     }
                     float scale = ((float)player.jump / 75f + 1f) / 2f;
                     player.sandStorm = true;
+                    sandStorm = true;
 
                     float tornadoWidth = dJumpEffectTime / 20f + 1;
                     for (int i = 0; i < tornadoWidth; i++)
@@ -142,7 +146,7 @@ namespace LolHens.Items
                 }
 
                 // player turning effect
-                if (player.sandStorm)
+                if (player.sandStorm && sandStorm)
                 {
                     if (player.miscCounter % 4 == 0 && player.itemAnimation == 0 && player.wingTime == 0)
                     {
