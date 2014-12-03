@@ -1,0 +1,17 @@
+{
+    "displayName": "Wand of the Frost Slime",
+    "size": [ 36, 38 ],
+    "maxStack": 1,
+    "value": [ 0, 0, 10, 0 ],
+    "rare": 7,
+    "tooltip": [ "Spawns a Frost Slime minion" ],
+    "useStyle": 1,
+    "useAnimation": 28,
+    "useTime": 28,
+    "damage": 50,
+    "knockback": 2,
+    "autoReuse": true,
+    "noMelee": true,
+    "magic": true,
+    "mana": 5
+}
