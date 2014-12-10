@@ -32,10 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="banner.pdn" />
     <None Include="Buffs\illuminant\IlluminantBuff.json" />
     <None Include="Buffs\illuminant\IlluminantCrystal.json" />
     <None Include="Buffs\illuminant\IlluminantCrystal.pdn" />
+    <None Include="Images\banner.pdn" />
     <None Include="Items\balloon\black\TornadoInABalloon.json" />
     <None Include="Items\balloon\black\BlackHorseshoeBalloon.json" />
     <None Include="Items\balloon\bundle\honey\GiantWeightedHoneyBalloonBundle.json" />
@@ -61,6 +61,7 @@
     <None Include="Items\bubble\PoisonBubbleWand.json" />
     <None Include="Items\bubble\PoisonBubbleWand.pdn" />
     <None Include="Items\extinguisher\Extinguisher.json" />
+    <None Include="Items\frostslime\wandOfTheFrostSlime.json" />
     <None Include="Items\ice\IceStorm.json" />
     <None Include="Items\illuminant\IlluminantHeartNecklace.json" />
     <None Include="Items\illuminant\IlluminantPearl.json" />
@@ -151,6 +152,7 @@
     <Content Include="Items\bottle\TornadoInABottle.png" />
     <Content Include="Items\bubble\PoisonBubbleWand.png" />
     <Content Include="Items\extinguisher\Extinguisher.png" />
+    <Content Include="Items\frostslime\wandOfTheFrostSlime.png" />
     <Content Include="Items\ice\IceStorm.png" />
     <Content Include="Items\illuminant\IlluminantHeartNecklace.png" />
     <Content Include="Items\illuminant\IlluminantPearl.png" />

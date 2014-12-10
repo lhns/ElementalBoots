@@ -17,6 +17,7 @@ namespace LolHens.Items
         public int bulletOffset = 0;
         public float bulletSpread = 0;
         public bool addPlayerVel = false;
+        public Projectile projOverride = null;
 
         public override bool ConsumeAmmo(Player p) { return bulletOffset == 0; }
 
@@ -35,7 +36,7 @@ namespace LolHens.Items
             Tile tile = Main.tile[(int)(newPos.X / 16f), (int)(newPos.Y / 16f)];
             if (!tile.active() || tile.collisionType == -1)
             {
-                int projectile = Projectile.NewProjectile(newPos.X, newPos.Y, velocity.X, velocity.Y, projType, damage, knockback, player.whoAmI, 0f, 0f);
+                int projectile = Projectile.NewProjectile(newPos.X, newPos.Y, velocity.X, velocity.Y, projOverride == null ? projType : projOverride.type, damage, knockback, player.whoAmI, 0f, 0f);
                 player.UseAmmo();
             }
             else
