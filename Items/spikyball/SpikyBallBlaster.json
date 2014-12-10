@@ -1,6 +1,6 @@
 ﻿{
     "displayName": "Spiky Ball Blaster",
-    "size": [ 66, 34 ],
+    "size": [ 66, 36 ],
     "maxStack": 1,
     "value": [ 0, 0, 10, 0 ],
     "rare": 0,

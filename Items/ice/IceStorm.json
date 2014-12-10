@@ -1,6 +1,6 @@
 ﻿{
     "displayName": "Ice Storm",
-    "size": [ 28, 32 ],
+    "size": [ 28, 30 ],
     "maxStack": 1,
     "value": [ 0, 0, 10, 0 ],
     "rare": 0,
