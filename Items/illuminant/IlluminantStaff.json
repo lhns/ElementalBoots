@@ -1,0 +1,27 @@
+﻿{
+    "displayName": "Illuminant Staff",
+    "size": [ 42, 40 ],
+    "maxStack": 1,
+    "value": [ 0, 0, 10, 0 ],
+    "rare": 0,
+    "tooltip": "Shoots Illuminant Crystal",
+    "useStyle": 5,
+    "useAnimation": 30,
+    "useTime": 30,
+    "damage": 30,
+    "knockBack": 2,
+    "useSound": 9,
+    "autoReuse": false,
+    "noMelee": true,
+    "magic": true,
+    "shoot": "LolHens:IlluminantCrystal",
+    "shootSpeed": 1,
+    "mana": 5,
+    "recipes": [
+        {
+            "items": { "Spell Tome": 1, "LolHens:IlluminantPearl": 1 },
+            "tiles": [ "Bookcase" ],
+            "creates": 1
+        }
+    ]
+}

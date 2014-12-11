@@ -13,7 +13,7 @@
     "useSound": 9,
     "autoReuse": true,
     "noMelee": true,
-    "ranged": true,
+    "magic": true,
     "shoot": "LolHens:IceCrystal",
     "shootSpeed": 2,
     "mana": 2,
