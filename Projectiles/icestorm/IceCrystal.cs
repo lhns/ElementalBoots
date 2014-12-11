@@ -26,7 +26,7 @@ namespace LolHens.Projectiles
 
         public override void InitTextures()
         {
-            projectile.Texture = modBase.textures["Projectiles/ice/textures/IceCrystal" + type];
+            projectile.Texture = modBase.textures["Projectiles/icestorm/textures/IceCrystal" + type];
             projectile.width = projectile.Texture.Width;
             projectile.height = projectile.Texture.Height;
         }
