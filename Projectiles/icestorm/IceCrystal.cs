@@ -56,6 +56,8 @@ namespace LolHens.Projectiles
                 projectile.velocity = projectile.velocity.Rotate(-rotation);
                 splitsLeft /= 2f;
             }
+
+            Lighting.AddLight((int)(projectile.Center.X / 16f), (int)(projectile.Center.Y / 16f), 0.44f * 0.5f, 0.92f * 0.5f, 1f * 0.5f);
         }
 
         public override bool OnTileCollide(ref Vector2 velocityChange) { return true; }
