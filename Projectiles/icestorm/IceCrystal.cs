@@ -12,7 +12,7 @@ namespace LolHens.Projectiles
     public class IceCrystal : LolHensProjectile
     {
         public int type;
-        public float splitsLeft = 4;
+        public float splitsLeft = 16;
 
         public override void Init()
         {
@@ -35,13 +35,13 @@ namespace LolHens.Projectiles
         {
             projectile.rotation = (float)System.Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;
 
-            if (splitsLeft > 1 && Main.rand.Next(20) == 0)
+            if (splitsLeft > 1 && Main.rand.Next(30) == 0)
             {
-                float rotation = (Main.rand.NextFloat() - 0.5f) * 0.2f;
+                float rotation = (Main.rand.NextFloat() - 0.5f) * 0.12f;
 
-                Vector2 velocity = projectile.velocity.Rotate(rotation);
+                Vector2 velocity = projectile.velocity.Rotate(rotation) * (Main.rand.NextFloat() * 0.5f + 0.75f);
 
-                int projId = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, velocity.X, velocity.Y, projectile.type, (int)(projectile.damage * 0.6f), projectile.knockBack, projectile.owner, 0f, 0f);
+                int projId = Projectile.NewProjectile(projectile.Center.X, projectile.Center.Y, velocity.X, velocity.Y, projectile.type, projectile.damage, projectile.knockBack, projectile.owner, 0f, 0f);
 
                 Projectile proj = Main.projectile[projId];
                 if (proj != null && proj.active)

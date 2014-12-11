@@ -8,6 +8,6 @@
     "tileCollide": true,
     "damage": 5,
     "magic": true,
-    "penetrate": 4,
+    "penetrate": 100,
     "maxUpdates": 4
 }
