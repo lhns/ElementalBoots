@@ -12,7 +12,7 @@
     "useAnimation": 60,
     "useTime": 60,
     "damage": 20,
-    "knockback": 4,
+    "knockback": 2,
     "autoReuse": true,
     "useAmmo": "Acorn",
     "noMelee": true,

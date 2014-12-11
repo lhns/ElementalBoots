@@ -67,6 +67,8 @@
     <None Include="Items\illuminant\IlluminantHeartNecklace.json" />
     <None Include="Items\illuminant\IlluminantPearl.json" />
     <None Include="Items\illuminant\IlluminantPearlsNecklace.json" />
+    <None Include="Items\illuminant\IlluminantStaff.json" />
+    <None Include="Items\illuminant\IlluminantStaff.pdn" />
     <None Include="Items\illuminant\IlluminantStarNecklace.json" />
     <None Include="Items\magnet\Magnet.json" />
     <None Include="Items\magnet\Magnet.pdn" />
@@ -162,6 +164,7 @@
     <Content Include="Items\illuminant\IlluminantHeartNecklace.png" />
     <Content Include="Items\illuminant\IlluminantPearl.png" />
     <Content Include="Items\illuminant\IlluminantPearlsNecklace.png" />
+    <Content Include="Items\illuminant\IlluminantStaff.png" />
     <Content Include="Items\illuminant\IlluminantStarNecklace.png" />
     <Content Include="Items\magnet\Magnet.png" />
     <Content Include="Items\necklace\NightskyNecklace.png" />
@@ -260,6 +263,7 @@
     <Compile Include="Items\extinguisher\Extinguisher.cs" />
     <Compile Include="Items\illuminant\IlluminantHeartNecklace.cs" />
     <Compile Include="Items\illuminant\IlluminantPearlsNecklace.cs" />
+    <Compile Include="Items\illuminant\IlluminantStaff.cs" />
     <Compile Include="Items\illuminant\IlluminantStarNecklace.cs" />
     <Compile Include="Items\LolHensGun.cs" />
     <Compile Include="Items\LolHensItem.cs" />

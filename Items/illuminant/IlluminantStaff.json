@@ -5,10 +5,10 @@
     "value": [ 0, 0, 10, 0 ],
     "rare": 0,
     "tooltip": "Shoots Illuminant Crystal",
-    "useStyle": 5,
+    "useStyle": 4,
     "useAnimation": 30,
     "useTime": 30,
-    "damage": 30,
+    "damage": 40,
     "knockBack": 2,
     "useSound": 9,
     "autoReuse": false,
@@ -16,7 +16,7 @@
     "magic": true,
     "shoot": "LolHens:IlluminantCrystal",
     "shootSpeed": 1,
-    "mana": 5,
+    "mana": 12,
     "recipes": [
         {
             "items": { "Spell Tome": 1, "LolHens:IlluminantPearl": 1 },

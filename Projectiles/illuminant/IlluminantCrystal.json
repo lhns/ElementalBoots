@@ -2,7 +2,7 @@
     "displayName": "Illuminant Crystal",
     "size": [ 14, 16 ],
     "aiStyle": 0,
-    "timeLeft": 600,
+    "timeLeft": 800,
     "friendly": true,
     "hostile": false,
     "tileCollide": true,

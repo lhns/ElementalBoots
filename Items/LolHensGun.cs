@@ -23,6 +23,8 @@ namespace LolHens.Items
 
         public override bool PreShoot(Player player, Vector2 position, Vector2 velocity, int projType, int damage, float knockback)
         {
+            base.PreShoot(player, position, velocity, projType, damage, knockback);
+
             if (bulletOffset == 0) return true;
 
             velocity = velocity.Rotate((Main.rand.NextFloat() - 0.5f) * bulletSpread);
@@ -30,13 +32,16 @@ namespace LolHens.Items
 
             Vector2 direction = new Vector2(velocity.X, velocity.Y);
             direction.Normalize();
-            direction *= bulletOffset;
-            Vector2 newPos = new Vector2(position.X + direction.X, position.Y + direction.Y);
+
+            Vector2 offsetVector = direction * bulletOffset;
+            Vector2 newPos = new Vector2(position.X + offsetVector.X, position.Y + offsetVector.Y);
             
+            if (projOverride != null) projType = projOverride.type;
+
             Tile tile = Main.tile[(int)(newPos.X / 16f), (int)(newPos.Y / 16f)];
-            if (!tile.active() || tile.collisionType == -1)
+            if ((!tile.active() || tile.collisionType == -1) && PreShootCustom(player, newPos, direction, projType))
             {
-                int projectile = Projectile.NewProjectile(newPos.X, newPos.Y, velocity.X, velocity.Y, projOverride == null ? projType : projOverride.type, damage, knockback, player.whoAmI, 0f, 0f);
+                int projectile = Projectile.NewProjectile(newPos.X, newPos.Y, velocity.X, velocity.Y, projType, damage, knockback, player.whoAmI, 0f, 0f);
                 player.UseAmmo();
             }
             else
@@ -49,5 +54,7 @@ namespace LolHens.Items
             }
             return false;
         }
+
+        public virtual bool PreShootCustom(Player player, Vector2 position, Vector2 direction, int projType) { return true; }
     }
 }

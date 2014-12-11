@@ -199,5 +199,31 @@ namespace LolHens
             }
             return false;
         }
+
+        public static void SetFrameGun(this Player player, Item item)
+        {
+            player.bodyFrame = SetFrameGun(player.bodyFrame, player.itemRotation, player.direction, player.gravDir, item);
+        }
+
+        /*
+         * AUTHOR: Grox the Great
+         * Change the arm frame in the same way that useStyle 5 would.
+         */
+        public static Rectangle SetFrameGun(Rectangle bodyFrame, float itemRotation, int direction, float gravDir, Item item)
+        {
+            float FacingRotation = itemRotation * direction;
+            bodyFrame.Y = bodyFrame.Height * 3;
+            if (FacingRotation < -0.75f)
+            {
+                bodyFrame.Y = bodyFrame.Height * 2;
+                if (gravDir == -1.0f) bodyFrame.Y = bodyFrame.Height * 4;
+            }
+            if (FacingRotation > 0.6f)
+            {
+                bodyFrame.Y = bodyFrame.Height * 4;
+                if (gravDir == -1.0f) bodyFrame.Y = bodyFrame.Height * 2;
+            }
+            return bodyFrame;
+        }
     }
 }

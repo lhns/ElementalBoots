@@ -15,8 +15,10 @@ namespace LolHens.Items
         private float usedTime = 0;
         public float usedPercent = 0;
         public int time = 0;
+        public Vector2 useScreenPos = default(Vector2);
 
         public Boolean glowing = false;
+        public Boolean diagonalTexture = false;
 
         public sealed override void Initialize()
         {
@@ -59,6 +61,50 @@ namespace LolHens.Items
                 return false;
             }
             return null;
+        }
+
+        public override bool PreShoot(Player player, Vector2 position, Vector2 velocity, int projType, int damage, float knockback)
+        {
+            useScreenPos = Main.mouseWorld - player.position;
+            UseStyle(player);
+
+            return base.PreShoot(player, position, velocity, projType, damage, knockback);
+        }
+
+        public Vector2 GetUsePos(Player player)
+        {
+            return player.position + useScreenPos;
+        }
+
+        public override void UseStyle(Player player)
+        {
+            if (diagonalTexture)
+            {
+                Vector2 pos = player.position + useScreenPos;
+                player.direction = (pos.X < player.Center.X ? -1 : 1);
+                float PlayerMouseDistX = pos.X - player.Center.X;
+                float PlayerMouseDistY = pos.Y - player.Center.Y;
+                player.itemRotation = (float)Math.Atan2(PlayerMouseDistY * player.direction, PlayerMouseDistX * player.direction) + (((float)Math.PI / 4f) * player.direction);
+                player.itemLocation = player.Center;
+            }
+            else
+            {
+                base.UseStyle(player);
+            }
+        }
+
+        public override void SetUseFrame(Player player)
+        {
+            if (diagonalTexture)
+            {
+                player.itemRotation -= (((float)Math.PI / 4f) * player.direction);
+                player.SetFrameGun(item);
+                player.itemRotation += (((float)Math.PI / 4f) * player.direction);
+            }
+            else
+            {
+                base.SetUseFrame(player);
+            }
         }
     }
 }
