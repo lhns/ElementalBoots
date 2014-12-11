@@ -9,7 +9,7 @@
     "useAnimation": 15,
     "useTime": 15,
     "damage": 10,
-    "knockBack": 3,
+    "knockBack": 1,
     "useSound": 40,
     "autoReuse": true,
     "noMelee": true,
