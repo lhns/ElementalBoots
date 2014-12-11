@@ -11,7 +11,7 @@ using LolHens.Projectiles;
 
 namespace LolHens.Buffs
 {
-    class IlluminantCrystal : LolHensBuff
+    public class IlluminantCrystal : LolHensBuff
     {
         private int damage = 0;
         private float knockBack = 0;

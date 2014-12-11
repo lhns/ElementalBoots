@@ -32,6 +32,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="Buffs\frostslime\FrostSlime.json" />
     <None Include="Buffs\illuminant\IlluminantBuff.json" />
     <None Include="Buffs\illuminant\IlluminantCrystal.json" />
     <None Include="Buffs\illuminant\IlluminantCrystal.pdn" />
@@ -61,7 +62,7 @@
     <None Include="Items\bubble\PoisonBubbleWand.json" />
     <None Include="Items\bubble\PoisonBubbleWand.pdn" />
     <None Include="Items\extinguisher\Extinguisher.json" />
-    <None Include="Items\frostslime\wandOfTheFrostSlime.json" />
+    <None Include="Items\frostslime\FrostSlimeWand.json" />
     <None Include="Items\icestorm\IceStorm.json" />
     <None Include="Items\icestorm\IceStorm.pdn" />
     <None Include="Items\illuminant\IlluminantHeartNecklace.json" />
@@ -119,6 +120,7 @@
     <None Include="Tiles\workshop\InventorsWorkshopTile.pdn" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Buffs\frostslime\FrostSlime.png" />
     <Content Include="Buffs\illuminant\IlluminantBuff_alternate.png" />
     <Content Include="Buffs\illuminant\IlluminantBuff.png" />
     <Content Include="Buffs\illuminant\IlluminantCrystal.png" />
@@ -159,7 +161,7 @@
     <Content Include="Items\elemental\BowofElemental.png" />
     <Content Include="Items\elemental\PickaxeofElemental.png" />
     <Content Include="Items\extinguisher\Extinguisher.png" />
-    <Content Include="Items\frostslime\wandOfTheFrostSlime.png" />
+    <Content Include="Items\frostslime\FrostSlimeWand.png" />
     <Content Include="Items\icestorm\IceStorm.png" />
     <Content Include="Items\illuminant\IlluminantHeartNecklace.png" />
     <Content Include="Items\illuminant\IlluminantPearl.png" />
@@ -207,6 +209,7 @@
     <Content Include="Items\wings\terra\TrueDemonWings.png" />
     <Content Include="Items\wings\terra\TrueDemonWings_Wings.png" />
     <Content Include="Items\workshop\InventorsWorkshopItem.png" />
+    <Content Include="NPCs\frostslime\frostSlime.png" />
     <Content Include="Projectiles\bubble\textures\bubble11.png" />
     <Content Include="Projectiles\bubble\textures\bubble12.png" />
     <Content Include="Projectiles\bubble\textures\bubble13.png" />
@@ -245,6 +248,7 @@
     <Content Include="Tiles\workshop\InventorsWorkshopTile.png" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Buffs\frostslime\FrostSlime.cs" />
     <Compile Include="Buffs\illuminant\IlluminantBuff.cs" />
     <Compile Include="Buffs\illuminant\IlluminantCrystal.cs" />
     <Compile Include="Buffs\LolHensBuff.cs" />
@@ -261,6 +265,7 @@
     <Compile Include="Items\bottle\TornadoInABottle.cs" />
     <Compile Include="Items\bubble\PoisonBubbleWand.cs" />
     <Compile Include="Items\extinguisher\Extinguisher.cs" />
+    <Compile Include="Items\frostslime\FrostSlimeWand.cs" />
     <Compile Include="Items\illuminant\IlluminantHeartNecklace.cs" />
     <Compile Include="Items\illuminant\IlluminantPearlsNecklace.cs" />
     <Compile Include="Items\illuminant\IlluminantStaff.cs" />

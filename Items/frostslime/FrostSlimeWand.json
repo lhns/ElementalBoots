@@ -1,0 +1,12 @@
+{
+    "displayName": "Wand of the Frost Slime",
+    "size": [ 36, 38 ],
+    "maxStack": 1,
+    "value": [ 0, 0, 10, 0 ],
+    "rare": 7,
+    "tooltip": [ "Spawns a Frost Slime pet" ],
+    "useStyle": 4,
+    "useAnimation": 20,
+    "useTime": 20,
+    "useSound": 9
+}
