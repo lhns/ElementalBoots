@@ -8,19 +8,26 @@ using Microsoft.Xna.Framework;
 using TAPI;
 using Terraria;
 using LolHens.Projectiles;
+using LolHens.NPCs;
 
 namespace LolHens.Buffs
 {
     public class FrostSlime : LolHensBuff
     {
-        public override void Effects(CodableEntity player, int index)
+        public override void Effects(CodableEntity entity, int index)
         {
-            base.Effects(player, index);
+            base.Effects(entity, index);
 
-            for (int num36 = 0; num36 < 200; num36++) if (Main.npc[num36].active && Main.npc[num36].type == NPCDef.byName["LolHens:FrozenSlime"].type && Main.npc[num36].ai[0] == player.whoAmI) return;
+            Player player = entity as Player;
+            if (player == null) return;
 
-            int npcId = NPC.NewNPC((int)player.Center.X, (int)player.Center.Y, NPCDef.byName["LolHens:FrozenSlime"].type);
-            Main.npc[npcId].ai[0] = player.whoAmI;
+            for (int i = 0; i < Main.npc.Length - 1; i++)
+            {
+                if (Main.npc[i].active && Main.npc[i].type == NPCDef.byName["LolHens:FrostSlime"].type && Main.npc[i].target == player.whoAmI) return;
+            }
+
+            int npcId = NPC.NewNPC((int)player.Center.X, (int)player.Center.Y, NPCDef.byName["LolHens:FrostSlime"].type);
+            Main.npc[npcId].target = player.whoAmI;
             Main.npc[npcId].netUpdate = true;
             if (Main.netMode == 2 && npcId < 200) NetMessage.SendData(23, -1, -1, "", npcId);
         }

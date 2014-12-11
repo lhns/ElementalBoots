@@ -1,0 +1,16 @@
+﻿{
+    "displayName": "Baby Frost Slime",
+    // "animationType": 1, // 63
+    "aiStyle": 1,
+    "frameCount": 1,
+    "size": [ 30, 22 ],
+    "lifeMax": 100,
+    "defense": 200,
+    "friendly": true,
+    "noTileCollide": false,
+    "noGravity": false,
+    "knockBackResist": 0,
+    "dontTakeDamage": true,
+    "hostile": true,
+    "showHealthBar": false
+}

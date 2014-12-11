@@ -111,6 +111,7 @@
     <None Include="Items\wings\terra\TrueDemonWings.json" />
     <None Include="Items\workshop\InventorsWorkshopItem.json" />
     <None Include="ModInfo.json" />
+    <None Include="NPCs\frostslime\FrostSlime.json" />
     <None Include="Projectiles\bubble\PoisonBubble.json" />
     <None Include="Projectiles\extinguisher\Smoke.json" />
     <None Include="Projectiles\icestorm\IceCrystal.json" />
@@ -209,7 +210,7 @@
     <Content Include="Items\wings\terra\TrueDemonWings.png" />
     <Content Include="Items\wings\terra\TrueDemonWings_Wings.png" />
     <Content Include="Items\workshop\InventorsWorkshopItem.png" />
-    <Content Include="NPCs\frostslime\frostSlime.png" />
+    <Content Include="NPCs\frostslime\FrostSlime.png" />
     <Content Include="Projectiles\bubble\textures\bubble11.png" />
     <Content Include="Projectiles\bubble\textures\bubble12.png" />
     <Content Include="Projectiles\bubble\textures\bubble13.png" />
@@ -291,6 +292,7 @@
     <Compile Include="LolHensInterface.cs" />
     <Compile Include="LolHensPlayer.cs" />
     <Compile Include="LolHensWorld.cs" />
+    <Compile Include="NPCs\frostslime\FrostSlime.cs" />
     <Compile Include="Projectiles\bubble\PoisonBubble.cs" />
     <Compile Include="Projectiles\extinguisher\Smoke.cs" />
     <Compile Include="Projectiles\icestorm\IceCrystal.cs" />
