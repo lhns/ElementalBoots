@@ -15,7 +15,7 @@ namespace LolHens.Items
         {
             base.UseItem(player);
 
-            player.AddBuff(BuffDef.byName["LolHens:FrostSlime"], 600);
+            player.AddPet(NPCDef.byName["LolHens:FrostSlime"]);
             return null;
         }
     }

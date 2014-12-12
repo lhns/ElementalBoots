@@ -12,24 +12,12 @@ using LolHens.NPCs;
 
 namespace LolHens.Buffs
 {
-    public class FrostSlime : LolHensBuff
+    public class FrostSlime : LolHensPetBuff
     {
-        public override void Effects(CodableEntity entity, int index)
+        public override void Start(CodableEntity entity, int index)
         {
-            base.Effects(entity, index);
-
-            Player player = entity as Player;
-            if (player == null) return;
-
-            for (int i = 0; i < Main.npc.Length - 1; i++)
-            {
-                if (Main.npc[i].active && Main.npc[i].type == NPCDef.byName["LolHens:FrostSlime"].type && Main.npc[i].target == player.whoAmI) return;
-            }
-
-            int npcId = NPC.NewNPC((int)player.Center.X, (int)player.Center.Y, NPCDef.byName["LolHens:FrostSlime"].type);
-            Main.npc[npcId].target = player.whoAmI;
-            Main.npc[npcId].netUpdate = true;
-            if (Main.netMode == 2 && npcId < 200) NetMessage.SendData(23, -1, -1, "", npcId);
+            base.Start(entity, index);
+            petNPC = NPCDef.byName["LolHens:FrostSlime"];
         }
     }
 }

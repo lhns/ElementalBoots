@@ -12,6 +12,7 @@ using Terraria;
 using LolHens.Items;
 using LolHens.Projectiles;
 using LolHens.Buffs;
+using LolHens.NPCs;
 
 namespace LolHens
 {
@@ -21,6 +22,7 @@ namespace LolHens
 
         public List<LolHensItem> items = new List<LolHensItem>();
         public List<LolHensProjectile> projectiles = new List<LolHensProjectile>();
+        public List<LolHensNPC> npcs = new List<LolHensNPC>();
 
         public LolHensBase() : base() { instance = this; }
 
@@ -198,6 +200,22 @@ namespace LolHens
                 return false;
             }
             return false;
+        }
+
+        public static LolHensNPC AsLolHensNPC(this NPC npc)
+        {
+            if (npc != null)
+            {
+                ModNPC modNPC = npc.GetSubClass<ModNPC>();
+                if (modNPC != null && modNPC is LolHensNPC) return modNPC as LolHensNPC;
+            }
+            return null;
+        }
+
+        public static void AddPet(this Player player, NPC npc)
+        {
+            LolHensPet pet = npc.AsLolHensNPC() as LolHensPet;
+            if (pet != null) player.AddBuff(pet.petBuff, 100);
         }
 
         public static void SetFrameGun(this Player player, Item item)
