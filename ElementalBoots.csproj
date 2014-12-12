@@ -114,6 +114,7 @@
     <None Include="NPCs\frostslime\FrostSlime.json" />
     <None Include="Projectiles\bubble\PoisonBubble.json" />
     <None Include="Projectiles\extinguisher\Smoke.json" />
+    <None Include="Projectiles\frostslime\FrostProjectile.json" />
     <None Include="Projectiles\icestorm\IceCrystal.json" />
     <None Include="Projectiles\illuminant\IlluminantCrystal.json" />
     <None Include="Projectiles\slingshot\Acorn.json" />
@@ -238,7 +239,7 @@
     <Content Include="Projectiles\bubble\textures\bubble55.png" />
     <Content Include="Projectiles\bubble\PoisonBubble.png" />
     <Content Include="Projectiles\extinguisher\Smoke.png" />
-    <Content Include="Projectiles\frostslime\frostSlime.png" />
+    <Content Include="Projectiles\frostslime\FrostProjectile.png" />
     <Content Include="Projectiles\icestorm\IceCrystal.png" />
     <Content Include="Projectiles\icestorm\textures\IceCrystal0.png" />
     <Content Include="Projectiles\icestorm\textures\IceCrystal1.png" />
@@ -253,6 +254,7 @@
     <Compile Include="Buffs\illuminant\IlluminantBuff.cs" />
     <Compile Include="Buffs\illuminant\IlluminantCrystal.cs" />
     <Compile Include="Buffs\LolHensBuff.cs" />
+    <Compile Include="Buffs\LolHensPetBuff.cs" />
     <Compile Include="Items\balloon\black\TornadoInABalloon.cs" />
     <Compile Include="Items\balloon\black\BlackHorseshoeBalloon.cs" />
     <Compile Include="Items\balloon\bundle\honey\GiantWeightedHoneyBalloonBundle.cs" />
@@ -293,8 +295,11 @@
     <Compile Include="LolHensPlayer.cs" />
     <Compile Include="LolHensWorld.cs" />
     <Compile Include="NPCs\frostslime\FrostSlime.cs" />
+    <Compile Include="NPCs\LolHensNPC.cs" />
+    <Compile Include="NPCs\LolHensPet.cs" />
     <Compile Include="Projectiles\bubble\PoisonBubble.cs" />
     <Compile Include="Projectiles\extinguisher\Smoke.cs" />
+    <Compile Include="Projectiles\frostslime\FrostProjectile.cs" />
     <Compile Include="Projectiles\icestorm\IceCrystal.cs" />
     <Compile Include="Projectiles\illuminant\IlluminantCrystal.cs" />
     <Compile Include="Projectiles\LolHensProjectile.cs" />
