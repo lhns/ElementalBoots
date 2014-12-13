@@ -140,15 +140,16 @@ namespace LolHens
             return null;
         }
 
-        public static int AddBuff(this CodableEntity entity, string name, int time, CodableEntity trigger, bool quiet = true)
+        public static int AddBuff(this CodableEntity entity, string name, int time, CodableEntity trigger, bool quiet = true, bool resetTimer = true)
         {
             if (!name.Contains(":")) name = "Vanilla:" + name;
-            return AddBuff(entity, BuffDef.byName[name], time, trigger, quiet);
+            return AddBuff(entity, BuffDef.byName[name], time, trigger, quiet, resetTimer);
         }
 
-        public static int AddBuff(this CodableEntity entity, int type, int time, CodableEntity trigger, bool quiet = true)
+        public static int AddBuff(this CodableEntity entity, int type, int time, CodableEntity trigger, bool quiet = true, bool resetTimer = true)
         {
-            int ret = 0;
+            int ret = -1;
+            if (!resetTimer && entity.HasBuff(type)) return ret;
             LolHensBuff.lastTrigger = trigger;
             if (entity is Player) ret = (entity as Player).AddBuff(type, time, quiet);
             else if (entity is NPC) ret = (entity as NPC).AddBuff(type, time, quiet);
@@ -210,6 +211,26 @@ namespace LolHens
                 if (modNPC != null && modNPC is LolHensNPC) return modNPC as LolHensNPC;
             }
             return null;
+        }
+
+        public static int BuffIndex(this CodableEntity entity, int buff)
+        {
+            if (entity is Player)
+            {
+                Player player = entity as Player;
+                for (int i = 0; i < player.buffType.Length; i++) if (player.buffType[i] == buff) return i;
+            }
+            else if (entity is NPC)
+            {
+                NPC npc = entity as NPC;
+                for (int i = 0; i < npc.buffType.Length; i++) if (npc.buffType[i] == buff) return i;
+            }
+            return -1;
+        }
+
+        public static bool HasBuff(this CodableEntity entity, int buff)
+        {
+            return BuffIndex(entity, buff) > -1;
         }
 
         public static void AddPet(this Player player, NPC npc)

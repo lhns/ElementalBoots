@@ -32,7 +32,7 @@ namespace LolHens.Items
         {
             Buffs.LolHensBuff.lastTrigger = item;
             owner.AddBuff("LolHens:IlluminantBuff", 1200, item, false);
-            owner.AddBuff("LolHens:IlluminantCrystal", 250, item, false);
+            owner.AddBuff("LolHens:IlluminantCrystal", 250, item, false, false);
             owner.AddBuff("Vanilla:Panic!", 600, item, false);
         }
     }

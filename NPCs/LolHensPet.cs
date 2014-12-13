@@ -23,14 +23,11 @@ namespace LolHens.NPCs
             if (petBuff > -1 && npc.target > -1 && npc.target < Main.player.Length)
             {
                 owner = Main.player[npc.target];
-
-                for (int i = 0; i < owner.buffType.Length; i++)
+                int buffIndex = owner.BuffIndex(petBuff);
+                if (buffIndex > -1)
                 {
-                    if (owner.buffType[i] == petBuff)
-                    {
-                        active = true;
-                        owner.buffTime[i] = 100;
-                    }
+                    active = true;
+                    owner.buffTime[buffIndex] = 100;
                 }
             }
             if (!active) npc.active = false;

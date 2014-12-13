@@ -26,7 +26,7 @@ namespace LolHens.Items
         public override void DamagePlayer(NPC npc, Player owner, int hitDir, ref int damage, ref bool crit, ref float critMult)
         {
             owner.AddBuff("LolHens:IlluminantBuff", 900, item, false);
-            owner.AddBuff("LolHens:IlluminantCrystal", 300, item, false);
+            owner.AddBuff("LolHens:IlluminantCrystal", 300, item, false, false);
             owner.AddBuff("Vanilla:Panic!", 600, item, false);
         }
     }
