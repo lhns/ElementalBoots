@@ -19,8 +19,8 @@
     "mana": 12,
     "recipes": [
         {
-            "items": { "Spell Tome": 1, "LolHens:IlluminantPearl": 1 },
-            "tiles": [ "Bookcase" ],
+            "items": { "Meteorite Bar": 1, "LolHens:IlluminantPearl": 1 },
+            "tiles": [ "Inventor's Workshop" ],
             "creates": 1
         }
     ]

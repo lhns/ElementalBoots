@@ -13,7 +13,7 @@
     "wingRateMult": 2.2,
     "recipes": [
         {
-            "items": { "Purple Phaseblade": 1, "Crystal Shard": 20, "Lens": 20, "g:Tier2Bar": 10, "Soul of Flight": 20 },
+            "items": { "Purple Phaseblade": 1, "Crystal Shard": 20, "Lens": 20, "Meteorite Bar": 10, "Soul of Flight": 20 },
             "tiles": [ "Inventor's Workshop" ],
             "creates": 1
         }
