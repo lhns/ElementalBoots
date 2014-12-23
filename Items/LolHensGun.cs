@@ -43,6 +43,7 @@ namespace LolHens.Items
             {
                 int projectile = Projectile.NewProjectile(newPos.X, newPos.Y, velocity.X, velocity.Y, projType, damage, knockback, player.whoAmI, 0f, 0f);
                 player.UseAmmo();
+                PostShootCustom(player, Main.projectile[projectile]);
             }
             else
             {
@@ -56,5 +57,7 @@ namespace LolHens.Items
         }
 
         public virtual bool PreShootCustom(Player player, Vector2 position, Vector2 direction, int projType) { return true; }
+
+        public virtual void PostShootCustom(Player player, Projectile projectile) { }
     }
 }
