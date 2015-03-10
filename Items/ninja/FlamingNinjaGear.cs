@@ -26,6 +26,8 @@ namespace LolHens.Items
             player.dash += 1;
             player.spikedBoots += 2;
 
+            player.moveSpeedMax = Math.Min(player.moveSpeedMax, 16);
+
             if (fiery)
             {
                 dustDelay = Math.Max(0, dustDelay - 1);

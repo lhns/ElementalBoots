@@ -72,18 +72,9 @@ namespace LolHens.Items
             shot = false;
         }
 
-        public override int PreDrawItemSlotItem(Item item, Color color, SpriteBatch sb, ItemSlot slot)
+        public override void DrawItemSlotItem(ref SpriteBatch sb, ref ItemSlot slot, ref Item item, ref Texture2D texture, ref Color color, ref float scale)
         {
-            float num = 1f;
-            Texture2D texture = slot.MyItem.GetTexture();
-            if (Main.localPlayer.selectedItem != slot.index) texture = textures[0];
-            if (texture.Width > 32 || texture.Height > 32)
-            {
-                num = ((texture.Width > texture.Height) ? (32f / (float)texture.Width) : (32f / (float)texture.Height));
-            }
-            num *= slot.scale * 1.6f;
-            sb.Draw(texture, new Vector2(slot.pos.X + 26f * slot.scale - (float)texture.Width * 0.5f * num, slot.pos.Y + 26f * slot.scale - (float)texture.Height * 0.5f * num), null, color, 0f, new Vector2(0.5f, 0.5f), num, SpriteEffects.None, 0f);
-            return 1;
+            scale *= 1.6f;
         }
     }
 }

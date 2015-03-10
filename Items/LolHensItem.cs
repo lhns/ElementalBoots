@@ -39,8 +39,6 @@ namespace LolHens.Items
 
         public virtual void UseItemPost(Player player) { }
 
-        public virtual int PreDrawItemSlotItem(Item item, Color color, SpriteBatch sb, ItemSlot slot) { return 0; }
-
         public override void Effects(Player player)
         {
             time++;
@@ -105,6 +103,35 @@ namespace LolHens.Items
             {
                 base.SetUseFrame(player);
             }
+        }
+
+        public virtual void DrawItemSlotItem(ref SpriteBatch sb, ref ItemSlot slot, ref Item item, ref Texture2D texture, ref Color color, ref float scale)
+        {
+        }
+
+        public virtual bool DrawItemSlotItemTexture(SpriteBatch sb, ItemSlot slot, Item item, Texture2D texture, Color color, float scale)
+        {
+            return true;
+        }
+
+        public virtual bool DrawItemSlotBgColor(SpriteBatch sb, ItemSlot slot, Item item, Texture2D texture, float scale)
+        {
+            return true;
+        }
+
+        public virtual bool DrawItemSlotItemCount(SpriteBatch sb, ItemSlot slot, Item item)
+        {
+            return true;
+        }
+
+        public virtual bool DrawItemSlotNum(SpriteBatch sb, ItemSlot slot)
+        {
+            return true;
+        }
+
+        public virtual bool DrawItemSlotItemStats(SpriteBatch sb, ItemSlot slot, Item item, float scale)
+        {
+            return true;
         }
     }
 }

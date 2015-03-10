@@ -15,6 +15,7 @@ namespace LolHens.Items
     public class LolHensGun : LolHensItem
     {
         public int bulletOffset = 0;
+        public Vector2 bulletOrigin = new Vector2(0, 0);
         public float bulletSpread = 0;
         public bool addPlayerVel = false;
         public Projectile projOverride = null;
@@ -28,13 +29,16 @@ namespace LolHens.Items
             if (bulletOffset == 0) return true;
 
             velocity = velocity.Rotate((Main.rand.NextFloat() - 0.5f) * bulletSpread);
-            if (addPlayerVel) velocity = velocity + player.velocity;
 
             Vector2 direction = new Vector2(velocity.X, velocity.Y);
             direction.Normalize();
 
             Vector2 offsetVector = direction * bulletOffset;
-            Vector2 newPos = new Vector2(position.X + offsetVector.X, position.Y + offsetVector.Y);
+            Vector2 originVector = new Vector2(player.direction * bulletOrigin.X , bulletOrigin.Y);
+
+            Vector2 newPos = new Vector2(position.X + originVector.X + offsetVector.X, position.Y + originVector.Y + offsetVector.Y);
+
+            if (addPlayerVel) velocity = velocity + player.velocity;
             
             if (projOverride != null) projType = projOverride.type;
 

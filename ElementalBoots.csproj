@@ -36,6 +36,7 @@
     <None Include="Buffs\illuminant\IlluminantBuff.json" />
     <None Include="Buffs\illuminant\IlluminantCrystal.json" />
     <None Include="Buffs\illuminant\IlluminantCrystal.pdn" />
+    <None Include="Buffs\illuminant\unused.zip" />
     <None Include="Images\banner.pdn" />
     <None Include="Items\balloon\black\TornadoInABalloon.json" />
     <None Include="Items\balloon\black\BlackHorseshoeBalloon.json" />
@@ -71,6 +72,8 @@
     <None Include="Items\illuminant\IlluminantStaff.json" />
     <None Include="Items\illuminant\IlluminantStaff.pdn" />
     <None Include="Items\illuminant\IlluminantStarNecklace.json" />
+    <None Include="Items\laser\SpaceRifle.json" />
+    <None Include="Items\laser\unused.zip" />
     <None Include="Items\magnet\Magnet.json" />
     <None Include="Items\magnet\Magnet.pdn" />
     <None Include="Items\necklace\NightskyNecklace.json" />
@@ -123,7 +126,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Buffs\frostslime\FrostSlime.png" />
-    <Content Include="Buffs\illuminant\IlluminantBuff_alternate.png" />
     <Content Include="Buffs\illuminant\IlluminantBuff.png" />
     <Content Include="Buffs\illuminant\IlluminantCrystal.png" />
     <Content Include="Buffs\TemplateBuff.png" />
@@ -158,6 +160,7 @@
     <Content Include="Items\bottle\SquidInABottle.png" />
     <Content Include="Items\bottle\TornadoInABottle.png" />
     <Content Include="Items\bubble\PoisonBubbleWand.png" />
+    <Content Include="Items\cannon\Cannon.png" />
     <Content Include="Items\elemental\BladeofElemental.png" />
     <Content Include="Items\elemental\BookofElemental.png" />
     <Content Include="Items\elemental\BowofElemental.png" />
@@ -170,6 +173,8 @@
     <Content Include="Items\illuminant\IlluminantPearlsNecklace.png" />
     <Content Include="Items\illuminant\IlluminantStaff.png" />
     <Content Include="Items\illuminant\IlluminantStarNecklace.png" />
+    <Content Include="Items\laser\SpaceLaser.png" />
+    <Content Include="Items\laser\SpaceRifle.png" />
     <Content Include="Items\magnet\Magnet.png" />
     <Content Include="Items\necklace\NightskyNecklace.png" />
     <Content Include="Items\ninja\FlamingNinjaGear.png" />
@@ -186,6 +191,8 @@
     <Content Include="Items\slingshot\Slingshot6.png" />
     <Content Include="Items\slingshot\Slingshot7.png" />
     <Content Include="Items\spikyball\SpikyBallBlaster.png" />
+    <Content Include="Items\stamina\Band of Anarchy.png" />
+    <Content Include="Items\stamina\Band of Stamina.png" />
     <Content Include="Items\wings\elemental\ElementalWings_Wings.png" />
     <Content Include="Items\wings\laser\LaserWings0_Wings.png" />
     <Content Include="Items\wings\laser\LaserWings1_Wings.png" />
@@ -273,6 +280,7 @@
     <Compile Include="Items\illuminant\IlluminantPearlsNecklace.cs" />
     <Compile Include="Items\illuminant\IlluminantStaff.cs" />
     <Compile Include="Items\illuminant\IlluminantStarNecklace.cs" />
+    <Compile Include="Items\laser\SpaceRifle.cs" />
     <Compile Include="Items\LolHensGun.cs" />
     <Compile Include="Items\LolHensItem.cs" />
     <Compile Include="Items\magnet\Magnet.cs" />

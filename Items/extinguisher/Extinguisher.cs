@@ -14,6 +14,7 @@ namespace LolHens.Items
         {
             base.Init();
             bulletOffset = 30;
+            bulletOrigin.Y += 10;
             bulletSpread = 1.2f;
             addPlayerVel = true;
         }

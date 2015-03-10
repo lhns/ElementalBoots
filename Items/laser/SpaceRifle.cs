@@ -1,25 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
-using Terraria;
 using TAPI;
 using TAPI.UIKit;
+using Terraria;
 
 namespace LolHens.Items
 {
-    public class SpikyBallBlaster : LolHensGun
+    public class SpaceRifle : LolHensGun
     {
         public override void Init()
         {
             base.Init();
-            bulletOffset = 60;
-            bulletOrigin.Y -= 10;
+            bulletOffset = 50;
+            //bulletOrigin.Y += 2;
         }
 
         public override void DrawItemSlotItem(ref SpriteBatch sb, ref ItemSlot slot, ref Item item, ref Texture2D texture, ref Color color, ref float scale)
