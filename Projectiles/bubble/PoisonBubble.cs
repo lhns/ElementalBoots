@@ -12,8 +12,7 @@ namespace LolHens.Projectiles
     public class PoisonBubble : LolHensProjectile
     {
         public Texture2D texture;
-        public float texSize;
-        public int color, size;
+        public float size;
         public bool toxic = true;
 
         public override void Init()
@@ -22,63 +21,29 @@ namespace LolHens.Projectiles
 
             if (Main.rand.Next(300) == 0)
             {
-                size = 5;
+                size = 64;
             }
             else if (Main.rand.Next(60) == 0)
             {
-                size = 4;
+                size = 48;
             }
             else if (Main.rand.Next(20) == 0)
             {
-                size = 3;
+                size = 32;
             }
             else if (Main.rand.Next(5) == 0)
             {
-                size = 2;
+                size = 20;
             }
             else
             {
-                size = 1;
-            }
-
-            if (size == 1)
-            {
-                texSize = 10;
-            }
-            else if (size == 2)
-            {
-                texSize = 20;
-            }
-            else if (size == 3)
-            {
-                texSize = 32;
-            }
-            else if (size == 4)
-            {
-                texSize = 48;
-            }
-            else if (size == 5)
-            {
-                texSize = 64;
-            }
-            else
-            {
-                texSize = 1;
-            }
-
-            if (toxic)
-            {
-                color = 5;
-            }
-            else
-            {
-                color = Main.rand.Next(4) + 1;
+                size = 10;
             }
         }
 
         public override void InitTextures()
         {
-            texture = modBase.textures["Projectiles/bubble/textures/bubble" + color + size];
+            texture = modBase.textures["Projectiles/bubble/PoisonBubble" + size];
         }
 
         public override void AI()
@@ -117,57 +82,22 @@ namespace LolHens.Projectiles
 
         public override void PostKill()
         {
-            if (Main.netMode != 2)
+            if (Main.netMode == 2) return;
+
+            projectile.alpha = 255;
+
+            Color dustColor = new Color(
+                122 / 255,
+                204 / 255,
+                70 / 255);
+
+            for (int i = 0; i < size * projectile.scale * 0.8f; i++)
             {
-                projectile.alpha = 255;
-
-                float dustR = 0;
-                float dustG = 0;
-                float dustB = 0;
-                if (color == 1)
-                {
-                    dustR = 105;
-                    dustG = 172;
-                    dustB = 255;
-                }
-                else if (color == 2)
-                {
-                    dustR = 228;
-                    dustG = 255;
-                    dustB = 133;
-                }
-                else if (color == 3)
-                {
-                    dustR = 179;
-                    dustG = 133;
-                    dustB = 255;
-                }
-                else if (color == 4)
-                {
-                    dustR = 255;
-                    dustG = 133;
-                    dustB = 200;
-                }
-                else if (color == 5)
-                {
-                    dustR = 122;
-                    dustG = 204;
-                    dustB = 70;
-                }
-                dustR /= 255;
-                dustG /= 255;
-                dustB /= 255;
-
-                float num = texSize * projectile.scale * 0.8f;
-                int i = 0;
-                while ((float)i < num)
-                {
-                    int num6 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), (int)(texSize * projectile.scale), (int)(texSize * projectile.scale), 176, 0, 0, 80, new Color(dustR, dustG, dustB), 1f);
-                    Main.dust[num6].noGravity = true;
-                    Main.dust[num6].alpha = 100;
-                    Main.dust[num6].scale = projectile.scale;
-                    i++;
-                }
+                int num6 = Dust.NewDust(new Vector2(projectile.position.X, projectile.position.Y), (int)(size * projectile.scale), (int)(size * projectile.scale), 176, 0, 0, 80, dustColor, 1f);
+                Main.dust[num6].noGravity = true;
+                Main.dust[num6].alpha = 100;
+                Main.dust[num6].scale = projectile.scale;
+                i++;
             }
         }
 
