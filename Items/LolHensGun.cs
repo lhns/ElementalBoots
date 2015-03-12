@@ -20,6 +20,9 @@ namespace LolHens.Items
         public bool addPlayerVel = false;
         public Projectile projOverride = null;
 
+        private bool cancelMana = false;
+        public int mana = 0;
+
         public override bool ConsumeAmmo(Player p) { return bulletOffset == 0; }
 
         public override bool PreShoot(Player player, Vector2 position, Vector2 velocity, int projType, int damage, float knockback)
@@ -41,12 +44,14 @@ namespace LolHens.Items
             if (addPlayerVel) velocity = velocity + player.velocity;
             
             if (projOverride != null) projType = projOverride.type;
-
+            
             Tile tile = Main.tile[(int)(newPos.X / 16f), (int)(newPos.Y / 16f)];
             if ((!tile.active() || tile.collisionType == -1) && PreShootCustom(player, newPos, direction, projType))
             {
                 int projectile = Projectile.NewProjectile(newPos.X, newPos.Y, velocity.X, velocity.Y, projType, damage, knockback, player.whoAmI, 0f, 0f);
+                
                 player.UseAmmo();
+
                 PostShootCustom(player, Main.projectile[projectile]);
             }
             else
@@ -56,12 +61,31 @@ namespace LolHens.Items
                 {
                     int dustID = Dust.NewDust(newPos, 10, 10, 1, velocity.X * 0.1f, velocity.Y * 0.1f, 100, default(Color), 1.2f);
                 }
+                CancelMana();
             }
+
+            if (cancelMana)
+            {
+                cancelMana = false;
+                if (item.mana != 0) mana = item.mana;
+                item.mana = 0;
+            }
+            else if (mana != 0)
+            {
+                item.mana = mana;
+                mana = 0;
+            }
+
             return false;
         }
 
         public virtual bool PreShootCustom(Player player, Vector2 position, Vector2 direction, int projType) { return true; }
 
         public virtual void PostShootCustom(Player player, Projectile projectile) { }
+
+        public void CancelMana()
+        {
+            cancelMana = true;
+        }
     }
 }

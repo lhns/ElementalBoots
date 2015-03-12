@@ -32,6 +32,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="bin\Debug\ElementalBoots.exe.config" />
+    <None Include="bin\Debug\ElementalBoots.vshost.exe.config" />
     <None Include="Buffs\frostslime\FrostSlime.json" />
     <None Include="Buffs\illuminant\IlluminantBuff.json" />
     <None Include="Buffs\illuminant\IlluminantCrystal.json" />
@@ -50,19 +52,20 @@
     <None Include="Items\balloon\bundle\weighted\GiantWeightedBalloonBundle.json" />
     <None Include="Items\balloon\green\GreenHorseshoeBalloon.json" />
     <None Include="Items\balloon\green\GreenHorseshoeBalloon_Balloon.pdn" />
-    <None Include="Items\balloon\unused.rar" />
     <None Include="Items\balloon\bundle\weighted\WeightedBalloonBundle.json" />
     <None Include="Items\balloon\bundle\honey\WeightedHoneyBalloonBundle.json" />
+    <None Include="Items\balloon\unused.zip" />
     <None Include="Items\boots\ElementalBoots.json" />
     <None Include="Items\boots\ElementalBoots.pdn" />
     <None Include="Items\boots\ElementalBoots_Shoes.pdn" />
-    <None Include="Items\boots\unused.rar" />
+    <None Include="Items\boots\unused.zip" />
     <None Include="Items\bottle\EnemyInABottle.pdn" />
     <None Include="Items\bottle\TornadoInABottle.json" />
     <None Include="Items\bottle\WeatherInABottle.pdn" />
     <None Include="Items\bubble\PoisonBubbleWand.json" />
     <None Include="Items\bubble\PoisonBubbleWand.pdn" />
     <None Include="Items\extinguisher\Extinguisher.json" />
+    <None Include="Items\extinguisher\Extinguisher.pdn" />
     <None Include="Items\frostslime\FrostSlimeWand.json" />
     <None Include="Items\icestorm\IceStorm.json" />
     <None Include="Items\icestorm\IceStorm.pdn" />
@@ -72,10 +75,8 @@
     <None Include="Items\illuminant\IlluminantStaff.json" />
     <None Include="Items\illuminant\IlluminantStaff.pdn" />
     <None Include="Items\illuminant\IlluminantStarNecklace.json" />
-    <None Include="Items\laser\SpaceRifle.json" />
-    <None Include="Items\laser\unused.zip" />
     <None Include="Items\magnet\Magnet.json" />
-    <None Include="Items\magnet\Magnet.pdn" />
+    <None Include="Items\magnet\unused.zip" />
     <None Include="Items\necklace\NightskyNecklace.json" />
     <None Include="Items\necklace\NightskyNecklace.pdn" />
     <None Include="Items\ninja\FlamingNinjaGear.json" />
@@ -88,13 +89,18 @@
     <None Include="Items\shell\FieryShell.json" />
     <None Include="Items\shell\FieryShell.pdn" />
     <None Include="Items\shield\FrozenTurtleShield.json" />
+    <None Include="Items\shield\FrozenTurtleShield_Shield.pdn" />
     <None Include="Items\slingshot\Slingshot.json" />
     <None Include="Items\slingshot\Slingshot.pdn" />
-    <None Include="Items\slingshot\Slingshot_1.pdn" />
-    <None Include="Items\slingshot\Slingshot_2.pdn" />
+    <None Include="Items\slingshot\unused.zip" />
+    <None Include="Items\space\SpaceLaser.json" />
+    <None Include="Items\space\SpaceRifle.json" />
+    <None Include="Items\space\unused.zip" />
     <None Include="Items\spikyball\SpikyBallBlaster.json" />
+    <None Include="Items\spikyball\SpikyBallBlaster.pdn" />
+    <None Include="Items\spikyball\unused.zip" />
     <None Include="Items\wings\elemental\ElementalWings_Wings.pdn" />
-    <None Include="Items\wings\elemental\unused.rar" />
+    <None Include="Items\wings\elemental\unused.zip" />
     <None Include="Items\wings\laser\LaserWings_Wings.pdn" />
     <None Include="Items\wings\terra\BrokenHeroWings.json" />
     <None Include="Items\wings\elemental\ElementalWings.json" />
@@ -113,25 +119,35 @@
     <None Include="Items\wings\terra\TrueAngelWings.pdn" />
     <None Include="Items\wings\terra\TrueDemonWings.json" />
     <None Include="Items\workshop\InventorsWorkshopItem.json" />
+    <None Include="LICENSE" />
     <None Include="ModInfo.json" />
     <None Include="NPCs\frostslime\FrostSlime.json" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\ElementalBoots.csprojResolveAssemblyReference.cache" />
     <None Include="Projectiles\bubble\PoisonBubble.json" />
     <None Include="Projectiles\extinguisher\Smoke.json" />
     <None Include="Projectiles\frostslime\FrostProjectile.json" />
     <None Include="Projectiles\icestorm\IceCrystal.json" />
     <None Include="Projectiles\illuminant\IlluminantCrystal.json" />
     <None Include="Projectiles\slingshot\Acorn.json" />
+    <None Include="README.md" />
     <None Include="Tiles\workshop\InventorsWorkshop.json" />
     <None Include="Tiles\workshop\InventorsWorkshopTile.pdn" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitignore" />
+    <Content Include="bin\Debug\ElementalBoots.vshost.exe" />
     <Content Include="Buffs\frostslime\FrostSlime.png" />
     <Content Include="Buffs\illuminant\IlluminantBuff.png" />
     <Content Include="Buffs\illuminant\IlluminantCrystal.png" />
     <Content Include="Buffs\TemplateBuff.png" />
+    <Content Include="ElementalBoots.sln" />
     <Content Include="Images\banner.png" />
     <Content Include="icon.png" />
+    <Content Include="Items\balloon\black\BlackHorseshoeBalloon_Balloon.png" />
+    <Content Include="Items\balloon\black\TornadoInABalloon_Balloon.png" />
     <Content Include="Items\balloon\bundle\honey\GiantWeightedHoneyBalloonBundle.png" />
+    <Content Include="Items\balloon\bundle\honey\GiantWeightedHoneyBalloonBundle_Balloon.png" />
     <Content Include="Items\balloon\bundle\normal\BigBalloonBundle.png" />
     <Content Include="Items\balloon\bundle\normal\BigBalloonBundle_Balloon.png" />
     <Content Include="Items\balloon\bundle\honey\BigHoneyBalloonBundle.png" />
@@ -161,10 +177,6 @@
     <Content Include="Items\bottle\TornadoInABottle.png" />
     <Content Include="Items\bubble\PoisonBubbleWand.png" />
     <Content Include="Items\cannon\Cannon.png" />
-    <Content Include="Items\elemental\BladeofElemental.png" />
-    <Content Include="Items\elemental\BookofElemental.png" />
-    <Content Include="Items\elemental\BowofElemental.png" />
-    <Content Include="Items\elemental\PickaxeofElemental.png" />
     <Content Include="Items\extinguisher\Extinguisher.png" />
     <Content Include="Items\frostslime\FrostSlimeWand.png" />
     <Content Include="Items\icestorm\IceStorm.png" />
@@ -173,16 +185,16 @@
     <Content Include="Items\illuminant\IlluminantPearlsNecklace.png" />
     <Content Include="Items\illuminant\IlluminantStaff.png" />
     <Content Include="Items\illuminant\IlluminantStarNecklace.png" />
-    <Content Include="Items\laser\SpaceLaser.png" />
-    <Content Include="Items\laser\SpaceRifle.png" />
     <Content Include="Items\magnet\Magnet.png" />
     <Content Include="Items\necklace\NightskyNecklace.png" />
     <Content Include="Items\ninja\FlamingNinjaGear.png" />
     <Content Include="Items\ninja\MagmaClaws.png" />
+    <Content Include="Items\ninja\MagmaClaws_Hand.png" />
     <Content Include="Items\ninja\MagmaClimbingGear.png" />
     <Content Include="Items\prism\Prism.png" />
     <Content Include="Items\shell\FieryShell.png" />
     <Content Include="Items\shield\FrozenTurtleShield.png" />
+    <Content Include="Items\shield\FrozenTurtleShield_Shield.png" />
     <Content Include="Items\slingshot\Slingshot.png" />
     <Content Include="Items\slingshot\Slingshot2.png" />
     <Content Include="Items\slingshot\Slingshot3.png" />
@@ -190,6 +202,8 @@
     <Content Include="Items\slingshot\Slingshot5.png" />
     <Content Include="Items\slingshot\Slingshot6.png" />
     <Content Include="Items\slingshot\Slingshot7.png" />
+    <Content Include="Items\space\SpaceLaser.png" />
+    <Content Include="Items\space\SpaceRifle.png" />
     <Content Include="Items\spikyball\SpikyBallBlaster.png" />
     <Content Include="Items\stamina\Band of Anarchy.png" />
     <Content Include="Items\stamina\Band of Stamina.png" />
@@ -219,6 +233,7 @@
     <Content Include="Items\wings\terra\TrueDemonWings_Wings.png" />
     <Content Include="Items\workshop\InventorsWorkshopItem.png" />
     <Content Include="NPCs\frostslime\FrostSlime.png" />
+    <Content Include="obj\Debug\ElementalBoots.csproj.FileListAbsolute.txt" />
     <Content Include="Projectiles\bubble\textures\bubble11.png" />
     <Content Include="Projectiles\bubble\textures\bubble12.png" />
     <Content Include="Projectiles\bubble\textures\bubble13.png" />
@@ -280,7 +295,6 @@
     <Compile Include="Items\illuminant\IlluminantPearlsNecklace.cs" />
     <Compile Include="Items\illuminant\IlluminantStaff.cs" />
     <Compile Include="Items\illuminant\IlluminantStarNecklace.cs" />
-    <Compile Include="Items\laser\SpaceRifle.cs" />
     <Compile Include="Items\LolHensGun.cs" />
     <Compile Include="Items\LolHensItem.cs" />
     <Compile Include="Items\magnet\Magnet.cs" />
@@ -291,6 +305,8 @@
     <Compile Include="Items\shell\FieryShell.cs" />
     <Compile Include="Items\shield\FrozenTurtleShield.cs" />
     <Compile Include="Items\slingshot\Slingshot.cs" />
+    <Compile Include="Items\space\SpaceLaser.cs" />
+    <Compile Include="Items\space\SpaceRifle.cs" />
     <Compile Include="Items\spikyball\SpikyBallBlaster.cs" />
     <Compile Include="Items\wings\elemental\ElementalWings.cs" />
     <Compile Include="Items\wings\laser\LaserWings.cs" />
@@ -305,6 +321,9 @@
     <Compile Include="NPCs\frostslime\FrostSlime.cs" />
     <Compile Include="NPCs\LolHensNPC.cs" />
     <Compile Include="NPCs\LolHensPet.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Projectiles\bubble\PoisonBubble.cs" />
     <Compile Include="Projectiles\extinguisher\Smoke.cs" />
     <Compile Include="Projectiles\frostslime\FrostProjectile.cs" />
@@ -335,7 +354,10 @@
       <HintPath>E:\Program Files (x86)\Steam\SteamApps\common\Terraria\tAPI.exe</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
