@@ -16,7 +16,7 @@
     "autoReuse": true,
     "noMelee": true,
     "magic": true,
-	"shoot": "LolHens:PoisonBubble",
+	"shoot": "LolHens:SpaceLaserRay",
 	"shootSpeed": 6,
 	"mana": 4,
 

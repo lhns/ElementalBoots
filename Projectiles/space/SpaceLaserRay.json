@@ -1,0 +1,13 @@
+﻿{
+    "displayName": "Laser Ray",
+    "size": [ 272, 24 ],
+    "aiStyle": 0,
+    "timeLeft": 200,
+    "friendly": true,
+    "hostile": false,
+    "tileCollide": true,
+    "damage": 5,
+    "magic": true,
+    "penetrate": 100,
+    "maxUpdates": 4
+}

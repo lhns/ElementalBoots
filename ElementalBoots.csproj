@@ -130,6 +130,7 @@
     <None Include="Projectiles\icestorm\IceCrystal.json" />
     <None Include="Projectiles\illuminant\IlluminantCrystal.json" />
     <None Include="Projectiles\slingshot\Acorn.json" />
+    <None Include="Projectiles\space\SpaceLaserRay.json" />
     <None Include="README.md" />
     <None Include="Tiles\workshop\InventorsWorkshop.json" />
     <None Include="Tiles\workshop\InventorsWorkshopTile.pdn" />
@@ -234,32 +235,12 @@
     <Content Include="Items\workshop\InventorsWorkshopItem.png" />
     <Content Include="NPCs\frostslime\FrostSlime.png" />
     <Content Include="obj\Debug\ElementalBoots.csproj.FileListAbsolute.txt" />
-    <Content Include="Projectiles\bubble\textures\bubble11.png" />
-    <Content Include="Projectiles\bubble\textures\bubble12.png" />
-    <Content Include="Projectiles\bubble\textures\bubble13.png" />
-    <Content Include="Projectiles\bubble\textures\bubble14.png" />
-    <Content Include="Projectiles\bubble\textures\bubble15.png" />
-    <Content Include="Projectiles\bubble\textures\bubble21.png" />
-    <Content Include="Projectiles\bubble\textures\bubble22.png" />
-    <Content Include="Projectiles\bubble\textures\bubble23.png" />
-    <Content Include="Projectiles\bubble\textures\bubble24.png" />
-    <Content Include="Projectiles\bubble\textures\bubble25.png" />
-    <Content Include="Projectiles\bubble\textures\bubble31.png" />
-    <Content Include="Projectiles\bubble\textures\bubble32.png" />
-    <Content Include="Projectiles\bubble\textures\bubble33.png" />
-    <Content Include="Projectiles\bubble\textures\bubble34.png" />
-    <Content Include="Projectiles\bubble\textures\bubble35.png" />
-    <Content Include="Projectiles\bubble\textures\bubble41.png" />
-    <Content Include="Projectiles\bubble\textures\bubble42.png" />
-    <Content Include="Projectiles\bubble\textures\bubble43.png" />
-    <Content Include="Projectiles\bubble\textures\bubble44.png" />
-    <Content Include="Projectiles\bubble\textures\bubble45.png" />
-    <Content Include="Projectiles\bubble\textures\bubble51.png" />
-    <Content Include="Projectiles\bubble\textures\bubble52.png" />
-    <Content Include="Projectiles\bubble\textures\bubble53.png" />
-    <Content Include="Projectiles\bubble\textures\bubble54.png" />
-    <Content Include="Projectiles\bubble\textures\bubble55.png" />
     <Content Include="Projectiles\bubble\PoisonBubble.png" />
+    <Content Include="Projectiles\bubble\PoisonBubble10.png" />
+    <Content Include="Projectiles\bubble\PoisonBubble20.png" />
+    <Content Include="Projectiles\bubble\PoisonBubble32.png" />
+    <Content Include="Projectiles\bubble\PoisonBubble48.png" />
+    <Content Include="Projectiles\bubble\PoisonBubble64.png" />
     <Content Include="Projectiles\extinguisher\Smoke.png" />
     <Content Include="Projectiles\frostslime\FrostProjectile.png" />
     <Content Include="Projectiles\icestorm\IceCrystal.png" />
@@ -268,6 +249,10 @@
     <Content Include="Projectiles\icestorm\textures\IceCrystal2.png" />
     <Content Include="Projectiles\illuminant\IlluminantCrystal.png" />
     <Content Include="Projectiles\slingshot\Acorn.png" />
+    <Content Include="Projectiles\space\SpaceLaserRay.png" />
+    <Content Include="Projectiles\space\SpaceLaserRayBody.png" />
+    <Content Include="Projectiles\space\SpaceLaserRayHead.png" />
+    <Content Include="Projectiles\space\SpaceLaserRayTail.png" />
     <Content Include="Tiles\workshop\InventorsWorkshop.png" />
     <Content Include="Tiles\workshop\InventorsWorkshopTile.png" />
   </ItemGroup>
@@ -331,6 +316,7 @@
     <Compile Include="Projectiles\illuminant\IlluminantCrystal.cs" />
     <Compile Include="Projectiles\LolHensProjectile.cs" />
     <Compile Include="Projectiles\slingshot\Acorn.cs" />
+    <Compile Include="Projectiles\space\SpaceLaserRay.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
