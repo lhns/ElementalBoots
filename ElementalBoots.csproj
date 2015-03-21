@@ -131,6 +131,7 @@
     <None Include="Projectiles\illuminant\IlluminantCrystal.json" />
     <None Include="Projectiles\slingshot\Acorn.json" />
     <None Include="Projectiles\space\SpaceLaserRay.json" />
+    <None Include="Projectiles\space\SpaceRifleRay.json" />
     <None Include="README.md" />
     <None Include="Tiles\workshop\InventorsWorkshop.json" />
     <None Include="Tiles\workshop\InventorsWorkshopTile.pdn" />
@@ -253,6 +254,7 @@
     <Content Include="Projectiles\space\SpaceLaserRayBody.png" />
     <Content Include="Projectiles\space\SpaceLaserRayHead.png" />
     <Content Include="Projectiles\space\SpaceLaserRayTail.png" />
+    <Content Include="Projectiles\space\SpaceRifleRay.png" />
     <Content Include="Tiles\workshop\InventorsWorkshop.png" />
     <Content Include="Tiles\workshop\InventorsWorkshopTile.png" />
   </ItemGroup>
@@ -317,6 +319,7 @@
     <Compile Include="Projectiles\LolHensProjectile.cs" />
     <Compile Include="Projectiles\slingshot\Acorn.cs" />
     <Compile Include="Projectiles\space\SpaceLaserRay.cs" />
+    <Compile Include="Projectiles\space\SpaceRifleRay.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">

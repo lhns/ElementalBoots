@@ -14,7 +14,7 @@ namespace LolHens.Items
         {
             base.Init();
             bulletOffset = 50;
-            //bulletOrigin.Y += 2;
+            bulletOrigin.Y -= 2;
         }
 
         public override void DrawItemSlotItem(ref SpriteBatch sb, ref ItemSlot slot, ref Item item, ref Texture2D texture, ref Color color, ref float scale)

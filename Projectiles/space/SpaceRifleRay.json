@@ -1,6 +1,6 @@
 ﻿{
-    "displayName": "Laser Beam",
-    "size": [ 272, 24 ],
+    "displayName": "Laser Ray",
+    "size": [ 120, 4 ],
     "aiStyle": 0,
     "timeLeft": 200,
     "friendly": true,
@@ -9,5 +9,5 @@
     "damage": 5,
     "magic": true,
     "penetrate": 100,
-    "maxUpdates": 10
+    "maxUpdates": 4
 }

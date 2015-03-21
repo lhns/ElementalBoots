@@ -16,8 +16,8 @@
     "autoReuse": true,
     "noMelee": true,
     "magic": true,
-	"shoot": "LolHens:PoisonBubble",
-	"shootSpeed": 6,
+	"shoot": "LolHens:SpaceRifleRay",
+	"shootSpeed": 4,
 	"mana": 4,
 
     "recipes": [
