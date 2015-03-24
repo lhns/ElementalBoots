@@ -13,8 +13,9 @@ namespace LolHens.Items
         public override void Init()
         {
             base.Init();
-            bulletOffset = 30;
-            bulletOrigin.Y += 10;
+            bulletOffset.X = 30;
+            bulletOffset.Y -= 20;
+            bulletOrigin.Y += 18;
             bulletSpread = 1.2f;
             addPlayerVel = true;
         }

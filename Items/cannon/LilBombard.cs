@@ -13,13 +13,14 @@ using TAPI.UIKit;
 
 namespace LolHens.Items
 {
-    public class SpikyBallBlaster : LolHensGun
+    public class LilBombard : LolHensGun
     {
         public override void Init()
         {
             base.Init();
-            bulletOffset.X = 50;
+            bulletOffset.X = 30;
             bulletOffset.Y -= 10;
+            bulletOrigin.Y -= 10;
         }
 
         public override void DrawItemSlotItem(ref SpriteBatch sb, ref ItemSlot slot, ref Item item, ref Texture2D texture, ref Color color, ref float scale)

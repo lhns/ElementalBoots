@@ -64,6 +64,8 @@
     <None Include="Items\bottle\WeatherInABottle.pdn" />
     <None Include="Items\bubble\PoisonBubbleWand.json" />
     <None Include="Items\bubble\PoisonBubbleWand.pdn" />
+    <None Include="Items\cannon\LilBombard.json" />
+    <None Include="Items\cannon\unused.zip" />
     <None Include="Items\extinguisher\Extinguisher.json" />
     <None Include="Items\extinguisher\Extinguisher.pdn" />
     <None Include="Items\frostslime\FrostSlimeWand.json" />
@@ -178,7 +180,7 @@
     <Content Include="Items\bottle\SquidInABottle.png" />
     <Content Include="Items\bottle\TornadoInABottle.png" />
     <Content Include="Items\bubble\PoisonBubbleWand.png" />
-    <Content Include="Items\cannon\Cannon.png" />
+    <Content Include="Items\cannon\LilBombard.png" />
     <Content Include="Items\extinguisher\Extinguisher.png" />
     <Content Include="Items\frostslime\FrostSlimeWand.png" />
     <Content Include="Items\icestorm\IceStorm.png" />
@@ -276,6 +278,7 @@
     <Compile Include="Items\boots\ElementalBoots.cs" />
     <Compile Include="Items\bottle\TornadoInABottle.cs" />
     <Compile Include="Items\bubble\PoisonBubbleWand.cs" />
+    <Compile Include="Items\cannon\LilBombard.cs" />
     <Compile Include="Items\extinguisher\Extinguisher.cs" />
     <Compile Include="Items\frostslime\FrostSlimeWand.cs" />
     <Compile Include="Items\illuminant\IlluminantHeartNecklace.cs" />

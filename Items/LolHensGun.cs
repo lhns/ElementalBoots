@@ -14,8 +14,9 @@ namespace LolHens.Items
 {
     public class LolHensGun : LolHensItem
     {
-        public int bulletOffset = 0;
+        public Vector2 bulletOffset = new Vector2(0, 0);
         public Vector2 bulletOrigin = new Vector2(0, 0);
+
         public float bulletSpread = 0;
         public bool addPlayerVel = false;
         public Projectile projOverride = null;
@@ -23,23 +24,19 @@ namespace LolHens.Items
         private bool cancelMana = false;
         public int mana = 0;
 
-        public override bool ConsumeAmmo(Player p) { return bulletOffset == 0; }
+        public override bool ConsumeAmmo(Player p) { return false; }
 
         public override bool PreShoot(Player player, Vector2 position, Vector2 velocity, int projType, int damage, float knockback)
         {
             base.PreShoot(player, position, velocity, projType, damage, knockback);
 
-            if (bulletOffset == 0) return true;
+            Vector2 origin = new Vector2(bulletOrigin.X * player.direction, bulletOrigin.Y);
 
-            velocity = velocity.Rotate((Main.rand.NextFloat() - 0.5f) * bulletSpread);
+            Vector2 direction = new Vector2(bulletOffset.X, bulletOffset.Y * player.direction).Rotate(new Vector2(velocity.X, velocity.Y).ToRotation(), new Vector2(0, 0));
 
-            Vector2 direction = new Vector2(velocity.X, velocity.Y);
-            direction.Normalize();
+            Vector2 newPos = new Vector2(position.X + origin.X + direction.X, position.Y + origin.Y + direction.Y);
 
-            Vector2 offsetVector = direction * bulletOffset;
-            Vector2 originVector = new Vector2(player.direction * bulletOrigin.X , bulletOrigin.Y);
-
-            Vector2 newPos = new Vector2(position.X + originVector.X + offsetVector.X, position.Y + originVector.Y + offsetVector.Y);
+            Vector2 newVel = new Vector2(velocity.X, velocity.Y).Rotate((Main.rand.NextFloat() - 0.5f) * bulletSpread);
 
             if (addPlayerVel) velocity = velocity + player.velocity;
             
@@ -48,7 +45,7 @@ namespace LolHens.Items
             Tile tile = Main.tile[(int)(newPos.X / 16f), (int)(newPos.Y / 16f)];
             if ((!tile.active() || tile.collisionType == -1) && PreShootCustom(player, newPos, direction, projType))
             {
-                int projectile = Projectile.NewProjectile(newPos.X, newPos.Y, velocity.X, velocity.Y, projType, damage, knockback, player.whoAmI, 0f, 0f);
+                int projectile = Projectile.NewProjectile(newPos.X, newPos.Y, newVel.X, newVel.Y, projType, damage, knockback, player.whoAmI, 0f, 0f);
                 
                 player.UseAmmo();
 

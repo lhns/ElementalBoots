@@ -39,6 +39,7 @@ namespace LolHens
 
             ItemDef.byName["Vanilla:Acorn"].MakeAmmo("Acorn");
             ItemDef.byName["Vanilla:Spiky Ball"].MakeAmmo("SpikyBall");
+            ItemDef.byName["Vanilla:Cannonball"].MakeAmmo("Cannonball");
 
             ItemDef.byName["LolHens:TornadoInABottle"].MakeChestLoot(0.3f, ChestType.ISLAND, true);
             ItemDef.byName["LolHens:Slingshot"].MakeChestLoot(0.1f, ChestType.SURFACE, true);

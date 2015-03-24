@@ -17,7 +17,7 @@ namespace LolHens.Items
         {
             base.Init();
             diagonalTexture = true;
-            bulletOffset = 40;
+            bulletOffset.X = 40;
         }
 
         public override bool PreShootCustom(Player player, Vector2 position, Vector2 direction, int projType)
