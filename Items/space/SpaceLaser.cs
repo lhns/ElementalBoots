@@ -13,7 +13,7 @@ namespace LolHens.Items
         public override void Init()
         {
             base.Init();
-            bulletOffset.X = 50;
+            //bulletOffset.X = 50;
             //bulletOffset.Y += 2;
         }
 

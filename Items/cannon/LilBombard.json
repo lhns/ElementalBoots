@@ -1,8 +1,8 @@
 ﻿{
     "displayName": "Lil' Bombard",
     "size": [ 66, 36 ],
-    "holdoutOrigin": [ 0, 0 ],
-	"holdoutOffset": [ -10, -10 ],
+    "holdoutOrigin": [ -0, 0 ],
+	"holdoutOffset": [ -14, -10 ],
     "maxStack": 1,
     "value": [ 0, 0, 10, 0 ],
     "rare": 0,

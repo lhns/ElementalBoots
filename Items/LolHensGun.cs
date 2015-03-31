@@ -30,11 +30,11 @@ namespace LolHens.Items
         {
             base.PreShoot(player, position, velocity, projType, damage, knockback);
 
-            Vector2 origin = new Vector2(bulletOrigin.X * player.direction, bulletOrigin.Y);
+            Vector2 holdOrigin = new Vector2(bulletOrigin.X * player.direction, bulletOrigin.Y);
 
-            Vector2 direction = new Vector2(bulletOffset.X, bulletOffset.Y * player.direction).Rotate(new Vector2(velocity.X, velocity.Y).ToRotation(), new Vector2(0, 0));
+            Vector2 holdDirection = new Vector2(bulletOffset.X, bulletOffset.Y * player.direction).Rotate(new Vector2(velocity.X, velocity.Y).ToRotation(), new Vector2(0, 0));
 
-            Vector2 newPos = new Vector2(position.X + origin.X + direction.X, position.Y + origin.Y + direction.Y);
+            Vector2 newPos = new Vector2(position.X + holdOrigin.X + holdDirection.X, position.Y + holdOrigin.Y + holdDirection.Y);
 
             Vector2 newVel = new Vector2(velocity.X, velocity.Y).Rotate((Main.rand.NextFloat() - 0.5f) * bulletSpread);
 
@@ -43,7 +43,7 @@ namespace LolHens.Items
             if (projOverride != null) projType = projOverride.type;
             
             Tile tile = Main.tile[(int)(newPos.X / 16f), (int)(newPos.Y / 16f)];
-            if ((!tile.active() || tile.collisionType == -1) && PreShootCustom(player, newPos, direction, projType))
+            if ((!tile.active() || tile.collisionType == -1) && PreShootCustom(player, newPos, holdDirection, projType))
             {
                 int projectile = Projectile.NewProjectile(newPos.X, newPos.Y, newVel.X, newVel.Y, projType, damage, knockback, player.whoAmI, 0f, 0f);
                 
