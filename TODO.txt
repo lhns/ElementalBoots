@@ -1,0 +1,16 @@
+Documentation:
+- new Magnet texture
+- Ice Storm recipe
+
+Ingame:
+- Stammina band
+- Laser Rifle
+- Space Laser
+- Frozen Slime staff recipe
+- Frozen Slime attack
+
+Credits:
+- Battle Bee
+
+Fixes:
+- Sky chest items get generated in wood chests
