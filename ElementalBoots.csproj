@@ -101,6 +101,8 @@
     <None Include="Items\spikyball\SpikyBallBlaster.json" />
     <None Include="Items\spikyball\SpikyBallBlaster.pdn" />
     <None Include="Items\spikyball\unused.zip" />
+    <None Include="Items\stamina\BandOfAnarchy.json" />
+    <None Include="Items\stamina\BandOfStamina.json" />
     <None Include="Items\wings\elemental\ElementalWings_Wings.pdn" />
     <None Include="Items\wings\elemental\unused.zip" />
     <None Include="Items\wings\laser\LaserWings_Wings.pdn" />
@@ -209,8 +211,8 @@
     <Content Include="Items\space\SpaceLaser.png" />
     <Content Include="Items\space\SpaceRifle.png" />
     <Content Include="Items\spikyball\SpikyBallBlaster.png" />
-    <Content Include="Items\stamina\Band of Anarchy.png" />
-    <Content Include="Items\stamina\Band of Stamina.png" />
+    <Content Include="Items\stamina\BandOfAnarchy.png" />
+    <Content Include="Items\stamina\BandOfStamina.png" />
     <Content Include="Items\wings\elemental\ElementalWings_Wings.png" />
     <Content Include="Items\wings\laser\LaserWings0_Wings.png" />
     <Content Include="Items\wings\laser\LaserWings1_Wings.png" />
@@ -259,6 +261,7 @@
     <Content Include="Projectiles\space\SpaceRifleRay.png" />
     <Content Include="Tiles\workshop\InventorsWorkshop.png" />
     <Content Include="Tiles\workshop\InventorsWorkshopTile.png" />
+    <Content Include="TODO.txt" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Buffs\frostslime\FrostSlime.cs" />
@@ -299,6 +302,8 @@
     <Compile Include="Items\space\SpaceLaser.cs" />
     <Compile Include="Items\space\SpaceRifle.cs" />
     <Compile Include="Items\spikyball\SpikyBallBlaster.cs" />
+    <Compile Include="Items\stamina\BandOfAnarchy.cs" />
+    <Compile Include="Items\stamina\BandOfStamina.cs" />
     <Compile Include="Items\wings\elemental\ElementalWings.cs" />
     <Compile Include="Items\wings\laser\LaserWings.cs" />
     <Compile Include="Items\wings\laser\SpectrumWings.cs" />

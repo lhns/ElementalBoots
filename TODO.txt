@@ -3,7 +3,7 @@ Documentation:
 - Ice Storm recipe
 
 Ingame:
-- Stammina band
+- Stamina band
 - Laser Rifle
 - Space Laser
 - Frozen Slime staff recipe

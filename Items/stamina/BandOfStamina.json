@@ -1,0 +1,9 @@
+{
+    "displayName": "Band of Stamina",
+    "size": [ 28, 28 ],
+    "maxStack": 1,
+    "value": [ 0, 0, 0, 0 ],
+    "rare": 1,
+    "tooltip": "",
+    "accessory": true
+}

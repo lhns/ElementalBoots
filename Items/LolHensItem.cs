@@ -14,7 +14,9 @@ namespace LolHens.Items
 
         private float usedTime = 0;
         public float usedPercent = 0;
+
         public int time = 0;
+
         public Vector2 useScreenPos = default(Vector2);
 
         public Boolean glowing = false;
