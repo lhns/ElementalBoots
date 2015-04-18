@@ -8,7 +8,7 @@ using Terraria;
 
 namespace LolHens.Items
 {
-    public class BandOfStamina : LolHensItem
+    public class BandOfAnarchy : LolHensItem
     {
         public override void Effects(Player player)
         {
