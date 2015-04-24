@@ -8,8 +8,8 @@
     "rare": 1,
     "tooltip": [ "" ],
     "useStyle": 5,
-    "useAnimation": 10,
-    "useTime": 10,
+    "useAnimation": 2,
+    "useTime": 2,
     "damage": 50,
     "knockback": 2,
 	"useSound": 11,
@@ -17,8 +17,8 @@
     "noMelee": true,
     "magic": true,
 	"shoot": "LolHens:SpaceLaserRay",
-	"shootSpeed": 6,
-	"mana": 4,
+	"shootSpeed": 1,
+	"mana": 1,
 
     "recipes": [
         {

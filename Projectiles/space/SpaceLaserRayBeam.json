@@ -1,6 +1,7 @@
 ﻿{
+    "code": "Projectiles.SpaceLaserRay",
     "displayName": "Laser Beam",
-    "size": [ 22, 30 ],
+    "size": [ 22, 24 ],
     "aiStyle": 0,
     "timeLeft": 30,
     "friendly": true,

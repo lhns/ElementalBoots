@@ -135,6 +135,7 @@
     <None Include="Projectiles\illuminant\IlluminantCrystal.json" />
     <None Include="Projectiles\slingshot\Acorn.json" />
     <None Include="Projectiles\space\SpaceLaserRay.json" />
+    <None Include="Projectiles\space\SpaceLaserRayBeam.json" />
     <None Include="Projectiles\space\SpaceRifleRay.json" />
     <None Include="README.md" />
     <None Include="Tiles\workshop\InventorsWorkshop.json" />
@@ -255,9 +256,7 @@
     <Content Include="Projectiles\illuminant\IlluminantCrystal.png" />
     <Content Include="Projectiles\slingshot\Acorn.png" />
     <Content Include="Projectiles\space\SpaceLaserRay.png" />
-    <Content Include="Projectiles\space\SpaceLaserRayBody.png" />
-    <Content Include="Projectiles\space\SpaceLaserRayHead.png" />
-    <Content Include="Projectiles\space\SpaceLaserRayTail.png" />
+    <Content Include="Projectiles\space\SpaceLaserRayBeam.png" />
     <Content Include="Projectiles\space\SpaceRifleRay.png" />
     <Content Include="Tiles\workshop\InventorsWorkshop.png" />
     <Content Include="Tiles\workshop\InventorsWorkshopTile.png" />

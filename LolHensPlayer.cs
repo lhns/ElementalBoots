@@ -50,5 +50,15 @@ namespace LolHens
             LolHensItem wings = Main.localPlayer.GetWingsItem();
             if (wings != null && wings.glowing) PlayerLayer.extraDrawInfo.colorArmorBody = new Color(255, 255, 255);
         }
+
+        public virtual void PostHurt(bool pvp, bool quiet, int hitDirection, string deathtext, bool crit, float critMultiplier, ref double parsedDamage)
+        {
+            TConsole.Print("Dealt");
+        }
+
+        public virtual void PostKill(double damage, int hitDirection, bool pvp, string deathText)
+        {
+            TConsole.Print("Dealt");
+        }
     }
 }

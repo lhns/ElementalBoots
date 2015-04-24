@@ -16,7 +16,9 @@ namespace LolHens.Items
     {
         public Vector2 bulletOffset = new Vector2(0, 0);
         public Vector2 bulletOrigin = new Vector2(0, 0);
+        public float bulletXCorrection = 0;
 
+        public Boolean noclip = false;
         public float bulletSpread = 0;
         public bool addPlayerVel = false;
         public Projectile projOverride = null;
@@ -30,7 +32,7 @@ namespace LolHens.Items
         {
             base.PreShoot(player, position, velocity, projType, damage, knockback);
 
-            Vector2 holdOrigin = new Vector2(bulletOrigin.X * player.direction, bulletOrigin.Y);
+            Vector2 holdOrigin = new Vector2(bulletOrigin.X * player.direction + bulletXCorrection, bulletOrigin.Y);
 
             Vector2 holdDirection = new Vector2(bulletOffset.X, bulletOffset.Y * player.direction).Rotate(new Vector2(velocity.X, velocity.Y).ToRotation(), new Vector2(0, 0));
 
@@ -41,9 +43,24 @@ namespace LolHens.Items
             if (addPlayerVel) velocity = velocity + player.velocity;
             
             if (projOverride != null) projType = projOverride.type;
-            
+
+            Boolean cancel = false;
+
             Tile tile = Main.tile[(int)(newPos.X / 16f), (int)(newPos.Y / 16f)];
-            if ((!tile.active() || tile.collisionType == -1) && PreShootCustom(player, newPos, holdDirection, projType))
+
+            if (!noclip && tile.active() &&  tile.collisionType != -1) {
+                cancel = true;
+
+                Main.PlaySound(0, (int)newPos.X, (int)newPos.Y, 1);
+                for (int m = 0; m < 5; m++)
+                {
+                    int dustID = Dust.NewDust(newPos, 10, 10, 1, velocity.X * 0.1f, velocity.Y * 0.1f, 100, default(Color), 1.2f);
+                }
+            }
+
+            if (!cancel && !PreShootCustom(player, newPos, newVel, projType)) cancel = true;
+
+            if (!cancel)
             {
                 int projectile = Projectile.NewProjectile(newPos.X, newPos.Y, newVel.X, newVel.Y, projType, damage, knockback, player.whoAmI, 0f, 0f);
                 
@@ -53,11 +70,6 @@ namespace LolHens.Items
             }
             else
             {
-                Main.PlaySound(0, (int)newPos.X, (int)newPos.Y, 1);
-                for (int m = 0; m < 5; m++)
-                {
-                    int dustID = Dust.NewDust(newPos, 10, 10, 1, velocity.X * 0.1f, velocity.Y * 0.1f, 100, default(Color), 1.2f);
-                }
                 CancelMana();
             }
 
@@ -76,7 +88,7 @@ namespace LolHens.Items
             return false;
         }
 
-        public virtual bool PreShootCustom(Player player, Vector2 position, Vector2 direction, int projType) { return true; }
+        public virtual bool PreShootCustom(Player player, Vector2 position, Vector2 velocity, int projType) { return true; }
 
         public virtual void PostShootCustom(Player player, Projectile projectile) { }
 

@@ -23,15 +23,5 @@ namespace LolHens.Items
                 }
             }
         }
-
-        public override void DamageNPC(Player owner, NPC npc, int hitDir, ref int damage, ref float knockback, ref bool crit, ref float critMult)
-        {
-            TConsole.Print("Damage");
-        }
-
-        public override void DealtNPC(Player owner, NPC npc, int hitDir, int dmgDealt, float knockback, bool crit)
-        {
-            TConsole.Print("Dealt");
-        }
     }
 }
