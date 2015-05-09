@@ -6,7 +6,6 @@ Ingame:
 - Stamina band
 - Laser Rifle
 - Space Laser
-- Frozen Slime staff recipe
 - Frozen Slime attack
 
 Credits:
