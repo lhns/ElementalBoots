@@ -318,6 +318,7 @@
     <Compile Include="src\LolHensBase.cs" />
     <Compile Include="src\Buffs\LolHensBuff.cs" />
     <Compile Include="src\Items\LolHensGun.cs" />
+    <Compile Include="src\LolHensEvent.cs" />
     <Compile Include="src\LolHensInterface.cs" />
     <Compile Include="src\Items\LolHensItem.cs" />
     <Compile Include="src\NPCs\LolHensNPC.cs" />
