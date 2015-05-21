@@ -10,7 +10,13 @@ namespace LolHens.Items
 {
     public class IlluminantStarNecklace : LolHensItem
     {
-        public bool playerDead = false;
+        public override void Init()
+        {
+            LolHensEvent.Register((LolHensEvent.PlayerRespawn e) =>
+            {
+                e.player.player.statMana = e.player.player.statManaMax;
+            });
+        }
 
         public override void Effects(Player player)
         {
@@ -18,11 +24,6 @@ namespace LolHens.Items
 
             player.starCloak = System.Math.Max(player.starCloak, 3);
             player.longInvince = true;
-        }
-
-        public override void PlayerDied(Player player)
-        {
-            player.statMana = player.statManaMax;
         }
 
         public override void DamagePlayer(NPC npc, Player owner, int hitDir, ref int damage, ref bool crit, ref float critMult)

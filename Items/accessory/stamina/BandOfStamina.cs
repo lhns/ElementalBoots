@@ -10,18 +10,47 @@ namespace LolHens.Items
 {
     public class BandOfStamina : LolHensItem
     {
+        public override void Init()
+        {
+            base.Init();
+
+            LolHensEvent.Register((LolHensEvent.EntityDamaged e) =>
+            {
+                time = 0;
+            });
+
+            LolHensEvent.Register((LolHensEvent.PlayerRespawn e) =>
+            {
+                time = 0;
+            });
+        }
+
         public override void Effects(Player player)
         {
             base.Effects(player);
-            if (time > 4)
+
+            int chance = 0;
+
+            if (seconds() >= 20)
             {
-                for (int i = 0; i < (int)(Math.Abs(player.velocity.X) * 1.4f); i++)
-                {
-                    int dust = Dust.NewDust(new Vector2(player.position.X, player.position.Y + player.height / 2.4f), player.width, player.height / 3, 6, 0f, 0f, 0, default(Color), 1.6f);
-                    Main.dust[dust].noGravity = true;
-                    Main.dust[dust].velocity -= player.velocity * 0.5f;
-                }
+                chance = 15;
             }
+            else if (seconds() >= 10)
+            {
+                chance = 5;
+            }
+            else if (seconds() >= 3)
+            {
+                chance = 2;
+            }
+            else if (seconds() >= 1)
+            {
+                chance = 1;
+            }
+
+            player.meleeCrit += chance;
+            player.rangedCrit += chance;
+            player.magicCrit += chance;
         }
     }
 }

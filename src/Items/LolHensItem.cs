@@ -37,7 +37,7 @@ namespace LolHens.Items
 
         public virtual void InitPost() { }
 
-        public virtual void PlayerDied(Player player) { }
+        //public virtual void PlayerDied(Player player) { }
 
         public virtual void UseItemPost(Player player) { }
 
@@ -45,7 +45,7 @@ namespace LolHens.Items
         {
             time++;
             EffectsPre(player);
-            if (LolHensPlayer.dead) PlayerDied(player);
+            //if (LolHensPlayer.dead) PlayerDied(player);
         }
 
         public virtual void EffectsPre(Player player) { }
@@ -134,6 +134,11 @@ namespace LolHens.Items
         public virtual bool DrawItemSlotItemStats(SpriteBatch sb, ItemSlot slot, Item item, float scale)
         {
             return true;
+        }
+
+        public virtual int seconds()
+        {
+            return time / 45;
         }
     }
 }

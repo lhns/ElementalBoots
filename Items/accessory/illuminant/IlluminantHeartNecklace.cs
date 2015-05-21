@@ -10,17 +10,19 @@ namespace LolHens.Items
 {
     public class IlluminantHeartNecklace : LolHensItem
     {
+        public override void Init()
+        {
+            LolHensEvent.Register((LolHensEvent.PlayerRespawn e) =>
+            {
+                e.player.player.statLife = e.player.player.statLifeMax;
+            });
+        }
 
         public override void Effects(Player player)
         {
             base.Effects(player);
 
             player.panic = true;
-        }
-
-        public override void PlayerDied(Player player)
-        {
-            player.statLife = player.statLifeMax;
         }
 
         public override void DamagePlayer(NPC npc, Player owner, int hitDir, ref int damage, ref bool crit, ref float critMult)

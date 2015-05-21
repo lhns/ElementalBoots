@@ -65,8 +65,8 @@
     <None Include="Items\accessory\bottle\WeatherInABottle.pdn" />
     <None Include="Items\accessory\illuminant\IlluminantHeartNecklace.json" />
     <None Include="Items\accessory\illuminant\IlluminantPearlsNecklace.json" />
-    <None Include="Items\accessory\illuminant\IlluminantStaff.json" />
-    <None Include="Items\accessory\illuminant\IlluminantStaff.pdn" />
+    <None Include="Items\weapon\illuminant\IlluminantStaff.json" />
+    <None Include="Items\weapon\illuminant\IlluminantStaff.pdn" />
     <None Include="Items\accessory\illuminant\IlluminantStarNecklace.json" />
     <None Include="Items\accessory\magnet\Magnet.json" />
     <None Include="Items\accessory\magnet\unused.zip" />
@@ -183,7 +183,7 @@
     <Content Include="Items\accessory\bottle\TornadoInABottle.png" />
     <Content Include="Items\accessory\illuminant\IlluminantHeartNecklace.png" />
     <Content Include="Items\accessory\illuminant\IlluminantPearlsNecklace.png" />
-    <Content Include="Items\accessory\illuminant\IlluminantStaff.png" />
+    <Content Include="Items\weapon\illuminant\IlluminantStaff.png" />
     <Content Include="Items\accessory\illuminant\IlluminantStarNecklace.png" />
     <Content Include="Items\accessory\magnet\Magnet.png" />
     <Content Include="Items\accessory\necklace\NightskyNecklace.png" />
@@ -277,7 +277,7 @@
     <Compile Include="Items\accessory\bottle\TornadoInABottle.cs" />
     <Compile Include="Items\accessory\illuminant\IlluminantHeartNecklace.cs" />
     <Compile Include="Items\accessory\illuminant\IlluminantPearlsNecklace.cs" />
-    <Compile Include="Items\accessory\illuminant\IlluminantStaff.cs" />
+    <Compile Include="Items\weapon\illuminant\IlluminantStaff.cs" />
     <Compile Include="Items\accessory\illuminant\IlluminantStarNecklace.cs" />
     <Compile Include="Items\accessory\magnet\Magnet.cs" />
     <Compile Include="Items\accessory\necklace\NightskyNecklace.cs" />
