@@ -14,12 +14,12 @@ namespace LolHens.Items
         {
             base.Init();
 
-            LolHensEvent.Register((LolHensEvent.EntityDamaged e) =>
+            modBase.eventRegistry.Register((LolHensEvent.EntityDamaged e) =>
             {
                 time = 0;
             });
 
-            LolHensEvent.Register((LolHensEvent.PlayerRespawn e) =>
+            modBase.eventRegistry.Register((LolHensEvent.PlayerRespawn e) =>
             {
                 time = 0;
             });

@@ -22,9 +22,17 @@ namespace LolHens.Items
         private float lastWingTime = 0;
         private int lastRocketTime = 0;
 
+        public override void InitType(Type type)
+        {
+            if (type != typeof(TornadoInABottle)) return;
+
+            modBase.eventRegistry.Register((LolHensEvent.ChestGenerated e) => { if (e.chestInfo.height == ChestInfo.Height.SKY) e.chestInfo.AddLoot(item, 0.1f, true); });
+        }
+
         public override void OnUnEquip(Player player, TAPI.UIKit.ItemSlot slot)
         {
             base.OnUnEquip(player, slot);
+
             lastWingTime = 0;
             lastRocketTime = 0;
         }

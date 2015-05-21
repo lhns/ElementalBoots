@@ -15,9 +15,15 @@ namespace LolHens.Items
 {
     public class LilBombard : LolHensGun
     {
+        public override void InitType(Type type)
+        {
+            ItemDef.byName["Vanilla:Cannonball"].MakeAmmo("Cannonball");
+        }
+
         public override void Init()
         {
             base.Init();
+
             bulletOffset.X = 30;
             bulletOffset.Y -= 10;
             bulletOrigin.Y -= 10;

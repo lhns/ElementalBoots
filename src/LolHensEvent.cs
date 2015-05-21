@@ -9,7 +9,7 @@ using TAPI;
 
 namespace LolHens
 {
-    public class LolHensEvent
+    public abstract class LolHensEvent
     {
         private Boolean cancelled = false;
 
@@ -23,36 +23,50 @@ namespace LolHens
             return cancelled;
         }
 
-        private static List<EventListener> eventListeners = new List<EventListener>();
+        protected virtual void OnEventPre() {}
 
-        public static void Register<E>(Action<E> listener) where E : LolHensEvent
-        {
-            eventListeners.Add(new EventListener(e => listener((E)e), typeof(E)));
-        }
+        protected virtual void OnEventPost() {}
 
-        public static Boolean Call<E>(E lolHensEvent) where E : LolHensEvent
+        public class Registry
         {
-            foreach (EventListener listener in eventListeners)
+            private List<EventListener> eventListeners = new List<EventListener>();
+
+            public void Register<E>(Action<E> listener) where E : LolHensEvent
             {
-                if (listener.type == typeof(E))
-                {
-                    listener.action(lolHensEvent);
-                    if (lolHensEvent.IsCancelled()) return false;
-                }
+                eventListeners.Add(new EventListener(e => listener((E)e), typeof(E)));
             }
 
-            return true;
-        }
-
-        private class EventListener
-        {
-            public Action<LolHensEvent> action;
-            public Type type;
-
-            public EventListener(Action<LolHensEvent> action, Type type)
+            public Boolean Call<E>(E lolHensEvent) where E : LolHensEvent
             {
-                this.action = action;
-                this.type = type;
+                List<EventListener> eventListeners = new List<EventListener>();
+                eventListeners.AddRange(this.eventListeners);
+
+                lolHensEvent.OnEventPre();
+
+                foreach (EventListener listener in eventListeners)
+                {
+                    if (listener.type == typeof(E))
+                    {
+                        listener.action(lolHensEvent);
+                        if (lolHensEvent.IsCancelled()) break;
+                    }
+                }
+
+                lolHensEvent.OnEventPost();
+
+                return !lolHensEvent.IsCancelled();
+            }
+
+            private class EventListener
+            {
+                public Action<LolHensEvent> action;
+                public Type type;
+
+                public EventListener(Action<LolHensEvent> action, Type type)
+                {
+                    this.action = action;
+                    this.type = type;
+                }
             }
         }
 
@@ -79,11 +93,11 @@ namespace LolHens
                 this.critMult = critMult;
             }
 
-            public static void Call(LolHensPlayer player, CodableEntity victim, Projectile projectile, int hitDir, ref int damage, ref float knockback, ref bool crit, ref float critMult)
+            public static void Call(Registry registry, LolHensPlayer player, CodableEntity victim, Projectile projectile, int hitDir, ref int damage, ref float knockback, ref bool crit, ref float critMult)
             {
                 EntityDamaged lolHensEvent = new EntityDamaged(player, victim, projectile, hitDir, damage, knockback, crit, critMult);
 
-                Call(lolHensEvent);
+                registry.Call(lolHensEvent);
 
                 damage = lolHensEvent.damage;
                 knockback = lolHensEvent.knockback;
@@ -109,11 +123,11 @@ namespace LolHens
                 this.deathText = deathText;
             }
 
-            public static void Call(LolHensPlayer player, double damage, int hitDir, bool pvp, string deathText)
+            public static void Call(Registry registry, LolHensPlayer player, double damage, int hitDir, bool pvp, string deathText)
             {
                 PlayerDeath lolHensEvent = new PlayerDeath(player, damage, hitDir, pvp, deathText);
 
-                Call(lolHensEvent);
+                registry.Call(lolHensEvent);
             }
         }
 
@@ -126,11 +140,28 @@ namespace LolHens
                 this.player = player;
             }
 
-            public static void Call(LolHensPlayer player)
+            public static void Call(Registry registry, LolHensPlayer player)
             {
                 PlayerRespawn lolHensEvent = new PlayerRespawn(player);
 
-                Call(lolHensEvent);
+                registry.Call(lolHensEvent);
+            }
+        }
+
+        public class ChestGenerated: LolHensEvent
+        {
+            public readonly ChestInfo chestInfo;
+
+            public ChestGenerated(ChestInfo chestInfo)
+            {
+                this.chestInfo = chestInfo;
+            }
+
+            public static void Call(Registry registry, ChestInfo chestInfo)
+            {
+                ChestGenerated lolHensEvent = new ChestGenerated(chestInfo);
+
+                registry.Call(lolHensEvent);
             }
         }
     }

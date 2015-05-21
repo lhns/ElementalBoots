@@ -13,6 +13,14 @@ namespace LolHens.Items
         public bool shot = false;
         private Texture2D[] textures = new Texture2D[7];
 
+        public override void InitType(Type type)
+        {
+            ItemDef.byName["Vanilla:Acorn"].MakeAmmo("Acorn");
+
+            modBase.eventRegistry.Register((LolHensEvent.ChestGenerated e) => { if (e.chestInfo.height == ChestInfo.Height.SURFACE) e.chestInfo.AddLoot(item, 0.1f, true); });
+            modBase.eventRegistry.Register((LolHensEvent.ChestGenerated e) => { if (e.chestInfo.height == ChestInfo.Height.SURFACE) e.chestInfo.AddLoot(ItemDef.byName["Vanilla:Acorn"], 0.6f, false, 10, 40); });
+        }
+
         public override void InitTextures()
         {
             textures[0] = modBase.textures["Items/weapon/slingshot/Slingshot"];

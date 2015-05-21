@@ -24,6 +24,12 @@ namespace LolHens
         public List<LolHensProjectile> projectiles = new List<LolHensProjectile>();
         public List<LolHensNPC> npcs = new List<LolHensNPC>();
 
+        public List<Type> initializedTypes = new List<Type>();
+
+        public LolHensEvent.Registry eventRegistry = new LolHensEvent.Registry();
+
+        public static Exception e;
+
         public LolHensBase() : base() { instance = this; }
 
         public override void OnLoad()
@@ -32,22 +38,14 @@ namespace LolHens
 
         public override void OnAllModsLoaded()
         {
-            NPCDef.byName["Vanilla:Illuminant Bat"].AddDrop(ItemDef.byName["LolHens:IlluminantPearl"], 0.0167f);
-            NPCDef.byName["Vanilla:Illuminant Slime"].AddDrop(ItemDef.byName["LolHens:IlluminantPearl"], 0.0167f);
-            NPCDef.byName["Vanilla:Eyezor"].AddDrop(ItemDef.byName["LolHens:BrokenHeroWings"], 0.004f);
             NPCDef.byName["Vanilla:King Slime"].AddDrop(ItemDef.byName["Vanilla:Gel"], 1, 40, 80);
 
-            ItemDef.byName["Vanilla:Acorn"].MakeAmmo("Acorn");
-            ItemDef.byName["Vanilla:Spiky Ball"].MakeAmmo("SpikyBall");
-            ItemDef.byName["Vanilla:Cannonball"].MakeAmmo("Cannonball");
+            InitializeItems();
+        }
 
-            ItemDef.byName["LolHens:TornadoInABottle"].MakeChestLoot(chestInfo => chestInfo.GetHeight() == ChestInfo.Height.SKY, 0.1f, true);
-            ItemDef.byName["LolHens:Slingshot"].MakeChestLoot(chestInfo => chestInfo.GetHeight() == ChestInfo.Height.SURFACE, 0.1f, true);
-            ItemDef.byName["Vanilla:Acorn"].MakeChestLoot(chestInfo => chestInfo.GetHeight() == ChestInfo.Height.SURFACE, 0.3f, false, 10, 40);
-            ItemDef.byName["LolHens:Magnet"].MakeChestLoot(chestInfo => chestInfo.GetHeight() == ChestInfo.Height.UNDERGROUND, 0.05f, true);
-            ItemDef.byName["LolHens:Extinguisher"].MakeChestLoot(chestInfo => chestInfo.GetHeight() == ChestInfo.Height.UNDERGROUND, 0.05f, true);
-            ItemDef.byName["LolHens:SpikyBallBlaster"].MakeChestLoot(chestInfo => chestInfo.GetHeight() == ChestInfo.Height.CAVERN, 0.05f, true);
-            ItemDef.byName["LolHens:FrostSlimeWand"].MakeChestLoot(chestInfo => chestInfo.GetHeight() == ChestInfo.Height.CAVERN, 0.05f, true);
+        private void InitializeItems()
+        {
+            foreach (KeyValuePair<String, Item> entry in ItemDef.byName) entry.Value.AsLolHensItem();
         }
 
         public override object OnModCall(TAPI.ModBase mod, params object[] args)
@@ -73,12 +71,6 @@ namespace LolHens
             var entries = entriesField.GetValue(source) as Array;
             if (entries == null) return 0;
             return entries.Length;
-        }
-
-
-        public static void MakeChestLoot(this Item item, Func<ChestInfo, bool> filter, float chance = 1, bool rare = false, int numFrom = 1, int numTo = 1)
-        {
-            ChestInfo.Loot.Add(item, filter, chance, rare, numFrom, numTo);
         }
 
         public static void MakeAmmo(this Item item, String ammoName)

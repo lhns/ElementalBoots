@@ -277,6 +277,8 @@
     <Compile Include="Items\accessory\bottle\TornadoInABottle.cs" />
     <Compile Include="Items\accessory\illuminant\IlluminantHeartNecklace.cs" />
     <Compile Include="Items\accessory\illuminant\IlluminantPearlsNecklace.cs" />
+    <Compile Include="Items\accessory\wings\terra\BrokenHeroWings.cs" />
+    <Compile Include="Items\material\illuminant\IlluminantPearl.cs" />
     <Compile Include="Items\weapon\illuminant\IlluminantStaff.cs" />
     <Compile Include="Items\accessory\illuminant\IlluminantStarNecklace.cs" />
     <Compile Include="Items\accessory\magnet\Magnet.cs" />

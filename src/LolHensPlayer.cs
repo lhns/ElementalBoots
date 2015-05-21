@@ -17,7 +17,6 @@ namespace LolHens
     {
         new public LolHensBase modBase;
 
-        //public static bool dead = false;
         public static bool flyingVertically = false;
         public static bool resetFlightTimer = false;
 
@@ -33,16 +32,8 @@ namespace LolHens
             if (dead && player.respawnTimer == 0)
             {
                 dead = false;
-                LolHensEvent.PlayerRespawn.Call(this);
+                LolHensEvent.PlayerRespawn.Call(modBase.eventRegistry, this);
             }
-            /*dead = false;
-            if (player.dead) died = true;
-            if (player.respawnTimer == 0 && died)
-            {
-                LolHensBase.instance.onPlayerRespawn.ForEach(action => action(this));
-                died = false;
-                dead = true;
-            }*/
 
             resetFlightTimer = (player.grappling[0] >= 0
                 || (player.grappling[0] == -1 && !player.tongued && (player.velocity.Y == 0f || player.sliding))
@@ -60,7 +51,7 @@ namespace LolHens
         public override void PostKill(double damage, int hitDirection, bool pvp, string deathText)
         {
             dead = true;
-            LolHensEvent.PlayerDeath.Call(this, damage, hitDirection, pvp, deathText);
+            LolHensEvent.PlayerDeath.Call(modBase.eventRegistry, this, damage, hitDirection, pvp, deathText);
         }
 
         public override void DamageNPC(NPC npc, int hitDir, ref int damage, ref float knockback, ref bool crit, ref float critMult)
@@ -99,7 +90,7 @@ namespace LolHens
 
         private void Damage(CodableEntity victim, Projectile projectile, int hitDir, ref int damage, ref float knockback, ref bool crit, ref float critMult)
         {
-            LolHensEvent.EntityDamaged.Call(this, victim, projectile, hitDir, ref damage, ref knockback, ref crit, ref critMult);
+            LolHensEvent.EntityDamaged.Call(modBase.eventRegistry, this, victim, projectile, hitDir, ref damage, ref knockback, ref crit, ref critMult);
         }
     }
 }

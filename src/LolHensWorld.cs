@@ -16,7 +16,14 @@ namespace LolHens
     {
         public override void WorldGenPostGen()
         {
-            ChestInfo.Loot.FillAllChests();
+            try
+            {
+                ChestInfo.OnChestsGenerate();
+            }
+            catch (Exception e)
+            {
+                TConsole.Print(e);
+            }
         }
     }
 }

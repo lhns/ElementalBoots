@@ -14,7 +14,7 @@ namespace LolHens.Items
     {
         public override void Init()
         {
-            LolHensEvent.Register((LolHensEvent.PlayerRespawn e) =>
+            modBase.eventRegistry.Register((LolHensEvent.PlayerRespawn e) =>
             {
                 e.player.player.statLife = e.player.player.statLifeMax;
                 e.player.player.statMana = e.player.player.statManaMax;

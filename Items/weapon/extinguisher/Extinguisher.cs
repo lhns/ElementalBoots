@@ -10,9 +10,15 @@ namespace LolHens.Items
 {
     class Extinguisher : LolHensGun
     {
+        public override void InitType(Type type)
+        {
+            modBase.eventRegistry.Register((LolHensEvent.ChestGenerated e) => { if (e.chestInfo.height == ChestInfo.Height.UNDERGROUND) e.chestInfo.AddLoot(item, 0.05f, true); });
+        }
+
         public override void Init()
         {
             base.Init();
+
             bulletOffset.X = 30;
             bulletOffset.Y -= 20;
             bulletOrigin.Y += 18;

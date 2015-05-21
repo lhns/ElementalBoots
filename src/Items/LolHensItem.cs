@@ -25,9 +25,20 @@ namespace LolHens.Items
         public sealed override void Initialize()
         {
             modBase = base.modBase as LolHensBase;
+
             modBase.items.Add(this);
+            
             Init();
+            
             if (!Main.dedServ) InitTextures();
+
+            Type type = GetType();
+            if (!modBase.initializedTypes.Contains(type))
+            {
+                modBase.initializedTypes.Add(type);
+                InitType(type);
+            }
+            
             InitPost();
         }
 
@@ -37,7 +48,7 @@ namespace LolHens.Items
 
         public virtual void InitPost() { }
 
-        //public virtual void PlayerDied(Player player) { }
+        public virtual void InitType(Type type) { }
 
         public virtual void UseItemPost(Player player) { }
 
@@ -45,7 +56,6 @@ namespace LolHens.Items
         {
             time++;
             EffectsPre(player);
-            //if (LolHensPlayer.dead) PlayerDied(player);
         }
 
         public virtual void EffectsPre(Player player) { }

@@ -12,34 +12,27 @@ namespace LolHens
 {
     public class ChestInfo
     {
-        private Chest chest;
+        public readonly Chest chest;
+        public readonly Tile tile;
+        public readonly int style;
+        public readonly int height;
+
+        private bool rareItem = false;
 
         public ChestInfo(Chest chest)
         {
             this.chest = chest;
+            this.tile = Main.tile[chest.x, chest.y];
+            this.style = tile.frameX / 36;
+            this.height = GetHeight();
         }
 
-        public Chest GetChest()
-        {
-            return chest;
-        }
-
-        public Tile GetTile()
-        {
-            return Main.tile[chest.x, chest.y];
-        }
-
-        public int GetStyle()
-        {
-            return GetTile().frameX / 36;
-        }
-
-        public int GetHeight()
+        private int GetHeight()
         {
             int height;
             int y = chest.y;
 
-            if (GetStyle() == Style.SKY)
+            if (style == Style.SKY)
             {
                 height = Height.SKY;
             }
@@ -63,6 +56,11 @@ namespace LolHens
             return height;
         }
 
+        public bool HasRareItem()
+        {
+            return rareItem;
+        }
+
         public bool AddItem(Item item, int stack)
         {
             if (chest == null || item == null) return false;
@@ -82,6 +80,30 @@ namespace LolHens
             }
 
             return false;
+        }
+
+        public bool AddLoot(Item item, float chance = 1, bool rare = false, int numFrom = 1, int numTo = 1)
+        {
+            if (!(rare && rareItem) && WorldGen.genRand.Next(1, (int)(1f / chance)) == 1)
+            {
+                int stack = WorldGen.genRand.Next(numFrom, numTo);
+                if (stack <= 0) return true;
+
+                if (rare) rareItem = true;
+
+                return AddItem(item, stack);
+            }
+            return true;
+        }
+
+        public static void OnChestsGenerate()
+        {
+            foreach (Chest chest in Main.chest)
+            {
+                if (chest == null) continue;
+
+                LolHensEvent.ChestGenerated.Call(LolHensBase.instance.eventRegistry, new ChestInfo(chest));
+            }
         }
 
         public static class Style
@@ -110,58 +132,6 @@ namespace LolHens
             public const int UNDERGROUND = 2;
             public const int SURFACE = 3;
             public const int SKY = 4;
-        }
-
-        public class Loot
-        {
-            private static List<Loot> loots = new List<Loot>();
-
-            public static void FillAllChests()
-            {
-                foreach (Chest chest in Main.chest)
-                {
-                    if (chest == null) continue;
-
-                    foreach (Loot loot in loots) if (loot.FillChest(new ChestInfo(chest))) break;
-                }
-            }
-
-            public static void Add(Item item, Func<ChestInfo, bool> filter, float chance = 1, bool rare = false, int numFrom = 1, int numTo = 1)
-            {
-                loots.Add(new Loot(item, chance, numFrom, numTo, rare, filter));
-            }
-
-            public Item item;
-            public float chance;
-            public int numFrom, numTo;
-            public Func<ChestInfo, bool> filter;
-            public bool rare;
-
-            private Loot(Item item, float chance, int numFrom, int numTo, bool rare, Func<ChestInfo, bool> filter)
-            {
-                this.item = item;
-                this.chance = chance;
-                this.numFrom = numFrom;
-                this.numTo = numTo;
-                this.filter = filter;
-                this.rare = rare;
-            }
-
-            public bool FillChest(ChestInfo chest)
-            {
-                if (filter(chest))
-                {
-                    if (WorldGen.genRand.Next(1, (int)(1f / chance)) == 1)
-                    {
-                        int stack = WorldGen.genRand.Next(numFrom, numTo);
-                        if (stack <= 0) return true;
-
-                        return chest.AddItem(item, stack);
-                    }
-                    return rare;
-                }
-                return false;
-            }
         }
     }
 }
