@@ -28,8 +28,6 @@ namespace LolHens
 
         public LolHensEvent.Registry eventRegistry = new LolHensEvent.Registry();
 
-        public static Exception e;
-
         public LolHensBase() : base() { instance = this; }
 
         public override void OnLoad()
