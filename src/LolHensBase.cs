@@ -163,18 +163,19 @@ namespace LolHens
             return Main.projectile[Projectile.NewProjectile(x, y, speedX, speedY, projectile.type, damage, knockBack, owner, ai0, ai1)].AsLolHensProjectile();
         }
 
-        public static void UseAmmo(this Player player)
+        public static bool UseAmmo(this Player player)
         {
-            if (player.inventory[player.selectedItem].useAmmo == 0) return;
+            if (player.inventory[player.selectedItem].useAmmo == 0) return true;
             for (int i = 0; i < player.inventory.Length; i++)
             {
                 if (player.inventory[i].ammo == player.inventory[player.selectedItem].useAmmo && player.inventory[i].stack > 0)
                 {
                     player.inventory[i].stack--;
                     if (player.inventory[i].stack == 0) player.inventory[i].SetDefaults(0);
-                    return;
+                    return true;
                 }
             }
+            return false;
         }
 
         public static bool isEnemy(this CodableEntity entity)

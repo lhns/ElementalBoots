@@ -12,7 +12,7 @@ using TAPI;
 
 namespace LolHens.Items
 {
-    public class LolHensGun : LolHensItem
+    public abstract class LolHensGun : LolHensItem
     {
         public Vector2 bulletOffset = new Vector2(0, 0);
         public Vector2 bulletOrigin = new Vector2(0, 0);
@@ -58,7 +58,7 @@ namespace LolHens.Items
                 }
             }
 
-            if (!cancel && !PreShootCustom(player, newPos, newVel, projType)) cancel = true;
+            if (!cancel && !PreShootCustom(player, newPos, newVel, projType, damage, knockback)) cancel = true;
 
             if (!cancel)
             {
@@ -88,7 +88,7 @@ namespace LolHens.Items
             return false;
         }
 
-        public virtual bool PreShootCustom(Player player, Vector2 position, Vector2 velocity, int projType) { return true; }
+        public virtual bool PreShootCustom(Player player, Vector2 position, Vector2 velocity, int projType, int damage, float knockback) { return true; }
 
         public virtual void PostShootCustom(Player player, Projectile projectile) { }
 

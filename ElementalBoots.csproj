@@ -133,8 +133,8 @@
     <None Include="Projectiles\weapon\icestorm\IceCrystal.json" />
     <None Include="Projectiles\weapon\illuminant\IlluminantCrystal.json" />
     <None Include="Projectiles\weapon\slingshot\Acorn.json" />
+    <None Include="Projectiles\weapon\space\SpaceLaserNozzle.json" />
     <None Include="Projectiles\weapon\space\SpaceLaserRay.json" />
-    <None Include="Projectiles\weapon\space\SpaceLaserRayBeam.json" />
     <None Include="Projectiles\weapon\space\SpaceRifleRay.json" />
     <None Include="README.md" />
     <None Include="Tiles\crafting\workshop\InventorsWorkshop.json" />
@@ -253,8 +253,8 @@
     <Content Include="Projectiles\weapon\icestorm\texture\IceCrystal2.png" />
     <Content Include="Projectiles\weapon\illuminant\IlluminantCrystal.png" />
     <Content Include="Projectiles\weapon\slingshot\Acorn.png" />
+    <Content Include="Projectiles\weapon\space\SpaceLaserNozzle.png" />
     <Content Include="Projectiles\weapon\space\SpaceLaserRay.png" />
-    <Content Include="Projectiles\weapon\space\SpaceLaserRayBeam.png" />
     <Content Include="Projectiles\weapon\space\SpaceRifleRay.png" />
     <Content Include="Tiles\crafting\workshop\InventorsWorkshop.png" />
     <Content Include="Tiles\crafting\workshop\InventorsWorkshopTile.png" />
@@ -317,6 +317,7 @@
     <Compile Include="Projectiles\weapon\space\SpaceLaserRay.cs" />
     <Compile Include="Projectiles\weapon\space\SpaceRifleRay.cs" />
     <Compile Include="src\ChestInfo.cs" />
+    <Compile Include="src\Items\LolHensRayGun.cs" />
     <Compile Include="src\LolHensBase.cs" />
     <Compile Include="src\Buffs\LolHensBuff.cs" />
     <Compile Include="src\Items\LolHensGun.cs" />

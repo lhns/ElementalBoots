@@ -20,7 +20,7 @@ namespace LolHens.Items
             bulletOffset.X = 40;
         }
 
-        public override bool PreShootCustom(Player player, Vector2 position, Vector2 direction, int projType)
+        public override bool PreShootCustom(Player player, Vector2 position, Vector2 direction, int projType, int damage, float knockback)
         {
             for (int m = 0; m < 5; m++)
             {
