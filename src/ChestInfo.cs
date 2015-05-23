@@ -32,7 +32,7 @@ namespace LolHens
             int height;
             int y = chest.y;
 
-            if (style == Style.SKY)
+            if (style == Style.SKYWARE)
             {
                 height = Height.SKY;
             }
@@ -111,18 +111,48 @@ namespace LolHens
             public const int WOOD = 0;
             public const int GOLD = 1;
             public const int GOLD_LOCKED = 2;
-            public const int HELL = 4;
-            public const int JUNGLE = 10;
+            public const int SHADOW = 3;
+            public const int SHADOW_LOCKED = 4;
+            public const int BARREL = 5;
+            public const int TRASHCAN = 6;
+            public const int EBONWOOD = 7;
+            public const int MAHOGANY = 8;
+            public const int PEARLWOOD = 9;
+            public const int IVY = 10;
             public const int ICE = 11;
-            public const int SKY = 13;
-            public const int SPIDERNEST = 15;
-            public const int TEMPLE = 16;
+            public const int LIVINGWOOD = 12;
+            public const int SKYWARE = 13;
+            public const int SHADEWOOD = 14;
+            public const int WEB = 15;
+            public const int LIHZAHRD = 16;
             public const int WATER = 17;
-            public const int DUNGEON_JUNGLE = 23;
-            public const int DUNGEON_CORRUPTION = 24;
-            public const int DUNGEON_CRIMSON = 25;
-            public const int DUNGEON_HALLOW = 26;
-            public const int DUNGEON_ICE = 27;
+            public const int JUNGLE = 18;
+            public const int CORRUPTION = 19;
+            public const int CRIMSON = 20;
+            public const int HALLOWED = 21;
+            public const int FROZEN = 22;
+            public const int JUNGLE_LOCKED = 23;
+            public const int CORRUPTION_LOCKED = 24;
+            public const int CRIMSON_LOCKED = 25;
+            public const int HALLOWED_LOCKED = 26;
+            public const int FROZEN_LOCKED = 27;
+            public const int DYNASTY = 28;
+            public const int HONEY = 29;
+            public const int STEAMPUNK = 30;
+            public const int PALMWOOD = 31;
+            public const int MUSHROOM = 32;
+            public const int BOREALWOOD = 33;
+            public const int SLIME = 34;
+            public const int DUNGEON_GREEN = 35;
+            public const int DUNGEON_PINK = 36;
+            public const int DUNGEON_BLUE = 37;
+            public const int BONE = 38;
+            public const int CACTUS = 39;
+            public const int FLESH = 40;
+            public const int OBSIDIAN = 41;
+            public const int PUMPKIN = 42;
+            public const int SPOOKY = 43;
+            public const int GLASS = 44;
         }
 
         public static class Height

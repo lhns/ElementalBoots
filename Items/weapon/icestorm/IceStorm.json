@@ -3,7 +3,7 @@
     "size": [ 28, 30 ],
     "maxStack": 1,
     "value": [ 0, 0, 10, 0 ],
-    "rare": 0,
+    "rare": 4,
     "tooltip": "Shoots Ice Crystals",
     "useStyle": 5,
     "useAnimation": 10,

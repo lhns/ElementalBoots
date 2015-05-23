@@ -3,7 +3,7 @@
     "size": [ 42, 40 ],
     "maxStack": 1,
     "value": [ 0, 0, 10, 0 ],
-    "rare": 0,
+    "rare": 3,
     "tooltip": "Shoots Illuminant Crystal",
     "useStyle": 4,
     "useAnimation": 30,

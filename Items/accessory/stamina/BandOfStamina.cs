@@ -10,13 +10,25 @@ namespace LolHens.Items
 {
     public class BandOfStamina : LolHensItem
     {
+        public override void InitType(Type type)
+        {
+            modBase.eventRegistry.Register((LolHensEvent.ChestGenerated e) => { if (e.chestInfo.height == ChestInfo.Height.SKY) e.chestInfo.AddLoot(item, 0.1f, true); });
+        }
+        
         public override void Init()
         {
             base.Init();
 
             modBase.eventRegistry.Register((LolHensEvent.EntityDamaged e) =>
             {
-                time = 0;
+                if (e.player.player == e.victim)
+                {
+                    if (time > 0) time = 0;
+                }
+                else
+                {
+                    SetSeconds(-7);
+                }
             });
 
             modBase.eventRegistry.Register((LolHensEvent.PlayerRespawn e) =>

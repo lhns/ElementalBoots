@@ -4,7 +4,7 @@
 	"holdoutOffset": [ -6, -10 ],
     "maxStack": 1,
     "value": [ 0, 0, 10, 0 ],
-    "rare": 0,
+    "rare": 2,
     "tooltip": "Shoots Spiky Balls",
     "useStyle": 5,
     "useAnimation": 15,

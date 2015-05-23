@@ -17,8 +17,15 @@ namespace LolHens.Items
         {
             ItemDef.byName["Vanilla:Acorn"].MakeAmmo("Acorn");
 
-            modBase.eventRegistry.Register((LolHensEvent.ChestGenerated e) => { if (e.chestInfo.height == ChestInfo.Height.SURFACE) e.chestInfo.AddLoot(item, 0.1f, true); });
-            modBase.eventRegistry.Register((LolHensEvent.ChestGenerated e) => { if (e.chestInfo.height == ChestInfo.Height.SURFACE) e.chestInfo.AddLoot(ItemDef.byName["Vanilla:Acorn"], 0.6f, false, 10, 40); });
+            modBase.eventRegistry.Register((LolHensEvent.ChestGenerated e) => {
+                if ((e.chestInfo.height == ChestInfo.Height.SURFACE && e.chestInfo.style == ChestInfo.Style.WOOD)
+                    || e.chestInfo.style == ChestInfo.Style.LIVINGWOOD) e.chestInfo.AddLoot(item, 0.2f, true);
+            });
+            
+            modBase.eventRegistry.Register((LolHensEvent.ChestGenerated e) => {
+                if ((e.chestInfo.height == ChestInfo.Height.SURFACE && e.chestInfo.style == ChestInfo.Style.WOOD)
+                    || e.chestInfo.style == ChestInfo.Style.LIVINGWOOD) e.chestInfo.AddLoot(ItemDef.byName["Vanilla:Acorn"], 0.6f, false, 10, 40);
+            });
         }
 
         public override void InitTextures()

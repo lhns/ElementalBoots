@@ -150,5 +150,10 @@ namespace LolHens.Items
         {
             return time / 45;
         }
+        
+        public virtual void SetSeconds(int seconds)
+        {
+            time = seconds * 45;
+        }
     }
 }

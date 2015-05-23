@@ -5,7 +5,7 @@
 	"holdoutOffset": [ -14, -10 ],
     "maxStack": 1,
     "value": [ 0, 0, 10, 0 ],
-    "rare": 0,
+    "rare": 3,
     "tooltip": "Shoots Cannonballs",
     "useStyle": 5,
     "useAnimation": 15,
