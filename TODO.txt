@@ -5,10 +5,13 @@ Documentation:
 
 Changelog:
 - Fixed Sky chest items get generated in wood chests
+- Added Space Rifle
+- Added Space Laser
+- Added Band of Stamina and Band of Anarchy
 
 Ingame:
-- Laser Rifle
-- Space Laser
+- Space Rifle sound
+- Space Laser sound
 - Frozen Slime attack
 
 Credits:
