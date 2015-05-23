@@ -12,7 +12,7 @@
     "useTime": 2,
     "damage": 100,
     "knockback": 2,
-	"useSound": 11,
+	"useSound": 15,
     "autoReuse": true,
     "noMelee": true,
     "magic": true,

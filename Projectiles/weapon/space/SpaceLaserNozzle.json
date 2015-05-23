@@ -6,7 +6,7 @@
     "timeLeft": 8,
     "friendly": true,
     "hostile": false,
-    "tileCollide": true,
+    "tileCollide": false,
     "damage": 5,
     "magic": true,
     "penetrate": 100,

@@ -2,7 +2,7 @@
     "displayName": "Laser Ray",
     "size": [ 4, 12 ],
     "aiStyle": 0,
-    "timeLeft": 200,
+    "timeLeft": 300,
     "friendly": true,
     "hostile": false,
     "tileCollide": true,

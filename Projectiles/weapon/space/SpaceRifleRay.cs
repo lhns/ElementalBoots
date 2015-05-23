@@ -10,7 +10,7 @@ namespace LolHens.Projectiles
 {
     public class SpaceRifleRay : LolHensProjectile
     {
-        const float brightness = 0.4f;
+        const float brightness = 0.6f;
 
         public override void Init()
         {
@@ -21,7 +21,7 @@ namespace LolHens.Projectiles
         {
             projectile.rotation = (float)System.Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;
 
-            Lighting.AddLight((int)(projectile.Center.X / 16f), (int)(projectile.Center.Y / 16f), 1f * brightness, 0f * brightness, 0f * brightness);
+            Lighting.AddLight((int)(projectile.Center.X / 16f), (int)(projectile.Center.Y / 16f), 1f * brightness, 0.1f * brightness, 0.1f * brightness);
         }
     }
 }

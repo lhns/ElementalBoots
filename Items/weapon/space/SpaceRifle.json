@@ -12,12 +12,12 @@
     "useTime": 10,
     "damage": 50,
     "knockback": 2,
-	"useSound": 11,
+	"useSound": 12,
     "autoReuse": true,
     "noMelee": true,
     "magic": true,
 	"shoot": "LolHens:SpaceRifleRay",
-	"shootSpeed": 10,
+	"shootSpeed": 6,
 	"mana": 4,
 
     "recipes": [

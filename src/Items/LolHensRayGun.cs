@@ -15,7 +15,7 @@ namespace LolHens.Items
         protected Projectile[] ray;
         
         public Boolean rayUseAmmo = false;
-        public Boolean rayTileCollision = true;
+        public Boolean rayTileCollision = false;
 
         public LolHensRayGun() : base()
         {
