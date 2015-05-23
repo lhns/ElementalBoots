@@ -10,17 +10,18 @@ namespace LolHens.Projectiles
 {
     public class SpaceRifleRay : LolHensProjectile
     {
-        private int length = 0;
-        public LolHensProjectile beam;
+        const float brightness = 0.4f;
+
+        public override void Init()
+        {
+            projectile.hurtsTiles = false;
+        }
 
         public override void AI()
         {
             projectile.rotation = (float)System.Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;
-            if (beam == null && length > 0)
-            {
-                beam = ProjDef.byName["LolHens:SpaceLaserRayBeam"].New(projectile.Center.X, projectile.Center.Y, projectile.velocity.X, projectile.velocity.Y, projectile.damage, projectile.knockBack, projectile.whoAmI);
-                (beam as SpaceRifleRay).length = length - 1;
-            }
+
+            Lighting.AddLight((int)(projectile.Center.X / 16f), (int)(projectile.Center.Y / 16f), 1f * brightness, 0f * brightness, 0f * brightness);
         }
     }
 }

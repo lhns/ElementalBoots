@@ -20,11 +20,11 @@ namespace LolHens.Items
             bulletOffset.X = 40;
         }
 
-        public override bool PreShootCustom(Player player, Vector2 position, Vector2 direction, int projType, int damage, float knockback)
+        public override bool PreShootCustom(Player player, ref Vector2 position, ref Vector2 velocity, ref int projType, ref int damage, ref float knockback)
         {
             for (int m = 0; m < 5; m++)
             {
-                Vector2 newDir = direction.Rotate((Main.rand.NextFloat() - 0.5f) * 2f);
+                Vector2 newDir = velocity.Rotate((Main.rand.NextFloat() - 0.5f) * 2f);
                 int dustID = Dust.NewDust(position, 0, 0, 62, newDir.X * 20, newDir.Y * 20, 100, default(Color), 2f);
             }
             return true; 

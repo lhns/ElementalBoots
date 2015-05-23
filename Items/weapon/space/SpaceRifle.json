@@ -17,7 +17,7 @@
     "noMelee": true,
     "magic": true,
 	"shoot": "LolHens:SpaceRifleRay",
-	"shootSpeed": 4,
+	"shootSpeed": 10,
 	"mana": 4,
 
     "recipes": [

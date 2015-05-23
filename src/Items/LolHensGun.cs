@@ -23,8 +23,8 @@ namespace LolHens.Items
         public bool addPlayerVel = false;
         public Projectile projOverride = null;
 
-        private bool cancelMana = false;
-        public int mana = 0;
+        public int manaMultiplier = 1;
+        private int mana = 0;
 
         public override bool ConsumeAmmo(Player p) { return false; }
 
@@ -58,7 +58,7 @@ namespace LolHens.Items
                 }
             }
 
-            if (!cancel && !PreShootCustom(player, newPos, newVel, projType, damage, knockback)) cancel = true;
+            if (!cancel && !PreShootCustom(player, ref newPos, ref newVel, ref projType, ref damage, ref knockback)) cancel = true;
 
             if (!cancel)
             {
@@ -66,18 +66,18 @@ namespace LolHens.Items
                 
                 player.UseAmmo();
 
-                PostShootCustom(player, Main.projectile[projectile]);
+                PostShootCustom(player, Main.projectile[projectile], newPos, newVel, projType, damage, knockback);
             }
             else
             {
                 CancelMana();
             }
 
-            if (cancelMana)
+            if (manaMultiplier != 1)
             {
-                cancelMana = false;
                 if (item.mana != 0) mana = item.mana;
-                item.mana = 0;
+                item.mana *= manaMultiplier;
+                manaMultiplier = 1;
             }
             else if (mana != 0)
             {
@@ -88,13 +88,13 @@ namespace LolHens.Items
             return false;
         }
 
-        public virtual bool PreShootCustom(Player player, Vector2 position, Vector2 velocity, int projType, int damage, float knockback) { return true; }
+        public virtual bool PreShootCustom(Player player, ref Vector2 position, ref Vector2 velocity, ref int projType, ref int damage, ref float knockback) { return true; }
 
-        public virtual void PostShootCustom(Player player, Projectile projectile) { }
+        public virtual void PostShootCustom(Player player, Projectile projectile, Vector2 position, Vector2 velocity, int projType, int damage, float knockback) { }
 
         public void CancelMana()
         {
-            cancelMana = true;
+            manaMultiplier = 0;
         }
     }
 }

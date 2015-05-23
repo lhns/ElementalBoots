@@ -3,7 +3,7 @@
     "displayName": "Laser Beam",
     "size": [ 22, 30 ],
     "aiStyle": 0,
-    "timeLeft": 30,
+    "timeLeft": 8,
     "friendly": true,
     "hostile": false,
     "tileCollide": true,

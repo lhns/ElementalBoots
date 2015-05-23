@@ -1,6 +1,6 @@
 ﻿{
     "displayName": "Laser Ray",
-    "size": [ 4, 120 ],
+    "size": [ 4, 12 ],
     "aiStyle": 0,
     "timeLeft": 200,
     "friendly": true,
