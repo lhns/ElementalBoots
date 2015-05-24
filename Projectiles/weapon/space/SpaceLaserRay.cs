@@ -18,13 +18,14 @@ namespace LolHens.Projectiles
         public override void Init()
         {
             projectile.hurtsTiles = false;
+            projectile.light = 0.9f;
         }
 
         public override void AI()
         {
             projectile.rotation = (float)System.Math.Atan2((double)projectile.velocity.Y, (double)projectile.velocity.X) + 1.57f;
 
-            Lighting.AddLight((int)(projectile.Center.X / 16f), (int)(projectile.Center.Y / 16f), 0.4f * brightness, 0.8f * brightness, 0.4f * brightness);
+            //Lighting.AddLight((int)(projectile.Center.X / 16f), (int)(projectile.Center.Y / 16f), 0.4f * brightness, 0.8f * brightness, 0.4f * brightness);
         }
     }
 }

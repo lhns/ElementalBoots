@@ -14,7 +14,7 @@ namespace LolHens.Projectiles
 
         public override void Init()
         {
-            projectile.hurtsTiles = false;
+            //projectile.hurtsTiles = false;
         }
 
         public override void AI()
