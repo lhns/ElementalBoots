@@ -6,7 +6,7 @@
     "maxStack": 1,
     "value": [ 0, 4, 0, 0 ],
     "rare": 6,
-    "tooltip": [ "" ],
+    "tooltip": "Shoots a continuous laser ray",
     "useStyle": 5,
     "useAnimation": 2,
     "useTime": 2,
@@ -22,7 +22,7 @@
 
     "recipes": [
         {
-            "items": { "Bubble Wand": 1, "Poison Staff": 1 },
+            "items": { "LolHens:SpaceRifle": 1, "Star Cannon": 1, "Meteorite Bar": 20, "LolHens:Prism": 1, "Crystal Shard": 30, "Emerald": 1 },
             "tiles": [ "Inventor's Workshop" ],
             "creates": 1
         }

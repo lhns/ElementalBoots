@@ -6,7 +6,7 @@
     "maxStack": 1,
     "value": [ 0, 1, 0, 0 ],
     "rare": 4,
-    "tooltip": [ "" ],
+    "tooltip": "Space Gun MK2",
     "useStyle": 5,
     "useAnimation": 10,
     "useTime": 10,
@@ -22,7 +22,7 @@
 
     "recipes": [
         {
-            "items": { "Bubble Wand": 1, "Poison Staff": 1 },
+            "items": { "Space Gun": 1, "Illegal Gun Parts": 1, "Meteorite Bar": 20, "Lens": 3, "Crystal Shard": 20, "Ruby": 1},
             "tiles": [ "Inventor's Workshop" ],
             "creates": 1
         }

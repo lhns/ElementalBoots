@@ -11,9 +11,8 @@ Changelog:
 - Illuminant pearls now drop from all illuminant creatures
 
 Ingame:
-- Space Rifle sound
-- Space Laser sound
 - Frozen Slime attack
+- Alternate Balloon Bundle
 
 Credits:
 - Battle Bee
