@@ -11,12 +11,12 @@ namespace LolHens.Projectiles
 {
     public abstract class LolHensProjectile : ModProjectile
     {
-        new public LolHensBase modBase;
+        new public MBase modBase;
 
         public sealed override void Initialize()
         {
             base.modBase = projectile.def.modBase;
-            modBase = base.modBase as LolHensBase;
+            modBase = base.modBase as MBase;
             modBase.projectiles.Add(this);
             Init();
             if (!Main.dedServ) InitTextures();
@@ -29,7 +29,7 @@ namespace LolHens.Projectiles
 
         public virtual void InitPost() { }
 
-        public void Load(LolHensBase modBase)
+        public void Load(MBase modBase)
         {
             this.modBase = modBase;
             Load();

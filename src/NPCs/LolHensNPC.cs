@@ -11,11 +11,11 @@ namespace LolHens.NPCs
 {
     public class LolHensNPC: ModNPC
     {
-        new public LolHensBase modBase;
+        new public MBase modBase;
 
         public sealed override void Initialize()
         {
-            modBase = base.modBase as LolHensBase;
+            modBase = base.modBase as MBase;
             modBase.npcs.Add(this);
             Init();
             if (!Main.dedServ) InitTextures();

@@ -12,7 +12,7 @@ using LolHens.Items;
 
 namespace LolHens
 {
-    public class LolHensWorld : TAPI.ModWorld
+    public class MWorld : TAPI.ModWorld
     {
         public override void WorldGenPostGen()
         {

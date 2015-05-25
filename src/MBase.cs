@@ -16,9 +16,9 @@ using LolHens.NPCs;
 
 namespace LolHens
 {
-    public class LolHensBase : TAPI.ModBase
+    public class MBase : TAPI.ModBase
     {
-        public static LolHensBase instance;
+        public static MBase instance;
 
         public List<LolHensItem> items = new List<LolHensItem>();
         public List<LolHensProjectile> projectiles = new List<LolHensProjectile>();
@@ -28,7 +28,7 @@ namespace LolHens
 
         public LolHensEvent.Registry eventRegistry = new LolHensEvent.Registry();
 
-        public LolHensBase() : base() { instance = this; }
+        public MBase() : base() { instance = this; }
 
         public override void OnLoad()
         {
@@ -73,7 +73,7 @@ namespace LolHens
 
         public static void MakeAmmo(this Item item, String ammoName)
         {
-            if (!ammoName.Contains(":")) ammoName = LolHensBase.instance.mod.InternalName + ":" + ammoName;
+            if (!ammoName.Contains(":")) ammoName = MBase.instance.mod.InternalName + ":" + ammoName;
             if (!ItemDef.ammo.ContainsKey(ammoName)) ItemDef.ammo.Add(ammoName, 1000 + ItemDef.ammo.Count);
             item.ammo = ItemDef.ammo[ammoName];
         }
@@ -127,7 +127,7 @@ namespace LolHens
 
         public static LolHensItem GetWingsItem(this Player player)
         {
-            if (player.wings != 0) foreach (LolHensItem item in LolHensBase.instance.items) if (item.item.wingSlot == player.wings) return item;
+            if (player.wings != 0) foreach (LolHensItem item in MBase.instance.items) if (item.item.wingSlot == player.wings) return item;
             return null;
         }
 

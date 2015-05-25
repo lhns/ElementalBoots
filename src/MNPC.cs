@@ -12,7 +12,7 @@ using Terraria;
 
 namespace LolHens
 {
-    [GlobalMod] public class LolHensGlobalNPC : TAPI.ModNPC
+    [GlobalMod] public class MNPC : TAPI.ModNPC
     {
         public static class NPC
         {

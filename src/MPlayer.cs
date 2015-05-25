@@ -13,9 +13,9 @@ using LolHens.Items;
 
 namespace LolHens
 {
-    public class LolHensPlayer : TAPI.ModPlayer
+    public class MPlayer : TAPI.ModPlayer
     {
-        new public LolHensBase modBase;
+        new public MBase modBase;
 
         public static bool flyingVertically = false;
         public static bool resetFlightTimer = false;
@@ -24,7 +24,7 @@ namespace LolHens
 
         public override void Initialize()
         {
-            modBase = base.modBase as LolHensBase;
+            modBase = base.modBase as MBase;
         }
 
         public override void PostUpdate()

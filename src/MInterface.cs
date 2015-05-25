@@ -14,7 +14,7 @@ using LolHens.Items;
 
 namespace LolHens
 {
-    public class LolHensInterface : TAPI.ModInterface
+    public class MInterface : TAPI.ModInterface
     {
         public override bool PreDrawItemSlotItem(SpriteBatch sb, ItemSlot slot)
         {

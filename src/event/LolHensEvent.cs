@@ -72,7 +72,7 @@ namespace LolHens
 
         public class EntityDamaged : LolHensEvent
         {
-            public readonly LolHensPlayer player;
+            public readonly MPlayer player;
             public readonly CodableEntity victim;
             public readonly Projectile projectile;
             public readonly int hitDir;
@@ -81,7 +81,7 @@ namespace LolHens
             public bool crit;
             public float critMult;
 
-            public EntityDamaged(LolHensPlayer player, CodableEntity victim, Projectile projectile, int hitDir, int damage, float knockback, bool crit, float critMult)
+            public EntityDamaged(MPlayer player, CodableEntity victim, Projectile projectile, int hitDir, int damage, float knockback, bool crit, float critMult)
             {
                 this.player = player;
                 this.victim = victim;
@@ -93,7 +93,7 @@ namespace LolHens
                 this.critMult = critMult;
             }
 
-            public static void Call(Registry registry, LolHensPlayer player, CodableEntity victim, Projectile projectile, int hitDir, ref int damage, ref float knockback, ref bool crit, ref float critMult)
+            public static void Call(Registry registry, MPlayer player, CodableEntity victim, Projectile projectile, int hitDir, ref int damage, ref float knockback, ref bool crit, ref float critMult)
             {
                 EntityDamaged lolHensEvent = new EntityDamaged(player, victim, projectile, hitDir, damage, knockback, crit, critMult);
 
@@ -108,13 +108,13 @@ namespace LolHens
 
         public class PlayerDeath : LolHensEvent
         {
-            public readonly LolHensPlayer player;
+            public readonly MPlayer player;
             public readonly double damage;
             public readonly int hitDir;
             public readonly bool pvp;
             public readonly string deathText;
 
-            public PlayerDeath(LolHensPlayer player, double damage, int hitDir, bool pvp, string deathText)
+            public PlayerDeath(MPlayer player, double damage, int hitDir, bool pvp, string deathText)
             {
                 this.player = player;
                 this.damage = damage;
@@ -123,7 +123,7 @@ namespace LolHens
                 this.deathText = deathText;
             }
 
-            public static void Call(Registry registry, LolHensPlayer player, double damage, int hitDir, bool pvp, string deathText)
+            public static void Call(Registry registry, MPlayer player, double damage, int hitDir, bool pvp, string deathText)
             {
                 PlayerDeath lolHensEvent = new PlayerDeath(player, damage, hitDir, pvp, deathText);
 
@@ -133,14 +133,14 @@ namespace LolHens
 
         public class PlayerRespawn : LolHensEvent
         {
-            public readonly LolHensPlayer player;
+            public readonly MPlayer player;
 
-            public PlayerRespawn(LolHensPlayer player)
+            public PlayerRespawn(MPlayer player)
             {
                 this.player = player;
             }
 
-            public static void Call(Registry registry, LolHensPlayer player)
+            public static void Call(Registry registry, MPlayer player)
             {
                 PlayerRespawn lolHensEvent = new PlayerRespawn(player);
 

@@ -10,7 +10,7 @@ namespace LolHens.Items
 {
     public abstract class LolHensItem : ModItem
     {
-        new public LolHensBase modBase;
+        new public MBase modBase;
 
         private float usedTime = 0;
         public float usedPercent = 0;
@@ -24,7 +24,7 @@ namespace LolHens.Items
 
         public sealed override void Initialize()
         {
-            modBase = base.modBase as LolHensBase;
+            modBase = base.modBase as MBase;
 
             modBase.items.Add(this);
             

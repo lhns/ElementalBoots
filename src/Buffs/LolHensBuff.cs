@@ -13,7 +13,7 @@ namespace LolHens.Buffs
     {
         public static CodableEntity lastTrigger = null;
 
-        new public LolHensBase modBase;
+        new public MBase modBase;
         public CodableEntity entity;
         public CodableEntity trigger;
         public int time = 0;
@@ -24,7 +24,7 @@ namespace LolHens.Buffs
 
         public virtual void Start(CodableEntity entity, int index)
         {
-            modBase = base.modBase as LolHensBase;
+            modBase = base.modBase as MBase;
             this.entity = entity;
             trigger = lastTrigger;
             lastTrigger = null;
