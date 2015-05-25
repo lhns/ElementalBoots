@@ -4,7 +4,7 @@
     "holdoutOrigin": [ -0, 0 ],
 	"holdoutOffset": [ -14, -10 ],
     "maxStack": 1,
-    "value": [ 0, 0, 10, 0 ],
+    "value": [ 0, 40, 0, 0 ],
     "rare": 3,
     "tooltip": "Shoots Cannonballs",
     "useStyle": 5,
