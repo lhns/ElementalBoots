@@ -1,0 +1,8 @@
+{
+    "displayName": "Funnel",
+    "size": [ 24, 24 ],
+    "maxStack": 10,
+    "value": [ 0, 0, 20, 0 ],
+    "rare": 3,
+    "tooltip": "Can funnel things into bottles"
+}

@@ -9,12 +9,7 @@
     "textureShoes": "Items/accessory/boots/ElementalBoots_Shoes",
     "recipes": [
         {
-            "items": { "Frostspark Boots": 1, "Lava Waders": 1, "Soul of Light": 20, "Ichor": 10 },
-            "tiles": [ "Inventor's Workshop" ],
-            "creates": 1
-        },
-        {
-            "items": { "Frostspark Boots": 1, "Lava Waders": 1, "Soul of Light": 20, "Cursed Flame": 10 },
+            "items": { "Frostspark Boots": 1, "Lava Waders": 1, "Soul of Light": 20, "g:HardmodeFlame": 10 },
             "tiles": [ "Inventor's Workshop" ],
             "creates": 1
         }

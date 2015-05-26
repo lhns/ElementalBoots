@@ -5,5 +5,12 @@
     "value": [ 0, 1, 0, 0 ],
     "rare": 1,
     "tooltip": "Allows the holder to double jump",
-    "accessory": true
+    "accessory": true,
+	"recipes": [
+        {
+            "items": { "g:WeatherBottle": 1, "LolHens:Funnel": 1, "Rain Cloud": 20 },
+            "tiles": [ "Inventor's Workshop" ],
+            "creates": 1
+        }
+    ]
 }

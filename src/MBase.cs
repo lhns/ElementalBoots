@@ -32,13 +32,13 @@ namespace LolHens
 
         public override void OnLoad()
         {
+            NPCDef.byName["Vanilla:King Slime"].AddDrop(ItemDef.byName["Vanilla:Gel"], 1, 40, 80);
+
+            InitializeItems();
         }
 
         public override void OnAllModsLoaded()
         {
-            NPCDef.byName["Vanilla:King Slime"].AddDrop(ItemDef.byName["Vanilla:Gel"], 1, 40, 80);
-
-            InitializeItems();
         }
 
         private void InitializeItems()
@@ -49,6 +49,22 @@ namespace LolHens
         public override object OnModCall(TAPI.ModBase mod, params object[] args)
         {
             return base.OnModCall(mod, args);
+        }
+
+        private static ModBase dummyVanillaModBase = null;
+
+        public static ModBase GetDummyVanillaModBase()
+        {
+            if (dummyVanillaModBase == null)
+            {
+                dummyVanillaModBase = new ModBase();
+                dummyVanillaModBase.mod = new Mod(null);
+
+                FieldInfo modInfoField = dummyVanillaModBase.mod.GetType().GetField("_modInfo", BindingFlags.NonPublic | BindingFlags.Instance);
+                if (modInfoField == null) return null;
+                modInfoField.SetValue(dummyVanillaModBase.mod, JsonMapper.ToObject("{\"internalName\": \"LolHens\"}"));
+            }
+            return dummyVanillaModBase;
         }
     }
 
@@ -229,6 +245,13 @@ namespace LolHens
         {
             LolHensPet pet = npc.AsLolHensNPC() as LolHensPet;
             if (pet != null) player.AddBuff(pet.petBuff, 100);
+        }
+
+        public static void AddRecipe(this Item item, String jsonObj)
+        {
+            Resolver resolver = new UniversalRecipeResolver(item, JsonMapper.ToObject(jsonObj));
+
+            ResolverQueue.Add(resolver);
         }
 
         public static void SetFrameGun(this Player player, Item item)

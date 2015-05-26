@@ -1,0 +1,17 @@
+{
+	"itemGroups":
+	[
+		{
+			"name": "WeatherBottle",
+			"displayName": "Weather Bottle",
+			"displayItem": "Cloud in a Bottle",
+			"items":[ "Cloud in a Bottle", "Sandstorm in a Bottle", "Blizzard in a Bottle", "LolHens:TornadoInABottle" ]
+		},
+		{
+			"name": "HardmodeFlame",
+			"displayName": "Ichor / Cursed Flame",
+			"displayItem": "Ichor",
+			"items":[ "Cursed Flame", "Ichor" ]
+		}
+	]
+}
