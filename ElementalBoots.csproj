@@ -183,6 +183,7 @@
     <Content Include="Items\accessory\bottle\TornadoInABottle.png" />
     <Content Include="Items\accessory\illuminant\IlluminantHeartNecklace.png" />
     <Content Include="Items\accessory\illuminant\IlluminantPearlsNecklace.png" />
+    <Content Include="Items\material\funnel\funnel.png" />
     <Content Include="Items\weapon\illuminant\IlluminantStaff.png" />
     <Content Include="Items\accessory\illuminant\IlluminantStarNecklace.png" />
     <Content Include="Items\accessory\magnet\Magnet.png" />
@@ -317,7 +318,8 @@
     <Compile Include="Projectiles\weapon\space\SpaceLaserRay.cs" />
     <Compile Include="Projectiles\weapon\space\SpaceRifleRay.cs" />
     <Compile Include="src\chest\ChestInfo.cs" />
-    <Compile Include="src\event\LolHensEvent.cs" />
+    <Compile Include="src\event\EventRegistry.cs" />
+    <Compile Include="src\event\Event.cs" />
     <Compile Include="src\Items\LolHensRayGun.cs" />
     <Compile Include="src\Buffs\LolHensBuff.cs" />
     <Compile Include="src\Items\LolHensGun.cs" />

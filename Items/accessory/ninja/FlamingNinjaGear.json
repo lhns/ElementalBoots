@@ -13,7 +13,7 @@
             "creates": 1
         },
         {
-            "items": { "Fire Gauntlet": 1, "Master Ninja Gear": 1, "Soul of Might": 5 },
+            "items": { "Fire Gauntlet": 1, "Master Ninja Gear": 1 },
             "tiles": [ "Inventor's Workshop" ],
             "creates": 1
         }

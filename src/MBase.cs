@@ -26,7 +26,7 @@ namespace LolHens
 
         public List<Type> initializedTypes = new List<Type>();
 
-        public LolHensEvent.Registry eventRegistry = new LolHensEvent.Registry();
+        public EventRegistry eventRegistry = new EventRegistry();
 
         public MBase() : base() { instance = this; }
 

@@ -12,14 +12,14 @@ namespace LolHens.Items
     {
         public override void InitType(Type type)
         {
-            modBase.eventRegistry.Register((LolHensEvent.ChestGenerated e) => { if (e.chestInfo.height == ChestInfo.Height.SKY) e.chestInfo.AddLoot(item, 0.1f, true); });
+            modBase.eventRegistry.Register((Event.ChestGenerated e) => { if (e.chestInfo.height == ChestInfo.Height.SKY) e.chestInfo.AddLoot(item, 0.1f, true); });
         }
         
         public override void Init()
         {
             base.Init();
 
-            modBase.eventRegistry.Register((LolHensEvent.EntityDamaged e) =>
+            modBase.eventRegistry.Register((Event.EntityDamaged e) =>
             {
                 if (e.player.player == e.victim)
                 {
@@ -31,7 +31,7 @@ namespace LolHens.Items
                 }
             });
 
-            modBase.eventRegistry.Register((LolHensEvent.PlayerRespawn e) =>
+            modBase.eventRegistry.Register((Event.PlayerRespawn e) =>
             {
                 time = 0;
             });

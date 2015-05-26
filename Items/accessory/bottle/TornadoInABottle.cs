@@ -26,7 +26,7 @@ namespace LolHens.Items
         {
             if (type != typeof(TornadoInABottle)) return;
 
-            modBase.eventRegistry.Register((LolHensEvent.ChestGenerated e) => { if (e.chestInfo.height == ChestInfo.Height.SKY) e.chestInfo.AddLoot(item, 0.1f, true); });
+            modBase.eventRegistry.Register((Event.ChestGenerated e) => { if (e.chestInfo.height == ChestInfo.Height.SKY) e.chestInfo.AddLoot(item, 0.1f, true); });
         }
 
         public override void OnUnEquip(Player player, TAPI.UIKit.ItemSlot slot)

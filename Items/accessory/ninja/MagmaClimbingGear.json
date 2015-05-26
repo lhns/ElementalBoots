@@ -13,7 +13,7 @@
             "creates": 1
         },
         {
-            "items": { "Fire Gauntlet": 1, "Tiger Climbing Gear": 1, "Soul of Might": 2 },
+            "items": { "Fire Gauntlet": 1, "Tiger Climbing Gear": 1 },
             "tiles": [ "Inventor's Workshop" ],
             "creates": 1
         }

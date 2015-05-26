@@ -12,7 +12,7 @@ namespace LolHens.Items
     {
         public override void InitType(Type type)
         {
-            modBase.eventRegistry.Register((LolHensEvent.ChestGenerated e) => { if (e.chestInfo.height == ChestInfo.Height.UNDERGROUND) e.chestInfo.AddLoot(item, 0.05f, true); });
+            modBase.eventRegistry.Register((Event.ChestGenerated e) => { if (e.chestInfo.height == ChestInfo.Height.UNDERGROUND) e.chestInfo.AddLoot(item, 0.05f, true); });
         }
 
         public override void Init()

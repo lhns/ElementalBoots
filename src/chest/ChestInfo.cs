@@ -102,7 +102,7 @@ namespace LolHens
             {
                 if (chest == null) continue;
 
-                LolHensEvent.ChestGenerated.Call(MBase.instance.eventRegistry, new ChestInfo(chest));
+                Event.ChestGenerated.Call(MBase.instance.eventRegistry, new ChestInfo(chest));
             }
         }
 

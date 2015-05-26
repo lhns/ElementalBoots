@@ -13,7 +13,7 @@ namespace LolHens.Items
     {
         public override void InitType(Type type)
         {
-            modBase.eventRegistry.Register((LolHensEvent.ChestGenerated e) => { if (e.chestInfo.height == ChestInfo.Height.CAVERN) e.chestInfo.AddLoot(item, 0.05f, true); });
+            modBase.eventRegistry.Register((Event.ChestGenerated e) => { if (e.chestInfo.height == ChestInfo.Height.CAVERN) e.chestInfo.AddLoot(item, 0.05f, true); });
         }
 
         public override bool? UseItem(Player player)

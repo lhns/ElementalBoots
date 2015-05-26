@@ -9,7 +9,7 @@ using TAPI;
 
 namespace LolHens
 {
-    public abstract class LolHensEvent
+    public class Event
     {
         private Boolean cancelled = false;
 
@@ -18,59 +18,16 @@ namespace LolHens
             cancelled = true;
         }
 
-        public Boolean IsCancelled()
+        public Boolean Cancelled()
         {
             return cancelled;
         }
 
-        protected virtual void OnEventPre() {}
+        public virtual void OnEventPre() { }
 
-        protected virtual void OnEventPost() {}
+        public virtual void OnEventPost() { }
 
-        public class Registry
-        {
-            private List<EventListener> eventListeners = new List<EventListener>();
-
-            public void Register<E>(Action<E> listener) where E : LolHensEvent
-            {
-                eventListeners.Add(new EventListener(e => listener((E)e), typeof(E)));
-            }
-
-            public Boolean Call<E>(E lolHensEvent) where E : LolHensEvent
-            {
-                List<EventListener> eventListeners = new List<EventListener>();
-                eventListeners.AddRange(this.eventListeners);
-
-                lolHensEvent.OnEventPre();
-
-                foreach (EventListener listener in eventListeners)
-                {
-                    if (listener.type == typeof(E))
-                    {
-                        listener.action(lolHensEvent);
-                        if (lolHensEvent.IsCancelled()) break;
-                    }
-                }
-
-                lolHensEvent.OnEventPost();
-
-                return !lolHensEvent.IsCancelled();
-            }
-
-            private class EventListener
-            {
-                public Action<LolHensEvent> action;
-                public Type type;
-
-                public EventListener(Action<LolHensEvent> action, Type type)
-                {
-                    this.action = action;
-                    this.type = type;
-                }
-            }
-        }
-
-        public class EntityDamaged : LolHensEvent
+        public class EntityDamaged : Event
         {
             public readonly MPlayer player;
             public readonly CodableEntity victim;
@@ -93,7 +50,7 @@ namespace LolHens
                 this.critMult = critMult;
             }
 
-            public static void Call(Registry registry, MPlayer player, CodableEntity victim, Projectile projectile, int hitDir, ref int damage, ref float knockback, ref bool crit, ref float critMult)
+            public static void Call(EventRegistry registry, MPlayer player, CodableEntity victim, Projectile projectile, int hitDir, ref int damage, ref float knockback, ref bool crit, ref float critMult)
             {
                 EntityDamaged lolHensEvent = new EntityDamaged(player, victim, projectile, hitDir, damage, knockback, crit, critMult);
 
@@ -106,7 +63,7 @@ namespace LolHens
             }
         }
 
-        public class PlayerDeath : LolHensEvent
+        public class PlayerDeath : Event
         {
             public readonly MPlayer player;
             public readonly double damage;
@@ -123,7 +80,7 @@ namespace LolHens
                 this.deathText = deathText;
             }
 
-            public static void Call(Registry registry, MPlayer player, double damage, int hitDir, bool pvp, string deathText)
+            public static void Call(EventRegistry registry, MPlayer player, double damage, int hitDir, bool pvp, string deathText)
             {
                 PlayerDeath lolHensEvent = new PlayerDeath(player, damage, hitDir, pvp, deathText);
 
@@ -131,7 +88,7 @@ namespace LolHens
             }
         }
 
-        public class PlayerRespawn : LolHensEvent
+        public class PlayerRespawn : Event
         {
             public readonly MPlayer player;
 
@@ -140,7 +97,7 @@ namespace LolHens
                 this.player = player;
             }
 
-            public static void Call(Registry registry, MPlayer player)
+            public static void Call(EventRegistry registry, MPlayer player)
             {
                 PlayerRespawn lolHensEvent = new PlayerRespawn(player);
 
@@ -148,7 +105,7 @@ namespace LolHens
             }
         }
 
-        public class ChestGenerated: LolHensEvent
+        public class ChestGenerated : Event
         {
             public readonly ChestInfo chestInfo;
 
@@ -157,7 +114,7 @@ namespace LolHens
                 this.chestInfo = chestInfo;
             }
 
-            public static void Call(Registry registry, ChestInfo chestInfo)
+            public static void Call(EventRegistry registry, ChestInfo chestInfo)
             {
                 ChestGenerated lolHensEvent = new ChestGenerated(chestInfo);
 

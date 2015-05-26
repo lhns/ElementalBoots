@@ -10,7 +10,7 @@ namespace LolHens.Items
     {
         public override void InitType(Type type)
         {
-            modBase.eventRegistry.Register((LolHensEvent.ChestGenerated e) =>
+            modBase.eventRegistry.Register((Event.ChestGenerated e) =>
             {
                 if (this.GetType() == typeof(TornadoInABottle))
                     if (e.chestInfo.height == ChestInfo.Height.UNDERGROUND && e.chestInfo.style == ChestInfo.Style.GOLD) e.chestInfo.AddLoot(item, 0.05f, true);

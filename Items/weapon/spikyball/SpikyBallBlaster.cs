@@ -19,7 +19,7 @@ namespace LolHens.Items
         {
             ItemDef.byName["Vanilla:Spiky Ball"].MakeAmmo("SpikyBall");
 
-            modBase.eventRegistry.Register((LolHensEvent.ChestGenerated e) =>
+            modBase.eventRegistry.Register((Event.ChestGenerated e) =>
             {
                 if (e.chestInfo.height == ChestInfo.Height.CAVERN && e.chestInfo.style == ChestInfo.Style.GOLD) e.chestInfo.AddLoot(item, 0.05f, true);
             });
