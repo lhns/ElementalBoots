@@ -12,7 +12,7 @@ Changelog:
 
 Ingame:
 - Frozen Slime attack
-- Alternate Balloon Bundle
+- Move funnel balloon recipe into funnel.cs
 
 Credits:
 - Battle Bee

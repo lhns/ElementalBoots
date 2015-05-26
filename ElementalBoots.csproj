@@ -40,6 +40,7 @@
     <None Include="Buffs\weapon\illuminant\IlluminantCrystal.json" />
     <None Include="Buffs\weapon\illuminant\IlluminantCrystal.pdn" />
     <None Include="Buffs\weapon\illuminant\unused.zip" />
+    <None Include="CraftGroups.json" />
     <None Include="Images\banner.pdn" />
     <None Include="Items\accessory\balloon\black\BlackHorseshoeBalloon.json" />
     <None Include="Items\accessory\balloon\black\TornadoInABalloon.json" />
@@ -65,6 +66,7 @@
     <None Include="Items\accessory\bottle\WeatherInABottle.pdn" />
     <None Include="Items\accessory\illuminant\IlluminantHeartNecklace.json" />
     <None Include="Items\accessory\illuminant\IlluminantPearlsNecklace.json" />
+    <None Include="Items\material\funnel\Funnel.json" />
     <None Include="Items\weapon\illuminant\IlluminantStaff.json" />
     <None Include="Items\weapon\illuminant\IlluminantStaff.pdn" />
     <None Include="Items\accessory\illuminant\IlluminantStarNecklace.json" />
@@ -279,6 +281,7 @@
     <Compile Include="Items\accessory\illuminant\IlluminantHeartNecklace.cs" />
     <Compile Include="Items\accessory\illuminant\IlluminantPearlsNecklace.cs" />
     <Compile Include="Items\accessory\wings\terra\BrokenHeroWings.cs" />
+    <Compile Include="Items\material\funnel\Funnel.cs" />
     <Compile Include="Items\material\illuminant\IlluminantPearl.cs" />
     <Compile Include="Items\weapon\illuminant\IlluminantStaff.cs" />
     <Compile Include="Items\accessory\illuminant\IlluminantStarNecklace.cs" />
@@ -318,6 +321,7 @@
     <Compile Include="Projectiles\weapon\space\SpaceLaserRay.cs" />
     <Compile Include="Projectiles\weapon\space\SpaceRifleRay.cs" />
     <Compile Include="src\chest\ChestInfo.cs" />
+    <Compile Include="src\craft\UniversalRecipeResolver.cs" />
     <Compile Include="src\event\EventRegistry.cs" />
     <Compile Include="src\event\Event.cs" />
     <Compile Include="src\Items\LolHensRayGun.cs" />
