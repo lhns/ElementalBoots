@@ -3,7 +3,7 @@
 	[
 		{
 			"name": "WeatherBottle",
-			"displayName": "Weather Bottle",
+			"displayName": "Weather in a Bottle (Cloud, Sandstorm, Blizzard, Tornado)",
 			"displayItem": "Cloud in a Bottle",
 			"items":[ "Cloud in a Bottle", "Sandstorm in a Bottle", "Blizzard in a Bottle", "LolHens:TornadoInABottle" ]
 		},
