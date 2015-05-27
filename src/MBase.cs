@@ -249,9 +249,18 @@ namespace LolHens
 
         public static void AddRecipe(this Item item, String jsonObj)
         {
-            Resolver resolver = new UniversalRecipeResolver(item, JsonMapper.ToObject(jsonObj));
+            Resolver recipeResolver = new UniversalRecipeResolver(item, JsonMapper.ToObject(jsonObj));
+            
+            int firstGroupIndex = ResolverQueue.queue.FindIndex(resolver => resolver.GetType() == typeof(CraftGroupResolver));
 
-            ResolverQueue.Add(resolver);
+            if (firstGroupIndex == -1)
+            {
+                ResolverQueue.Add(recipeResolver);
+            }
+            else
+            {
+                ResolverQueue.queue.Insert(firstGroupIndex, recipeResolver);
+            }
         }
 
         public static void SetFrameGun(this Player player, Item item)

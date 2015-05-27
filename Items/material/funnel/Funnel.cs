@@ -37,11 +37,11 @@ namespace LolHens.Items
                 ""creates"": 1
             }");
 
-            /*ItemDef.byName["LolHens:TornadoInABottle"].AddRecipe(@"{
+            ItemDef.byName["LolHens:TornadoInABottle"].AddRecipe(@"{
                 ""items"": { ""g:WeatherBottle"": 1, ""LolHens:Funnel"": 1, ""Rain Cloud"": 20 },
                 ""tiles"": [ ""Inventor's Workshop"" ],
                 ""creates"": 1
-            }");*/
+            }");
         }
     }
 }
