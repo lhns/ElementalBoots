@@ -12,7 +12,6 @@ Changelog:
 
 Ingame:
 - Frozen Slime attack
-- Move funnel balloon recipe into funnel.cs
 
 Credits:
 - Battle Bee
