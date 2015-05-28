@@ -16,10 +16,22 @@ namespace LolHens.Projectiles
         public sealed override void Initialize()
         {
             base.modBase = projectile.def.modBase;
+
             modBase = base.modBase as MBase;
+
             modBase.projectiles.Add(this);
+
             Init();
+
             if (!Main.dedServ) InitTextures();
+
+            Type type = GetType();
+            if (!modBase.initializedTypes.Contains(type))
+            {
+                modBase.initializedTypes.Add(type);
+                InitType(type);
+            }
+
             InitPost();
         }
 
@@ -28,6 +40,8 @@ namespace LolHens.Projectiles
         public virtual void InitTextures() { }
 
         public virtual void InitPost() { }
+
+        public virtual void InitType(Type type) { }
 
         public void Load(MBase modBase)
         {

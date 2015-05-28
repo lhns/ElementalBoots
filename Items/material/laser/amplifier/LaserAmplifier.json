@@ -3,7 +3,7 @@
     "size": [ 44, 44 ],
     "maxStack": 1,
     "value": [ 1, 0, 0, 0 ],
-    "rare": 1,
+    "rare": 7,
     "tooltip": "Maximizes the energy of Laser Rays",
     "recipes": [
         {

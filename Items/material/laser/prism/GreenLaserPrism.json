@@ -3,7 +3,7 @@
     "size": [ 32, 32 ],
     "maxStack": 1,
     "value": [ 0, 0, 0, 0 ],
-    "rare": 0,
+    "rare": 5,
     "tooltip": "Seems to work but the laser rays\nneed much more energy...",
     "recipes": [
         {

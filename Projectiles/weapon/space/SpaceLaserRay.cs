@@ -18,7 +18,18 @@ namespace LolHens.Projectiles
         public override void Init()
         {
             //projectile.hurtsTiles = false;
-            projectile.light = 0.9f;
+
+            ShowLight();
+        }
+
+        public override void InitType(Type type)
+        {
+            modBase.eventRegistry.Register((Event.OptionChanged e) => ShowLight());
+        }
+
+        private void ShowLight()
+        {
+            projectile.light = modBase.options.GetBoolean("SpaceLaserLight") ? 0.9f : 0;
         }
 
         public override void AI()

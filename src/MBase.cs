@@ -19,12 +19,12 @@ namespace LolHens
     public class MBase : TAPI.ModBase
     {
         public static MBase instance;
+        public List<Type> initializedTypes = new List<Type>();
 
         public List<LolHensItem> items = new List<LolHensItem>();
         public List<LolHensProjectile> projectiles = new List<LolHensProjectile>();
         public List<LolHensNPC> npcs = new List<LolHensNPC>();
-
-        public List<Type> initializedTypes = new List<Type>();
+        public List<String> craftGroups = new List<String>();
 
         public EventRegistry eventRegistry = new EventRegistry();
 
@@ -35,26 +35,37 @@ namespace LolHens
 
         public override void OnLoad()
         {
-            NPCDef.byName["Vanilla:King Slime"].AddDrop(ItemDef.byName["Vanilla:Gel"], 1, 40, 80);
+            LoadOptions();
 
             InitializeItems();
 
-            Event.OnModLoaded.Call(eventRegistry, this);
-        }
+            if (options.GetBoolean("KingSlimeGel"))
+                NPCDef.byName["Vanilla:King Slime"].AddDrop(ItemDef.byName["Vanilla:Gel"], 1, 40, 80);
 
-        private void InitializeItems()
-        {
-            foreach (KeyValuePair<String, Item> entry in ItemDef.byName) entry.Value.AsLolHensItem();
+            Event.ModLoaded.Call(eventRegistry, this);
+
+            GetCraftGroups();
+
+            PreventCraftGroupCrash();
+
+            try
+            {
+                ResolverQueue.ResolveAll();
+            }
+            catch (Exception e)
+            {
+                TConsole.Print(e);
+            }
         }
 
         public override void OnAllModsLoaded()
         {
-            Event.OnAllModsLoaded.Call(eventRegistry, this);
+            Event.AllModsLoaded.Call(eventRegistry, this);
         }
 
-        public void OnInitializeWorld(MWorld world)
+        public override void OptionChanged(Option option)
         {
-            this.world = world;
+            Event.OptionChanged.Call(eventRegistry, this, option);
         }
 
         public override void PostGameUpdate()
@@ -65,6 +76,57 @@ namespace LolHens
 
                 world = null;
             }
+        }
+
+        private void LoadOptions()
+        {
+            List<Mod> modList = Mods.mods;
+
+            Mods.mods = new List<Mod>();
+            Mods.mods.Add(mod);
+
+            Mods.SetModOptions();
+
+            Mods.mods = modList;
+        }
+
+        private void InitializeItems()
+        {
+            foreach (KeyValuePair<String, Item> entry in ItemDef.byName) entry.Value.AsLolHensItem();
+        }
+
+        private void GetCraftGroups()
+        {
+            List<Resolver> craftGroupResolverList = ResolverQueue.queue.FindAll(resolver => resolver.GetType() == typeof(CraftGroupResolver));
+            foreach (Resolver resolver in craftGroupResolverList)
+            {
+                CraftGroupResolver craftGroupResolver = (CraftGroupResolver)resolver;
+
+                FieldInfo modBaseField = craftGroupResolver.GetType().GetField("modBase", BindingFlags.NonPublic | BindingFlags.Instance);
+                if (modBaseField == null || modBaseField.GetValue(craftGroupResolver) != this) continue;
+
+                FieldInfo jsonField = craftGroupResolver.GetType().GetField("craftJson", BindingFlags.NonPublic | BindingFlags.Instance);
+                if (jsonField == null) continue;
+
+                JsonData j = (JsonData)jsonField.GetValue(craftGroupResolver);
+                if (j == null || !j.Has("itemGroups")) continue;
+
+                foreach (JsonData itemGroup in j["itemGroups"])
+                    craftGroups.Add((string)itemGroup["name"]);
+            }
+        }
+
+        private void PreventCraftGroupCrash()
+        {
+            int firstGroupIndex = ResolverQueue.queue.FindIndex(resolver => resolver.GetType() == typeof(CraftGroupResolver));
+
+            if (firstGroupIndex != -1)
+                ResolverQueue.queue.Insert(firstGroupIndex, new CraftGroupFixResolver());
+        }
+
+        public void OnInitializeWorld(MWorld world)
+        {
+            this.world = world;
         }
 
         public static ModBase GetDummyVanillaModBase()
@@ -96,7 +158,7 @@ namespace LolHens
         {
             FieldInfo entriesField = source.GetType().GetField("entries", BindingFlags.NonPublic | BindingFlags.Instance);
             if (entriesField == null) return 0;
-            var entries = entriesField.GetValue(source) as Array;
+            Array entries = entriesField.GetValue(source) as Array;
             if (entries == null) return 0;
             return entries.Length;
         }
@@ -264,7 +326,7 @@ namespace LolHens
         public static void AddRecipe(this Item item, String jsonObj)
         {
             Resolver recipeResolver = new UniversalRecipeResolver(item, JsonMapper.ToObject(jsonObj));
-            
+
             int firstGroupIndex = ResolverQueue.queue.FindIndex(resolver => resolver.GetType() == typeof(CraftGroupResolver));
 
             if (firstGroupIndex == -1)
@@ -286,6 +348,11 @@ namespace LolHens
                 Mods.UpdateModState();
                 Mods.SaveModState();
             }
+        }
+
+        public static bool GetBoolean(this OptionList optionList, String name)
+        {
+            return (bool)optionList[name].Value;
         }
 
         public static void SetFrameGun(this Player player, Item item)

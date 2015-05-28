@@ -30,7 +30,7 @@ namespace LolHens
         {
             try
             {
-                Option retrogen = MBase.instance.options["retrogen"];
+                Option retrogen = MBase.instance.options["Retrogen"];
 
                 if ((bool)retrogen.Value)
                 {

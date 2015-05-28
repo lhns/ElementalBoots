@@ -127,11 +127,11 @@ namespace LolHens
             }
         }
 
-        public class OnModLoaded : Event
+        public class ModLoaded : Event
         {
             public readonly MBase modBase;
 
-            public OnModLoaded(MBase modBase)
+            public ModLoaded(MBase modBase)
             {
                 this.modBase = modBase;
             }
@@ -143,17 +143,17 @@ namespace LolHens
 
             public static void Call(EventRegistry registry, MBase modBase)
             {
-                OnModLoaded lolHensEvent = new OnModLoaded(modBase);
+                ModLoaded lolHensEvent = new ModLoaded(modBase);
 
                 registry.Call(lolHensEvent);
             }
         }
 
-        public class OnAllModsLoaded : Event
+        public class AllModsLoaded : Event
         {
             public readonly MBase modBase;
 
-            public OnAllModsLoaded(MBase modBase)
+            public AllModsLoaded(MBase modBase)
             {
                 this.modBase = modBase;
             }
@@ -165,7 +165,26 @@ namespace LolHens
 
             public static void Call(EventRegistry registry, MBase modBase)
             {
-                OnModLoaded lolHensEvent = new OnModLoaded(modBase);
+                AllModsLoaded lolHensEvent = new AllModsLoaded(modBase);
+
+                registry.Call(lolHensEvent);
+            }
+        }
+
+        public class OptionChanged : Event
+        {
+            public readonly MBase modBase;
+            public readonly Option option;
+
+            public OptionChanged(MBase modBase, Option option)
+            {
+                this.modBase = modBase;
+                this.option = option;
+            }
+
+            public static void Call(EventRegistry registry, MBase modBase, Option option)
+            {
+                OptionChanged lolHensEvent = new OptionChanged(modBase, option);
 
                 registry.Call(lolHensEvent);
             }

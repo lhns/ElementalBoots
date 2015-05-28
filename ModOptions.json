@@ -1,8 +1,33 @@
 {
     "options": [
         {
-            "name": "retrogen",
+            "name": "SpaceLaserLight",
+            "displayName": "Space Laser light",
+            "tooltip": "Turn off the Space Laser light\non slow computers",
+            "type": "Boolean",
+            "notify": true,
+            "default": true
+        },
+        {
+            "name": "KingSlimeGel",
+            "displayName": "King Slime drops Gel",
+            "tooltip": "MOD RELOAD IS NECESSARY",
+            "type": "Boolean",
+            "notify": false,
+            "default": true
+        },
+        { 
+            "name": "WeatherBottleConversion",
+            "displayName": "Weather Bottle conversion",
+            "tooltip": "MOD RELOAD IS NECESSARY\nAllows you to convert Weather in Bottles\n(Cloud, Sandstorm, Blizzard, Tornado)\nusing Funnels",
+            "type": "Boolean",
+            "notify": false,
+            "default": true
+        },
+        {
+            "name": "Retrogen",
             "displayName": "Retrogen chest loot",
+            "tooltip": "Generate chest loot from this mod\nin the next world loaded",
             "type": "Boolean",
             "notify": false,
             "default": false
