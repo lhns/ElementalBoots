@@ -19,8 +19,8 @@ namespace LolHens
     public class MBase : TAPI.ModBase
     {
         public static MBase instance;
-        public List<Type> initializedTypes = new List<Type>();
 
+        public List<Type> initializedTypes = new List<Type>();
         public List<LolHensItem> items = new List<LolHensItem>();
         public List<LolHensProjectile> projectiles = new List<LolHensProjectile>();
         public List<LolHensNPC> npcs = new List<LolHensNPC>();
@@ -98,6 +98,7 @@ namespace LolHens
         private void GetCraftGroups()
         {
             List<Resolver> craftGroupResolverList = ResolverQueue.queue.FindAll(resolver => resolver.GetType() == typeof(CraftGroupResolver));
+
             foreach (Resolver resolver in craftGroupResolverList)
             {
                 CraftGroupResolver craftGroupResolver = (CraftGroupResolver)resolver;

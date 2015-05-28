@@ -20,7 +20,8 @@ namespace LolHens
 
         public override void Resolve()
         {
-            try {
+            try
+            {
                 if (item.def.modBase == null)
                 {
                     item.def.modBase = MBase.GetDummyVanillaModBase();
@@ -33,7 +34,9 @@ namespace LolHens
                 {
                     recipeResolver.Resolve();
                 }
-            } catch (Exception e) {
+            }
+            catch (Exception e)
+            {
                 TConsole.Print(e);
             }
         }
