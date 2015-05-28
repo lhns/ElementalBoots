@@ -19,10 +19,9 @@
 	"shoot": "LolHens:SpaceRifleRay",
 	"shootSpeed": 8,
 	"mana": 4,
-
     "recipes": [
         {
-            "items": { "Space Gun": 1, "Illegal Gun Parts": 1, "Meteorite Bar": 20, "Lens": 3, "Crystal Shard": 20, "Ruby": 1},
+            "items": { "Space Gun": 1, "LolHens:IllegalMeteoriteGunParts": 1, "LolHens:RedLaserFocus": 1},
             "tiles": [ "Inventor's Workshop" ],
             "creates": 1
         }

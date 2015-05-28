@@ -1,0 +1,15 @@
+{
+    "displayName": "Illegal Meteorite Gun Parts",
+    "size": [ 30, 22 ],
+    "maxStack": 99,
+    "value": [ 0, 26, 0, 0 ],
+    "rare": 1,
+    "tooltip": "Illegal Gun Parts reinforced with Meteorite",
+    "recipes": [
+        {
+            "items": { "Illegal Gun Parts": 2, "Meteorite Bar": 40 },
+            "tiles": [ "Mythril Anvil" ],
+            "creates": 1
+        }
+    ]
+}
