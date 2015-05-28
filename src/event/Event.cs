@@ -27,6 +27,11 @@ namespace LolHens
 
         public virtual void OnEventPost() { }
 
+        public virtual bool CallOnce()
+        {
+            return false;
+        }
+
         public class EntityDamaged : Event
         {
             public readonly MPlayer player;
@@ -117,6 +122,50 @@ namespace LolHens
             public static void Call(EventRegistry registry, ChestInfo chestInfo)
             {
                 ChestGenerated lolHensEvent = new ChestGenerated(chestInfo);
+
+                registry.Call(lolHensEvent);
+            }
+        }
+
+        public class OnModLoaded : Event
+        {
+            public readonly MBase modBase;
+
+            public OnModLoaded(MBase modBase)
+            {
+                this.modBase = modBase;
+            }
+
+            public override bool CallOnce()
+            {
+                return true;
+            }
+
+            public static void Call(EventRegistry registry, MBase modBase)
+            {
+                OnModLoaded lolHensEvent = new OnModLoaded(modBase);
+
+                registry.Call(lolHensEvent);
+            }
+        }
+
+        public class OnAllModsLoaded : Event
+        {
+            public readonly MBase modBase;
+
+            public OnAllModsLoaded(MBase modBase)
+            {
+                this.modBase = modBase;
+            }
+
+            public override bool CallOnce()
+            {
+                return true;
+            }
+
+            public static void Call(EventRegistry registry, MBase modBase)
+            {
+                OnModLoaded lolHensEvent = new OnModLoaded(modBase);
 
                 registry.Call(lolHensEvent);
             }

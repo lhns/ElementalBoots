@@ -9,12 +9,12 @@ namespace LolHens
 {
     public class UniversalRecipeResolver : Resolver
     {
-        private RecipeResolver resolver;
+        private Resolver recipeResolver;
         private Item item;
 
         public UniversalRecipeResolver(Item item, JsonData json)
         {
-            this.resolver = new RecipeResolver(item, json);
+            this.recipeResolver = new FixedRecipeResolver(item, json);
             this.item = item;
         }
 
@@ -25,13 +25,13 @@ namespace LolHens
                 {
                     item.def.modBase = MBase.GetDummyVanillaModBase();
 
-                    resolver.Resolve();
+                    recipeResolver.Resolve();
 
                     item.def.modBase = null;
                 }
                 else
                 {
-                    resolver.Resolve();
+                    recipeResolver.Resolve();
                 }
             } catch (Exception e) {
                 TConsole.Print(e);

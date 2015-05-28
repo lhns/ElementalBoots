@@ -38,11 +38,18 @@ namespace LolHens
             NPCDef.byName["Vanilla:King Slime"].AddDrop(ItemDef.byName["Vanilla:Gel"], 1, 40, 80);
 
             InitializeItems();
+
+            Event.OnModLoaded.Call(eventRegistry, this);
         }
 
         private void InitializeItems()
         {
             foreach (KeyValuePair<String, Item> entry in ItemDef.byName) entry.Value.AsLolHensItem();
+        }
+
+        public override void OnAllModsLoaded()
+        {
+            Event.OnAllModsLoaded.Call(eventRegistry, this);
         }
 
         public void OnInitializeWorld(MWorld world)

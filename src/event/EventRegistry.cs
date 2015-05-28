@@ -20,6 +20,8 @@ namespace LolHens
             List<EventListener> listenersCopy = new List<EventListener>();
             listenersCopy.AddRange(listeners);
 
+            if (lolHensEvent.CallOnce()) Remove<E>();
+
             lolHensEvent.OnEventPre();
 
             foreach (EventListener listener in listenersCopy)
@@ -34,6 +36,11 @@ namespace LolHens
             lolHensEvent.OnEventPost();
 
             return !lolHensEvent.Cancelled();
+        }
+
+        public void Remove<E>() where E : Event
+        {
+            listeners.RemoveAll(listener => listener.type == typeof(E));
         }
     }
 

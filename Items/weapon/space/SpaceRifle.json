@@ -10,14 +10,14 @@
     "useStyle": 5,
     "useAnimation": 10,
     "useTime": 10,
-    "damage": 50,
+    "damage": 60,
     "knockback": 2,
 	"useSound": 12,
     "autoReuse": true,
     "noMelee": true,
     "magic": true,
 	"shoot": "LolHens:SpaceRifleRay",
-	"shootSpeed": 6,
+	"shootSpeed": 8,
 	"mana": 4,
 
     "recipes": [
