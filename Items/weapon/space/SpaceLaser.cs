@@ -70,8 +70,6 @@ namespace LolHens.Items
                 knockback,
                 player.whoAmI,
                 0f, 0f);
-
-            //CancelMana();
         }
     }
 }

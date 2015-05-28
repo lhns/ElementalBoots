@@ -17,7 +17,7 @@ namespace LolHens.Projectiles
 
         public override void Init()
         {
-            projectile.hurtsTiles = false;
+            //projectile.hurtsTiles = false;
             projectile.light = 0.9f;
         }
 

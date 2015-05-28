@@ -27,12 +27,5 @@ namespace LolHens.Items
         {
             return 10;
         }
-
-        public override void PostShootCustom(Player player, Projectile projectile, Vector2 position, Vector2 velocity, int projType, int damage, float knockback)
-        {
-            base.PostShootCustom(player, projectile, position, velocity, projType, damage, knockback);
-
-            //CancelMana();
-        }
     }
 }
