@@ -10,7 +10,7 @@
     "useStyle": 5,
     "useAnimation": 2,
     "useTime": 2,
-    "damage": 100,
+    "damage": 120,
     "knockback": 2,
 	"useSound": 15,
     "autoReuse": true,
@@ -18,7 +18,7 @@
     "magic": true,
 	"shoot": "LolHens:SpaceLaserRay",
 	"shootSpeed": 1,
-	"mana": 2,
+	"mana": 1,
     "recipes": [
         {
             "items": { "LolHens:SpaceRifle": 1, "LolHens:LaserAmplifier": 1, "LolHens:GreenLaserPrism": 1 },

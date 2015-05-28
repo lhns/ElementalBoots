@@ -10,7 +10,7 @@
     "useStyle": 5,
     "useAnimation": 10,
     "useTime": 10,
-    "damage": 60,
+    "damage": 62,
     "knockback": 2,
 	"useSound": 12,
     "autoReuse": true,
@@ -21,7 +21,7 @@
 	"mana": 4,
     "recipes": [
         {
-            "items": { "Space Gun": 1, "LolHens:IllegalMeteoriteGunParts": 1, "LolHens:RedLaserFocus": 1},
+            "items": { "Space Gun": 1, "LolHens:IllegalMeteoriteGunParts": 1, "Lihzahrd Power Cell":  1, "LolHens:RedLaserFocus": 1},
             "tiles": [ "Inventor's Workshop" ],
             "creates": 1
         }
