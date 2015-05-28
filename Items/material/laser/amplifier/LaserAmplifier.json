@@ -4,5 +4,13 @@
     "maxStack": 1,
     "value": [ 1, 0, 0, 0 ],
     "rare": 1,
-    "tooltip": "Maximizes the energy of Laser Rays"
+    "tooltip": "Maximizes the energy of Laser Rays",
+    "recipes": [
+        {
+            "items": { "Star in a Bottle": 1, "Fallen Star": 20, "Lihzahrd Power Cell": 1, "Meteorite Bar": 10 },
+            "tiles": [ "Inventor's Workshop" ],
+            "creates": 1
+        }
+    ]
+
 }

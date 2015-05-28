@@ -2,7 +2,7 @@
     "displayName": "Space Rifle",
     "size": [ 86, 32 ],
     "holdoutOffset": [ -6, 0 ],
-	"scale": 0.8,
+    "scale": 0.8,
     "maxStack": 1,
     "value": [ 0, 1, 0, 0 ],
     "rare": 4,
@@ -12,16 +12,16 @@
     "useTime": 10,
     "damage": 62,
     "knockback": 2,
-	"useSound": 12,
+    "useSound": 12,
     "autoReuse": true,
     "noMelee": true,
     "magic": true,
-	"shoot": "LolHens:SpaceRifleRay",
-	"shootSpeed": 8,
-	"mana": 4,
+    "shoot": "LolHens:SpaceRifleRay",
+    "shootSpeed": 8,
+    "mana": 4,
     "recipes": [
         {
-            "items": { "Space Gun": 1, "LolHens:IllegalMeteoriteGunParts": 1, "Lihzahrd Power Cell":  1, "LolHens:RedLaserFocus": 1},
+            "items": { "Space Gun": 1, "LolHens:IllegalMeteoriteGunParts": 1, "LolHens:RedLaserFocus": 1 },
             "tiles": [ "Inventor's Workshop" ],
             "creates": 1
         }
