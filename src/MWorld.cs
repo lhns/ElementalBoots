@@ -18,5 +18,31 @@ namespace LolHens
         {
             ChestInfo.OnChestsGenerate();
         }
+
+        public static bool worldLoaded = false;
+
+        public override void Initialize()
+        {
+            MBase.instance.OnInitializeWorld(this);
+        }
+
+        public void OnWorldLoaded()
+        {
+            try
+            {
+                Option retrogen = MBase.instance.options["retrogen"];
+
+                if ((bool)retrogen.Value)
+                {
+                    retrogen.SetValue(false);
+
+                    ChestInfo.OnChestsGenerate();
+                }
+            }
+            catch (Exception e)
+            {
+                TConsole.Print(e);
+            }
+        }
     }
 }

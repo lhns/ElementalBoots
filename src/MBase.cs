@@ -28,6 +28,9 @@ namespace LolHens
 
         public EventRegistry eventRegistry = new EventRegistry();
 
+        private MWorld world;
+        private static ModBase dummyVanillaModBase = null;
+
         public MBase() : base() { instance = this; }
 
         public override void OnLoad()
@@ -37,21 +40,25 @@ namespace LolHens
             InitializeItems();
         }
 
-        public override void OnAllModsLoaded()
-        {
-        }
-
         private void InitializeItems()
         {
             foreach (KeyValuePair<String, Item> entry in ItemDef.byName) entry.Value.AsLolHensItem();
         }
 
-        public override object OnModCall(TAPI.ModBase mod, params object[] args)
+        public void OnInitializeWorld(MWorld world)
         {
-            return base.OnModCall(mod, args);
+            this.world = world;
         }
 
-        private static ModBase dummyVanillaModBase = null;
+        public override void PostGameUpdate()
+        {
+            if (world != null && WorldGen.loadSuccess)
+            {
+                world.OnWorldLoaded();
+
+                world = null;
+            }
+        }
 
         public static ModBase GetDummyVanillaModBase()
         {
@@ -260,6 +267,17 @@ namespace LolHens
             else
             {
                 ResolverQueue.queue.Insert(firstGroupIndex, recipeResolver);
+            }
+        }
+
+        public static void SetValue(this Option option, Object value)
+        {
+            if (option.Value != value)
+            {
+                option.Value = value;
+
+                Mods.UpdateModState();
+                Mods.SaveModState();
             }
         }
 

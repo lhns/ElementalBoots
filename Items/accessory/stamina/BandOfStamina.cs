@@ -12,6 +12,8 @@ namespace LolHens.Items
     {
         public override void InitType(Type type)
         {
+            if (type != typeof(BandOfStamina)) return;
+
             modBase.eventRegistry.Register((Event.ChestGenerated e) => { if (e.chestInfo.height == ChestInfo.Height.SKY) e.chestInfo.AddLoot(item, 0.1f, true); });
         }
         

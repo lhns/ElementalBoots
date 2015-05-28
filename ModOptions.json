@@ -1,0 +1,11 @@
+{
+    "options": [
+        {
+            "name": "retrogen",
+            "displayName": "Retrogen chest loot",
+            "type": "Boolean",
+            "notify": false,
+            "default": false
+        }
+    ]
+}
