@@ -67,6 +67,10 @@
     <None Include="Items\accessory\illuminant\IlluminantHeartNecklace.json" />
     <None Include="Items\accessory\illuminant\IlluminantPearlsNecklace.json" />
     <None Include="Items\material\laser\amplifier\LaserAmplifier.json" />
+    <None Include="Items\material\laser\focus\YellowLaserFocus.json" />
+    <None Include="Items\material\laser\focus\WhiteLaserFocus.json" />
+    <None Include="Items\material\laser\focus\PurpleLaserFocus.json" />
+    <None Include="Items\material\laser\focus\OrangeLaserFocus.json" />
     <None Include="Items\material\laser\focus\GreenLaserFocus.json" />
     <None Include="Items\material\laser\focus\RedLaserFocus.json" />
     <None Include="Items\material\funnel\Funnel.json" />
@@ -193,9 +197,13 @@
     <Content Include="Items\accessory\illuminant\IlluminantPearlsNecklace.png" />
     <Content Include="Items\material\laser\amplifier\LaserAmplifier.png" />
     <Content Include="Items\material\laser\focus\GreenLaserFocus.png" />
+    <Content Include="Items\material\laser\focus\OrangeLaserFocus.png" />
+    <Content Include="Items\material\laser\focus\PurpleLaserFocus.png" />
     <Content Include="Items\material\laser\focus\RedLaserFocus.png" />
     <Content Include="Items\material\funnel\funnel.png" />
     <Content Include="Items\material\gunparts\IllegalMeteoriteGunParts.png" />
+    <Content Include="Items\material\laser\focus\WhiteLaserFocus.png" />
+    <Content Include="Items\material\laser\focus\YellowLaserFocus.png" />
     <Content Include="Items\material\laser\prism\GreenLaserPrism.png" />
     <Content Include="Items\weapon\illuminant\IlluminantStaff.png" />
     <Content Include="Items\accessory\illuminant\IlluminantStarNecklace.png" />
@@ -332,8 +340,9 @@
     <Compile Include="Projectiles\weapon\space\SpaceLaserRay.cs" />
     <Compile Include="Projectiles\weapon\space\SpaceRifleRay.cs" />
     <Compile Include="src\chest\ChestInfo.cs" />
-    <Compile Include="src\craft\FixedRecipeResolver.cs" />
-    <Compile Include="src\craft\UniversalRecipeResolver.cs" />
+    <Compile Include="src\resolver\CraftGroupFixResolver.cs" />
+    <Compile Include="src\resolver\FixedRecipeResolver.cs" />
+    <Compile Include="src\resolver\UniversalRecipeResolver.cs" />
     <Compile Include="src\event\EventRegistry.cs" />
     <Compile Include="src\event\Event.cs" />
     <Compile Include="src\Items\LolHensRayGun.cs" />
