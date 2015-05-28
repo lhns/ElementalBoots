@@ -128,6 +128,7 @@
     <None Include="Items\weapon\spikyball\unused.zip" />
     <None Include="LICENSE" />
     <None Include="ModInfo.json" />
+    <None Include="ModOptions.json" />
     <None Include="NPCs\summon\frostslime\FrostSlime.json" />
     <None Include="Projectiles\weapon\bubble\PoisonBubble.json" />
     <None Include="Projectiles\weapon\extinguisher\Smoke.json" />
