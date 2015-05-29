@@ -14,7 +14,9 @@ namespace LolHens.Buffs
         public static CodableEntity lastTrigger = null;
 
         new public MBase modBase;
-        public CodableEntity entity;
+        public int type;
+        public CodableEntity target;
+
         public CodableEntity trigger;
         public int time = 0;
 
@@ -22,14 +24,21 @@ namespace LolHens.Buffs
 
         public sealed override void Start(NPC npc, int index) { Start(npc as CodableEntity, index); }
 
-        public virtual void Start(CodableEntity entity, int index)
+        public virtual void Start(CodableEntity target, int index)
         {
             modBase = base.modBase as MBase;
-            this.entity = entity;
+
+            type = GetBuffType();
+
+            this.target = target;
+
             trigger = lastTrigger;
             lastTrigger = null;
+
             Init();
+
             if (!Main.dedServ) InitTextures();
+
             InitPost();
         }
 
@@ -50,5 +59,53 @@ namespace LolHens.Buffs
         public sealed override void ReApply(NPC npc, int index) { ReApply(npc as CodableEntity, index); }
 
         public virtual void ReApply(CodableEntity entity, int index) { }
+
+        private int GetBuffType()
+        {
+            foreach (KeyValuePair<int, BuffDef> buff in BuffDef.buffs)
+                if (buff.Value.modBuffType == GetType()) return buff.Key;
+            return -1;
+        }
+
+        public bool IsActive()
+        {
+            return target.HasBuff(type);
+        }
+
+        public int GetIndex()
+        {
+            return target.GetBuffIndex(type);
+        }
+
+        public int BuffTime
+        {
+            get
+            {
+                if (target is Player)
+                {
+                    Player player = target as Player;
+                    return player.buffTime[GetIndex()];
+                }
+                else if (target is NPC)
+                {
+                    NPC npc = target as NPC;
+                    return npc.buffTime[GetIndex()];
+                }
+                return 0;
+            }
+            set
+            {
+                if (target is Player)
+                {
+                    Player player = target as Player;
+                    player.buffTime[GetIndex()] = value;
+                }
+                else if (target is NPC)
+                {
+                    NPC npc = target as NPC;
+                    npc.buffTime[GetIndex()] = value;
+                }
+            }
+        }
     }
 }

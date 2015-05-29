@@ -19,12 +19,9 @@ namespace LolHens.Projectiles
         {
             //projectile.hurtsTiles = false;
 
-            ShowLight();
-        }
+            modBase.eventRegistry.Register((Event.OptionChanged e) => ShowLight(), this);
 
-        public override void InitType(Type type)
-        {
-            modBase.eventRegistry.Register((Event.OptionChanged e) => ShowLight());
+            ShowLight();
         }
 
         private void ShowLight()

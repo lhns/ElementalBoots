@@ -15,6 +15,8 @@ namespace LolHens.Items
         private float usedTime = 0;
         public float usedPercent = 0;
 
+        public bool equipped = false;
+
         public int time = 0;
 
         public Vector2 useScreenPos = default(Vector2);
@@ -55,6 +57,9 @@ namespace LolHens.Items
         public override void Effects(Player player)
         {
             time++;
+
+            equipped = true;
+
             EffectsPre(player);
         }
 
@@ -71,6 +76,16 @@ namespace LolHens.Items
                 return false;
             }
             return null;
+        }
+
+        public override void OnEquip(Player player, ItemSlot slot)
+        {
+            equipped = true;
+        }
+
+        public override void OnUnEquip(Player player, ItemSlot slot)
+        {
+            equipped = false;
         }
 
         public override bool PreShoot(Player player, Vector2 position, Vector2 velocity, int projType, int damage, float knockback)

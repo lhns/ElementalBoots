@@ -35,7 +35,7 @@
     <None Include="bin\Debug\ElementalBoots.exe.config" />
     <None Include="bin\Debug\ElementalBoots.vshost.exe.config" />
     <None Include="bin\Debug\ElementalBoots.vshost.exe.manifest" />
-    <None Include="Buffs\summon\frostslime\FrostSlime.json" />
+    <None Include="Buffs\summon\frostslime\FrostSlimeBuff.json" />
     <None Include="Buffs\weapon\illuminant\IlluminantBuff.json" />
     <None Include="Buffs\weapon\illuminant\IlluminantCrystal.json" />
     <None Include="Buffs\weapon\illuminant\IlluminantCrystal.pdn" />
@@ -158,7 +158,7 @@
   <ItemGroup>
     <Content Include=".gitignore" />
     <Content Include="bin\Debug\ElementalBoots.vshost.exe" />
-    <Content Include="Buffs\summon\frostslime\FrostSlime.png" />
+    <Content Include="Buffs\summon\frostslime\FrostSlimeBuff.png" />
     <Content Include="Buffs\TemplateBuff.png" />
     <Content Include="Buffs\weapon\illuminant\IlluminantBuff.png" />
     <Content Include="Buffs\weapon\illuminant\IlluminantCrystal.png" />
@@ -288,7 +288,7 @@
     <Content Include="TODO.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Buffs\summon\frostslime\FrostSlime.cs" />
+    <Compile Include="Buffs\summon\frostslime\FrostSlimeBuff.cs" />
     <Compile Include="Buffs\weapon\illuminant\IlluminantBuff.cs" />
     <Compile Include="Buffs\weapon\illuminant\IlluminantCrystal.cs" />
     <Compile Include="Items\accessory\balloon\black\BlackHorseshoeBalloon.cs" />

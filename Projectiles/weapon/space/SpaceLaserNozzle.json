@@ -7,7 +7,7 @@
     "friendly": true,
     "hostile": false,
     "tileCollide": false,
-    "damage": 5,
+    "damage": 50,
     "magic": true,
     "penetrate": 100,
     "maxUpdates": 4

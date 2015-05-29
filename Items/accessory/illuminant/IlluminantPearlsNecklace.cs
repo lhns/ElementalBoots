@@ -16,9 +16,11 @@ namespace LolHens.Items
         {
             modBase.eventRegistry.Register((Event.PlayerRespawn e) =>
             {
+                if (!equipped) return;
+
                 e.player.player.statLife = e.player.player.statLifeMax;
                 e.player.player.statMana = e.player.player.statManaMax;
-            });
+            }, this);
         }
 
         public override void Effects(Player player)

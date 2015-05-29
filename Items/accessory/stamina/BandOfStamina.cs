@@ -16,13 +16,15 @@ namespace LolHens.Items
 
             modBase.eventRegistry.Register((Event.ChestGenerated e) => { if (e.chestInfo.height == ChestInfo.Height.SKY) e.chestInfo.AddLoot(item, 0.1f, true); });
         }
-        
+
         public override void Init()
         {
             base.Init();
 
             modBase.eventRegistry.Register((Event.EntityDamaged e) =>
             {
+                if (!equipped) return;
+
                 if (e.player.player == e.victim)
                 {
                     if (time > 0) time = 0;
@@ -31,12 +33,14 @@ namespace LolHens.Items
                 {
                     SetSeconds(-7);
                 }
-            });
+            }, this);
 
             modBase.eventRegistry.Register((Event.PlayerRespawn e) =>
             {
+                if (!equipped) return;
+
                 time = 0;
-            });
+            }, this);
         }
 
         public override void Effects(Player player)

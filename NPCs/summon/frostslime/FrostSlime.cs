@@ -16,7 +16,8 @@ namespace LolHens.NPCs
         private const int damage = 40;
         private const int knockback = 2;
 
-        bool ability = true;
+        public bool ability = true;
+
         int timer = 0;
 
         public override void Init()
@@ -36,7 +37,7 @@ namespace LolHens.NPCs
                 {
                     timer = Math.Max(timer, 60);
                 }
-            });
+            }, this);
         }
 
         public override void HitEffect(int hitDirection, double damage, bool isDead)

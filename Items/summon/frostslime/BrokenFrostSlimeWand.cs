@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 using Terraria;
 using TAPI;
+using LolHens.NPCs;
 
 namespace LolHens.Items
 {
-    public class BrokenFrostSlimeWand: LolHensItem
+    public class BrokenFrostSlimeWand : LolHensItem
     {
         public override void InitType(Type type)
         {
@@ -20,7 +21,7 @@ namespace LolHens.Items
         {
             base.UseItem(player);
 
-            //player.AddPet(NPCDef.byName["LolHens:FrostSlime"]);
+            (player.AddPet(NPCDef.byName["LolHens:FrostSlime"]) as FrostSlime).ability = false;
             return null;
         }
     }

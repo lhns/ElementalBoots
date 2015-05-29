@@ -220,14 +220,12 @@ namespace LolHens
 
         public static MPlayer AsLolHensPlayer(this Player player)
         {
-            // NOT WORKING
             return player == null ? null : player.GetSubClass<MPlayer>();
         }
 
-        public static LolHensBuff AsLolHensBuff(this int buff)
+        public static LolHensBuff AsLolHensBuff(this int type, CodableEntity entity)
         {
-            BuffDef.buffs[buff].modBuffType.log();
-            return null;
+            return entity.GetBuff(entity.GetBuffIndex(type)) as LolHensBuff;
         }
 
         // Item
@@ -269,8 +267,44 @@ namespace LolHens
 
         // Buff
 
-        public static int BuffIndex(this CodableEntity entity, int buff)
+        public static ModBuff GetBuff(this CodableEntity entity, int index)
         {
+            if (index < 0) return null;
+
+            if (entity is Player)
+            {
+                Player player = entity as Player;
+                return player.buffCode[index];
+            }
+            else if (entity is NPC)
+            {
+                NPC npc = entity as NPC;
+                return npc.buffCode[index];
+            }
+            return null;
+        }
+
+        public static int GetBuffType(this CodableEntity entity, int index)
+        {
+            if (index < 0) return -1;
+
+            if (entity is Player)
+            {
+                Player player = entity as Player;
+                return player.buffType[index];
+            }
+            else if (entity is NPC)
+            {
+                NPC npc = entity as NPC;
+                return npc.buffType[index];
+            }
+            return -1;
+        }
+
+        public static int GetBuffIndex(this CodableEntity entity, int buff)
+        {
+            if (buff < 0) return -1;
+
             if (entity is Player)
             {
                 Player player = entity as Player;
@@ -286,7 +320,9 @@ namespace LolHens
 
         public static bool HasBuff(this CodableEntity entity, int buff)
         {
-            return BuffIndex(entity, buff) > -1;
+            if (buff < 0) return false;
+
+            return GetBuffIndex(entity, buff) > -1;
         }
 
         public static int AddBuff(this CodableEntity entity, string name, int time, CodableEntity trigger, bool quiet = true, bool resetTimer = true)
@@ -348,11 +384,37 @@ namespace LolHens
             NPCDef.npcDrops[npc.type] = drops;
         }
 
-        public static void AddPet(this Player player, NPC npc)
+        public static NPC New(this NPC npc, int x, int y)
+        {
+            int npcId = NPC.NewNPC(x, y, npc.type);
+
+            Main.npc[npcId].netUpdate = true;
+
+            if (Main.netMode == 2 && npcId < 200) NetMessage.SendData(23, -1, -1, "", npcId);
+
+            return Main.npc[npcId];
+        }
+
+        public static LolHensPet AddPet(this Player player, NPC npc)
         {
             LolHensPet pet = npc.AsLolHensNPC() as LolHensPet;
 
-            if (pet != null) player.AddBuff(pet.petBuff, 100);
+            LolHensPetBuff petBuff = pet.petBuff.AsLolHensBuff(player) as LolHensPetBuff;
+
+            if (petBuff != null && petBuff.pet != null) return petBuff.pet;
+
+            petBuff = player.GetBuff(player.AddBuff(pet.petBuff, 100)) as LolHensPetBuff;
+
+            NPC newNPC = npc.New((int)player.Center.X, (int)player.Center.Y);
+
+            LolHensPet newPet = newNPC.AsLolHensNPC() as LolHensPet;
+
+            newPet.owner = player;
+            newPet.buff = petBuff;
+
+            petBuff.pet = newPet;
+
+            return newPet;
         }
 
         public static bool isEnemy(this CodableEntity entity)

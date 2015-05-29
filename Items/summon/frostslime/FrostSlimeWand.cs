@@ -16,7 +16,7 @@ namespace LolHens.Items
         {
             base.UseItem(player);
 
-            player.AddPet(NPCDef.byName["LolHens:FrostSlime"]);
+            (player.AddPet(NPCDef.byName["LolHens:FrostSlime"]) as FrostSlime).ability = true;
             return null;
         }
     }

@@ -14,10 +14,5 @@ namespace LolHens.Buffs
 {
     public class FrostSlimeBuff : LolHensPetBuff
     {
-        public override void Start(CodableEntity entity, int index)
-        {
-            base.Start(entity, index);
-            petNPC = NPCDef.byName["LolHens:FrostSlime"];
-        }
     }
 }

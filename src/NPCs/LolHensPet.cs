@@ -8,38 +8,39 @@ using Microsoft.Xna.Framework;
 
 using Terraria;
 using TAPI;
+using LolHens.Buffs;
 
 namespace LolHens.NPCs
 {
-    public class LolHensPet: LolHensNPC
+    public class LolHensPet : LolHensNPC
     {
-        public int petBuff = -1;
-        public Player owner = null;
+        public int petBuff;
         public int teleportDistance = -1;
+
+        public LolHensPetBuff buff;
+        public Player owner;
 
         public override void AI()
         {
-            bool active = false;
-            if (petBuff > -1 && npc.target > -1 && npc.target < Main.player.Length)
+            if (npc.active && buff.IsActive() && owner.active)
             {
-                owner = Main.player[npc.target];
-                int buffIndex = owner.BuffIndex(petBuff);
-                if (buffIndex > -1)
-                {
-                    active = true;
-                    owner.buffTime[buffIndex] = 100;
-                }
-            }
-            if (!active) npc.active = false;
+                buff.BuffTime = 100;
 
-            if (npc.active)
+                TryTeleport();
+            }
+            else
             {
-                if (teleportDistance > -1)
+                npc.active = false;
+            }
+        }
+
+        protected virtual void TryTeleport()
+        {
+            if (teleportDistance > 0)
+            {
+                if ((owner.position - npc.position).Length() > teleportDistance && Teleport(owner.position))
                 {
-                    if ((owner.position - npc.position).Length() > teleportDistance && Teleport(owner.position))
-                    {
-                        npc.position = owner.position;
-                    }
+                    npc.position = owner.position;
                 }
             }
         }

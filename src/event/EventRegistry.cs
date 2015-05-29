@@ -10,9 +10,9 @@ namespace LolHens
     {
         private List<EventListener> listeners = new List<EventListener>();
 
-        public void Register<E>(Action<E> listener) where E : Event
+        public void Register<E>(Action<E> listener, Object monitor = null) where E : Event
         {
-            listeners.Add(new EventListener(e => listener((E)e), typeof(E)));
+            listeners.Add(new EventListener(e => listener((E)e), typeof(E), monitor));
         }
 
         public Boolean Call<E>(E lolHensEvent) where E : Event
@@ -26,7 +26,11 @@ namespace LolHens
 
             foreach (EventListener listener in listenersCopy)
             {
-                if (listener.type == typeof(E))
+                if (listener.action == null)
+                {
+                    listeners.Remove(listener);
+                }
+                else if (listener.type == typeof(E))
                 {
                     listener.action(lolHensEvent);
                     if (lolHensEvent.Cancelled()) break;
@@ -48,11 +52,18 @@ namespace LolHens
     {
         public readonly Action<Event> action;
         public readonly Type type;
+        private WeakReference monitor;
 
-        public EventListener(Action<Event> action, Type type)
+        public EventListener(Action<Event> action, Type type, Object monitor)
         {
             this.action = action;
             this.type = type;
+            monitor = monitor == null ? null : new WeakReference(monitor);
+        }
+
+        public bool IsAlive
+        {
+            get { return monitor == null || monitor.IsAlive; }
         }
     }
 }
