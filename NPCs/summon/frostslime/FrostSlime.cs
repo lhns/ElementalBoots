@@ -23,7 +23,7 @@ namespace LolHens.NPCs
         {
             base.Init();
 
-            petBuff = BuffDef.byName["LolHens:FrostSlime"];
+            petBuff = BuffDef.byName["LolHens:FrostSlimeBuff"];
             teleportDistance = 2000;
 
             modBase.eventRegistry.Register((Event.EntityDamaged e) =>

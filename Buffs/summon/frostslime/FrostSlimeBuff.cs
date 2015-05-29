@@ -12,7 +12,7 @@ using LolHens.NPCs;
 
 namespace LolHens.Buffs
 {
-    public class FrostSlime : LolHensPetBuff
+    public class FrostSlimeBuff : LolHensPetBuff
     {
         public override void Start(CodableEntity entity, int index)
         {
