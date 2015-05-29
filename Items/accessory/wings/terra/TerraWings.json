@@ -13,7 +13,7 @@
     "recipes": [
         {
             "items": { "LolHens:TrueDemonWings": 1, "LolHens:TrueAngelWings": 1, "LolHens:BrokenHeroWings": 1 },
-            "tiles": [ "Tinkerer's Workshop" ],
+            "tiles": [ "Inventor's Workshop" ],
             "creates": 1
         }
     ]
