@@ -72,8 +72,6 @@ namespace LolHens.Projectiles
         {
             Collision.HitTiles(projectile.position, projectile.velocity, projectile.width, projectile.height);
 
-            //Main.PlaySound(13, (int)projectile.position.X, (int)projectile.position.Y, 1);
-
             for (int m = 0; m < 3; m++)
             {
                 Dust.NewDust(projectile.position, projectile.width, projectile.height, 13, projectile.velocity.X * 0.2f, projectile.velocity.Y * 0.2f, 100, default(Color), 1.2f);

@@ -77,6 +77,10 @@ namespace LolHens.NPCs
             return true;
         }
 
+        const int projChance = 5;
+        const int soundChance = 2;
+        const int soundEffect = 17;
+
         private void ShootProjectiles()
         {
             if (!ability || timer <= 0) return;
@@ -85,10 +89,18 @@ namespace LolHens.NPCs
             float vel;
 
             vel = WorldGen.genRand.NextFloat() * 0.8f + 0.2f;
-            if (WorldGen.genRand.Next(5) == 0) ProjDef.byName["LolHens:FrostProjectile"].New(entity.Center.X + 14, entity.Center.Y + 1, 8f * vel, -8f * vel, damage, knockback, owner.whoAmI);
+            if (WorldGen.genRand.Next(projChance) == 0)
+            {
+                ProjDef.byName["LolHens:FrostProjectile"].New(entity.Center.X + 14, entity.Center.Y + 1, 8f * vel, -8f * vel, damage, knockback, owner.whoAmI);
+                if (WorldGen.genRand.Next(soundChance) == 0) Main.PlaySound(2, (int)npc.Center.X, (int)npc.Center.Y, soundEffect);
+            }
 
             vel = WorldGen.genRand.NextFloat() * 0.8f + 0.2f;
-            if (WorldGen.genRand.Next(5) == 0) ProjDef.byName["LolHens:FrostProjectile"].New(entity.Center.X - 6, entity.Center.Y - 2, -8f * vel, -8f * vel, damage, knockback, owner.whoAmI);
+            if (WorldGen.genRand.Next(projChance) == 0)
+            {
+                ProjDef.byName["LolHens:FrostProjectile"].New(entity.Center.X - 6, entity.Center.Y - 2, -8f * vel, -8f * vel, damage, knockback, owner.whoAmI);
+                if (WorldGen.genRand.Next(soundChance) == 0) Main.PlaySound(2, (int)npc.Center.X, (int)npc.Center.Y, soundEffect);
+            }
         }
     }
 }
