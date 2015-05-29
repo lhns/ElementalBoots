@@ -272,7 +272,8 @@ namespace LolHens
         }
 
         public static bool isEnemy(this CodableEntity entity)
-        { // TODO WIP
+        {
+            // TODO WIP
             if (!entity.active) return false;
             if (entity is NPC)
             {
@@ -298,6 +299,22 @@ namespace LolHens
             return null;
         }
 
+        public static MPlayer AsLolHensPlayer(this Player player)
+        {
+            // TODO WIP
+            if (player != null)
+            {
+                ModPlayer modPlayer = player.GetSubClass<ModPlayer>();
+                if (modPlayer != null && modPlayer is MPlayer) return modPlayer as MPlayer;
+            }
+            return null;
+        }
+
+        public static Item GetSelectedItem(this Player player)
+        {
+            return player.inventory[player.selectedItem];
+        }
+
         public static int BuffIndex(this CodableEntity entity, int buff)
         {
             if (entity is Player)
@@ -321,6 +338,7 @@ namespace LolHens
         public static void AddPet(this Player player, NPC npc)
         {
             LolHensPet pet = npc.AsLolHensNPC() as LolHensPet;
+
             if (pet != null) player.AddBuff(pet.petBuff, 100);
         }
 

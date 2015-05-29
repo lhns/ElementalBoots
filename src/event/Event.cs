@@ -36,6 +36,7 @@ namespace LolHens
         {
             public readonly MPlayer player;
             public readonly CodableEntity victim;
+            public readonly CodableEntity attacker;
             public readonly Projectile projectile;
             public readonly int hitDir;
             public int damage;
@@ -43,10 +44,11 @@ namespace LolHens
             public bool crit;
             public float critMult;
 
-            public EntityDamaged(MPlayer player, CodableEntity victim, Projectile projectile, int hitDir, int damage, float knockback, bool crit, float critMult)
+            public EntityDamaged(MPlayer player, CodableEntity victim, CodableEntity attacker, Projectile projectile, int hitDir, int damage, float knockback, bool crit, float critMult)
             {
                 this.player = player;
                 this.victim = victim;
+                this.attacker = attacker;
                 this.projectile = projectile;
                 this.hitDir = hitDir;
                 this.damage = damage;
@@ -55,9 +57,9 @@ namespace LolHens
                 this.critMult = critMult;
             }
 
-            public static void Call(EventRegistry registry, MPlayer player, CodableEntity victim, Projectile projectile, int hitDir, ref int damage, ref float knockback, ref bool crit, ref float critMult)
+            public static void Call(EventRegistry registry, MPlayer player, CodableEntity victim, CodableEntity attacker, Projectile projectile, int hitDir, ref int damage, ref float knockback, ref bool crit, ref float critMult)
             {
-                EntityDamaged lolHensEvent = new EntityDamaged(player, victim, projectile, hitDir, damage, knockback, crit, critMult);
+                EntityDamaged lolHensEvent = new EntityDamaged(player, victim, attacker, projectile, hitDir, damage, knockback, crit, critMult);
 
                 registry.Call(lolHensEvent);
 

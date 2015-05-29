@@ -1,0 +1,12 @@
+{
+    "displayName": "Broken Wand of the Frost Slime",
+    "size": [ 36, 38 ],
+    "maxStack": 1,
+    "value": [ 0, 0, 0, 20 ],
+    "rare": 2,
+    "tooltip": "Seems to be broken but maybe\nyou can repair it",
+    "useStyle": 4,
+    "useAnimation": 20,
+    "useTime": 20,
+    "useSound": 9
+}

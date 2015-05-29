@@ -66,6 +66,8 @@
     <None Include="Items\accessory\bottle\WeatherInABottle.pdn" />
     <None Include="Items\accessory\illuminant\IlluminantHeartNecklace.json" />
     <None Include="Items\accessory\illuminant\IlluminantPearlsNecklace.json" />
+    <None Include="Items\material\frostslime\BrokenFrostSlimeWandPart.json" />
+    <None Include="Items\summon\frostslime\BrokenFrostSlimeWand.json" />
     <None Include="Items\material\laser\amplifier\LaserAmplifier.json" />
     <None Include="Items\material\laser\focus\YellowLaserFocus.json" />
     <None Include="Items\material\laser\focus\WhiteLaserFocus.json" />
@@ -76,6 +78,7 @@
     <None Include="Items\material\funnel\Funnel.json" />
     <None Include="Items\material\gunparts\IllegalMeteoriteGunParts.json" />
     <None Include="Items\material\laser\prism\GreenLaserPrism.json" />
+    <None Include="Items\summon\frostslime\unused.zip" />
     <None Include="Items\weapon\illuminant\IlluminantStaff.json" />
     <None Include="Items\weapon\illuminant\IlluminantStaff.pdn" />
     <None Include="Items\accessory\illuminant\IlluminantStarNecklace.json" />
@@ -195,6 +198,8 @@
     <Content Include="Items\accessory\bottle\TornadoInABottle.png" />
     <Content Include="Items\accessory\illuminant\IlluminantHeartNecklace.png" />
     <Content Include="Items\accessory\illuminant\IlluminantPearlsNecklace.png" />
+    <Content Include="Items\summon\frostslime\BrokenFrostSlimeWand.png" />
+    <Content Include="Items\material\frostslime\BrokenFrostSlimeWandPart.png" />
     <Content Include="Items\material\laser\amplifier\LaserAmplifier.png" />
     <Content Include="Items\material\laser\focus\GreenLaserFocus.png" />
     <Content Include="Items\material\laser\focus\OrangeLaserFocus.png" />
@@ -300,6 +305,8 @@
     <Compile Include="Items\accessory\illuminant\IlluminantHeartNecklace.cs" />
     <Compile Include="Items\accessory\illuminant\IlluminantPearlsNecklace.cs" />
     <Compile Include="Items\accessory\wings\terra\BrokenHeroWings.cs" />
+    <Compile Include="Items\material\frostslime\BrokenFrostSlimeWandPart.cs" />
+    <Compile Include="Items\summon\frostslime\BrokenFrostSlimeWand.cs" />
     <Compile Include="Items\material\funnel\Funnel.cs" />
     <Compile Include="Items\material\illuminant\IlluminantPearl.cs" />
     <Compile Include="Items\weapon\illuminant\IlluminantStaff.cs" />
