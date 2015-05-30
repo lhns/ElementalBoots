@@ -20,16 +20,21 @@ namespace LolHens
     {
         public static MBase instance;
 
+        public EventRegistry eventRegistry = new EventRegistry();
+
         public List<Type> initializedTypes = new List<Type>();
         public List<LolHensItem> items = new List<LolHensItem>();
         public List<LolHensProjectile> projectiles = new List<LolHensProjectile>();
         public List<LolHensNPC> npcs = new List<LolHensNPC>();
         public List<String> craftGroups = new List<String>();
 
-        public EventRegistry eventRegistry = new EventRegistry();
-
         private MWorld world;
+
         private static ModBase dummyVanillaModBase = null;
+        public static FieldInfo fieldInfo_craftGroupResolver_modBase = typeof(CraftGroupResolver).GetField("modBase", BindingFlags.NonPublic | BindingFlags.Instance);
+        public static FieldInfo fieldInfo_craftGroupResolver_json = typeof(CraftGroupResolver).GetField("craftJson", BindingFlags.NonPublic | BindingFlags.Instance);
+        public static FieldInfo fieldInfo_mod_modInfo = typeof(Mod).GetField("_modInfo", BindingFlags.NonPublic | BindingFlags.Instance);
+        public static FieldInfo fieldInfo_dictionary_entries = typeof(Dictionary<Object, Object>).GetType().GetField("entries", BindingFlags.NonPublic | BindingFlags.Instance);
 
         public MBase() : base() { instance = this; }
 
@@ -37,14 +42,14 @@ namespace LolHens
         {
             LoadOptions();
 
+            GetCraftGroups();
+
             InitializeItems();
 
             if (options.GetBoolean("KingSlimeGel"))
                 NPCDef.byName["Vanilla:King Slime"].AddDrop(ItemDef.byName["Vanilla:Gel"], 1, 40, 80);
 
             Event.ModLoaded.Call(eventRegistry, this);
-
-            GetCraftGroups();
 
             PreventCraftGroupCrash();
         }
@@ -88,19 +93,17 @@ namespace LolHens
 
         private void GetCraftGroups()
         {
-            List<Resolver> craftGroupResolverList = ResolverQueue.queue.FindAll(resolver => resolver.GetType() == typeof(CraftGroupResolver));
-
-            foreach (Resolver resolver in craftGroupResolverList)
+            foreach (Resolver resolver in ResolverQueue.queue)
             {
+                if (!(resolver is CraftGroupResolver)) continue;
+
                 CraftGroupResolver craftGroupResolver = (CraftGroupResolver)resolver;
 
-                FieldInfo modBaseField = craftGroupResolver.GetType().GetField("modBase", BindingFlags.NonPublic | BindingFlags.Instance);
-                if (modBaseField == null || modBaseField.GetValue(craftGroupResolver) != this) continue;
+                if (fieldInfo_craftGroupResolver_modBase == null || fieldInfo_craftGroupResolver_modBase.GetValue(craftGroupResolver) != this) continue;
 
-                FieldInfo jsonField = craftGroupResolver.GetType().GetField("craftJson", BindingFlags.NonPublic | BindingFlags.Instance);
-                if (jsonField == null) continue;
+                if (fieldInfo_craftGroupResolver_json == null) continue;
 
-                JsonData j = (JsonData)jsonField.GetValue(craftGroupResolver);
+                JsonData j = (JsonData)fieldInfo_craftGroupResolver_json.GetValue(craftGroupResolver);
                 if (j == null || !j.Has("itemGroups")) continue;
 
                 foreach (JsonData itemGroup in j["itemGroups"])
@@ -108,12 +111,43 @@ namespace LolHens
             }
         }
 
+        private int GetFirstCraftGroupResolverIndex()
+        {
+            int index = -1;
+
+            foreach (Resolver resolver in ResolverQueue.queue)
+            {
+                index++;
+
+                if (!(resolver is CraftGroupResolver)) continue;
+
+                CraftGroupResolver craftGroupResolver = (CraftGroupResolver)resolver;
+
+                if (fieldInfo_craftGroupResolver_modBase == null || fieldInfo_craftGroupResolver_modBase.GetValue(craftGroupResolver) != this) continue;
+
+                return index;
+            }
+
+            return -1;
+        }
+
+        public void InsertPreCraftGroupResolver(Resolver resolver)
+        {
+            int firstCraftGroupResolverIndex = GetFirstCraftGroupResolverIndex();
+
+            if (firstCraftGroupResolverIndex == -1)
+            {
+                ResolverQueue.Add(resolver);
+            }
+            else
+            {
+                ResolverQueue.queue.Insert(firstCraftGroupResolverIndex, resolver);
+            }
+        }
+
         private void PreventCraftGroupCrash()
         {
-            int firstGroupIndex = ResolverQueue.queue.FindIndex(resolver => resolver.GetType() == typeof(CraftGroupResolver));
-
-            if (firstGroupIndex != -1)
-                ResolverQueue.queue.Insert(firstGroupIndex, new CraftGroupFixResolver());
+            InsertPreCraftGroupResolver(new CraftGroupFixResolver());
         }
 
         public void OnInitializeWorld(MWorld world)
@@ -128,9 +162,8 @@ namespace LolHens
                 dummyVanillaModBase = new ModBase();
                 dummyVanillaModBase.mod = new Mod(null);
 
-                FieldInfo modInfoField = dummyVanillaModBase.mod.GetType().GetField("_modInfo", BindingFlags.NonPublic | BindingFlags.Instance);
-                if (modInfoField == null) return null;
-                modInfoField.SetValue(dummyVanillaModBase.mod, JsonMapper.ToObject("{\"internalName\": \"LolHens\"}"));
+                if (fieldInfo_mod_modInfo == null) return null;
+                fieldInfo_mod_modInfo.SetValue(dummyVanillaModBase.mod, JsonMapper.ToObject("{\"internalName\": \"LolHens\"}"));
             }
             return dummyVanillaModBase;
         }
@@ -164,9 +197,8 @@ namespace LolHens
 
         public static int Capacity<TKey, TValue>(this Dictionary<TKey, TValue> source)
         {
-            FieldInfo entriesField = source.GetType().GetField("entries", BindingFlags.NonPublic | BindingFlags.Instance);
-            if (entriesField == null) return 0;
-            Array entries = entriesField.GetValue(source) as Array;
+            if (MBase.fieldInfo_dictionary_entries == null) return 0;
+            Array entries = MBase.fieldInfo_dictionary_entries.GetValue(source) as Array;
             if (entries == null) return 0;
             return entries.Length;
         }
@@ -236,18 +268,19 @@ namespace LolHens
 
         public static void AddRecipe(this Item item, String jsonObj)
         {
-            Resolver recipeResolver = new UniversalRecipeResolver(item, JsonMapper.ToObject(jsonObj));
+            MBase.instance.InsertPreCraftGroupResolver(new UniversalRecipeResolver(item, JsonMapper.ToObject(jsonObj)));
+        }
 
-            int firstGroupIndex = ResolverQueue.queue.FindIndex(resolver => resolver.GetType() == typeof(CraftGroupResolver));
-
-            if (firstGroupIndex == -1)
+        private static int GetCraftGroupResolverIndex(ModBase modBase)
+        {
+            return ResolverQueue.queue.FindIndex(resolver =>
             {
-                ResolverQueue.Add(recipeResolver);
-            }
-            else
-            {
-                ResolverQueue.queue.Insert(firstGroupIndex, recipeResolver);
-            }
+                if (resolver is CraftGroupResolver)
+                {
+                    if (MBase.fieldInfo_craftGroupResolver_modBase == null) return false;
+                }
+                return false;
+            });
         }
 
         public static Item GetSelectedItem(this Player player)
