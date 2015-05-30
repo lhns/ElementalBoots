@@ -31,9 +31,9 @@ namespace LolHens
         private MWorld world;
 
         private static ModBase dummyVanillaModBase = null;
-        public static FieldInfo fieldInfo_craftGroupResolver_modBase = typeof(CraftGroupResolver).GetField("modBase", BindingFlags.NonPublic | BindingFlags.Instance);
-        public static FieldInfo fieldInfo_craftGroupResolver_json = typeof(CraftGroupResolver).GetField("craftJson", BindingFlags.NonPublic | BindingFlags.Instance);
-        public static FieldInfo fieldInfo_mod_modInfo = typeof(Mod).GetField("_modInfo", BindingFlags.NonPublic | BindingFlags.Instance);
+        private static FieldInfo fieldInfo_craftGroupResolver_modBase = typeof(CraftGroupResolver).GetField("modBase", BindingFlags.NonPublic | BindingFlags.Instance);
+        private static FieldInfo fieldInfo_craftGroupResolver_json = typeof(CraftGroupResolver).GetField("craftJson", BindingFlags.NonPublic | BindingFlags.Instance);
+        private static FieldInfo fieldInfo_mod_modInfo = typeof(Mod).GetField("_modInfo", BindingFlags.NonPublic | BindingFlags.Instance);
         public static FieldInfo fieldInfo_dictionary_entries = typeof(Dictionary<Object, Object>).GetType().GetField("entries", BindingFlags.NonPublic | BindingFlags.Instance);
 
         public MBase() : base() { instance = this; }
