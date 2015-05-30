@@ -271,18 +271,6 @@ namespace LolHens
             MBase.instance.InsertPreCraftGroupResolver(new UniversalRecipeResolver(item, JsonMapper.ToObject(jsonObj)));
         }
 
-        private static int GetCraftGroupResolverIndex(ModBase modBase)
-        {
-            return ResolverQueue.queue.FindIndex(resolver =>
-            {
-                if (resolver is CraftGroupResolver)
-                {
-                    if (MBase.fieldInfo_craftGroupResolver_modBase == null) return false;
-                }
-                return false;
-            });
-        }
-
         public static Item GetSelectedItem(this Player player)
         {
             // WIP (crash)
