@@ -20,19 +20,23 @@ namespace LolHens.NPCs
         public LolHensPetBuff buff;
         public Player owner;
 
-        public override void AI()
+        public sealed override void AI()
         {
-            if (npc.active && buff.IsActive() && owner.active)
+            if (buff != null && owner != null && buff.IsActive() && owner.active && npc.active)
             {
                 buff.BuffTime = 100;
 
                 TryTeleport();
+
+                PetAI();
             }
             else
             {
                 npc.active = false;
             }
         }
+
+        public virtual void PetAI() { }
 
         protected virtual void TryTeleport()
         {

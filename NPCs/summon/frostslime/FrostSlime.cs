@@ -45,10 +45,8 @@ namespace LolHens.NPCs
             timer = Math.Max(timer, 80);
         }
 
-        public override void AI()
+        public override void PetAI()
         {
-            base.AI();
-
             if (npc.active)
             {
                 if (npc.velocity.X == 0)
