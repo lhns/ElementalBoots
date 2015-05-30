@@ -47,15 +47,6 @@ namespace LolHens
             GetCraftGroups();
 
             PreventCraftGroupCrash();
-
-            try
-            {
-                ResolverQueue.ResolveAll();
-            }
-            catch (Exception e)
-            {
-                TConsole.Print(e);
-            }
         }
 
         public override void OnAllModsLoaded()
