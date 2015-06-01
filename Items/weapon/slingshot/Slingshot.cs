@@ -15,6 +15,8 @@ namespace LolHens.Items
 
         public override void InitType(Type type)
         {
+            if (type != typeof(Slingshot)) return;
+
             ItemDef.byName["Vanilla:Acorn"].MakeAmmo("Acorn");
 
             modBase.eventRegistry.Register((Event.ChestGenerated e) =>

@@ -14,8 +14,9 @@ namespace LolHens.Items
     {
         public override void InitType(Type type)
         {
-            modBase.eventRegistry.Register((Event.ChestGenerated e) =>
-            {
+            if (type != typeof(Funnel)) return;
+
+            modBase.eventRegistry.Register((Event.ChestGenerated e) => {
                 if (e.chestInfo.style == ChestInfo.Style.WATER) e.chestInfo.AddLoot(item, 0.6f, false);
             });
 

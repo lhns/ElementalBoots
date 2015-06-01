@@ -17,11 +17,14 @@ namespace LolHens.Items
     {
         public override void InitType(Type type)
         {
+            if (type != typeof(SpikyBallBlaster)) return;
+
             ItemDef.byName["Vanilla:Spiky Ball"].MakeAmmo("SpikyBall");
 
             modBase.eventRegistry.Register((Event.ChestGenerated e) =>
             {
-                if (e.chestInfo.height == ChestInfo.Height.CAVERN && e.chestInfo.style == ChestInfo.Style.GOLD) e.chestInfo.AddLoot(item, 0.05f, true);
+                if (e.chestInfo.height == ChestInfo.Height.CAVERN
+                    && (e.chestInfo.style == ChestInfo.Style.GOLD || e.chestInfo.style == ChestInfo.Style.GOLD_LOCKED)) e.chestInfo.AddLoot(item, 0.05f, true);
             });
         }
 
