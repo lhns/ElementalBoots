@@ -10,7 +10,7 @@
     "knockback": 1,
     "recipes": [
         {
-            "items": { "LolHens:IlluminantHeartNecklace": 1, "LolHens:IlluminantStarNecklace": 1 },
+            "items": { "LolHens:IlluminantHeartNecklace": 1, "LolHens:IlluminantStarNecklace": 1, "LolHens:IlluminantPearl":  1 },
             "tiles": [ "Inventor's Workshop" ],
             "creates": 1
         }
