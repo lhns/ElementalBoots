@@ -14,3 +14,4 @@ Todo:
 - hook
 - alien technology fragments
 - orb alternates to craft illuminant necklaces
+- black demons
