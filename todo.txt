@@ -9,3 +9,8 @@ Changelog:
 - Added Space Laser
 - Added Band of Stamina and Band of Anarchy
 - Illuminant pearls now drop from all illuminant creatures
+
+Todo:
+- hook
+- alien technology fragments
+- orb alternates to craft illuminant necklaces
