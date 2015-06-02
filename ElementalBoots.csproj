@@ -79,6 +79,7 @@
     <None Include="Items\material\gunparts\IllegalMeteoriteGunParts.json" />
     <None Include="Items\material\laser\prism\GreenLaserPrism.json" />
     <None Include="Items\summon\frostslime\unused.zip" />
+    <None Include="Items\tool\plunger\Plunger.json" />
     <None Include="Items\weapon\illuminant\IlluminantStaff.json" />
     <None Include="Items\weapon\illuminant\IlluminantStaff.pdn" />
     <None Include="Items\accessory\illuminant\IlluminantStarNecklace.json" />
@@ -210,6 +211,7 @@
     <Content Include="Items\material\laser\focus\WhiteLaserFocus.png" />
     <Content Include="Items\material\laser\focus\YellowLaserFocus.png" />
     <Content Include="Items\material\laser\prism\GreenLaserPrism.png" />
+    <Content Include="Items\tool\plunger\Plunger.png" />
     <Content Include="Items\weapon\illuminant\IlluminantStaff.png" />
     <Content Include="Items\accessory\illuminant\IlluminantStarNecklace.png" />
     <Content Include="Items\accessory\magnet\Magnet.png" />
@@ -309,6 +311,7 @@
     <Compile Include="Items\summon\frostslime\BrokenFrostSlimeWand.cs" />
     <Compile Include="Items\material\funnel\Funnel.cs" />
     <Compile Include="Items\material\illuminant\IlluminantPearl.cs" />
+    <Compile Include="Items\tool\plunger\Plunger.cs" />
     <Compile Include="Items\weapon\illuminant\IlluminantStaff.cs" />
     <Compile Include="Items\accessory\illuminant\IlluminantStarNecklace.cs" />
     <Compile Include="Items\accessory\magnet\Magnet.cs" />
