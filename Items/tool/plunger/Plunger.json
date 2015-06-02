@@ -1,0 +1,8 @@
+{
+    "displayName": "Plunger",
+    "size": [ 25, 25 ],
+    "maxStack": 1,
+    "value": [ 0, 0, 1, 0 ],
+    "rare": 1,
+    "tooltip": "Allows you to climb walls"
+}
