@@ -19,7 +19,7 @@ namespace LolHens.Projectiles
         {
             //projectile.hurtsTiles = false;
 
-            modBase.eventRegistry.Register((Event.OptionChanged e) => ShowLight(), this);
+            modBase.eventRegistry.Register((Events.OptionChanged e) => ShowLight(), this);
 
             ShowLight();
         }

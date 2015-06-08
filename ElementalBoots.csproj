@@ -80,6 +80,7 @@
     <None Include="Items\material\laser\prism\GreenLaserPrism.json" />
     <None Include="Items\summon\frostslime\unused.zip" />
     <None Include="Items\tool\plunger\Plunger.json" />
+    <None Include="Items\tool\plunger\unused.zip" />
     <None Include="Items\weapon\illuminant\IlluminantStaff.json" />
     <None Include="Items\weapon\illuminant\IlluminantStaff.pdn" />
     <None Include="Items\accessory\illuminant\IlluminantStarNecklace.json" />
@@ -267,6 +268,8 @@
     <Content Include="Items\weapon\space\SpaceLaser.png" />
     <Content Include="Items\weapon\space\SpaceRifle.png" />
     <Content Include="Items\weapon\spikyball\SpikyBallBlaster.png" />
+    <Content Include="Items\weapon\spikyball\SpikyBallBlaster2.png" />
+    <Content Include="LibEventManagerCSharp.dll" />
     <Content Include="NPCs\summon\frostslime\FrostSlime.png" />
     <Content Include="Projectiles\weapon\bubble\PoisonBubble.png" />
     <Content Include="Projectiles\weapon\bubble\texture\PoisonBubble10.png" />
@@ -350,11 +353,10 @@
     <Compile Include="Projectiles\weapon\space\SpaceLaserRay.cs" />
     <Compile Include="Projectiles\weapon\space\SpaceRifleRay.cs" />
     <Compile Include="src\chest\ChestInfo.cs" />
+    <Compile Include="src\event\Events.cs" />
     <Compile Include="src\resolver\CraftGroupFixResolver.cs" />
     <Compile Include="src\resolver\FixedRecipeResolver.cs" />
     <Compile Include="src\resolver\UniversalRecipeResolver.cs" />
-    <Compile Include="src\event\EventRegistry.cs" />
-    <Compile Include="src\event\Event.cs" />
     <Compile Include="src\Items\LolHensRayGun.cs" />
     <Compile Include="src\Buffs\LolHensBuff.cs" />
     <Compile Include="src\Items\LolHensGun.cs" />
@@ -370,6 +372,9 @@
     <Compile Include="src\Projectiles\LolHensProjectile.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="LibEventManagerCSharp">
+      <HintPath>.\LibEventManagerCSharp.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Microsoft.Xna.Framework.dll</HintPath>

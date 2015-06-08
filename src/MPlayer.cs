@@ -7,6 +7,8 @@ using Microsoft.Xna.Framework.Graphics;
 using System.Reflection;
 using LitJson;
 
+using LibEventManagerCSharp;
+
 using TAPI;
 using Terraria;
 using LolHens.Items;
@@ -32,7 +34,7 @@ namespace LolHens
             if (dead && player.respawnTimer == 0)
             {
                 dead = false;
-                Event.PlayerRespawn.Call(modBase.eventRegistry, this);
+                modBase.eventRegistry.Call(new Events.PlayerRespawn.Factory())(this);
             }
 
             resetFlightTimer = (player.grappling[0] >= 0
@@ -51,7 +53,7 @@ namespace LolHens
         public override void PostKill(double damage, int hitDirection, bool pvp, string deathText)
         {
             dead = true;
-            Event.PlayerDeath.Call(modBase.eventRegistry, this, damage, hitDirection, pvp, deathText);
+            modBase.eventRegistry.Call(new Events.PlayerDeath.Factory())(this, damage, hitDirection, pvp, deathText);
         }
 
         public override void DamageNPC(NPC npc, int hitDir, ref int damage, ref float knockback, ref bool crit, ref float critMult)
@@ -90,7 +92,15 @@ namespace LolHens
 
         private void Damage(CodableEntity victim, CodableEntity attacker, Projectile projectile, int hitDir, ref int damage, ref float knockback, ref bool crit, ref float critMult)
         {
-            Event.EntityDamaged.Call(modBase.eventRegistry, this, victim, attacker, projectile, hitDir, ref damage, ref knockback, ref crit, ref critMult);
+            Events.EntityDamaged e = modBase.eventRegistry.Call(new Events.EntityDamaged.Factory())(this, victim, attacker, projectile, hitDir, damage, knockback, crit, critMult);
+
+            if (!e.Cancelled)
+            {
+                damage = e.damage;
+                knockback = e.knockback;
+                crit = e.crit;
+                critMult = e.critMult;
+            }
         }
     }
 }

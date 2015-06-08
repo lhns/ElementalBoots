@@ -19,13 +19,13 @@ namespace LolHens.Items
 
             ItemDef.byName["Vanilla:Acorn"].MakeAmmo("Acorn");
 
-            modBase.eventRegistry.Register((Event.ChestGenerated e) =>
+            modBase.eventRegistry.Register((Events.ChestGenerated e) =>
             {
                 if ((e.chestInfo.height == ChestInfo.Height.SURFACE && e.chestInfo.style == ChestInfo.Style.WOOD)
                     || e.chestInfo.style == ChestInfo.Style.LIVING_WOOD) e.chestInfo.AddLoot(item, 0.2f, true);
             });
 
-            modBase.eventRegistry.Register((Event.ChestGenerated e) =>
+            modBase.eventRegistry.Register((Events.ChestGenerated e) =>
             {
                 if ((e.chestInfo.height == ChestInfo.Height.SURFACE && e.chestInfo.style == ChestInfo.Style.WOOD)
                     || e.chestInfo.style == ChestInfo.Style.LIVING_WOOD) e.chestInfo.AddLoot(ItemDef.byName["Vanilla:Acorn"], 0.6f, false, 10, 40);

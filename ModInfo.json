@@ -4,5 +4,8 @@
     "icon": "icon",
     "author": "LolHens",
     "info": "Allows you to combine several accessories!\n\ncredits:\n- Fruitbat for his great balloon textures and his illuminated ideas\n- thelavaknightdm2 for his cool Elemental Boots texture color upgrade\n- kentanggoreng92 for his Lava Shell idea\n- Battle Bee for his new textures for the Spiky Ball Blaster, Ice Storm, Extinguisher, Lil' Bombard, Magnet, Space Rifle and Space Laser\n- DryCryCrystal for the Pickaxe, Bow, Book and Blade of Elemental sprites and ideas\n- [MG]Mecha-Pumpking(TM) for his baby frost slime sprites and ideas\n-Everybody for his Band of Stamina and Band of Anarchy Sprites\n- Grox the Great for his rotation method to make staves look right",
-    "version": "1.7"
+    "version": "1.7",
+	"dllReferences": [
+		"LibEventManagerCSharp.dll"
+	]
 }
