@@ -12,6 +12,28 @@ namespace LolHens
 {
     public class Events
     {
+        public static EventRegistry registry;
+
+        internal static void Init()
+        {
+            registry = new EventRegistry();
+        }
+
+        internal static void CallModLoaded(MBase modBase)
+        {
+            registry.Call(new Events.ModLoaded.Factory())(modBase);
+        }
+
+        internal static void CallAllModsLoaded(MBase modBase)
+        {
+            registry.Call(new Events.AllModsLoaded.Factory())(modBase);
+        }
+
+        internal static void CallOptionChanged(MBase modBase, Option option)
+        {
+            registry.Call(new Events.OptionChanged.Factory())(modBase, option);
+        }
+
         public class EntityDamaged : Event
         {
             public readonly MPlayer player;

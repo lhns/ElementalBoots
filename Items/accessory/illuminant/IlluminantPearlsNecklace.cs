@@ -14,7 +14,7 @@ namespace LolHens.Items
     {
         public override void Init()
         {
-            modBase.eventRegistry.Register((Events.PlayerRespawn e) =>
+            Events.registry.Register((Events.PlayerRespawn e) =>
             {
                 if (!equipped) return;
 

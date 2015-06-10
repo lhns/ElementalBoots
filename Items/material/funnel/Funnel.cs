@@ -16,8 +16,9 @@ namespace LolHens.Items
         {
             if (type != typeof(Funnel)) return;
 
-            modBase.eventRegistry.Register((Events.ChestGenerated e) => {
-                if (e.chestInfo.style == ChestInfo.Style.WATER) e.chestInfo.AddLoot(item, 0.6f, false);
+            Events.registry.Register((Events.ChestGenerated e) =>
+            {
+                if (e.chestInfo.style == ChestInfo.Style.WATER) e.chestInfo.AddLoot(item, 0.4f, false);
             });
 
             if (modBase.options.GetBoolean("WeatherBottleConversion"))

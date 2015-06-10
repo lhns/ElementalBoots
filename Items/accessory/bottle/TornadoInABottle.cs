@@ -26,7 +26,8 @@ namespace LolHens.Items
         {
             if (type != typeof(TornadoInABottle)) return;
 
-            modBase.eventRegistry.Register((Events.ChestGenerated e) => {
+            Events.registry.Register((Events.ChestGenerated e) =>
+            {
                 if (e.chestInfo.height == ChestInfo.Height.SKY) e.chestInfo.AddLoot(item, 0.1f, true);
             });
         }

@@ -27,7 +27,7 @@ namespace LolHens.NPCs
             petBuff = BuffDef.byName["LolHens:FrostSlimeBuff"];
             teleportDistance = 2000;
 
-            modBase.eventRegistry.Register((Events.EntityDamaged e) =>
+            Events.registry.Register((Events.EntityDamaged e) =>
             {
                 if (e.victim == owner)
                 {

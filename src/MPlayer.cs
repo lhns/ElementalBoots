@@ -34,7 +34,7 @@ namespace LolHens
             if (dead && player.respawnTimer == 0)
             {
                 dead = false;
-                modBase.eventRegistry.Call(new Events.PlayerRespawn.Factory())(this);
+                Events.registry.Call(new Events.PlayerRespawn.Factory())(this);
             }
 
             resetFlightTimer = (player.grappling[0] >= 0
@@ -53,7 +53,7 @@ namespace LolHens
         public override void PostKill(double damage, int hitDirection, bool pvp, string deathText)
         {
             dead = true;
-            modBase.eventRegistry.Call(new Events.PlayerDeath.Factory())(this, damage, hitDirection, pvp, deathText);
+            Events.registry.Call(new Events.PlayerDeath.Factory())(this, damage, hitDirection, pvp, deathText);
         }
 
         public override void DamageNPC(NPC npc, int hitDir, ref int damage, ref float knockback, ref bool crit, ref float critMult)
@@ -92,7 +92,7 @@ namespace LolHens
 
         private void Damage(CodableEntity victim, CodableEntity attacker, Projectile projectile, int hitDir, ref int damage, ref float knockback, ref bool crit, ref float critMult)
         {
-            Events.EntityDamaged e = modBase.eventRegistry.Call(new Events.EntityDamaged.Factory())(this, victim, attacker, projectile, hitDir, damage, knockback, crit, critMult);
+            Events.EntityDamaged e = Events.registry.Call(new Events.EntityDamaged.Factory())(this, victim, attacker, projectile, hitDir, damage, knockback, crit, critMult);
 
             if (!e.Cancelled)
             {

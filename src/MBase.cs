@@ -14,15 +14,11 @@ using LolHens.Projectiles;
 using LolHens.Buffs;
 using LolHens.NPCs;
 
-using LibEventManagerCSharp;
-
 namespace LolHens
 {
     public class MBase : TAPI.ModBase
     {
         public static MBase instance;
-
-        public EventRegistry eventRegistry = new EventRegistry();
 
         public List<Type> initializedTypes = new List<Type>();
         public List<LolHensItem> items = new List<LolHensItem>();
@@ -42,6 +38,8 @@ namespace LolHens
 
         public override void OnLoad()
         {
+            Events.Init();
+
             LoadOptions();
 
             GetCraftGroups();
@@ -51,19 +49,16 @@ namespace LolHens
             if (options.GetBoolean("KingSlimeGel"))
                 NPCDef.byName["Vanilla:King Slime"].AddDrop(ItemDef.byName["Vanilla:Gel"], 1, 40, 80);
 
-            eventRegistry.Call(new Events.ModLoaded.Factory())(this);
 
             PreventCraftGroupCrash();
         }
 
         public override void OnAllModsLoaded()
         {
-            eventRegistry.Call(new Events.AllModsLoaded.Factory())(this);
         }
 
         public override void OptionChanged(Option option)
         {
-            eventRegistry.Call(new Events.OptionChanged.Factory())(this, option);
         }
 
         public override void PostGameUpdate()

@@ -12,7 +12,8 @@ namespace LolHens.Items
         {
             if (type != typeof(Magnet)) return;
 
-            modBase.eventRegistry.Register((Events.ChestGenerated e) => {
+            Events.registry.Register((Events.ChestGenerated e) =>
+            {
                 if ((e.chestInfo.height == ChestInfo.Height.UNDERGROUND || e.chestInfo.height == ChestInfo.Height.CAVERN)
                     && (e.chestInfo.style == ChestInfo.Style.GOLD || e.chestInfo.style == ChestInfo.Style.GOLD_LOCKED)) e.chestInfo.AddLoot(item, 0.05f, true);
             });

@@ -392,8 +392,8 @@
       <HintPath>..\Microsoft.Xna.Framework.Xact.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="tAPI">
-      <HintPath>E:\Program Files (x86)\Steam\SteamApps\common\Terraria\tAPI.exe</HintPath>
+    <Reference Include="tAPI Core">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\Terraria\tAPI Core.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

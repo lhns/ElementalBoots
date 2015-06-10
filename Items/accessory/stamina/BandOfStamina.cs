@@ -14,7 +14,8 @@ namespace LolHens.Items
         {
             if (type != typeof(BandOfStamina)) return;
 
-            modBase.eventRegistry.Register((Events.ChestGenerated e) => {
+            Events.registry.Register((Events.ChestGenerated e) =>
+            {
                 if (e.chestInfo.height == ChestInfo.Height.SKY) e.chestInfo.AddLoot(item, 0.1f, true);
             });
         }
@@ -23,7 +24,7 @@ namespace LolHens.Items
         {
             base.Init();
 
-            modBase.eventRegistry.Register((Events.EntityDamaged e) =>
+            Events.registry.Register((Events.EntityDamaged e) =>
             {
                 if (!equipped) return;
 
@@ -37,7 +38,7 @@ namespace LolHens.Items
                 }
             }, this);
 
-            modBase.eventRegistry.Register((Events.PlayerRespawn e) =>
+            Events.registry.Register((Events.PlayerRespawn e) =>
             {
                 if (!equipped) return;
 

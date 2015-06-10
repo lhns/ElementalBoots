@@ -77,7 +77,7 @@ namespace LolHens
 
                             if (text.StartsWith("g:"))
                             {
-                                MBase.instance.eventRegistry.Register((Events.AllModsLoaded e) => item2.displayName = ItemDef.byType[item2.type].displayName);
+                                Events.registry.Register((Events.AllModsLoaded e) => item2.displayName = ItemDef.byType[item2.type].displayName);
                             }
                         }
 
