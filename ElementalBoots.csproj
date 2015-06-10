@@ -7,8 +7,8 @@
     <ProjectGuid>{3F28FD7F-31A4-463B-B021-98A4AEC6FC8D}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ElementalBoots</RootNamespace>
-    <AssemblyName>ElementalBoots</AssemblyName>
+    <RootNamespace>LolHens</RootNamespace>
+    <AssemblyName>LolHens</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
