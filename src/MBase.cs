@@ -49,16 +49,19 @@ namespace LolHens
             if (options.GetBoolean("KingSlimeGel"))
                 NPCDef.byName["Vanilla:King Slime"].AddDrop(ItemDef.byName["Vanilla:Gel"], 1, 40, 80);
 
+            Events.CallModLoaded(this);
 
             PreventCraftGroupCrash();
         }
 
         public override void OnAllModsLoaded()
         {
+            Events.CallAllModsLoaded(this);
         }
 
         public override void OptionChanged(Option option)
         {
+            Events.CallOptionChanged(this, option);
         }
 
         public override void PostGameUpdate()
