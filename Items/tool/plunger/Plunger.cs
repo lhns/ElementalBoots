@@ -26,9 +26,6 @@ namespace LolHens.Items
             });
         }
 
-        public override void DrawItemSlotItem(ref SpriteBatch sb, ref ItemSlot slot, ref Item item, ref Texture2D texture, ref Color color, ref float scale)
-        {
-            scale *= 1.4f;
-        }
+        // TODO: add climbing abilities
     }
 }
