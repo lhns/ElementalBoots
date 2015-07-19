@@ -1,6 +1,6 @@
 {
     "displayName": "Plunger",
-    "size": [ 15, 21 ],
+    "size": [ 31, 38 ],
     "maxStack": 1,
     "value": [ 0, 0, 1, 0 ],
     "rare": 1,
