@@ -1,19 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3F28FD7F-31A4-463B-B021-98A4AEC6FC8D}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{639950C8-5BFD-45B4-94F4-089D68273C79}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>LolHens</RootNamespace>
-    <AssemblyName>LolHens</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <RootNamespace>ElementalBoots</RootNamespace>
+    <AssemblyName>ElementalBoots</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,374 +30,46 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="bin\Debug\ElementalBoots.exe.config" />
-    <None Include="bin\Debug\ElementalBoots.vshost.exe.config" />
-    <None Include="bin\Debug\ElementalBoots.vshost.exe.manifest" />
-    <None Include="Buffs\summon\frostslime\FrostSlimeBuff.json" />
-    <None Include="Buffs\weapon\illuminant\IlluminantBuff.json" />
-    <None Include="Buffs\weapon\illuminant\IlluminantCrystal.json" />
-    <None Include="Buffs\weapon\illuminant\IlluminantCrystal.pdn" />
-    <None Include="Buffs\weapon\illuminant\unused.zip" />
-    <None Include="CraftGroups.json" />
-    <None Include="Images\banner.pdn" />
-    <None Include="Items\accessory\balloon\black\BlackHorseshoeBalloon.json" />
-    <None Include="Items\accessory\balloon\black\TornadoInABalloon.json" />
-    <None Include="Items\accessory\balloon\bundle\honey\BundleOfHoneyBalloons.pdn" />
-    <None Include="Items\accessory\balloon\bundle\honey\GiantWeightedHoneyBalloonBundle.json" />
-    <None Include="Items\accessory\balloon\bundle\honey\WeightedHoneyBalloonBundle.json" />
-    <None Include="Items\accessory\balloon\bundle\normal\BigBalloonBundle.json" />
-    <None Include="Items\accessory\balloon\bundle\normal\BigBalloonBundle.pdn" />
-    <None Include="Items\accessory\balloon\bundle\normal\BigBalloonBundle_Balloon.pdn" />
-    <None Include="Items\accessory\balloon\bundle\normal\GiantBalloonBundle.json" />
-    <None Include="Items\accessory\balloon\bundle\normal\GiantBalloonBundle.pdn" />
-    <None Include="Items\accessory\balloon\bundle\weighted\GiantWeightedBalloonBundle.json" />
-    <None Include="Items\accessory\balloon\bundle\weighted\WeightedBalloonBundle.json" />
-    <None Include="Items\accessory\balloon\green\GreenHorseshoeBalloon.json" />
-    <None Include="Items\accessory\balloon\green\GreenHorseshoeBalloon_Balloon.pdn" />
-    <None Include="Items\accessory\balloon\unused.zip" />
-    <None Include="Items\accessory\boots\ElementalBoots.json" />
-    <None Include="Items\accessory\boots\ElementalBoots.pdn" />
-    <None Include="Items\accessory\boots\ElementalBoots_Shoes.pdn" />
-    <None Include="Items\accessory\boots\unused.zip" />
-    <None Include="Items\accessory\bottle\EnemyInABottle.pdn" />
-    <None Include="Items\accessory\bottle\TornadoInABottle.json" />
-    <None Include="Items\accessory\bottle\WeatherInABottle.pdn" />
-    <None Include="Items\accessory\illuminant\IlluminantHeartNecklace.json" />
-    <None Include="Items\accessory\illuminant\IlluminantPearlsNecklace.json" />
-    <None Include="Items\material\frostslime\BrokenFrostSlimeWandPart.json" />
-    <None Include="Items\summon\frostslime\BrokenFrostSlimeWand.json" />
-    <None Include="Items\material\laser\amplifier\LaserAmplifier.json" />
-    <None Include="Items\material\laser\focus\YellowLaserFocus.json" />
-    <None Include="Items\material\laser\focus\WhiteLaserFocus.json" />
-    <None Include="Items\material\laser\focus\PurpleLaserFocus.json" />
-    <None Include="Items\material\laser\focus\OrangeLaserFocus.json" />
-    <None Include="Items\material\laser\focus\GreenLaserFocus.json" />
-    <None Include="Items\material\laser\focus\RedLaserFocus.json" />
-    <None Include="Items\material\funnel\Funnel.json" />
-    <None Include="Items\material\gunparts\IllegalMeteoriteGunParts.json" />
-    <None Include="Items\material\laser\prism\GreenLaserPrism.json" />
-    <None Include="Items\summon\frostslime\unused.zip" />
-    <None Include="Items\tool\plunger\Plunger.json" />
-    <None Include="Items\tool\plunger\unused.zip" />
-    <None Include="Items\weapon\illuminant\IlluminantStaff.json" />
-    <None Include="Items\weapon\illuminant\IlluminantStaff.pdn" />
-    <None Include="Items\accessory\illuminant\IlluminantStarNecklace.json" />
-    <None Include="Items\accessory\magnet\Magnet.json" />
-    <None Include="Items\accessory\magnet\unused.zip" />
-    <None Include="Items\accessory\necklace\NightskyNecklace.json" />
-    <None Include="Items\accessory\necklace\NightskyNecklace.pdn" />
-    <None Include="Items\accessory\ninja\FlamingNinjaGear.json" />
-    <None Include="Items\accessory\ninja\FlamingNinjaGear.pdn" />
-    <None Include="Items\accessory\ninja\MagmaClaws.json" />
-    <None Include="Items\accessory\ninja\MagmaClaws.pdn" />
-    <None Include="Items\accessory\ninja\MagmaClimbingGear.json" />
-    <None Include="Items\accessory\ninja\MagmaClimbingGear.pdn" />
-    <None Include="Items\accessory\shell\FieryShell.json" />
-    <None Include="Items\accessory\shell\FieryShell.pdn" />
-    <None Include="Items\accessory\shield\FrozenTurtleShield.json" />
-    <None Include="Items\accessory\shield\FrozenTurtleShield_Shield.pdn" />
-    <None Include="Items\accessory\stamina\BandOfAnarchy.json" />
-    <None Include="Items\accessory\stamina\BandOfStamina.json" />
-    <None Include="Items\accessory\wings\elemental\ElementalWings.json" />
-    <None Include="Items\accessory\wings\elemental\ElementalWings.pdn" />
-    <None Include="Items\accessory\wings\elemental\ElementalWings_Wings.pdn" />
-    <None Include="Items\accessory\wings\elemental\unused.zip" />
-    <None Include="Items\accessory\wings\laser\LaserWings.pdn" />
-    <None Include="Items\accessory\wings\laser\LaserWings0.json" />
-    <None Include="Items\accessory\wings\laser\LaserWings1.json" />
-    <None Include="Items\accessory\wings\laser\LaserWings2.json" />
-    <None Include="Items\accessory\wings\laser\LaserWings3.json" />
-    <None Include="Items\accessory\wings\laser\LaserWings4.json" />
-    <None Include="Items\accessory\wings\laser\LaserWings5.json" />
-    <None Include="Items\accessory\wings\laser\LaserWings_Wings.pdn" />
-    <None Include="Items\accessory\wings\laser\Phaseblade.pdn" />
-    <None Include="Items\accessory\wings\laser\SpectrumWings.json" />
-    <None Include="Items\accessory\wings\terra\BrokenHeroWings.json" />
-    <None Include="Items\accessory\wings\terra\TerraWings.json" />
-    <None Include="Items\accessory\wings\terra\TrueAngelWings.json" />
-    <None Include="Items\accessory\wings\terra\TrueAngelWings.pdn" />
-    <None Include="Items\accessory\wings\terra\TrueDemonWings.json" />
-    <None Include="Items\material\illuminant\IlluminantPearl.json" />
-    <None Include="Items\material\prism\Prism.json" />
-    <None Include="Items\summon\frostslime\FrostSlimeWand.json" />
-    <None Include="Items\tile\workshop\InventorsWorkshopItem.json" />
-    <None Include="Items\weapon\bubble\PoisonBubbleWand.json" />
-    <None Include="Items\weapon\bubble\PoisonBubbleWand.pdn" />
-    <None Include="Items\weapon\cannon\LilBombard.json" />
-    <None Include="Items\weapon\cannon\unused.zip" />
-    <None Include="Items\weapon\extinguisher\Extinguisher.json" />
-    <None Include="Items\weapon\extinguisher\Extinguisher.pdn" />
-    <None Include="Items\weapon\icestorm\IceStorm.json" />
-    <None Include="Items\weapon\icestorm\IceStorm.pdn" />
-    <None Include="Items\weapon\slingshot\Slingshot.json" />
-    <None Include="Items\weapon\slingshot\Slingshot.pdn" />
-    <None Include="Items\weapon\slingshot\unused.zip" />
-    <None Include="Items\weapon\space\SpaceLaser.json" />
-    <None Include="Items\weapon\space\SpaceRifle.json" />
-    <None Include="Items\weapon\space\unused.zip" />
-    <None Include="Items\weapon\spikyball\SpikyBallBlaster.json" />
-    <None Include="Items\weapon\spikyball\SpikyBallBlaster.pdn" />
-    <None Include="Items\weapon\spikyball\unused.zip" />
-    <None Include="LICENSE" />
-    <None Include="ModInfo.json" />
-    <None Include="ModOptions.json" />
-    <None Include="NPCs\summon\frostslime\FrostSlime.json" />
-    <None Include="Projectiles\weapon\bubble\PoisonBubble.json" />
-    <None Include="Projectiles\weapon\extinguisher\Smoke.json" />
-    <None Include="Projectiles\weapon\frostslime\FrostProjectile.json" />
-    <None Include="Projectiles\weapon\icestorm\IceCrystal.json" />
-    <None Include="Projectiles\weapon\illuminant\IlluminantCrystal.json" />
-    <None Include="Projectiles\weapon\slingshot\Acorn.json" />
-    <None Include="Projectiles\weapon\space\SpaceLaserNozzle.json" />
-    <None Include="Projectiles\weapon\space\SpaceLaserRay.json" />
-    <None Include="Projectiles\weapon\space\SpaceRifleRay.json" />
-    <None Include="README.md" />
-    <None Include="Tiles\crafting\workshop\InventorsWorkshop.json" />
-    <None Include="Tiles\crafting\workshop\InventorsWorkshopTile.pdn" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include=".gitignore" />
-    <Content Include="bin\Debug\ElementalBoots.vshost.exe" />
-    <Content Include="Buffs\summon\frostslime\FrostSlimeBuff.png" />
-    <Content Include="Buffs\TemplateBuff.png" />
-    <Content Include="Buffs\weapon\illuminant\IlluminantBuff.png" />
-    <Content Include="Buffs\weapon\illuminant\IlluminantCrystal.png" />
-    <Content Include="ElementalBoots.sln" />
-    <Content Include="icon.png" />
-    <Content Include="Images\banner.png" />
-    <Content Include="Items\accessory\balloon\black\BlackHorseshoeBalloon.png" />
-    <Content Include="Items\accessory\balloon\black\BlackHorseshoeBalloon_Balloon.png" />
-    <Content Include="Items\accessory\balloon\black\TornadoInABalloon.png" />
-    <Content Include="Items\accessory\balloon\black\TornadoInABalloon_Balloon.png" />
-    <Content Include="Items\accessory\balloon\bundle\honey\BigHoneyBalloonBundle.png" />
-    <Content Include="Items\accessory\balloon\bundle\honey\BigHoneyBalloonBundle_Balloon.png" />
-    <Content Include="Items\accessory\balloon\bundle\honey\GiantWeightedHoneyBalloonBundle.png" />
-    <Content Include="Items\accessory\balloon\bundle\honey\GiantWeightedHoneyBalloonBundle_Balloon.png" />
-    <Content Include="Items\accessory\balloon\bundle\honey\WeightedHoneyBalloonBundle.png" />
-    <Content Include="Items\accessory\balloon\bundle\honey\WeightedHoneyBalloonBundle_Balloon.png" />
-    <Content Include="Items\accessory\balloon\bundle\normal\BigBalloonBundle.png" />
-    <Content Include="Items\accessory\balloon\bundle\normal\BigBalloonBundle_Balloon.png" />
-    <Content Include="Items\accessory\balloon\bundle\normal\GiantBalloonBundle.png" />
-    <Content Include="Items\accessory\balloon\bundle\normal\GiantBalloonBundle_Balloon.png" />
-    <Content Include="Items\accessory\balloon\bundle\weighted\GiantWeightedBalloonBundle.png" />
-    <Content Include="Items\accessory\balloon\bundle\weighted\GiantWeightedBalloonBundle_Balloon.png" />
-    <Content Include="Items\accessory\balloon\bundle\weighted\WeightedBalloonBundle.png" />
-    <Content Include="Items\accessory\balloon\bundle\weighted\WeightedBalloonBundle_Balloon.png" />
-    <Content Include="Items\accessory\balloon\green\GreenHorseshoeBalloon.png" />
-    <Content Include="Items\accessory\balloon\green\GreenHorseshoeBalloon_Balloon.png" />
-    <Content Include="Items\accessory\boots\ElementalBoots.png" />
-    <Content Include="Items\accessory\boots\ElementalBoots_Shoes.png" />
-    <Content Include="Items\accessory\bottle\BatInABottle.png" />
-    <Content Include="Items\accessory\bottle\BeeInABottle.png" />
-    <Content Include="Items\accessory\bottle\BeeInABottle2.png" />
-    <Content Include="Items\accessory\bottle\EyeInABottle.png" />
-    <Content Include="Items\accessory\bottle\EyeInABottle2.png" />
-    <Content Include="Items\accessory\bottle\JellyfishInABottle.png" />
-    <Content Include="Items\accessory\bottle\SlimeInABottle.png" />
-    <Content Include="Items\accessory\bottle\SquidInABottle.png" />
-    <Content Include="Items\accessory\bottle\TornadoInABottle.png" />
-    <Content Include="Items\accessory\illuminant\IlluminantHeartNecklace.png" />
-    <Content Include="Items\accessory\illuminant\IlluminantPearlsNecklace.png" />
-    <Content Include="Items\summon\frostslime\BrokenFrostSlimeWand.png" />
-    <Content Include="Items\material\frostslime\BrokenFrostSlimeWandPart.png" />
-    <Content Include="Items\material\laser\amplifier\LaserAmplifier.png" />
-    <Content Include="Items\material\laser\focus\GreenLaserFocus.png" />
-    <Content Include="Items\material\laser\focus\OrangeLaserFocus.png" />
-    <Content Include="Items\material\laser\focus\PurpleLaserFocus.png" />
-    <Content Include="Items\material\laser\focus\RedLaserFocus.png" />
-    <Content Include="Items\material\funnel\funnel.png" />
-    <Content Include="Items\material\gunparts\IllegalMeteoriteGunParts.png" />
-    <Content Include="Items\material\laser\focus\WhiteLaserFocus.png" />
-    <Content Include="Items\material\laser\focus\YellowLaserFocus.png" />
-    <Content Include="Items\material\laser\prism\GreenLaserPrism.png" />
-    <Content Include="Items\tool\plunger\Plunger.png" />
-    <Content Include="Items\weapon\illuminant\IlluminantStaff.png" />
-    <Content Include="Items\accessory\illuminant\IlluminantStarNecklace.png" />
-    <Content Include="Items\accessory\magnet\Magnet.png" />
-    <Content Include="Items\accessory\necklace\NightskyNecklace.png" />
-    <Content Include="Items\accessory\ninja\FlamingNinjaGear.png" />
-    <Content Include="Items\accessory\ninja\MagmaClaws.png" />
-    <Content Include="Items\accessory\ninja\MagmaClaws_Hand.png" />
-    <Content Include="Items\accessory\ninja\MagmaClimbingGear.png" />
-    <Content Include="Items\accessory\shell\FieryShell.png" />
-    <Content Include="Items\accessory\shield\FrozenTurtleShield.png" />
-    <Content Include="Items\accessory\shield\FrozenTurtleShield_Shield.png" />
-    <Content Include="Items\accessory\stamina\BandOfAnarchy.png" />
-    <Content Include="Items\accessory\stamina\BandOfStamina.png" />
-    <Content Include="Items\accessory\wings\elemental\ElementalWings.png" />
-    <Content Include="Items\accessory\wings\elemental\ElementalWings_Wings.png" />
-    <Content Include="Items\accessory\wings\laser\LaserWings0.png" />
-    <Content Include="Items\accessory\wings\laser\LaserWings0_Wings.png" />
-    <Content Include="Items\accessory\wings\laser\LaserWings1.png" />
-    <Content Include="Items\accessory\wings\laser\LaserWings1_Wings.png" />
-    <Content Include="Items\accessory\wings\laser\LaserWings2.png" />
-    <Content Include="Items\accessory\wings\laser\LaserWings2_Wings.png" />
-    <Content Include="Items\accessory\wings\laser\LaserWings3.png" />
-    <Content Include="Items\accessory\wings\laser\LaserWings3_Wings.png" />
-    <Content Include="Items\accessory\wings\laser\LaserWings4.png" />
-    <Content Include="Items\accessory\wings\laser\LaserWings4_Wings.png" />
-    <Content Include="Items\accessory\wings\laser\LaserWings5.png" />
-    <Content Include="Items\accessory\wings\laser\LaserWings5_Wings.png" />
-    <Content Include="Items\accessory\wings\laser\SpectrumWings.png" />
-    <Content Include="Items\accessory\wings\laser\SpectrumWings_Wings.png" />
-    <Content Include="Items\accessory\wings\terra\BrokenHeroWings.png" />
-    <Content Include="Items\accessory\wings\terra\BrokenHeroWings_Wings.png" />
-    <Content Include="Items\accessory\wings\terra\TerraWings.png" />
-    <Content Include="Items\accessory\wings\terra\TerraWings_Wings.png" />
-    <Content Include="Items\accessory\wings\terra\TrueAngelWings.png" />
-    <Content Include="Items\accessory\wings\terra\TrueAngelWings_Wings.png" />
-    <Content Include="Items\accessory\wings\terra\TrueDemonWings.png" />
-    <Content Include="Items\accessory\wings\terra\TrueDemonWings_Wings.png" />
-    <Content Include="Items\material\illuminant\IlluminantPearl.png" />
-    <Content Include="Items\material\prism\Prism.png" />
-    <Content Include="Items\summon\frostslime\FrostSlimeWand.png" />
-    <Content Include="Items\tile\workshop\InventorsWorkshopItem.png" />
-    <Content Include="Items\weapon\bubble\PoisonBubbleWand.png" />
-    <Content Include="Items\weapon\cannon\LilBombard.png" />
-    <Content Include="Items\weapon\extinguisher\Extinguisher.png" />
-    <Content Include="Items\weapon\icestorm\IceStorm.png" />
-    <Content Include="Items\weapon\slingshot\Slingshot.png" />
-    <Content Include="Items\weapon\slingshot\Slingshot2.png" />
-    <Content Include="Items\weapon\slingshot\Slingshot3.png" />
-    <Content Include="Items\weapon\slingshot\Slingshot4.png" />
-    <Content Include="Items\weapon\slingshot\Slingshot5.png" />
-    <Content Include="Items\weapon\slingshot\Slingshot6.png" />
-    <Content Include="Items\weapon\slingshot\Slingshot7.png" />
-    <Content Include="Items\weapon\space\SpaceLaser.png" />
-    <Content Include="Items\weapon\space\SpaceRifle.png" />
-    <Content Include="Items\weapon\spikyball\SpikyBallBlaster.png" />
-    <Content Include="Items\weapon\spikyball\SpikyBallBlaster2.png" />
-    <Content Include="LibEventManagerCSharp.dll" />
-    <Content Include="NPCs\summon\frostslime\FrostSlime.png" />
-    <Content Include="Projectiles\weapon\bubble\PoisonBubble.png" />
-    <Content Include="Projectiles\weapon\bubble\texture\PoisonBubble10.png" />
-    <Content Include="Projectiles\weapon\bubble\texture\PoisonBubble20.png" />
-    <Content Include="Projectiles\weapon\bubble\texture\PoisonBubble32.png" />
-    <Content Include="Projectiles\weapon\bubble\texture\PoisonBubble48.png" />
-    <Content Include="Projectiles\weapon\bubble\texture\PoisonBubble64.png" />
-    <Content Include="Projectiles\weapon\extinguisher\Smoke.png" />
-    <Content Include="Projectiles\weapon\frostslime\FrostProjectile.png" />
-    <Content Include="Projectiles\weapon\icestorm\IceCrystal.png" />
-    <Content Include="Projectiles\weapon\icestorm\texture\IceCrystal0.png" />
-    <Content Include="Projectiles\weapon\icestorm\texture\IceCrystal1.png" />
-    <Content Include="Projectiles\weapon\icestorm\texture\IceCrystal2.png" />
-    <Content Include="Projectiles\weapon\illuminant\IlluminantCrystal.png" />
-    <Content Include="Projectiles\weapon\slingshot\Acorn.png" />
-    <Content Include="Projectiles\weapon\space\SpaceLaserNozzle.png" />
-    <Content Include="Projectiles\weapon\space\SpaceLaserRay.png" />
-    <Content Include="Projectiles\weapon\space\SpaceRifleRay.png" />
-    <Content Include="Tiles\crafting\workshop\InventorsWorkshop.png" />
-    <Content Include="Tiles\crafting\workshop\InventorsWorkshopTile.png" />
-    <Content Include="TODO.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="Buffs\summon\frostslime\FrostSlimeBuff.cs" />
-    <Compile Include="Buffs\weapon\illuminant\IlluminantBuff.cs" />
-    <Compile Include="Buffs\weapon\illuminant\IlluminantCrystal.cs" />
-    <Compile Include="Items\accessory\balloon\black\BlackHorseshoeBalloon.cs" />
-    <Compile Include="Items\accessory\balloon\black\TornadoInABalloon.cs" />
-    <Compile Include="Items\accessory\balloon\bundle\honey\GiantWeightedHoneyBalloonBundle.cs" />
-    <Compile Include="Items\accessory\balloon\bundle\honey\WeightedHoneyBalloonBundle.cs" />
-    <Compile Include="Items\accessory\balloon\bundle\normal\BigBalloonBundle.cs" />
-    <Compile Include="Items\accessory\balloon\bundle\normal\GiantBalloonBundle.cs" />
-    <Compile Include="Items\accessory\balloon\bundle\weighted\GiantWeightedBalloonBundle.cs" />
-    <Compile Include="Items\accessory\balloon\bundle\weighted\WeightedBalloonBundle.cs" />
-    <Compile Include="Items\accessory\balloon\green\GreenHorseshoeBalloon.cs" />
-    <Compile Include="Items\accessory\boots\ElementalBoots.cs" />
-    <Compile Include="Items\accessory\bottle\TornadoInABottle.cs" />
-    <Compile Include="Items\accessory\illuminant\IlluminantHeartNecklace.cs" />
-    <Compile Include="Items\accessory\illuminant\IlluminantPearlsNecklace.cs" />
-    <Compile Include="Items\accessory\wings\terra\BrokenHeroWings.cs" />
-    <Compile Include="Items\material\frostslime\BrokenFrostSlimeWandPart.cs" />
-    <Compile Include="Items\summon\frostslime\BrokenFrostSlimeWand.cs" />
-    <Compile Include="Items\material\funnel\Funnel.cs" />
-    <Compile Include="Items\material\illuminant\IlluminantPearl.cs" />
-    <Compile Include="Items\tool\plunger\Plunger.cs" />
-    <Compile Include="Items\weapon\illuminant\IlluminantStaff.cs" />
-    <Compile Include="Items\accessory\illuminant\IlluminantStarNecklace.cs" />
-    <Compile Include="Items\accessory\magnet\Magnet.cs" />
-    <Compile Include="Items\accessory\necklace\NightskyNecklace.cs" />
-    <Compile Include="Items\accessory\ninja\FlamingNinjaGear.cs" />
-    <Compile Include="Items\accessory\ninja\MagmaClaws.cs" />
-    <Compile Include="Items\accessory\ninja\MagmaClimbingGear.cs" />
-    <Compile Include="Items\accessory\shell\FieryShell.cs" />
-    <Compile Include="Items\accessory\shield\FrozenTurtleShield.cs" />
-    <Compile Include="Items\accessory\stamina\BandOfAnarchy.cs" />
-    <Compile Include="Items\accessory\stamina\BandOfStamina.cs" />
-    <Compile Include="Items\accessory\wings\elemental\ElementalWings.cs" />
-    <Compile Include="Items\accessory\wings\laser\LaserWings.cs" />
-    <Compile Include="Items\accessory\wings\laser\SpectrumWings.cs" />
-    <Compile Include="Items\accessory\wings\terra\TerraWings.cs" />
-    <Compile Include="Items\accessory\wings\terra\TrueAngelWings.cs" />
-    <Compile Include="Items\accessory\wings\terra\TrueDemonWings.cs" />
-    <Compile Include="Items\summon\frostslime\FrostSlimeWand.cs" />
-    <Compile Include="Items\weapon\bubble\PoisonBubbleWand.cs" />
-    <Compile Include="Items\weapon\cannon\LilBombard.cs" />
-    <Compile Include="Items\weapon\extinguisher\Extinguisher.cs" />
-    <Compile Include="Items\weapon\slingshot\Slingshot.cs" />
-    <Compile Include="Items\weapon\space\SpaceLaser.cs" />
-    <Compile Include="Items\weapon\space\SpaceRifle.cs" />
-    <Compile Include="Items\weapon\spikyball\SpikyBallBlaster.cs" />
-    <Compile Include="NPCs\summon\frostslime\FrostSlime.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
-    <Compile Include="Projectiles\weapon\bubble\PoisonBubble.cs" />
-    <Compile Include="Projectiles\weapon\extinguisher\Smoke.cs" />
-    <Compile Include="Projectiles\weapon\frostslime\FrostProjectile.cs" />
-    <Compile Include="Projectiles\weapon\icestorm\IceCrystal.cs" />
-    <Compile Include="Projectiles\weapon\illuminant\IlluminantCrystal.cs" />
-    <Compile Include="Projectiles\weapon\slingshot\Acorn.cs" />
-    <Compile Include="Projectiles\weapon\space\SpaceLaserRay.cs" />
-    <Compile Include="Projectiles\weapon\space\SpaceRifleRay.cs" />
-    <Compile Include="src\chest\ChestInfo.cs" />
-    <Compile Include="src\event\Events.cs" />
-    <Compile Include="src\resolver\CraftGroupFixResolver.cs" />
-    <Compile Include="src\resolver\FixedRecipeResolver.cs" />
-    <Compile Include="src\resolver\UniversalRecipeResolver.cs" />
-    <Compile Include="src\Items\LolHensRayGun.cs" />
-    <Compile Include="src\Buffs\LolHensBuff.cs" />
-    <Compile Include="src\Items\LolHensGun.cs" />
-    <Compile Include="src\Items\LolHensItem.cs" />
-    <Compile Include="src\MBase.cs" />
-    <Compile Include="src\MInterface.cs" />
-    <Compile Include="src\MNPC.cs" />
-    <Compile Include="src\MPlayer.cs" />
-    <Compile Include="src\MWorld.cs" />
-    <Compile Include="src\NPCs\LolHensNPC.cs" />
-    <Compile Include="src\NPCs\LolHensPet.cs" />
-    <Compile Include="src\Buffs\LolHensPetBuff.cs" />
-    <Compile Include="src\Projectiles\LolHensProjectile.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="LibEventManagerCSharp">
-      <HintPath>.\LibEventManagerCSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Microsoft.Xna.Framework.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Microsoft.Xna.Framework.Game.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Microsoft.Xna.Framework.Graphics.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Xna.Framework.Xact, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Microsoft.Xna.Framework.Xact.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="tAPI Core">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\SteamApps\common\Terraria\tAPI Core.dll</HintPath>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Terraria">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Terraria\Terraria.exe</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Xna.Framework" />
+    <Reference Include="Microsoft.Xna.Framework.Game" />
+    <Reference Include="Microsoft.Xna.Framework.Graphics" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\Release\" />
+    <Compile Include="ElementalBoots.cs" />
+    <Compile Include="Items\Accessories\Tornado\TornadoInABalloon.cs" />
+    <Compile Include="Items\Accessories\Tornado\TornadoInABottle.cs" />
+    <Compile Include="MItem.cs" />
+    <Compile Include="MPlayer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Items\Accessories\Balloon\Green\GreenHorseshoeBalloon.cs" />
+    <Compile Include="Value.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Items\Accessories\Balloon\Green\GreenHorseshoeBalloon_Balloon.pdn" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Items\Accessories\Balloon\Green\GreenHorseshoeBalloon.png" />
+    <Content Include="Items\Accessories\Balloon\Green\GreenHorseshoeBalloon_Balloon.png" />
+    <Content Include="Items\Accessories\Tornado\TornadoInABalloon.png" />
+    <Content Include="Items\Accessories\Tornado\TornadoInABalloon_Balloon.png" />
+    <Content Include="Items\Accessories\Tornado\TornadoInABottle.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"C:\Program Files (x86)\Steam\steamapps\common\Terraria\tModLoaderServer.exe" -build "$(ProjectDir)\" -eac "$(TargetPath)"</PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

@@ -1,9 +1,0 @@
-{
-    "displayName": "Band of Stamina",
-    "size": [ 28, 28 ],
-    "maxStack": 1,
-    "value": [ 0, 1, 0, 0 ],
-    "rare": 1,
-    "tooltip": "Increases Critical Strike Chance by\n1% after 1 sec\n2% after 3 sec\n5% after 10 sec\n15% after 20 sec\nTimer is reset after dealing or taking damage\n7 sec cooldown after dealing damage",
-    "accessory": true
-}
