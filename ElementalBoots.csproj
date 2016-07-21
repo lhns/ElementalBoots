@@ -50,24 +50,32 @@
     <Compile Include="Items\Accessories\BalloonBundle\BalloonBundle.cs" />
     <Compile Include="Items\Accessories\CompoundAccessory.cs" />
     <Compile Include="Items\Accessories\ElementalBoots\ElementalBoots.cs" />
+    <Compile Include="Items\Accessories\NightskyNecklace\NightskyNecklace.cs" />
     <Compile Include="Items\Accessories\Tornado\BlackHorseshoeBalloon.cs" />
     <Compile Include="Items\Accessories\Tornado\TornadoInABalloon.cs" />
     <Compile Include="Items\Accessories\Tornado\TornadoInABottle.cs" />
-    <Compile Include="MItem.cs" />
+    <Compile Include="Items\Tiles\InventorsWorkshop\InventorsWorkshopItem.cs" />
+    <Compile Include="Items\MItem.cs" />
     <Compile Include="MPlayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Defs.cs" />
+    <Compile Include="Tiles\InventorsWorkshop\InventorsWorkshop.cs" />
+    <Compile Include="Tiles\MTile.cs" />
     <Compile Include="Value.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
     <Content Include="Items\Accessories\ElementalBoots\ElementalBoots.png" />
     <Content Include="Items\Accessories\ElementalBoots\ElementalBoots_Shoes.png" />
+    <Content Include="Items\Accessories\NightskyNecklace\NightskyNecklace.png" />
     <Content Include="Items\Accessories\Tornado\BlackHorseshoeBalloon.png" />
     <Content Include="Items\Accessories\Tornado\BlackHorseshoeBalloon_Balloon.png" />
     <Content Include="Items\Accessories\Tornado\TornadoInABalloon.png" />
     <Content Include="Items\Accessories\Tornado\TornadoInABalloon_Balloon.png" />
     <Content Include="Items\Accessories\Tornado\TornadoInABottle.png" />
+    <Content Include="Items\Tiles\InventorsWorkshop\InventorsWorkshopItem.png" />
+    <Content Include="Tiles\InventorsWorkshop\InventorsWorkshop.png" />
+    <Content Include="Tiles\InventorsWorkshop\InventorsWorkshopTile.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

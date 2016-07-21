@@ -1,7 +1,7 @@
 ﻿using Terraria;
 using Terraria.ModLoader;
 
-namespace ElementalBoots
+namespace ElementalBoots.Items
 {
     public abstract class MItem: ModItem
     {
