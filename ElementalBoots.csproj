@@ -46,6 +46,7 @@
     <Reference Include="Microsoft.Xna.Framework.Graphics" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Chest\ChestInfo.cs" />
     <Compile Include="ElementalBoots.cs" />
     <Compile Include="Items\Accessories\BalloonBundle\BalloonBundle.cs" />
     <Compile Include="Items\Accessories\CompoundAccessory.cs" />
