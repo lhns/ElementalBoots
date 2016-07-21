@@ -5,11 +5,12 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace ElementalBoots.Items.Accessories.Tornado
 {
-    public class TornadoInABalloon : MItem
+    public class TornadoInABalloon : CompoundAccessory
     {
         public override bool Autoload(ref string name, ref string texture, IList<EquipType> equips)
         {
@@ -28,13 +29,13 @@ namespace ElementalBoots.Items.Accessories.Tornado
             item.toolTip = "Allows the holder to double jump";
         }
 
-        public override void UpdateAccessory(Player player, bool hideVisual)
+        public override IList<Item> GetCompoundAccessories()
         {
-            base.UpdateAccessory(player, hideVisual);
-
-            player.jumpBoost = true;
-
-            player.GetModPlayer<MPlayer>(mod).EquipEffects(mod.GetItem("TornadoInABottle").item);
+            return new List<Item>
+            {
+                Defs.GetItem(ItemID.ShinyRedBalloon),
+                mod.GetItem("TornadoInABottle").item
+            };
         }
     }
 }

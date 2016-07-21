@@ -39,9 +39,9 @@ namespace ElementalBoots.Items.Accessories.Tornado
             lastRocketTime = 0;
         }
 
-        public override void UpdateAccessory(Player player, bool hideVisual)
+        public override void UpdateAccessory2(Player player, bool hideVisual)
         {
-            base.UpdateAccessory(player, hideVisual);
+            base.UpdateAccessory2(player, hideVisual);
 
             if (player.grappling[0] == -1 && !player.tongued && (player.jump == 0 || player.frozen)
                 || player.pulley
@@ -157,7 +157,7 @@ namespace ElementalBoots.Items.Accessories.Tornado
                 }
 
                 // player turning effect
-                /*if (player.sandStorm && tornado)
+                if (player.sandStorm && tornado)
                 {
                     if (player.miscCounter % 4 == 0 && player.itemAnimation == 0 && player.wingTime == 0f)
                     {
@@ -177,8 +177,8 @@ namespace ElementalBoots.Items.Accessories.Tornado
                     }
                     player.legFrameCounter = 0.0;
                     player.legFrame.Y = 0;
-                }*/
-                SpinPlayerEffect(player, true);
+                }
+                //SpinPlayerEffect(player, true);
             }
             else
             {

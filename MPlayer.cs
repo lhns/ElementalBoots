@@ -41,7 +41,7 @@ namespace ElementalBoots
             Time += 1;
         }
 
-        public void EquipEffects(Item item)
+        public void ApplyAccessoryEffects(Item item)
         {
             player.VanillaUpdateEquip(item);
             bool flag1 = false, flag2 = false, flag3 = false;
