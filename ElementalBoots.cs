@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 
 namespace ElementalBoots
 {
-    public class ElementalBoots: Mod
+    public class ElementalBoots : Mod
     {
         public ElementalBoots()
         {

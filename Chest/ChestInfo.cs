@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Terraria;
 
 namespace LolHens
@@ -21,7 +20,7 @@ namespace LolHens
         {
             this.chest = chest;
             this.tile = Main.tile[chest.x, chest.y];
-            this.style = tile.frameX / 36;
+            this.style = tile.frameX/36;
             this.height = GetHeight();
         }
 
@@ -82,7 +81,7 @@ namespace LolHens
 
         public bool AddLoot(Item item, float chance = 1, bool rare = false, int numFrom = 1, int numTo = 1)
         {
-            if (!(rare && rareItem) && WorldGen.genRand.Next(1, (int)(1f / chance)) == 1)
+            if (!(rare && rareItem) && WorldGen.genRand.Next(1, (int) (1f/chance)) == 1)
             {
                 int stack = WorldGen.genRand.Next(numFrom, numTo);
                 if (stack <= 0) return true;

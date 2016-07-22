@@ -10,7 +10,7 @@ using Terraria.ModLoader;
 
 namespace ElementalBoots
 {
-    class MPlayer: ModPlayer
+    class MPlayer : ModPlayer
     {
         internal ISet<MItem> EquippedItems = new HashSet<MItem>();
 
@@ -42,11 +42,11 @@ namespace ElementalBoots
             Time += 1;
         }
 
-        public void ApplyAccessoryEffects(Item item)
+        public void ApplyAccessoryEffects(Item item, bool hideVisual = false)
         {
             player.VanillaUpdateEquip(item);
             bool flag1 = false, flag2 = false, flag3 = false;
-            player.VanillaUpdateAccessory(item, true, ref flag1, ref flag2, ref flag3);
+            player.VanillaUpdateAccessory(item, hideVisual, ref flag1, ref flag2, ref flag3);
         }
     }
 }

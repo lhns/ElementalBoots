@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace ElementalBoots.Items.Accessories.BalloonBundle
 {
-    public abstract class BalloonBundle: MItem
+    public abstract class BalloonBundle : MItem
     {
         public bool Cloud = false, Blizzard = false, Sandstorm = false, Fart = false, Sail = false, Tornado = false;
 
@@ -19,7 +19,7 @@ namespace ElementalBoots.Items.Accessories.BalloonBundle
         {
             item.name = "Balloon Bundle";
             item.maxStack = 1;
-            item.value = 1 * Value.GOLD;
+            item.value = 1*Value.GOLD;
             item.rare = 4;
             item.accessory = true;
             item.toolTip = "Allows the holder to double jump";
@@ -37,7 +37,8 @@ namespace ElementalBoots.Items.Accessories.BalloonBundle
             player.dJumpEffectFart = Fart;
             player.dJumpEffectSail = Sail;
 
-            if (Tornado) player.GetModPlayer<MPlayer>(mod).ApplyAccessoryEffects(mod.GetItem("TornadoInABottle").item);
+            if (Tornado)
+                player.GetModPlayer<MPlayer>(mod).ApplyAccessoryEffects(Utils.GetItem(mod, "TornadoInABottle"));
         }
     }
 }

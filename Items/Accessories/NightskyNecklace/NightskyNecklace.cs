@@ -29,9 +29,19 @@ namespace ElementalBoots.Items.Accessories.NightskyNecklace
         {
             return new List<Item>
             {
-                Defs.GetItem(ItemID.MoonShell),
-                Defs.GetItem(ItemID.StarVeil)
+                Utils.GetItem(ItemID.MoonShell),
+                Utils.GetItem(ItemID.StarVeil)
             };
+        }
+
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.MoonShell);
+            recipe.AddIngredient(ItemID.StarVeil);
+            recipe.AddTile(mod, "InventorsWorkshop");
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
     }
 }
