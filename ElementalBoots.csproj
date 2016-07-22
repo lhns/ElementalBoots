@@ -51,6 +51,7 @@
     <Compile Include="Items\Accessories\BalloonBundle\BalloonBundle.cs" />
     <Compile Include="Items\Accessories\CompoundAccessory.cs" />
     <Compile Include="Items\Accessories\ElementalBoots\ElementalBoots.cs" />
+    <Compile Include="Items\Accessories\FieryShell\FieryShell.cs" />
     <Compile Include="Items\Accessories\NightskyNecklace\NightskyNecklace.cs" />
     <Compile Include="Items\Accessories\Tornado\BlackHorseshoeBalloon.cs" />
     <Compile Include="Items\Accessories\Tornado\TornadoInABalloon.cs" />
@@ -68,6 +69,7 @@
   <ItemGroup>
     <Content Include="Items\Accessories\ElementalBoots\ElementalBoots.png" />
     <Content Include="Items\Accessories\ElementalBoots\ElementalBoots_Shoes.png" />
+    <Content Include="Items\Accessories\FieryShell\FieryShell.png" />
     <Content Include="Items\Accessories\NightskyNecklace\NightskyNecklace.png" />
     <Content Include="Items\Accessories\Tornado\BlackHorseshoeBalloon.png" />
     <Content Include="Items\Accessories\Tornado\BlackHorseshoeBalloon_Balloon.png" />
