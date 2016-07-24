@@ -12,32 +12,44 @@ namespace ElementalBoots
 {
     class MPlayer : ModPlayer
     {
-        internal ISet<MItem> EquippedItems = new HashSet<MItem>();
-
         public long Time { get; private set; }
 
-        private void CheckUnEquippedItems()
+        private ISet<IEquipped> _equippedItems = new HashSet<IEquipped>();
+        
+        public void UpdateEquipped(IEquipped equipped)
         {
-            var newEquippedItems = new HashSet<MItem>();
+            equipped.SetLastEquippedTime(Time);
 
-            foreach (var equippedItem in EquippedItems)
+            if (!_equippedItems.Contains(equipped))
             {
-                if (equippedItem.LastEquippedTime < Time)
+                _equippedItems.Add(equipped);
+
+                equipped.OnEquip(player);
+            }
+        }
+
+        private void UpdateUnEquipped()
+        {
+            var newEquippedItems = new HashSet<IEquipped>();
+
+            foreach (var equipped in _equippedItems)
+            {
+                if (equipped.GetLastEquippedTime() < Time)
                 {
-                    equippedItem.OnUnEquip(player);
+                    equipped.OnUnEquip(player);
                 }
                 else
                 {
-                    newEquippedItems.Add(equippedItem);
+                    newEquippedItems.Add(equipped);
                 }
             }
 
-            EquippedItems = newEquippedItems;
+            _equippedItems = newEquippedItems;
         }
 
         public override void PreUpdate()
         {
-            CheckUnEquippedItems();
+            UpdateUnEquipped();
 
             Time += 1;
         }

@@ -3,23 +3,15 @@ using Terraria.ModLoader;
 
 namespace ElementalBoots.Items
 {
-    public abstract class MItem: ModItem
+    public abstract class MItem: ModItem, IEquipped
     {
-        internal long LastEquippedTime { get; private set; }
-
         public bool Equipped { get; internal set; }
 
         public sealed override void UpdateAccessory(Player player, bool hideVisual)
         {
             var mPlayer = player.GetModPlayer<MPlayer>(mod);
 
-            LastEquippedTime = mPlayer.Time;
-
-            if (!mPlayer.EquippedItems.Contains(this))
-            {
-                mPlayer.EquippedItems.Add(this);
-                OnEquip(player);
-            }
+            mPlayer.UpdateEquipped(this);
 
             UpdateAccessory2(player, hideVisual);
         }
@@ -36,6 +28,18 @@ namespace ElementalBoots.Items
         public virtual void OnUnEquip(Player player)
         {
             Equipped = false;
+        }
+
+        private long _lastEquippedTime;
+
+        public void SetLastEquippedTime(long time)
+        {
+            _lastEquippedTime = time;
+        }
+
+        public long GetLastEquippedTime()
+        {
+            return _lastEquippedTime;
         }
     }
 }

@@ -3,16 +3,17 @@ using Terraria.ID;
 
 namespace ElementalBoots.Items.Accessories.FieryShell
 {
-    public class FieryShell: MItem
+    public class FieryShell : MItem
     {
         public override void SetDefaults()
         {
             item.name = "Fiery Shell";
             item.maxStack = 1;
-            item.value = 10 * Value.GOLD;
+            item.value = 10*Value.GOLD;
             item.rare = 6;
             item.accessory = true;
-            item.toolTip = "Transforms the holder into merfolk when entering water or lava\nProvides 12 seconds of immunity to lava";
+            item.toolTip =
+                "Transforms the holder into merfolk when entering water or lava\nProvides 12 seconds of immunity to lava";
         }
 
         public override void UpdateAccessory2(Player player, bool hideVisual)
