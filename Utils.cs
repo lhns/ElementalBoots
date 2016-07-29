@@ -106,5 +106,10 @@ namespace ElementalBoots
 
             return GetItem(resolvedName.Item1, resolvedName.Item2);
         }
+
+        public static Projectile GetProjectile(Mod mod, string name)
+        {
+            return mod.GetProjectile(name).projectile;
+        }
     }
 }

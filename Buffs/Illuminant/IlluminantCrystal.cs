@@ -5,6 +5,8 @@ namespace ElementalBoots.Buffs.Illuminant
 {
     public class IlluminantCrystal: MBuff
     {
+        public Item Trigger { get; }
+
         public override void SetDefaults()
         {
             Name = "Illuminant Crystal";
@@ -12,19 +14,19 @@ namespace ElementalBoots.Buffs.Illuminant
             Debuff = true;
         }
 
-        private int damage = 0;
-        private float knockBack = 0;
-        private MProjectile illuminantCrystal = null;
-
         public override void OnEquip(Player player)
         {
-            /*Item item = trigger as Item;
-            if (item != null)
+            int damage = 0;
+            float knockBack = 0;
+
+            var trigger = Utils.GetItem(player.selectedItem);
+            if (trigger != null)
             {
-                damage = item.damage;
-                knockBack = item.knockBack;
+                damage = trigger.damage;
+                knockBack = trigger.knockBack;
             }
-            illuminantCrystal = ProjDef.byName["LolHens:IlluminantCrystal"].New(entity.Center.X, entity.Center.Y, 0, 0, damage, knockBack, entity.whoAmI);*/
+
+            Projectile.NewProjectile(player.Center.X, player.Center.Y, 0, 0, Utils.GetProjectile(mod, "IlluminantCrystal").type, damage, knockBack, player.whoAmI);
         }
     }
 }

@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace ElementalBoots.Buffs
 {
-    public class MBuff: ModBuff, IEquipped
+    public abstract class MBuff: ModBuff, IEquipped
     {
         public string Name
         {
