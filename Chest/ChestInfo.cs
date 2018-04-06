@@ -141,16 +141,24 @@ namespace LolHens
             public const int BOREAL_WOOD = 33;
             public const int SLIME = 34;
             public const int DUNGEON_GREEN = 35;
-            public const int DUNGEON_PINK = 36;
-            public const int DUNGEON_BLUE = 37;
-            public const int BONE = 38;
-            public const int CACTUS = 39;
-            public const int FLESH = 40;
-            public const int OBSIDIAN = 41;
-            public const int PUMPKIN = 42;
-            public const int SPOOKY = 43;
-            public const int GLASS = 44;
-            // TODO: Add all chest types
+            public const int DUNGEON_GREEN_LOCKED = 36;
+            public const int DUNGEON_PINK = 37;
+            public const int DUNGEON_PINK_LOCKED = 38;
+            public const int DUNGEON_BLUE = 39;
+            public const int DUNGEON_BLUE_LOCKED = 40;
+            public const int BONE = 41;
+            public const int CACTUS = 42;
+            public const int FLESH = 43;
+            public const int OBSIDIAN = 44;
+            public const int PUMPKIN = 45;
+            public const int SPOOKY = 56;
+            public const int GLASS = 47;
+            public const int MARTIAN = 48;
+            public const int METEORITE = 49;
+            public const int GRANITE = 50;
+            public const int MARBLE = 51;
+            public const int CRYSTAL = 52;
+            public const int GOLDEN = 53;
         }
 
         public static class Height
