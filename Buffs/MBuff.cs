@@ -6,18 +6,6 @@ namespace ElementalBoots.Buffs
 {
     public abstract class MBuff: ModBuff, IEquipped
     {
-        public string Name
-        {
-            get { return Main.buffName[Type]; }
-            set { Main.buffName[Type] = value; }
-        }
-
-        public string Tooltip
-        {
-            get { return Main.buffTip[Type]; }
-            set { Main.buffTip[Type] = value; }
-        }
-
         public bool Debuff
         {
             get { return Main.debuff[Type]; }

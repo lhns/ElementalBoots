@@ -7,7 +7,6 @@ namespace ElementalBoots.Items.Tiles.InventorsWorkshop
     {
         public override void SetDefaults()
         {
-            item.name = "Inventor's Workshop";
             item.maxStack = 250;
             item.useTurn = true;
             item.autoReuse = true;

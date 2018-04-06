@@ -8,7 +8,6 @@ namespace ElementalBoots.Projectiles.Illuminant
     {
         public override void SetDefaults()
         {
-            projectile.name = "Illuminant Crystal";
             //projectile.width = 14;
             //projectile.height = 16;
             projectile.aiStyle = 0;

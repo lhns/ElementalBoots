@@ -9,23 +9,15 @@ using Terraria.ModLoader;
 
 namespace ElementalBoots.Items.Accessories.Tornado
 {
+    [AutoloadEquip(EquipType.Balloon)]
     public class TornadoInABalloon : CompoundAccessory
     {
-        public override bool Autoload(ref string name, ref string texture, IList<EquipType> equips)
-        {
-            equips.Add(EquipType.Balloon);
-
-            return true;
-        }
-
         public override void SetDefaults()
         {
-            item.name = "Tornado in a Balloon";
             item.maxStack = 1;
             item.value = 1*Value.GOLD;
             item.rare = 4;
             item.accessory = true;
-            item.toolTip = "Allows the holder to double jump";
         }
 
         public override IList<Item> GetCompoundAccessories()
@@ -33,7 +25,7 @@ namespace ElementalBoots.Items.Accessories.Tornado
             return new List<Item>
             {
                 Utils.GetItem(ItemID.ShinyRedBalloon),
-                Utils.GetItem(mod, "TornadoInABottle")
+                mod.GetItem("TornadoInABottle").item
             };
         }
 

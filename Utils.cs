@@ -20,7 +20,7 @@ namespace ElementalBoots
             return null;
         }
 
-        public static Item NewItem(Mod mod, string name)
+        /*public static Item NewItem(Mod mod, string name)
         {
             if (mod == null)
             {
@@ -38,7 +38,7 @@ namespace ElementalBoots
             }
 
             return null;
-        }
+        }*/
 
         private static Tuple<Mod, string> ResolveName(string name)
         {
@@ -53,12 +53,12 @@ namespace ElementalBoots
             return new Tuple<Mod, string>(mod, itemName);
         }
 
-        public static Item NewItem(string name)
+        /*public static Item NewItem(string name)
         {
             var resolvedName = ResolveName(name);
 
             return NewItem(resolvedName.Item1, resolvedName.Item2);
-        }
+        }*/
 
         private static readonly Dictionary<int, Item> ItemByType = new Dictionary<int, Item>();
 
@@ -82,7 +82,7 @@ namespace ElementalBoots
         private static readonly Dictionary<Tuple<Mod, string>, Item> ItemByName =
             new Dictionary<Tuple<Mod, string>, Item>();
 
-        public static Item GetItem(Mod mod, string name)
+        /*public static Item GetItem(Mod mod, string name)
         {
             Item item;
             var tuple = new Tuple<Mod, string>(mod, name);
@@ -98,14 +98,14 @@ namespace ElementalBoots
             }
 
             return null;
-        }
+        }*/
 
-        public static Item GetItem(string name)
+        /*public static Item GetItem(string name)
         {
             var resolvedName = ResolveName(name);
 
             return GetItem(resolvedName.Item1, resolvedName.Item2);
-        }
+        }*/
 
         public static Projectile GetProjectile(Mod mod, string name)
         {

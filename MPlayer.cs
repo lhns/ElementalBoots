@@ -57,8 +57,8 @@ namespace ElementalBoots
         public void ApplyAccessoryEffects(Item item, bool hideVisual = false)
         {
             player.VanillaUpdateEquip(item);
-            bool flag1 = false, flag2 = false, flag3 = false;
-            player.VanillaUpdateAccessory(item, hideVisual, ref flag1, ref flag2, ref flag3);
+            bool flag1 = false, flag2 = false, flag3 = false; // TODO
+            player.VanillaUpdateAccessory(0, item, hideVisual, ref flag1, ref flag2, ref flag3);
         }
     }
 }

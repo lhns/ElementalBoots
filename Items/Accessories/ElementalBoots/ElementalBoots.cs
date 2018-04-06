@@ -7,24 +7,15 @@ using Terraria.ModLoader;
 
 namespace ElementalBoots.Items.Accessories.ElementalBoots
 {
+    [AutoloadEquip(EquipType.Shoes)]
     public class ElementalBoots : MItem
     {
-        public override bool Autoload(ref string name, ref string texture, IList<EquipType> equips)
-        {
-            equips.Add(EquipType.Shoes);
-
-            return true;
-        }
-
         public override void SetDefaults()
         {
-            item.name = "Elemental Boots";
             item.maxStack = 1;
             item.value = 30*Value.GOLD;
             item.rare = 4;
             item.accessory = true;
-            item.toolTip =
-                "Allows flight, super fast running, and extra mobility on ice\n7% increased movement speed\nProvides the ability to walk on water and lava\nLeaves a trail of flames as the player moves";
         }
 
         public override void UpdateAccessory2(Player player, bool hideVisual)

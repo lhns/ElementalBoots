@@ -21,12 +21,10 @@ namespace ElementalBoots.Items.Accessories.Tornado
 
         public override void SetDefaults()
         {
-            item.name = "Tornado in a Bottle";
             item.maxStack = 1;
             item.value = 1*Value.GOLD;
             item.rare = 1;
             item.accessory = true;
-            item.toolTip = "Allows the holder to double jump";
         }
 
         public override void OnUnEquip(Player player)

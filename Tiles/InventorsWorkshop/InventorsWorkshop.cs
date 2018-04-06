@@ -20,7 +20,7 @@ namespace ElementalBoots.Tiles.InventorsWorkshop
             SolidTop = true;
             Table = true;
 
-            AddMapEntry(new Color(200, 50, 50), "Inventor's Workshop");
+            AddMapEntry(new Color(200, 50, 50));
 
             dustType = 1;
             disableSmartCursor = true;

@@ -6,23 +6,13 @@ namespace ElementalBoots.Items.Accessories.BalloonBundle
 {
     public abstract class BalloonBundle : MItem
     {
-        public bool Cloud = false, Blizzard = false, Sandstorm = false, Fart = false, Sail = false, Tornado = false;
-
-        public override bool Autoload(ref string name, ref string texture, IList<EquipType> equips)
-        {
-            equips.Add(EquipType.Balloon);
-
-            return true;
-        }
+        public bool Cloud, Blizzard, Sandstorm, Fart, Sail, Tornado = false;
+        public bool Horseshoe, Honey = false;
 
         public override void SetDefaults()
         {
-            item.name = "Balloon Bundle";
             item.maxStack = 1;
-            item.value = 1*Value.GOLD;
-            item.rare = 4;
             item.accessory = true;
-            item.toolTip = "Allows the holder to double jump";
         }
 
         public override void UpdateAccessory2(Player player, bool hideVisual)
@@ -36,9 +26,12 @@ namespace ElementalBoots.Items.Accessories.BalloonBundle
             player.dJumpEffectSandstorm = Sandstorm;
             player.dJumpEffectFart = Fart;
             player.dJumpEffectSail = Sail;
+            
+            if (Tornado) player.GetModPlayer<MPlayer>(mod).ApplyAccessoryEffects(mod.GetItem("TornadoInABottle").item);
 
-            if (Tornado)
-                player.GetModPlayer<MPlayer>(mod).ApplyAccessoryEffects(Utils.GetItem(mod, "TornadoInABottle"));
+            if (Horseshoe) player.noFallDmg = true;
+
+            if (Honey) player.bee = true;
         }
     }
 }

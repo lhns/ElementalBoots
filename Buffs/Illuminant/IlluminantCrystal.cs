@@ -5,12 +5,10 @@ namespace ElementalBoots.Buffs.Illuminant
 {
     public class IlluminantCrystal: MBuff
     {
-        public Item Trigger { get; }
+        //public Item Trigger { get; }
 
         public override void SetDefaults()
         {
-            Name = "Illuminant Crystal";
-            Tooltip = "Follows enemies and damages them";
             Debuff = true;
         }
 
