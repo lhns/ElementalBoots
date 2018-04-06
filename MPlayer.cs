@@ -49,8 +49,12 @@ namespace ElementalBoots
 
         private bool postRespawn = false;
 
+        private int defaultItemGrabRange;
+
         public override void PreUpdate()
         {
+            defaultItemGrabRange = Player.defaultItemGrabRange;
+
             UpdateUnEquipped();
 
             Time += 1;
@@ -60,11 +64,13 @@ namespace ElementalBoots
         {
             base.PostUpdate();
 
+            Player.defaultItemGrabRange = defaultItemGrabRange;
+
             if (postRespawn && !player.dead)
             {
                 postRespawn = false;
 
-                Events.registry.Call(new Events.PlayerPostRespawn(this));
+                Events.Registry().Call(new Events.PlayerPostRespawn(this));
             }
         }
 
@@ -102,7 +108,7 @@ namespace ElementalBoots
         {
             base.PostHurt(pvp, quiet, damage, hitDirection, crit);
 
-            Events.registry.Call(new Events.PlayerPostHurt(this, pvp, quiet, damage, hitDirection, crit));
+            Events.Registry().Call(new Events.PlayerPostHurt(this, pvp, quiet, damage, hitDirection, crit));
         }
     }
 }

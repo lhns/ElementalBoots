@@ -1,18 +1,20 @@
-ItemName.BalloonBundle=Balloon Bundle
 ItemName.ElementalBoots=Elemental Boots
-ItemName.FieryShell=Fiery Shell
-ItemName.NightskyNecklace=Nightsky Necklace
-ItemName.BlackHorseshoeBalloon=Black Horseshoe Balloon
-ItemName.TornadoInABalloon=Tornado in a Balloon
-ItemName.TornadoInABottle=Tornado in a Bottle
-
-ItemTooltip.BalloonBundle=Allows the holder to double jump
 ItemTooltip.ElementalBoots=Allows flight, super fast running, and extra mobility on ice\n7% increased movement speed\nProvides the ability to walk on water and lava\nLeaves a trail of flames as the player moves
+
+ItemName.FieryShell=Fiery Shell
 ItemTooltip.FieryShell=Transforms the holder into merfolk when entering water or lava\nProvides 12 seconds of immunity to lava
+
+ItemName.NightskyNecklace=Nightsky Necklace
 ItemTooltip.NightskyNecklace=Causes stars to fall and increases length of invincibility after taking damage\nTurns the holder into a werewolf at the night and a merfolk when entering water
-ItemTooltip.BlackHorseshoeBalloon=Allows the holder to double jump\nNegates fall damage
-ItemTooltip.TornadoInABalloon=Allows the holder to double jump
+
+ItemName.TornadoInABottle=Tornado in a Bottle
 ItemTooltip.TornadoInABottle=Allows the holder to double jump
+
+ItemName.TornadoInABalloon=Tornado in a Balloon
+ItemTooltip.TornadoInABalloon=Allows the holder to double jump
+
+ItemName.BlackHorseshoeBalloon=Black Horseshoe Balloon
+ItemTooltip.BlackHorseshoeBalloon=Allows the holder to double jump\nNegates fall damage
 
 ItemName.QuadrupleBalloonBundle=Big Balloon Bundle
 ItemName.QuintupleBalloonBundle=Huge Balloon Bundle
@@ -27,23 +29,37 @@ ItemName.QuadrupleHorseshoeHoneyBalloonBundle=Big Horseshoe Honey Balloon Bundle
 ItemName.QuintupleHorseshoeHoneyBalloonBundle=Huge Horseshoe Honey Balloon Bundle
 ItemName.SextupleHorseshoeHoneyBalloonBundle=Giant Horseshoe Honey Balloon Bundle
 
-
-
 ItemName.IlluminantHeartNecklace=Illuminant Heart Necklace
-ItemName.IlluminantStarNecklace=Illuminant Star Necklace
-ItemName.IlluminantPearlsNecklace=Illuminant Pearls Necklace
-
 ItemTooltip.IlluminantHeartNecklace=Releases illuminant crystal, increases movement speed\nand applies the Illuminated buff when damaged\nRefills your health when dead
+
+ItemName.IlluminantStarNecklace=Illuminant Star Necklace
 ItemTooltip.IlluminantStarNecklace=Causes stars to fall, increases length of invincibility\nand applies the Illuminated buff after taking damage\nRefills your mana when dead
+
+ItemName.IlluminantPearlsNecklace=Illuminant Pearls Necklace
 ItemTooltip.IlluminantPearlsNecklace=Causes stars to fall, increases length of invincibility,\nreleases illuminant crystal, increases movement speed\nand applies the Illuminated buff when damaged\nRefills your health when dead\nRefills your mana when dead
 
 ProjectileName.IlluminantCrystal=Illuminant Crystal
 
 BuffName.IlluminantBuff=Illuminant
-BuffName.IlluminantCrystal=Illuminant Crystal
-
 BuffDescription.IlluminantBuff=It glows!
+
+BuffName.IlluminantCrystal=Illuminant Crystal
 BuffDescription.IlluminantCrystal=Follows enemies and damages them
+
+ItemName.MagmaClaws=Magma Claws
+ItemTooltip.MagmaClaws=Increases melee knockback and inflicts fire damage on attack\n9% increased melee damage and speed\nAllows the ability to slide down walls\nImproved ability if combined with Shoe Spikes
+
+ItemName.MagmaClimbingGear=Magma Climbing Gear
+ItemTooltip.MagmaClimbingGear=Increases melee knockback and inflicts fire damage on attack\n9% increased melee damage and speed\nAllows the ability to climb walls
+
+ItemName.FlamingNinjaGear=Flaming Ninja Gear
+ItemTooltip.FlamingNinjaGear=Increases melee knockback and inflicts fire damage on attack\n9% increased melee damage and speed\nAllows the ability to climb walls and dash\nGives a chance to dodge attacks
+
+ItemName.FrozenTurtleShield=Frozen Turtle Shield
+ItemTooltip.FrozenTurtleShield=Absorbs 25% of damage done to players on your team when above 25% life\nBelow 25% it gives 30 extra defense
+
+ItemName.Magnet=Magnet
+ItemTooltip.Magnet=Increases pickup range for items
 
 ItemName.InventorsWorkshopItem=Inventor's Workshop
 

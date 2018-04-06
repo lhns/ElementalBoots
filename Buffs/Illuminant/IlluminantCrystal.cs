@@ -24,7 +24,7 @@ namespace ElementalBoots.Buffs.Illuminant
                 knockBack = trigger.knockBack;
             }*/
 
-            Projectile.NewProjectile(player.Center.X, player.Center.Y, 0, 0, Utils.GetProjectile(mod, "IlluminantCrystal").type, damage, knockBack, player.whoAmI);
+            Projectile.NewProjectile(player.Center.X, player.Center.Y, 0, 0,  mod.GetProjectile("IlluminantCrystal").projectile.type, damage, knockBack, player.whoAmI);
         }
     }
 }

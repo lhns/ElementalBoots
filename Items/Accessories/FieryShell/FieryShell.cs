@@ -1,24 +1,33 @@
-﻿using Terraria;
+﻿using System.Collections.Generic;
+using Terraria;
 using Terraria.ID;
 
 namespace ElementalBoots.Items.Accessories.FieryShell
 {
-    class FieryShell : MItem
+    class FieryShell : CompoundAccessory
     {
         public override void SetDefaults()
         {
-            item.maxStack = 1;
-            item.value = 10*Value.GOLD;
+            base.SetDefaults();
+            
+            item.value = 10 * Value.GOLD;
             item.rare = 6;
-            item.accessory = true;
+        }
+
+        public override IList<Item> GetCompoundAccessories()
+        {
+            return new List<Item>
+            {
+                ElementalBootsMod.instance.GetItemType(ItemID.NeptunesShell),
+                ElementalBootsMod.instance.GetItemType(ItemID.LavaCharm)
+            };
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             base.UpdateAccessory(player, hideVisual);
-
-            player.accMerman = true;
-            player.lavaMax += 720;
+            
+            player.lavaMax += 300;
 
             if (player.lavaWet)
             {

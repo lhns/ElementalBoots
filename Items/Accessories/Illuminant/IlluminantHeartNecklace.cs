@@ -9,14 +9,14 @@ using LibEventManagerCSharp;
 
 namespace ElementalBoots.Items.Accessories.Illuminant
 {
-    class IlluminantHeartNecklace: MItem
+    class IlluminantHeartNecklace: Accessory
     {
         public override void SetDefaults()
         {
-            item.maxStack = 1;
+            base.SetDefaults();
+            
             item.value = 8 * Value.GOLD;
             item.rare = 5;
-            item.accessory = true;
 
             /*item.damage = 20;
             item.knockBack = 1;*/
@@ -39,12 +39,12 @@ namespace ElementalBoots.Items.Accessories.Illuminant
             if (respawnListener != null) respawnListener.Unregister();
             if (postHurtListener != null) postHurtListener.Unregister();
 
-            respawnListener = Events.registry.Register((Events.PlayerPostRespawn e) =>
+            respawnListener = Events.Registry().Register((Events.PlayerPostRespawn e) =>
             {
                 e.player.player.statLife = e.player.player.statLifeMax;
             });
 
-            postHurtListener = Events.registry.Register((Events.PlayerPostHurt e) =>
+            postHurtListener = Events.Registry().Register((Events.PlayerPostHurt e) =>
             {
                 player.AddBuff(mod.GetBuff("IlluminantBuff").Type, 900, false);
                 player.AddBuff(mod.GetBuff("IlluminantCrystal").Type, 300, false);

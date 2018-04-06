@@ -9,14 +9,14 @@ using Terraria.ID;
 
 namespace ElementalBoots.Items.Accessories.Illuminant
 {
-    class IlluminantStarNecklace: MItem
+    class IlluminantStarNecklace: Accessory
     {
         public override void SetDefaults()
         {
-            item.maxStack = 1;
+            base.SetDefaults();
+
             item.value = 15 * Value.GOLD;
             item.rare = 6;
-            item.accessory = true;
         }
 
         private EventListener respawnListener, postHurtListener;
@@ -36,12 +36,12 @@ namespace ElementalBoots.Items.Accessories.Illuminant
             if (respawnListener != null) respawnListener.Unregister();
             if (postHurtListener != null) postHurtListener.Unregister();
 
-            respawnListener = Events.registry.Register((Events.PlayerPostRespawn e) =>
+            respawnListener = Events.Registry().Register((Events.PlayerPostRespawn e) =>
             {
                 e.player.player.statMana = e.player.player.statManaMax;
             });
 
-            postHurtListener = Events.registry.Register((Events.PlayerPostHurt e) =>
+            postHurtListener = Events.Registry().Register((Events.PlayerPostHurt e) =>
             {
                 player.AddBuff(mod.GetBuff("IlluminantBuff").Type, 900, false);
             });

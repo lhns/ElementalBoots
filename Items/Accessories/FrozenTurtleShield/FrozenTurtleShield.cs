@@ -4,16 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+using ElementalBoots;
 
-namespace ElementalBoots.Items.Accessories.Illuminant
+namespace ElementalBoots.Items.Accessories.FrozenTurtleShield
 {
-    class IlluminantPearlsNecklace : CompoundAccessory
+    [AutoloadEquip(EquipType.Shield)]
+    class FrozenTurtleShield: CompoundAccessory
     {
         public override void SetDefaults()
         {
             base.SetDefaults();
             
-            item.value = 30 * Value.GOLD;
+            item.value = 10 * Value.GOLD;
             item.rare = 8;
         }
 
@@ -21,8 +25,8 @@ namespace ElementalBoots.Items.Accessories.Illuminant
         {
             return new List<Item>
             {
-                ElementalBootsMod.instance.GetItemType("IlluminantHeartNecklace"),
-                ElementalBootsMod.instance.GetItemType("IlluminantStarNecklace")
+                ElementalBootsMod.instance.GetItemType(ItemID.PaladinsShield),
+                ElementalBootsMod.instance.GetItemType(ItemID.FrozenTurtleShell)
             };
         }
     }

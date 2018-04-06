@@ -9,7 +9,7 @@ using Terraria.ModLoader;
 
 namespace ElementalBoots.Items.Accessories.Tornado
 {
-    class TornadoInABottle : MItem
+    class TornadoInABottle : Accessory
     {
         private static Color grayMultiplier = new Color(0.53f, 0.54f, 0.675f)*1.3f;
 
@@ -21,17 +21,15 @@ namespace ElementalBoots.Items.Accessories.Tornado
 
         public override void SetDefaults()
         {
-            item.maxStack = 1;
-            item.value = 1*Value.GOLD;
+            base.SetDefaults();
+            
+            item.value = 1 * Value.GOLD;
             item.rare = 1;
-            item.accessory = true;
         }
 
         public override void OnUnEquip(Player player)
         {
             base.OnUnEquip(player);
-
-            ErrorLogger.Log("UNEQUIP");
 
             lastWingTime = 0;
             lastRocketTime = 0;

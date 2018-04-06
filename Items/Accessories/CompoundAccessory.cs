@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace ElementalBoots.Items.Accessories
 {
-    abstract class CompoundAccessory : MItem
+    abstract class CompoundAccessory : Accessory
     {
         public abstract IList<Item> GetCompoundAccessories();
 

@@ -8,14 +8,14 @@ using Terraria.ModLoader;
 namespace ElementalBoots.Items.Accessories.ElementalBoots
 {
     [AutoloadEquip(EquipType.Shoes)]
-    class ElementalBoots : MItem
+    class ElementalBoots : Accessory
     {
         public override void SetDefaults()
         {
-            item.maxStack = 1;
-            item.value = 30*Value.GOLD;
+            base.SetDefaults();
+            
+            item.value = 30 * Value.GOLD;
             item.rare = 4;
-            item.accessory = true;
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

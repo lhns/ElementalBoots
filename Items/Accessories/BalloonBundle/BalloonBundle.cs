@@ -4,16 +4,10 @@ using Terraria.ModLoader;
 
 namespace ElementalBoots.Items.Accessories.BalloonBundle
 {
-    abstract class BalloonBundle : MItem
+    abstract class BalloonBundle : Accessory
     {
         public bool Cloud, Blizzard, Sandstorm, Fart, Sail, Tornado = false;
         public bool Horseshoe, Obsidian, Honey = false;
-
-        public override void SetDefaults()
-        {
-            item.maxStack = 1;
-            item.accessory = true;
-        }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {

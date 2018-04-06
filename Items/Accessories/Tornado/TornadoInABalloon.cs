@@ -14,18 +14,18 @@ namespace ElementalBoots.Items.Accessories.Tornado
     {
         public override void SetDefaults()
         {
-            item.maxStack = 1;
+            base.SetDefaults();
+            
             item.value = 1*Value.GOLD;
             item.rare = 4;
-            item.accessory = true;
         }
 
         public override IList<Item> GetCompoundAccessories()
         {
             return new List<Item>
             {
-                Main.item[ItemID.ShinyRedBalloon],
-                mod.GetItem("TornadoInABottle").item
+                ElementalBootsMod.instance.GetItemType(ItemID.ShinyRedBalloon),
+                ElementalBootsMod.instance.GetItemType("TornadoInABottle")
             };
         }
 

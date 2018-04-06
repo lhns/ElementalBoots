@@ -11,18 +11,18 @@ namespace ElementalBoots.Items.Accessories.NightskyNecklace
     {
         public override void SetDefaults()
         {
-            item.maxStack = 1;
+            base.SetDefaults();
+            
             item.value = 30*Value.GOLD;
             item.rare = 8;
-            item.accessory = true;
         }
 
         public override IList<Item> GetCompoundAccessories()
         {
             return new List<Item>
             {
-                Main.item[ItemID.MoonShell],
-                Main.item[ItemID.StarVeil]
+                ElementalBootsMod.instance.GetItemType(ItemID.MoonShell),
+                ElementalBootsMod.instance.GetItemType(ItemID.StarVeil)
             };
         }
 

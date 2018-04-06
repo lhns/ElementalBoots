@@ -9,7 +9,10 @@ namespace ElementalBoots
 {
     class Events
     {
-        public static EventRegistry registry = new EventRegistry();
+        public static EventRegistry Registry()
+        {
+            return ElementalBootsMod.instance.eventRegistry;
+        }
 
         public class PlayerPostRespawn : Event
         {

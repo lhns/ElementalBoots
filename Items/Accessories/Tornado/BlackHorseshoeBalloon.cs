@@ -6,21 +6,23 @@ using Terraria.ModLoader;
 namespace ElementalBoots.Items.Accessories.Tornado
 {
     [AutoloadEquip(EquipType.Balloon)]
-    class BlackHorseshoeBalloon : TornadoInABalloon
+    class BlackHorseshoeBalloon : CompoundAccessory
     {
         public override void SetDefaults()
         {
-            item.maxStack = 1;
+            base.SetDefaults();
+            
             item.value = 1*Value.GOLD;
             item.rare = 4;
-            item.accessory = true;
         }
 
-        public override void UpdateAccessory(Player player, bool hideVisual)
+        public override IList<Item> GetCompoundAccessories()
         {
-            base.UpdateAccessory(player, hideVisual);
-
-            player.noFallDmg = true;
+            return new List<Item>
+            {
+                ElementalBootsMod.instance.GetItemType("TornadoInABalloon"),
+                ElementalBootsMod.instance.GetItemType(ItemID.LuckyHorseshoe)
+            };
         }
 
         public override void AddRecipes()
