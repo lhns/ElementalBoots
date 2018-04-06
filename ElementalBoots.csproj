@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LibEventManagerCSharp">
+      <HintPath>lib\LibEventManagerCSharp.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -51,15 +54,25 @@
     <Compile Include="Buffs\MBuff.cs" />
     <Compile Include="Chest\ChestInfo.cs" />
     <Compile Include="ElementalBoots.cs" />
+    <Compile Include="Events.cs" />
     <Compile Include="IEquipped.cs" />
     <Compile Include="Items\Accessories\BalloonBundle\BalloonBundle.cs" />
+    <Compile Include="Items\Accessories\BalloonBundle\QuadrupleHoneyBalloonBundle.cs" />
     <Compile Include="Items\Accessories\BalloonBundle\QuadrupleHorseshoeBalloonBundle.cs" />
+    <Compile Include="Items\Accessories\BalloonBundle\QuadrupleHorseshoeHoneyBalloonBundle.cs" />
+    <Compile Include="Items\Accessories\BalloonBundle\QuintupleHoneyBalloonBundle.cs" />
     <Compile Include="Items\Accessories\BalloonBundle\QuintupleHorseshoeBalloonBundle.cs" />
     <Compile Include="Items\Accessories\BalloonBundle\QuintupleBalloonBundle.cs" />
     <Compile Include="Items\Accessories\BalloonBundle\QuadrupleBalloonBundle.cs" />
+    <Compile Include="Items\Accessories\BalloonBundle\QuintupleHorseshoeHoneyBalloonBundle.cs" />
+    <Compile Include="Items\Accessories\BalloonBundle\SextupleBalloonBundle.cs" />
+    <Compile Include="Items\Accessories\BalloonBundle\SextupleHoneyBalloonBundle.cs" />
+    <Compile Include="Items\Accessories\BalloonBundle\SextupleHorseshoeBalloonBundle.cs" />
+    <Compile Include="Items\Accessories\BalloonBundle\SextupleHorseshoeHoneyBalloonBundle.cs" />
     <Compile Include="Items\Accessories\CompoundAccessory.cs" />
     <Compile Include="Items\Accessories\ElementalBoots\ElementalBoots.cs" />
     <Compile Include="Items\Accessories\FieryShell\FieryShell.cs" />
+    <Compile Include="Items\Accessories\Illuminant\IlluminantHeartNecklace.cs" />
     <Compile Include="Items\Accessories\NightskyNecklace\NightskyNecklace.cs" />
     <Compile Include="Items\Accessories\Tornado\BlackHorseshoeBalloon.cs" />
     <Compile Include="Items\Accessories\Tornado\TornadoInABalloon.cs" />
@@ -84,20 +97,30 @@
     <Content Include="Buffs\Illuminant\IlluminantBuff.png" />
     <Content Include="Buffs\Illuminant\IlluminantCrystal.png" />
     <Content Include="Buffs\ImbueBuffTemplate.png" />
-    <Content Include="Items\Accessories\BalloonBundle\HorseshoeHoneyBalloonBundle.png" />
-    <Content Include="Items\Accessories\BalloonBundle\HorseshoeHoneyBalloonBundle_Balloon.png" />
     <Content Include="Items\Accessories\BalloonBundle\QuadrupleBalloonBundle.png" />
     <Content Include="Items\Accessories\BalloonBundle\QuadrupleBalloonBundle_Balloon.png" />
+    <Content Include="Items\Accessories\BalloonBundle\QuadrupleHoneyBalloonBundle.png" />
+    <Content Include="Items\Accessories\BalloonBundle\QuadrupleHoneyBalloonBundle_Balloon.png" />
     <Content Include="Items\Accessories\BalloonBundle\QuadrupleHorseshoeBalloonBundle.png" />
     <Content Include="Items\Accessories\BalloonBundle\QuadrupleHorseshoeBalloonBundle_Balloon.png" />
     <Content Include="Items\Accessories\BalloonBundle\QuadrupleHorseshoeHoneyBalloonBundle.png" />
     <Content Include="Items\Accessories\BalloonBundle\QuadrupleHorseshoeHoneyBalloonBundle_Balloon.png" />
     <Content Include="Items\Accessories\BalloonBundle\QuintupleBalloonBundle.png" />
     <Content Include="Items\Accessories\BalloonBundle\QuintupleBalloonBundle_Balloon.png" />
+    <Content Include="Items\Accessories\BalloonBundle\QuintupleHoneyBalloonBundle.png" />
+    <Content Include="Items\Accessories\BalloonBundle\QuintupleHoneyBalloonBundle_Balloon.png" />
     <Content Include="Items\Accessories\BalloonBundle\QuintupleHorseshoeBalloonBundle.png" />
     <Content Include="Items\Accessories\BalloonBundle\QuintupleHorseshoeBalloonBundle_Balloon.png" />
     <Content Include="Items\Accessories\BalloonBundle\QuintupleHorseshoeHoneyBalloonBundle.png" />
     <Content Include="Items\Accessories\BalloonBundle\QuintupleHorseshoeHoneyBalloonBundle_Balloon.png" />
+    <Content Include="Items\Accessories\BalloonBundle\SextupleBalloonBundle.png" />
+    <Content Include="Items\Accessories\BalloonBundle\SextupleBalloonBundle_Balloon.png" />
+    <Content Include="Items\Accessories\BalloonBundle\SextupleHoneyBalloonBundle.png" />
+    <Content Include="Items\Accessories\BalloonBundle\SextupleHoneyBalloonBundle_Balloon.png" />
+    <Content Include="Items\Accessories\BalloonBundle\SextupleHorseshoeBalloonBundle.png" />
+    <Content Include="Items\Accessories\BalloonBundle\SextupleHorseshoeBalloonBundle_Balloon.png" />
+    <Content Include="Items\Accessories\BalloonBundle\SextupleHorseshoeHoneyBalloonBundle.png" />
+    <Content Include="Items\Accessories\BalloonBundle\SextupleHorseshoeHoneyBalloonBundle_Balloon.png" />
     <Content Include="Items\Accessories\ElementalBoots\ElementalBoots.png" />
     <Content Include="Items\Accessories\ElementalBoots\ElementalBoots_Shoes.png" />
     <Content Include="Items\Accessories\FieryShell\FieryShell.png" />
@@ -116,6 +139,10 @@
     <Content Include="Tiles\InventorsWorkshop\InventorsWorkshopTile.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Items\Accessories\BalloonBundle\BalloonBundle_Balloon.pdn" />
+    <None Include="Items\Accessories\BalloonBundle\QuadrupleBalloonBundle.pdn" />
+    <None Include="Items\Accessories\BalloonBundle\QuintupleBalloonBundle.pdn" />
+    <None Include="Items\Accessories\BalloonBundle\SextupleBalloonBundle.pdn" />
     <None Include="Localization\en-US.lang" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

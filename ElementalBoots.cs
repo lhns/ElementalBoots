@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Terraria;
 using Terraria.ModLoader;
+using LibEventManagerCSharp;
 
 namespace ElementalBoots
 {

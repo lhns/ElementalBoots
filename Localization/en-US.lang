@@ -19,6 +19,8 @@ ItemName.QuadrupleHorseshoeHoneyBalloonBundle=Big Horseshoe Honey Balloon Bundle
 ItemName.QuintupleHorseshoeHoneyBalloonBundle=Huge Horseshoe Honey Balloon Bundle
 ItemName.SextupleHorseshoeHoneyBalloonBundle=Giant Horseshoe Honey Balloon Bundle
 
+ItemName.IlluminantHeartNecklace=Illuminant Heart Necklace
+
 ItemTooltip.BalloonBundle=Allows the holder to double jump
 ItemTooltip.ElementalBoots=Allows flight, super fast running, and extra mobility on ice\n7% increased movement speed\nProvides the ability to walk on water and lava\nLeaves a trail of flames as the player moves
 ItemTooltip.FieryShell=Transforms the holder into merfolk when entering water or lava\nProvides 12 seconds of immunity to lava
@@ -26,6 +28,8 @@ ItemTooltip.NightskyNecklace=Causes stars to fall and increases length of invinc
 ItemTooltip.BlackHorseshoeBalloon=Allows the holder to double jump\nNegates fall damage
 ItemTooltip.TornadoInABalloon=Allows the holder to double jump
 ItemTooltip.TornadoInABottle=Allows the holder to double jump
+
+ItemTooltip.IlluminantHeartNecklace=Releases illuminant crystal, increases movement speed\nand applies the Illuminated buff when damaged\nRefills your health when dead
 
 ProjectileName.IlluminantCrystal=Illuminant Crystal
 

@@ -14,15 +14,15 @@ namespace ElementalBoots.Buffs.Illuminant
 
         public override void OnEquip(Player player)
         {
-            int damage = 0;
-            float knockBack = 0;
+            int damage = 30;
+            float knockBack = 1;
 
-            var trigger = Utils.GetItem(player.selectedItem);
+            /*var trigger = Utils.GetItem(player.selectedItem);
             if (trigger != null)
             {
                 damage = trigger.damage;
                 knockBack = trigger.knockBack;
-            }
+            }*/
 
             Projectile.NewProjectile(player.Center.X, player.Center.Y, 0, 0, Utils.GetProjectile(mod, "IlluminantCrystal").type, damage, knockBack, player.whoAmI);
         }

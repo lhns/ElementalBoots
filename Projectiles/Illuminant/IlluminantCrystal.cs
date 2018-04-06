@@ -8,18 +8,14 @@ namespace ElementalBoots.Projectiles.Illuminant
     {
         public override void SetDefaults()
         {
-            //projectile.width = 14;
-            //projectile.height = 16;
             projectile.aiStyle = 0;
             projectile.timeLeft = 800;
             projectile.friendly = true;
             projectile.hostile = false;
             projectile.tileCollide = true;
             projectile.ranged = true;
-            projectile.damage = 30;
             projectile.penetrate = 10;
             projectile.magic = true;
-            //ProjectileID.Sets.Homing[projectile.type] = true;
         }
 
         public override void AI()

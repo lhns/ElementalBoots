@@ -47,11 +47,25 @@ namespace ElementalBoots
             _equippedItems = newEquippedItems;
         }
 
+        private bool postRespawn = false;
+
         public override void PreUpdate()
         {
             UpdateUnEquipped();
 
             Time += 1;
+        }
+
+        public override void PostUpdate()
+        {
+            base.PostUpdate();
+
+            if (postRespawn && !player.dead)
+            {
+                postRespawn = false;
+
+                Events.registry.Call(new Events.PlayerPostRespawn(this));
+            }
         }
 
         private int id = -1;
@@ -75,6 +89,20 @@ namespace ElementalBoots
             player.VanillaUpdateEquip(item);
             bool flag1 = false, flag2 = false, flag3 = false;
             player.VanillaUpdateAccessory(GetID(), item, hideVisual, ref flag1, ref flag2, ref flag3);
+        }
+
+        public override void OnRespawn(Player player)
+        {
+            base.OnRespawn(player);
+
+            postRespawn = true;
+        }
+
+        public override void PostHurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)
+        {
+            base.PostHurt(pvp, quiet, damage, hitDirection, crit);
+
+            Events.registry.Call(new Events.PlayerPostHurt(this, pvp, quiet, damage, hitDirection, crit));
         }
     }
 }
