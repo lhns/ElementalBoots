@@ -3,7 +3,7 @@ using Terraria.ID;
 
 namespace ElementalBoots.Items.Accessories.FieryShell
 {
-    public class FieryShell : MItem
+    class FieryShell : MItem
     {
         public override void SetDefaults()
         {

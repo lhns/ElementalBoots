@@ -9,7 +9,7 @@ namespace ElementalBoots
 {
     public class Utils
     {
-        public static Item NewItem(int type)
+        /*public static Item NewItem(int type)
         {
             var item = new Item();
 
@@ -18,7 +18,7 @@ namespace ElementalBoots
             if (item.type != ItemID.None) return item;
 
             return null;
-        }
+        }*/
 
         /*public static Item NewItem(Mod mod, string name)
         {
@@ -40,7 +40,7 @@ namespace ElementalBoots
             return null;
         }*/
 
-        private static Tuple<Mod, string> ResolveName(string name)
+        /*private static Tuple<Mod, string> ResolveName(string name)
         {
             if (!name.Contains(":")) name = "Vanilla:" + name;
 
@@ -51,7 +51,7 @@ namespace ElementalBoots
             var mod = modName == "Vanilla" ? null : ModLoader.GetMod(modName);
 
             return new Tuple<Mod, string>(mod, itemName);
-        }
+        }*/
 
         /*public static Item NewItem(string name)
         {
@@ -62,7 +62,7 @@ namespace ElementalBoots
 
         private static readonly Dictionary<int, Item> ItemByType = new Dictionary<int, Item>();
 
-        public static Item GetItem(int type)
+        /*public static Item GetItem(int type)
         {
             Item item;
 
@@ -77,7 +77,7 @@ namespace ElementalBoots
             }
 
             return null;
-        }
+        }*/
 
         private static readonly Dictionary<Tuple<Mod, string>, Item> ItemByName =
             new Dictionary<Tuple<Mod, string>, Item>();

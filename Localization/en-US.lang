@@ -6,6 +6,14 @@ ItemName.BlackHorseshoeBalloon=Black Horseshoe Balloon
 ItemName.TornadoInABalloon=Tornado in a Balloon
 ItemName.TornadoInABottle=Tornado in a Bottle
 
+ItemTooltip.BalloonBundle=Allows the holder to double jump
+ItemTooltip.ElementalBoots=Allows flight, super fast running, and extra mobility on ice\n7% increased movement speed\nProvides the ability to walk on water and lava\nLeaves a trail of flames as the player moves
+ItemTooltip.FieryShell=Transforms the holder into merfolk when entering water or lava\nProvides 12 seconds of immunity to lava
+ItemTooltip.NightskyNecklace=Causes stars to fall and increases length of invincibility after taking damage\nTurns the holder into a werewolf at the night and a merfolk when entering water
+ItemTooltip.BlackHorseshoeBalloon=Allows the holder to double jump\nNegates fall damage
+ItemTooltip.TornadoInABalloon=Allows the holder to double jump
+ItemTooltip.TornadoInABottle=Allows the holder to double jump
+
 ItemName.QuadrupleBalloonBundle=Big Balloon Bundle
 ItemName.QuintupleBalloonBundle=Huge Balloon Bundle
 ItemName.SextupleBalloonBundle=Giant Balloon Bundle
@@ -19,17 +27,15 @@ ItemName.QuadrupleHorseshoeHoneyBalloonBundle=Big Horseshoe Honey Balloon Bundle
 ItemName.QuintupleHorseshoeHoneyBalloonBundle=Huge Horseshoe Honey Balloon Bundle
 ItemName.SextupleHorseshoeHoneyBalloonBundle=Giant Horseshoe Honey Balloon Bundle
 
-ItemName.IlluminantHeartNecklace=Illuminant Heart Necklace
 
-ItemTooltip.BalloonBundle=Allows the holder to double jump
-ItemTooltip.ElementalBoots=Allows flight, super fast running, and extra mobility on ice\n7% increased movement speed\nProvides the ability to walk on water and lava\nLeaves a trail of flames as the player moves
-ItemTooltip.FieryShell=Transforms the holder into merfolk when entering water or lava\nProvides 12 seconds of immunity to lava
-ItemTooltip.NightskyNecklace=Causes stars to fall and increases length of invincibility after taking damage\nTurns the holder into a werewolf at the night and a merfolk when entering water
-ItemTooltip.BlackHorseshoeBalloon=Allows the holder to double jump\nNegates fall damage
-ItemTooltip.TornadoInABalloon=Allows the holder to double jump
-ItemTooltip.TornadoInABottle=Allows the holder to double jump
+
+ItemName.IlluminantHeartNecklace=Illuminant Heart Necklace
+ItemName.IlluminantStarNecklace=Illuminant Star Necklace
+ItemName.IlluminantPearlsNecklace=Illuminant Pearls Necklace
 
 ItemTooltip.IlluminantHeartNecklace=Releases illuminant crystal, increases movement speed\nand applies the Illuminated buff when damaged\nRefills your health when dead
+ItemTooltip.IlluminantStarNecklace=Causes stars to fall, increases length of invincibility\nand applies the Illuminated buff after taking damage\nRefills your mana when dead
+ItemTooltip.IlluminantPearlsNecklace=Causes stars to fall, increases length of invincibility,\nreleases illuminant crystal, increases movement speed\nand applies the Illuminated buff when damaged\nRefills your health when dead\nRefills your mana when dead
 
 ProjectileName.IlluminantCrystal=Illuminant Crystal
 

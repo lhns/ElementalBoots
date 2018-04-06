@@ -24,7 +24,7 @@ namespace ElementalBoots.Items.Accessories.Tornado
         {
             return new List<Item>
             {
-                Utils.GetItem(ItemID.ShinyRedBalloon),
+                Main.item[ItemID.ShinyRedBalloon],
                 mod.GetItem("TornadoInABottle").item
             };
         }

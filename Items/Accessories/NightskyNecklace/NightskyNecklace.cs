@@ -21,8 +21,8 @@ namespace ElementalBoots.Items.Accessories.NightskyNecklace
         {
             return new List<Item>
             {
-                Utils.GetItem(ItemID.MoonShell),
-                Utils.GetItem(ItemID.StarVeil)
+                Main.item[ItemID.MoonShell],
+                Main.item[ItemID.StarVeil]
             };
         }
 

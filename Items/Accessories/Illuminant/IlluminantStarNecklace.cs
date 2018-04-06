@@ -3,23 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LibEventManagerCSharp;
 using Terraria;
 using Terraria.ID;
-using LibEventManagerCSharp;
 
 namespace ElementalBoots.Items.Accessories.Illuminant
 {
-    class IlluminantHeartNecklace: MItem
+    class IlluminantStarNecklace: MItem
     {
         public override void SetDefaults()
         {
             item.maxStack = 1;
-            item.value = 8 * Value.GOLD;
-            item.rare = 5;
+            item.value = 15 * Value.GOLD;
+            item.rare = 6;
             item.accessory = true;
-
-            /*item.damage = 20;
-            item.knockBack = 1;*/
         }
 
         private EventListener respawnListener, postHurtListener;
@@ -41,15 +38,21 @@ namespace ElementalBoots.Items.Accessories.Illuminant
 
             respawnListener = Events.registry.Register((Events.PlayerPostRespawn e) =>
             {
-                e.player.player.statLife = e.player.player.statLifeMax;
+                e.player.player.statMana = e.player.player.statManaMax;
             });
 
             postHurtListener = Events.registry.Register((Events.PlayerPostHurt e) =>
             {
                 player.AddBuff(mod.GetBuff("IlluminantBuff").Type, 900, false);
-                player.AddBuff(mod.GetBuff("IlluminantCrystal").Type, 300, false);
-                player.AddBuff(BuffID.Panic, 600, false);
             });
+        }
+
+        public override void UpdateAccessory(Player player, bool hideVisual)
+        {
+            base.UpdateAccessory(player, hideVisual);
+
+            player.starCloak = true;
+            player.longInvince = true;
         }
     }
 }
