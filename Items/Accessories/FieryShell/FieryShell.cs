@@ -13,9 +13,9 @@ namespace ElementalBoots.Items.Accessories.FieryShell
             item.accessory = true;
         }
 
-        public override void UpdateAccessory2(Player player, bool hideVisual)
+        public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            base.UpdateAccessory2(player, hideVisual);
+            base.UpdateAccessory(player, hideVisual);
 
             player.accMerman = true;
             player.lavaMax += 720;

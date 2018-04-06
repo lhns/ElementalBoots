@@ -37,9 +37,9 @@ namespace ElementalBoots.Items.Accessories.Tornado
             lastRocketTime = 0;
         }
 
-        public override void UpdateAccessory2(Player player, bool hideVisual)
+        public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            base.UpdateAccessory2(player, hideVisual);
+            base.UpdateAccessory(player, hideVisual);
 
             if (player.grappling[0] == -1 && !player.tongued && (player.jump == 0 || player.frozen)
                 || player.pulley

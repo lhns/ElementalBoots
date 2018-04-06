@@ -54,11 +54,27 @@ namespace ElementalBoots
             Time += 1;
         }
 
+        private int id = -1;
+
+        public int GetID()
+        {
+            if (id > -1) return id;
+            for (var i = 0; i < Main.player.Length; i++)
+            {
+                if (Main.player[i] == player)
+                {
+                    id = i;
+                    return i;
+                }
+            }
+            throw new Exception("Player not found!");
+        }
+
         public void ApplyAccessoryEffects(Item item, bool hideVisual = false)
         {
             player.VanillaUpdateEquip(item);
-            bool flag1 = false, flag2 = false, flag3 = false; // TODO
-            player.VanillaUpdateAccessory(0, item, hideVisual, ref flag1, ref flag2, ref flag3);
+            bool flag1 = false, flag2 = false, flag3 = false;
+            player.VanillaUpdateAccessory(GetID(), item, hideVisual, ref flag1, ref flag2, ref flag3);
         }
     }
 }

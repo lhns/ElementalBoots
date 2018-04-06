@@ -8,9 +8,9 @@ namespace ElementalBoots.Items.Accessories
     {
         public abstract IList<Item> GetCompoundAccessories();
 
-        public override void UpdateAccessory2(Player player, bool hideVisual)
+        public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            base.UpdateAccessory2(player, hideVisual);
+            base.UpdateAccessory(player, hideVisual);
 
             foreach (var accessory in GetCompoundAccessories())
             {

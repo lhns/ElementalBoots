@@ -1,12 +1,23 @@
-ItemName.BalloonBundle="Balloon Bundle"
-ItemName.ElementalBoots="Elemental Boots"
+ItemName.BalloonBundle=Balloon Bundle
+ItemName.ElementalBoots=Elemental Boots
 ItemName.FieryShell=Fiery Shell
 ItemName.NightskyNecklace=Nightsky Necklace
 ItemName.BlackHorseshoeBalloon=Black Horseshoe Balloon
 ItemName.TornadoInABalloon=Tornado in a Balloon
 ItemName.TornadoInABottle=Tornado in a Bottle
+
 ItemName.QuadrupleBalloonBundle=Big Balloon Bundle
-ItemName.QuintupleBalloonBundle=Giant Balloon Bundle
+ItemName.QuintupleBalloonBundle=Huge Balloon Bundle
+ItemName.SextupleBalloonBundle=Giant Balloon Bundle
+ItemName.QuadrupleHorseshoeBalloonBundle=Big Horseshoe Balloon Bundle
+ItemName.QuintupleHorseshoeBalloonBundle=Huge Horseshoe Balloon Bundle
+ItemName.SextupleHorseshoeBalloonBundle=Giant Horseshoe Balloon Bundle
+ItemName.QuadrupleHoneyBalloonBundle=Big Honey Balloon Bundle
+ItemName.QuintupleHoneyBalloonBundle=Huge Honey Balloon Bundle
+ItemName.SextupleHoneyBalloonBundle=Giant Honey Balloon Bundle
+ItemName.QuadrupleHorseshoeHoneyBalloonBundle=Big Horseshoe Honey Balloon Bundle
+ItemName.QuintupleHorseshoeHoneyBalloonBundle=Huge Horseshoe Honey Balloon Bundle
+ItemName.SextupleHorseshoeHoneyBalloonBundle=Giant Horseshoe Honey Balloon Bundle
 
 ItemTooltip.BalloonBundle=Allows the holder to double jump
 ItemTooltip.ElementalBoots=Allows flight, super fast running, and extra mobility on ice\n7% increased movement speed\nProvides the ability to walk on water and lava\nLeaves a trail of flames as the player moves
@@ -18,15 +29,15 @@ ItemTooltip.TornadoInABottle=Allows the holder to double jump
 
 ProjectileName.IlluminantCrystal=Illuminant Crystal
 
-BuffName.IlluminantBuff="Illuminant"
-BuffName.IlluminantCrystal="Illuminant Crystal"
+BuffName.IlluminantBuff=Illuminant
+BuffName.IlluminantCrystal=Illuminant Crystal
 
-BuffDescription.IlluminantBuff="It glows!"
-BuffDescription.IlluminantCrystal="Follows enemies and damages them"
+BuffDescription.IlluminantBuff=It glows!
+BuffDescription.IlluminantCrystal=Follows enemies and damages them
 
-ItemName.InventorsWorkshopItem="Inventor's Workshop"
+ItemName.InventorsWorkshopItem=Inventor's Workshop
 
-MapObject.InventorsWorkshop="Inventor's Workshop"
+MapObject.InventorsWorkshop=Inventor's Workshop
 
 You may find this .lang file approach to translations easier for your mod.
 .lang files contain translations for the language specified in the filename.

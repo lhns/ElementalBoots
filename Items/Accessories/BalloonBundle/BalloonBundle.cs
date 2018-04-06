@@ -7,7 +7,7 @@ namespace ElementalBoots.Items.Accessories.BalloonBundle
     public abstract class BalloonBundle : MItem
     {
         public bool Cloud, Blizzard, Sandstorm, Fart, Sail, Tornado = false;
-        public bool Horseshoe, Honey = false;
+        public bool Horseshoe, Obsidian, Honey = false;
 
         public override void SetDefaults()
         {
@@ -15,22 +15,20 @@ namespace ElementalBoots.Items.Accessories.BalloonBundle
             item.accessory = true;
         }
 
-        public override void UpdateAccessory2(Player player, bool hideVisual)
+        public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            base.UpdateAccessory2(player, hideVisual);
+            base.UpdateAccessory(player, hideVisual);
 
             player.jumpBoost = true;
 
-            player.dJumpEffectCloud = Cloud;
-            player.dJumpEffectBlizzard = Blizzard;
-            player.dJumpEffectSandstorm = Sandstorm;
-            player.dJumpEffectFart = Fart;
-            player.dJumpEffectSail = Sail;
-            
+            player.doubleJumpCloud = Cloud;
+            player.doubleJumpBlizzard = Blizzard;
+            player.doubleJumpSandstorm = Sandstorm;
+            player.doubleJumpFart = Fart;
+            player.doubleJumpSail = Sail;
             if (Tornado) player.GetModPlayer<MPlayer>(mod).ApplyAccessoryEffects(mod.GetItem("TornadoInABottle").item);
-
             if (Horseshoe) player.noFallDmg = true;
-
+            if (Obsidian) player.fireWalk = true;
             if (Honey) player.bee = true;
         }
     }

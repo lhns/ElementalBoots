@@ -7,17 +7,11 @@ namespace ElementalBoots.Items
     {
         public bool Equipped { get; internal set; }
 
-        public sealed override void UpdateAccessory(Player player, bool hideVisual)
+        public override void UpdateAccessory(Player player, bool hideVisual)
         {
             var mPlayer = player.GetModPlayer<MPlayer>(mod);
 
             mPlayer.UpdateEquipped(this);
-
-            UpdateAccessory2(player, hideVisual);
-        }
-
-        public virtual void UpdateAccessory2(Player player, bool hideVisual)
-        {
         }
 
         public virtual void OnEquip(Player player)
