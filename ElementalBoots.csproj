@@ -73,6 +73,8 @@
     <Compile Include="Items\Accessories\ElementalBoots\ElementalBoots.cs" />
     <Compile Include="Items\Accessories\FieryShell\FieryShell.cs" />
     <Compile Include="Items\Accessories\Illuminant\IlluminantHeartNecklace.cs" />
+    <Compile Include="Items\Accessories\Illuminant\IlluminantPearlsNecklace.cs" />
+    <Compile Include="Items\Accessories\Illuminant\IlluminantStarNecklace.cs" />
     <Compile Include="Items\Accessories\NightskyNecklace\NightskyNecklace.cs" />
     <Compile Include="Items\Accessories\Tornado\BlackHorseshoeBalloon.cs" />
     <Compile Include="Items\Accessories\Tornado\TornadoInABalloon.cs" />

@@ -4,7 +4,7 @@ using Terraria.ID;
 
 namespace ElementalBoots.Projectiles.Illuminant
 {
-    public class IlluminantCrystal: MProjectile
+    class IlluminantCrystal: MProjectile
     {
         public override void SetDefaults()
         {

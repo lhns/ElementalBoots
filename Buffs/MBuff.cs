@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace ElementalBoots.Buffs
 {
-    public abstract class MBuff: ModBuff, IEquipped
+    abstract class MBuff: ModBuff, IEquipped
     {
         public bool Debuff
         {

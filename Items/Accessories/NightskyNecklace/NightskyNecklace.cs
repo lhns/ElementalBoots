@@ -7,7 +7,7 @@ using Terraria.ModLoader;
 namespace ElementalBoots.Items.Accessories.NightskyNecklace
 {
     //[AutoloadEquip(EquipType.Neck)]
-    public class NightskyNecklace : CompoundAccessory
+    class NightskyNecklace : CompoundAccessory
     {
         public override void SetDefaults()
         {

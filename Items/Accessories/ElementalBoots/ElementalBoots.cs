@@ -8,7 +8,7 @@ using Terraria.ModLoader;
 namespace ElementalBoots.Items.Accessories.ElementalBoots
 {
     [AutoloadEquip(EquipType.Shoes)]
-    public class ElementalBoots : MItem
+    class ElementalBoots : MItem
     {
         public override void SetDefaults()
         {

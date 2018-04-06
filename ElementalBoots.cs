@@ -9,7 +9,7 @@ using LibEventManagerCSharp;
 
 namespace ElementalBoots
 {
-    public class ElementalBoots : Mod
+    class ElementalBoots : Mod
     {
         public ElementalBoots()
         {

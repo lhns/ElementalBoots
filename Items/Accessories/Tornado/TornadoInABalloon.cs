@@ -10,7 +10,7 @@ using Terraria.ModLoader;
 namespace ElementalBoots.Items.Accessories.Tornado
 {
     [AutoloadEquip(EquipType.Balloon)]
-    public class TornadoInABalloon : CompoundAccessory
+    class TornadoInABalloon : CompoundAccessory
     {
         public override void SetDefaults()
         {

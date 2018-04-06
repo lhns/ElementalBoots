@@ -2,7 +2,7 @@
 
 namespace ElementalBoots.Projectiles
 {
-    public abstract class MProjectile: ModProjectile
+    abstract class MProjectile: ModProjectile
     {
         
     }

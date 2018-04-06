@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace ElementalBoots.Items.Tiles.InventorsWorkshop
 {
-    public class InventorsWorkshopItem : MItem
+    class InventorsWorkshopItem : MItem
     {
         public override void SetDefaults()
         {

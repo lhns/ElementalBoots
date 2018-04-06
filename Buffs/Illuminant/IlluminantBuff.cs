@@ -2,7 +2,7 @@
 
 namespace ElementalBoots.Buffs.Illuminant
 {
-    public class IlluminantBuff: MBuff
+    class IlluminantBuff: MBuff
     {
         public override void Update2(Entity entity, ref int buffIndex)
         {

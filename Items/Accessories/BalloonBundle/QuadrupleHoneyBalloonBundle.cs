@@ -9,7 +9,7 @@ using Terraria.ModLoader;
 namespace ElementalBoots.Items.Accessories.BalloonBundle
 {
     [AutoloadEquip(EquipType.Balloon)]
-    public class QuadrupleHoneyBalloonBundle : BalloonBundle
+    class QuadrupleHoneyBalloonBundle : BalloonBundle
     {
         public override void SetDefaults()
         {

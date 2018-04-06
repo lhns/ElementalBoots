@@ -4,7 +4,7 @@ using Terraria.ModLoader;
 
 namespace ElementalBoots.Items.Accessories.BalloonBundle
 {
-    public abstract class BalloonBundle : MItem
+    abstract class BalloonBundle : MItem
     {
         public bool Cloud, Blizzard, Sandstorm, Fart, Sail, Tornado = false;
         public bool Horseshoe, Obsidian, Honey = false;

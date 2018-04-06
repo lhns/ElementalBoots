@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace ElementalBoots.Items
 {
-    public abstract class MItem: ModItem, IEquipped
+    abstract class MItem: ModItem, IEquipped
     {
         public bool Equipped { get; internal set; }
 

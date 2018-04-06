@@ -5,7 +5,7 @@ using Terraria.ObjectData;
 
 namespace ElementalBoots.Tiles
 {
-    public abstract class MTile: ModTile
+    abstract class MTile: ModTile
     {
         public bool FrameImportant
         {

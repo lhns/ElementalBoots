@@ -7,7 +7,7 @@ using Terraria.ObjectData;
 
 namespace ElementalBoots.Tiles.InventorsWorkshop
 {
-    public class InventorsWorkshop: MTile
+    class InventorsWorkshop: MTile
     {
         public override void SetDefaults2()
         {

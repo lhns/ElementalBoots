@@ -3,7 +3,7 @@ using Terraria;
 
 namespace ElementalBoots.Buffs.Illuminant
 {
-    public class IlluminantCrystal: MBuff
+    class IlluminantCrystal: MBuff
     {
         //public Item Trigger { get; }
 
