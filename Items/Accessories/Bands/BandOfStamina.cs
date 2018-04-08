@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Terraria;
 using Terraria.ID;
 using LibEventManagerCSharp;
+using Microsoft.Xna.Framework;
 
 namespace ElementalBoots.Items.Accessories.Bands
 {

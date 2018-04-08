@@ -7,6 +7,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using LibEventManagerCSharp;
+using Microsoft.Xna.Framework;
 
 namespace ElementalBoots
 {
@@ -67,6 +68,11 @@ namespace ElementalBoots
         public Item GetItemType(string name)
         {
             return GetItem(name).item;
+        }
+
+        public void Log(string text, Color color)
+        {
+            Main.NewTextMultiline(text, false, color);
         }
     }
 }
