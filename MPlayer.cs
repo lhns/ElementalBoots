@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using ElementalBoots.Items;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.ModLoader;
+using Terraria.DataStructures;
 
 namespace ElementalBoots
 {
@@ -109,6 +111,21 @@ namespace ElementalBoots
             base.PostHurt(pvp, quiet, damage, hitDirection, crit);
 
             Events.Registry().Call(new Events.PlayerPostHurt(this, pvp, quiet, damage, hitDirection, crit));
+        }
+
+        public override void ModifyDrawLayers(List<PlayerLayer> layers)
+        {
+            base.ModifyDrawLayers(layers);
+
+            layers.Add(new PlayerLayer(mod.Name, "ModyfyPlayerDrawData", (PlayerDrawInfo info) =>
+            {
+                ModifyPlayerDrawData(Main.playerDrawData);
+            }));
+        }
+
+        public void ModifyPlayerDrawData(List<DrawData> playerDrawData)
+        {
+            Events.Registry().Call(new Events.ModifyPlayerDrawData(this, playerDrawData));
         }
     }
 }

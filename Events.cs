@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LibEventManagerCSharp;
+using Terraria.DataStructures;
 
 namespace ElementalBoots
 {
@@ -40,6 +41,18 @@ namespace ElementalBoots
                 this.damage = damage;
                 this.hitDirection = hitDirection;
                 this.crit = crit;
+            }
+        }
+
+        public class ModifyPlayerDrawData : Event
+        {
+            public readonly MPlayer player;
+            public readonly List<DrawData> playerDrawData;
+
+            public ModifyPlayerDrawData(MPlayer player, List<DrawData> playerDrawData)
+            {
+                this.player = player;
+                this.playerDrawData = playerDrawData;
             }
         }
     }
