@@ -70,6 +70,8 @@
     <Compile Include="Items\Accessories\BalloonBundle\SextupleHoneyBalloonBundle.cs" />
     <Compile Include="Items\Accessories\BalloonBundle\SextupleHorseshoeBalloonBundle.cs" />
     <Compile Include="Items\Accessories\BalloonBundle\SextupleHorseshoeHoneyBalloonBundle.cs" />
+    <Compile Include="Items\Accessories\Bands\BandOfAnarchy.cs" />
+    <Compile Include="Items\Accessories\Bands\BandOfStamina.cs" />
     <Compile Include="Items\Accessories\CompoundAccessory.cs" />
     <Compile Include="Items\Accessories\ElementalBoots\ElementalBoots.cs" />
     <Compile Include="Items\Accessories\FieryShell\FieryShell.cs" />
@@ -99,8 +101,15 @@
     <Compile Include="Items\Accessories\Wings\TerraWings\TrueAngelWings.cs" />
     <Compile Include="Items\Accessories\Wings\TerraWings\TrueDemonWings.cs" />
     <Compile Include="Items\Accessories\Wings\Wings.cs" />
+    <Compile Include="Items\Materials\FrostSlime\BrokenFrostSlimeWandPart.cs" />
+    <Compile Include="Items\Materials\GunParts\IllegalMeteoriteGunParts.cs" />
+    <Compile Include="Items\Materials\Illuminant\IlluminantPearl.cs" />
+    <Compile Include="Items\Materials\Prism\Prism.cs" />
     <Compile Include="Items\Tiles\InventorsWorkshop\InventorsWorkshopItem.cs" />
     <Compile Include="Items\MItem.cs" />
+    <Compile Include="Items\Weapon\Gun.cs" />
+    <Compile Include="Items\Weapon\SpikyBallBlaster\SpikyBall.cs" />
+    <Compile Include="Items\Weapon\SpikyBallBlaster\SpikyBallBlaster.cs" />
     <Compile Include="MPlayer.cs" />
     <Compile Include="Projectiles\Illuminant\IlluminantCrystal.cs" />
     <Compile Include="Projectiles\MProjectile.cs" />
@@ -109,9 +118,7 @@
     <Compile Include="Tiles\MTile.cs" />
     <Compile Include="Value.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Items\Materials\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Buffs\BuffTemplate.png" />
     <Content Include="Buffs\DebuffTemplate.png" />
@@ -142,6 +149,8 @@
     <Content Include="Items\Accessories\BalloonBundle\SextupleHorseshoeBalloonBundle_Balloon.png" />
     <Content Include="Items\Accessories\BalloonBundle\SextupleHorseshoeHoneyBalloonBundle.png" />
     <Content Include="Items\Accessories\BalloonBundle\SextupleHorseshoeHoneyBalloonBundle_Balloon.png" />
+    <Content Include="Items\Accessories\Bands\BandOfAnarchy.png" />
+    <Content Include="Items\Accessories\Bands\BandOfStamina.png" />
     <Content Include="Items\Accessories\ElementalBoots\ElementalBoots.png" />
     <Content Include="Items\Accessories\ElementalBoots\ElementalBoots_Shoes.png" />
     <Content Include="Items\Accessories\FieryShell\FieryShell.png" />
@@ -186,7 +195,19 @@
     <Content Include="Items\Accessories\Wings\TerraWings\TrueAngelWings_Wings.png" />
     <Content Include="Items\Accessories\Wings\TerraWings\TrueDemonWings.png" />
     <Content Include="Items\Accessories\Wings\TerraWings\TrueDemonWings_Wings.png" />
+    <Content Include="Items\Materials\FrostSlime\BrokenFrostSlimeWandPart.png" />
+    <Content Include="Items\Materials\GunParts\IllegalMeteoriteGunParts.png" />
+    <Content Include="Items\Materials\Illuminant\IlluminantPearl.png" />
+    <Content Include="Items\Materials\Prism\Prism.png" />
     <Content Include="Items\Tiles\InventorsWorkshop\InventorsWorkshopItem.png" />
+    <Content Include="Items\Weapon\Cannon\LilBombard.png" />
+    <Content Include="Items\Weapon\Extinguisher\Extinguisher.png" />
+    <Content Include="Items\Weapon\IceStorm\IceStorm.png" />
+    <Content Include="Items\Weapon\Illuminant\IlluminantStaff.png" />
+    <Content Include="Items\Weapon\PoisonBubbleWand\PoisonBubbleWand.png" />
+    <Content Include="Items\Weapon\Space\SpaceLaser.png" />
+    <Content Include="Items\Weapon\Space\SpaceRifle.png" />
+    <Content Include="Items\Weapon\SpikyBallBlaster\SpikyBallBlaster.png" />
     <Content Include="Projectiles\Illuminant\IlluminantCrystal.png" />
     <Content Include="Tiles\InventorsWorkshop\InventorsWorkshop.png" />
     <Content Include="Tiles\InventorsWorkshop\InventorsWorkshopTile.png" />
@@ -198,6 +219,7 @@
     <None Include="Items\Accessories\BalloonBundle\SextupleBalloonBundle.pdn" />
     <None Include="Items\Accessories\Wings\ElementalWings\ElementalWings.pdn" />
     <None Include="Items\Accessories\Wings\ElementalWings\ElementalWings_Wings.pdn" />
+    <None Include="Items\Weapon\Slingshot\Slingshot.pdn" />
     <None Include="Localization\en-US.lang" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

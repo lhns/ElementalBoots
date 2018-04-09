@@ -26,7 +26,7 @@ namespace ElementalBoots.Items.Accessories.Wings.ElementalWings
             ascentWhenFalling *= 4;
             maxAscentSpeedMultiplier *= 3;
             maxHorizontalSpeedMultiplier *= 6;
-            horizontalAccelerationMultiplier *= 6;
+            horizontalAccelerationMultiplier *= 4;
         }
     }
 }

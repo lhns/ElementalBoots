@@ -127,5 +127,18 @@ namespace ElementalBoots
         {
             Events.Registry().Call(new Events.ModifyPlayerDrawData(this, playerDrawData));
         }
+
+        public bool consumeAmmo = true;
+
+        public override bool ConsumeAmmo(Item weapon, Item ammo)
+        {
+            if (!consumeAmmo)
+            {
+                consumeAmmo = true;
+                return false;
+            }
+
+            return base.ConsumeAmmo(weapon, ammo);
+        }
     }
 }
