@@ -7,7 +7,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 
-namespace ElementalBoots.Items.Weapon.SpikyBallBlaster
+namespace ElementalBoots.Items.Weapons.SpikyBallBlaster
 {
     class SpikyBallBlaster: Gun
     {

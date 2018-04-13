@@ -7,9 +7,9 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 
-namespace ElementalBoots.Items.Weapon
+namespace ElementalBoots.Items.Weapons
 {
-    abstract class Gun: MItem
+    abstract class Gun: Weapon
     {
         public Vector2 holdoutOffset = Vector2.Zero;
         public Vector2 shootOrigin = Vector2.Zero;

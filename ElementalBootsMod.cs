@@ -31,14 +31,14 @@ namespace ElementalBoots
         {
             instance = this;
         }
-        
+
 
         public Item NewItemType(int type)
         {
             var item = new Item();
-            
+
             item.SetDefaults(type);
-            
+
             if (item.type != ItemID.None)
                 return item;
             else
@@ -73,6 +73,11 @@ namespace ElementalBoots
         public void Log(string text, Color color)
         {
             Main.NewTextMultiline(text, false, color);
+        }
+
+        public void Log(string text)
+        {
+            Log(text, Color.White);
         }
     }
 }

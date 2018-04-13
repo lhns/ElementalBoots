@@ -7,7 +7,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace ElementalBoots.Items.Weapon.SpikyBallBlaster
+namespace ElementalBoots.Items.Weapons.SpikyBallBlaster
 {
     class SpikyBall: GlobalItem
     {
