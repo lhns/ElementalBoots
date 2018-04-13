@@ -12,8 +12,9 @@ namespace ElementalBoots.Items.Weapons
     abstract class Gun: Weapon
     {
         public Vector2 holdoutOffset = Vector2.Zero;
-        public Vector2 shootOrigin = Vector2.Zero;
-        public Vector2 shootOffset = Vector2.Zero;
+        public Vector2 relativeShootOffset = Vector2.Zero;
+        public Vector2 absoluteShootOffset = Vector2.Zero;
+        public float xOffset = 0;
         public float rotationOffset = 0;
         public bool relativeVelocity = false;
 
@@ -27,9 +28,9 @@ namespace ElementalBoots.Items.Weapons
 
         public override bool Shoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
-            var newShootOrigin = new Vector2(shootOrigin.X * player.direction, shootOrigin.Y);
+            var newShootOrigin = new Vector2(absoluteShootOffset.X * player.direction + xOffset, absoluteShootOffset.Y);
 
-            var newShootOffset = new Vector2(shootOffset.X, shootOffset.Y * player.direction).RotatedBy(new Vector2(speedX, speedY).ToRotation() + rotationOffset * player.direction);
+            var newShootOffset = new Vector2(relativeShootOffset.X, relativeShootOffset.Y * player.direction).RotatedBy(new Vector2(speedX, speedY).ToRotation() + rotationOffset * player.direction);
 
             var newPosition = new Vector2(position.X + newShootOrigin.X + newShootOffset.X, position.Y + newShootOrigin.Y + newShootOffset.Y);
 
