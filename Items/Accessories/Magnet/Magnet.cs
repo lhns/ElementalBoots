@@ -18,6 +18,15 @@ namespace ElementalBoots.Items.Accessories.Magnet
             item.rare = 2;
         }
 
+        public override void OnChestGenerated(ChestInfo chestInfo)
+        {
+            base.OnChestGenerated(chestInfo);
+
+            if ((chestInfo.height == ChestInfo.Height.UNDERGROUND || chestInfo.height == ChestInfo.Height.CAVERN)
+                    && (chestInfo.style == ChestInfo.Style.GOLD || chestInfo.style == ChestInfo.Style.GOLD_LOCKED))
+                chestInfo.AddLoot(item, 0.05f, true);
+        }
+
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             base.UpdateAccessory(player, hideVisual);

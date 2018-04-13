@@ -17,6 +17,8 @@ namespace ElementalBoots
 
         public EventRegistry eventRegistry = new EventRegistry();
 
+        public readonly Dictionary<int, List<Drop>> npcDrops = new Dictionary<int, List<Drop>>();
+
         public ElementalBootsMod()
         {
             Properties = new ModProperties()
@@ -30,6 +32,18 @@ namespace ElementalBoots
         public override void Load()
         {
             instance = this;
+        }
+
+        public void AddDrop(int npc, int item, float chance = 1f, int from = 1, int to = 1)
+        {
+            List<Drop> drops;
+            npcDrops.TryGetValue(npc, out drops);
+            if (drops == null)
+            {
+                drops = new List<Drop>();
+                npcDrops.Add(npc, drops);
+            }
+            drops.Add(new Drop(item, chance, from, to));
         }
 
 
@@ -72,6 +86,7 @@ namespace ElementalBoots
 
         public void Log(string text, Color color)
         {
+            ErrorLogger.Log(text);
             Main.NewTextMultiline(text, false, color);
         }
 

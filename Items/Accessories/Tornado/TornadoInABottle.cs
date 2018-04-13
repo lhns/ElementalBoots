@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
+using LibEventManagerCSharp;
 
 namespace ElementalBoots.Items.Accessories.Tornado
 {
@@ -25,6 +26,14 @@ namespace ElementalBoots.Items.Accessories.Tornado
             
             item.value = 1 * Value.GOLD;
             item.rare = 1;
+        }
+
+        public override void OnChestGenerated(ChestInfo chestInfo)
+        {
+            base.OnChestGenerated(chestInfo);
+
+            if (chestInfo.height == ChestInfo.Height.SKY)
+                chestInfo.AddLoot(item, 0.1f, true);
         }
 
         public override void OnUnEquip(Player player)

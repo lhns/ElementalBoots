@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LibEventManagerCSharp;
 using Terraria;
+using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 
 namespace ElementalBoots.Items.Accessories.Wings
@@ -24,29 +25,31 @@ namespace ElementalBoots.Items.Accessories.Wings
 
         private EventListener modifyPlayerDrawDataListener;
 
-        public override void SetDefaults()
+        public override void SetStaticDefaults()
         {
-            base.SetDefaults();
+            base.SetStaticDefaults();
 
             modifyPlayerDrawDataListener = Events.Registry().Register((Events.ModifyPlayerDrawData e) =>
-             {
-                 if (glowing)
-                 {
-                     for (int i = 0; i < e.playerDrawData.Count; i++)
-                     {
-                         if (i < e.playerDrawData.Count)
-                         {
-                             var drawData = e.playerDrawData[i];
+            {
+                RenderGlow(e);
+            });
+        }
 
-                             if (drawData.texture == Main.wingsTexture[item.wingSlot])
-                             {
-                                 drawData.color = new Color(250, 250, 250);
-                                 e.playerDrawData[i] = drawData;
-                             }
-                         }
-                     }
-                 }
-             });
+        private void RenderGlow(Events.ModifyPlayerDrawData e)
+        {
+            if (glowing)
+            {
+                for (int i = 0; i < e.playerDrawData.Count; i++)
+                {
+                    var drawData = e.playerDrawData[i];
+
+                    if (item.wingSlot >= 0 && item.wingSlot < Main.wingsTexture.Length && drawData.texture == Main.wingsTexture[item.wingSlot])
+                    {
+                        drawData.color = new Color(250, 250, 250);
+                        e.playerDrawData[i] = drawData;
+                    }
+                }
+            }
         }
 
         public override void VerticalWingSpeeds(Player player, ref float ascentWhenFalling, ref float ascentWhenRising, ref float maxCanAscendMultiplier, ref float maxAscentMultiplier, ref float constantAscend)

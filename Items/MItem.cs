@@ -1,11 +1,26 @@
 ﻿using Terraria;
 using Terraria.ModLoader;
+using LibEventManagerCSharp;
 
 namespace ElementalBoots.Items
 {
     abstract class MItem: ModItem, IEquipped
     {
         public bool Equipped { get; internal set; }
+
+        private EventListener chestGeneratedEvent;
+
+        public override void SetStaticDefaults()
+        {
+            base.SetStaticDefaults();
+
+            chestGeneratedEvent = Events.Registry().Register((Events.ChestGenerated e) =>
+            {
+                OnChestGenerated(e.chestInfo);
+            });
+        }
+
+        public virtual void OnChestGenerated(ChestInfo chestInfo) { }
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {

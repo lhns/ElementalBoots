@@ -119,13 +119,15 @@ namespace ElementalBoots
 
             layers.Add(new PlayerLayer(mod.Name, "ModyfyPlayerDrawData", (PlayerDrawInfo info) =>
             {
-                ModifyPlayerDrawData(Main.playerDrawData);
+                Main.playerDrawData = ModifyPlayerDrawData(Main.playerDrawData);
             }));
         }
 
-        public void ModifyPlayerDrawData(List<DrawData> playerDrawData)
+        public List<DrawData> ModifyPlayerDrawData(List<DrawData> playerDrawData)
         {
             Events.Registry().Call(new Events.ModifyPlayerDrawData(this, playerDrawData));
+
+            return playerDrawData;
         }
 
         public bool consumeAmmo = true;

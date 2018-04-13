@@ -41,5 +41,14 @@ namespace ElementalBoots.Items.Weapons.SpikyBallBlaster
 
             item.UseSound = new LegacySoundStyle(2, 40);
         }
+
+        public override void OnChestGenerated(ChestInfo chestInfo)
+        {
+            base.OnChestGenerated(chestInfo);
+
+            if (chestInfo.height == ChestInfo.Height.CAVERN
+                    && (chestInfo.style == ChestInfo.Style.GOLD || chestInfo.style == ChestInfo.Style.GOLD_LOCKED))
+                chestInfo.AddLoot(item, 0.05f, true);
+        }
     }
 }

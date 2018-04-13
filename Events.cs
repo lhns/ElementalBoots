@@ -15,6 +15,16 @@ namespace ElementalBoots
             return ElementalBootsMod.instance.eventRegistry;
         }
 
+        public class ChestGenerated : Event
+        {
+            public readonly ChestInfo chestInfo;
+
+            public ChestGenerated(ChestInfo chestInfo)
+            {
+                this.chestInfo = chestInfo;
+            }
+        }
+
         public class PlayerPostRespawn : Event
         {
             public readonly MPlayer player;

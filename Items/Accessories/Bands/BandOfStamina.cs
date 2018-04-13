@@ -19,6 +19,14 @@ namespace ElementalBoots.Items.Accessories.Bands
             base.SetDefaults();
         }
 
+        public override void OnChestGenerated(ChestInfo chestInfo)
+        {
+            base.OnChestGenerated(chestInfo);
+
+            if (chestInfo.height == ChestInfo.Height.SKY)
+                chestInfo.AddLoot(item, 0.1f, true);
+        }
+
         public override void OnUnEquip(Player player)
         {
             base.OnUnEquip(player);

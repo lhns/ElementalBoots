@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Terraria;
 
-namespace LolHens
+namespace ElementalBoots
 {
     public class ChestInfo
     {
@@ -99,7 +99,7 @@ namespace LolHens
             {
                 if (chest == null) continue;
 
-                //Events.registry.Call(new Events.ChestGenerated.Factory())(new ChestInfo(chest));
+                Events.Registry().Call(new Events.ChestGenerated(new ChestInfo(chest)));
             }
         }
 
