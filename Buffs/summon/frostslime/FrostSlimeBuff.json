@@ -1,9 +1,0 @@
-﻿{
-    "displayName": "Baby Frost Slime",
-    "tip": "Pet that follows you",
-    "debuff": false,
-    "vanityPet": true,
-    "lightPet": false,
-    "enchantment": false,
-    "noTimer": true
-}

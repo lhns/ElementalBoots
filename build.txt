@@ -1,0 +1,10 @@
+author = LolHens
+version = 2.0.0
+displayName = Elemental Boots
+homepage = http://forums.terraria.org/index.php?threads/elemental-boots.4021/
+dllReferences = LibEventManagerCSharp
+hideCode = false
+hideResources = false
+includeSource = true
+buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*
+includePDB = true
