@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace ElementalBoots.Items.Accessories.Illuminant
 {
@@ -15,6 +17,17 @@ namespace ElementalBoots.Items.Accessories.Illuminant
             
             item.value = 30 * Value.GOLD;
             item.rare = 8;
+        }
+
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(mod, "IlluminantHeartNecklace");
+            recipe.AddIngredient(mod, "IlluminantStarNecklace");
+            recipe.AddIngredient(mod, "IlluminantPearl");
+            recipe.AddTile(mod, "InventorsWorkshop");
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
 
         public override IList<Item> GetCompoundAccessories()

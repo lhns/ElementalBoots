@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
 
 namespace ElementalBoots.Items.Accessories.Ninja
@@ -17,6 +18,24 @@ namespace ElementalBoots.Items.Accessories.Ninja
             
             item.value = 20 * Value.GOLD;
             item.rare = 8;
+        }
+
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.FireGauntlet);
+            recipe.AddIngredient(ItemID.MasterNinjaGear);
+            recipe.AddTile(mod, "InventorsWorkshop");
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+
+            recipe = new ModRecipe(mod);
+            recipe.AddIngredient(mod, "MagmaClimbingGear");
+            recipe.AddIngredient(ItemID.Tabi);
+            recipe.AddIngredient(ItemID.BlackBelt);
+            recipe.AddTile(mod, "InventorsWorkshop");
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
 
         public override IList<Item> GetCompoundAccessories()

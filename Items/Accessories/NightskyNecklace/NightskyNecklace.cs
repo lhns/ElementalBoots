@@ -17,6 +17,16 @@ namespace ElementalBoots.Items.Accessories.NightskyNecklace
             item.rare = 8;
         }
 
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.StarVeil);
+            recipe.AddIngredient(ItemID.MoonShell);
+            recipe.AddTile(mod, "InventorsWorkshop");
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+        }
+
         public override IList<Item> GetCompoundAccessories()
         {
             return new List<Item>
@@ -24,16 +34,6 @@ namespace ElementalBoots.Items.Accessories.NightskyNecklace
                 ElementalBootsMod.instance.GetItemType(ItemID.MoonShell),
                 ElementalBootsMod.instance.GetItemType(ItemID.StarVeil)
             };
-        }
-
-        public override void AddRecipes()
-        {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.MoonShell);
-            recipe.AddIngredient(ItemID.StarVeil);
-            recipe.AddTile(mod, "InventorsWorkshop");
-            recipe.SetResult(this);
-            recipe.AddRecipe();
         }
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace ElementalBoots.Items.Accessories.Wings.LaserWings
@@ -39,6 +40,21 @@ namespace ElementalBoots.Items.Accessories.Wings.LaserWings
 
             item.value = 1 * Value.GOLD;
             item.rare = 3;
+        }
+
+        protected int correspondingPhaseblade = -1;
+
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(correspondingPhaseblade);
+            recipe.AddIngredient(ItemID.CrystalShard, 20);
+            recipe.AddIngredient(ItemID.Lens, 20);
+            recipe.AddIngredient(ItemID.MeteoriteBar, 10);
+            recipe.AddIngredient(ItemID.SoulofFlight, 20);
+            recipe.AddTile(mod, "InventorsWorkshop");
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
 
         public override void UpdateAccessory(Player player, bool hideVisual)

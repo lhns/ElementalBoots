@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 using LibEventManagerCSharp;
 
 namespace ElementalBoots.Items.Accessories.Illuminant
@@ -20,6 +21,16 @@ namespace ElementalBoots.Items.Accessories.Illuminant
 
             /*item.damage = 20;
             item.knockBack = 1;*/
+        }
+
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.SweetheartNecklace);
+            recipe.AddIngredient(mod, "IlluminantPearl");
+            recipe.AddTile(TileID.TinkerersWorkbench);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
 
         private EventListener respawnListener, postHurtListener;

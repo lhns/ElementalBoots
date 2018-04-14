@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace ElementalBoots.Items.Accessories.Wings.TerraWings
@@ -25,6 +26,16 @@ namespace ElementalBoots.Items.Accessories.Wings.TerraWings
             maxAscentSpeedMultiplier *= 2;
             maxHorizontalSpeedMultiplier *= 4;
             horizontalAccelerationMultiplier *= 4;
+        }
+
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(mod, "TrueAngelWings");
+            recipe.AddIngredient(mod, "TrueDemonWings");
+            recipe.AddTile(mod, "InventorsWorkshop");
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
     }
 }

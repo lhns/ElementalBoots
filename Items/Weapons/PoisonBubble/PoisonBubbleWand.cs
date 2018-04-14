@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace ElementalBoots.Items.Weapons.PoisonBubble
 {
@@ -27,6 +29,16 @@ namespace ElementalBoots.Items.Weapons.PoisonBubble
             item.noMelee = true;
             item.magic = true;
             item.mana = 5;
+        }
+
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.BubbleWand);
+            recipe.AddIngredient(ItemID.PoisonStaff);
+            recipe.AddTile(mod, "InventorsWorkshop");
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
 
         public override bool UseItem(Player player, float progress)

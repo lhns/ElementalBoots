@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace ElementalBoots.Items.Accessories.Wings.LaserWings
@@ -29,6 +30,27 @@ namespace ElementalBoots.Items.Accessories.Wings.LaserWings
 
             maxAscentSpeedMultiplier *= 1.2f;
             maxHorizontalSpeedMultiplier *= 1.2f;
+        }
+
+        private void AddRecipeWith(string item)
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(mod, item);
+            recipe.AddIngredient(mod, "Prism");
+            recipe.AddIngredient(ItemID.SoulofFlight, 5);
+            recipe.AddTile(mod, "InventorsWorkshop");
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+        }
+
+        public override void AddRecipes()
+        {
+            AddRecipeWith("BlueLaserWings");
+            AddRecipeWith("GreenLaserWings");
+            AddRecipeWith("PurpleLaserWings");
+            AddRecipeWith("RedLaserWings");
+            AddRecipeWith("WhiteLaserWings");
+            AddRecipeWith("YellowLaserWings");
         }
     }
 }

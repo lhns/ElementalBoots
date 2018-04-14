@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace ElementalBoots.Items.Accessories.Bands
 {
@@ -19,6 +20,18 @@ namespace ElementalBoots.Items.Accessories.Bands
                 ElementalBootsMod.instance.GetItemType(ItemID.BandofStarpower),
                 ElementalBootsMod.instance.GetItemType(ItemID.BandofRegeneration)
             };
+        }
+
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.AvengerEmblem);
+            recipe.AddIngredient(ItemID.BandofRegeneration);
+            recipe.AddIngredient(ItemID.BandofStarpower);
+            recipe.AddIngredient(mod, "BandOfStamina");
+            recipe.AddTile(mod, "InventorsWorkshop");
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
     }
 }

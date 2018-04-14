@@ -20,6 +20,23 @@ namespace ElementalBoots.Items.Accessories.Ninja
             item.rare = 8;
         }
 
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.FireGauntlet);
+            recipe.AddIngredient(ItemID.TigerClimbingGear);
+            recipe.AddTile(mod, "InventorsWorkshop");
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+
+            recipe = new ModRecipe(mod);
+            recipe.AddIngredient(mod, "MagmaClaws");
+            recipe.AddIngredient(ItemID.ShoeSpikes);
+            recipe.AddTile(mod, "InventorsWorkshop");
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+        }
+
         public override IList<Item> GetCompoundAccessories()
         {
             return new List<Item>

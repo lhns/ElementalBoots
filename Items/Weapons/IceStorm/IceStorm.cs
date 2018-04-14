@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria.Audio;
+using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace ElementalBoots.Items.Weapons.IceStorm
 {
@@ -29,6 +31,16 @@ namespace ElementalBoots.Items.Weapons.IceStorm
             item.shoot = mod.ProjectileType("IceCrystal");
             item.shootSpeed = 2;
             item.mana = 2;
+        }
+
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.SpellTome);
+            recipe.AddIngredient(ItemID.FrostCore);
+            recipe.AddTile(TileID.Bookcases);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
     }
 }

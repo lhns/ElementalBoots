@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using LibEventManagerCSharp;
 using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace ElementalBoots.Items.Accessories.Illuminant
 {
@@ -17,6 +18,16 @@ namespace ElementalBoots.Items.Accessories.Illuminant
 
             item.value = 15 * Value.GOLD;
             item.rare = 6;
+        }
+
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(ItemID.StarVeil);
+            recipe.AddIngredient(mod, "IlluminantPearl");
+            recipe.AddTile(TileID.TinkerersWorkbench);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
         }
 
         private EventListener respawnListener, postHurtListener;

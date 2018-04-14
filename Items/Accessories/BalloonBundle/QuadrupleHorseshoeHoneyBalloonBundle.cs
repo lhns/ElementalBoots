@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Terraria;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace ElementalBoots.Items.Accessories.BalloonBundle
@@ -21,6 +22,14 @@ namespace ElementalBoots.Items.Accessories.BalloonBundle
             Cloud = Blizzard = Sandstorm = Tornado = true;
             Horseshoe = true;
             Honey = true;
+        }
+
+        public override void AddRecipes()
+        {
+            upgradeOf = new int[] { mod.ItemType("QuadrupleHoneyBalloonBundle"), mod.ItemType("QuadrupleHorseshoeBalloonBundle") };
+            upgradeRequires = new int[] { ItemID.LuckyHorseshoe, ItemID.HoneyComb };
+
+            base.AddRecipes();
         }
     }
 }
