@@ -26,6 +26,7 @@ namespace ElementalBoots.Items.Accessories.BalloonBundle
         {
             upgradeOf = new int[] { ItemID.BundleofBalloons };
             upgradeRequires = new int[] { mod.ItemType("TornadoInABalloon") };
+            upgradeAddsBalloon = true;
 
             base.AddRecipes();
         }

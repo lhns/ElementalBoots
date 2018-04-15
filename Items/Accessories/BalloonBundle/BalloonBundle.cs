@@ -10,6 +10,7 @@ namespace ElementalBoots.Items.Accessories.BalloonBundle
         public bool Cloud, Blizzard, Sandstorm, Fart, Sail, Tornado;
         public bool Horseshoe, Obsidian, Honey;
         protected int[] upgradeOf, upgradeRequires;
+        protected bool upgradeAddsBalloon;
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
@@ -78,7 +79,7 @@ namespace ElementalBoots.Items.Accessories.BalloonBundle
                     recipe = new ModRecipe(mod);
                     recipe.AddIngredient(upgradeOf[i]);
                     recipe.AddIngredient(upgradeRequires[i]);
-                    recipe.AddIngredient(ItemID.SoulofFlight, 5);
+                    if (upgradeAddsBalloon) recipe.AddIngredient(ItemID.SoulofFlight, 5);
                     recipe.AddTile(mod, "InventorsWorkshop");
                     recipe.SetResult(this);
                     recipe.AddRecipe();

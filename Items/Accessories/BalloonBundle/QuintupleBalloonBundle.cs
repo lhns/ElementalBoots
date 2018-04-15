@@ -26,6 +26,7 @@ namespace ElementalBoots.Items.Accessories.BalloonBundle
         {
             upgradeOf = new int[] { mod.ItemType("QuadrupleBalloonBundle") };
             upgradeRequires = new int[] { ItemID.FartInABalloon };
+            upgradeAddsBalloon = true;
 
             base.AddRecipes();
         }

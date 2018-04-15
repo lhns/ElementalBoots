@@ -26,6 +26,7 @@ namespace ElementalBoots.Items.Accessories.BalloonBundle
         {
             upgradeOf = new int[] { mod.ItemType("QuintupleBalloonBundle") };
             upgradeRequires = new int[] { ItemID.BalloonPufferfish };
+            upgradeAddsBalloon = true;
 
             base.AddRecipes();
         }
