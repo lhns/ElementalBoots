@@ -32,6 +32,7 @@ namespace ElementalBoots
         public override void Load()
         {
             instance = this;
+            if (Main.rand == null) Main.rand = new Terraria.Utilities.UnifiedRandom();
         }
 
         public void AddDrop(int npc, int item, float chance = 1f, int from = 1, int to = 1)
