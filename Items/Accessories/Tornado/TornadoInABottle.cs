@@ -33,7 +33,7 @@ namespace ElementalBoots.Items.Accessories.Tornado
             base.OnChestGenerated(chestInfo);
 
             if (chestInfo.height == ChestInfo.Height.SKY)
-                chestInfo.AddLoot(item, 0.1f, true);
+                chestInfo.AddLoot(item, 0.2f, true);
         }
 
         public override void OnUnEquip(Player player)
